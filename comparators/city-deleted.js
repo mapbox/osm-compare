@@ -1,10 +1,10 @@
 'use strict';
-function city_deleted(newVersion, oldVersion, callback) {
+function cityDeleted(newVersion, oldVersion, callback) {
     // Note: newVersion does not have any tags, so using oldVersion.
     if (newVersion && newVersion.deleted === true && oldVersion.tags && oldVersion.tags.place === 'city') {
-        callback(null, { 'result:city_deleted': true });
+        callback(null, { 'cityDeleted': true });
     } else {
-        callback(null, {});
+        callback(null, { 'cityDeleted': false });
     }
 }
-module.exports = city_deleted;
+module.exports = cityDeleted;

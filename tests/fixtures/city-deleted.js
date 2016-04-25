@@ -4,7 +4,7 @@
         {
             "description": "Test city deleted",
             "expectedResult": {
-                "result:city_deleted": true
+                "cityDeleted": true
             },
             "newVersion": {
                 "id": 158230039,
@@ -60,7 +60,9 @@
         },
         {
             "description": "Test restoring deleted city",
-            "expectedResult": {},
+            "expectedResult": {
+              "cityDeleted": false
+            },
             "newVersion": {
                 "id": 158230039,
                 "type": "node",
@@ -115,7 +117,9 @@
         },
         {
             "description": "Test deleted but not city",
-            "expectedResult": {},
+            "expectedResult": {
+              "cityDeleted": false
+            },
             "newVersion": {
                 "id": 38276009,
                 "type": "node",
