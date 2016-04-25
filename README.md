@@ -1,6 +1,9 @@
 # Compare-GeoJSON
 
 
+[![Circle CI](https://circleci.com/gh/mapbox/compare-geojson.svg?style=svg)](https://circleci.com/gh/mapbox/compare-geojson)
+
+
 Compare functions take as inputs the following:
 
 1. `oldVersion` - GeoJSON of the feature's old version
