@@ -4,7 +4,10 @@
         {
             "description": "Test city deleted",
             "expectedResult": {
+              "name": "cityDeleted",
+              "data": {
                 "cityDeleted": true
+              }
             },
             "newVersion": {
                 "id": 158230039,
@@ -61,7 +64,10 @@
         {
             "description": "Test restoring deleted city",
             "expectedResult": {
-              "cityDeleted": false
+              "name": "cityDeleted",
+              "data": {
+                "cityDeleted": false
+              }
             },
             "newVersion": {
                 "id": 158230039,
@@ -118,7 +124,10 @@
         {
             "description": "Test deleted but not city",
             "expectedResult": {
-              "cityDeleted": false
+              "name": "cityDeleted",
+              "data": {
+                "cityDeleted": false
+              }
             },
             "newVersion": {
                 "id": 38276009,
