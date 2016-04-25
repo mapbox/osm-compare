@@ -6,6 +6,10 @@
   "scripts": {
     "test": "TAP_TIMEOUT=600 tap --coverage tests/*.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapbox/compare-geojson.git"
+  },
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
