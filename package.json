@@ -13,7 +13,11 @@
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
-    "queue-async": "^1.2.1"
+    "queue-async": "^1.2.1",
+    "turf-area": "^1.1.1",
+    "turf-centroid": "^1.1.0",
+    "turf-distance": "^1.1.0",
+    "turf-envelope": "^1.0.2"
   },
   "devDependencies": {
     "tap": "^5.7.1"
