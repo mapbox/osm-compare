@@ -31,8 +31,8 @@ function testFixture(assert, fixture, callback) {
 
   var compareQueue = queue(1);
   files.forEach(function(filename) {
-    compareFunction = filename.split('.')[0];
-    var compareFunctionPath = path.join(__dirname, '../', 'comparators', compareFunction);
+    var compareFunctionName = filename.split('.')[0];
+    var compareFunctionPath = path.join(__dirname, '../', 'comparators', compareFunctionName);
     var compareFunction = require(compareFunctionPath);
     compareQueue.defer(testFixtureOnCompareFunction, assert, fixture, compareFunction, callback);
   });
