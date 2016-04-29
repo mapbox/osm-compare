@@ -4,7 +4,9 @@
   "description": "Compare a features new and old versions in GeoJSON",
   "main": "index.js",
   "scripts": {
-    "test": "TAP_TIMEOUT=600 tap --coverage tests/*.js"
+    "test": "TAP_TIMEOUT=600 tap --coverage tests/*.js",
+    "lint": "eslint index.js comparetors/*.js tests/*.js",
+    "pretest": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
     "turf-envelope": "^1.0.2"
   },
   "devDependencies": {
+    "eslint": "^2.8.0",
+    "eslint-config-mourner": "^2.0.1",
     "tap": "^5.7.1"
   }
 }
