@@ -11,6 +11,7 @@ test('Test compare functions', function(assert) {
 
   var dirname = path.join(__dirname, '/fixtures/');
   var files = fs.readdirSync(dirname);
+  files = files.filter(function(filename) { return /.json$/.test(filename); });
   files.forEach(function(filename) {
     var jsonData = JSON.parse(fs.readFileSync(path.join(dirname, filename), 'utf-8'));
     fileQueue.defer(processFixtureFile, assert, jsonData);
