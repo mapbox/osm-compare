@@ -19,6 +19,11 @@ function getFeatureSize(feature) {
 * To flag unusually large geometry changes or movements.
 */
 function geometryTransformation(newVersion, oldVersion, callback) {
+
+  if (!newVersion || !oldVersion) {
+    return callback(null, {});
+  }
+
   // When a feature is deleted, it does not have a geometry.
   var newArea = getFeatureSize(newVersion);
   var oldArea = getFeatureSize(oldVersion);

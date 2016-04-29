@@ -2,6 +2,11 @@
 // To flag deleted highway's.
 
 function highway_deleted(newVersion, oldVersion, callback) {
+
+  if (!newVersion || !oldVersion) {
+    return callback(null, {});
+  }
+
   var highwayTypesToFlag = ['motorway', 'trunk', 'primary', 'secondary', 'tertiary'];
   if (newVersion && oldVersion && newVersion.deleted && oldVersion.properties && oldVersion.properties.highway && highwayTypesToFlag.indexOf(oldVersion.properties.highway) !== -1) {
     callback(null, {
