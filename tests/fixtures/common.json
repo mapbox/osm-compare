@@ -3,13 +3,11 @@
     "fixtures": [
         {
             "description": "Test newVersion and oldVersion is null",
-            "expectedResult": {},
             "newVersion": null,
             "oldVersion": null
         },
         {
             "description": "Test newVersion is null",
-            "expectedResult": {},
             "newVersion": {
                 "id": 158230039,
                 "type": "node",
@@ -29,7 +27,6 @@
         },
         {
             "description": "Test oldVersion is null",
-            "expectedResult": {},
             "newVersion": null,
             "oldVersion": {
                 "id": 158230039,
