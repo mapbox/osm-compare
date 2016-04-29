@@ -47,10 +47,7 @@ function testFixture(assert, fixture, callback) {
 */
 function testFixtureOnCompareFunction(assert, fixture, compareFunction, callback) {
   compareFunction(fixture.newVersion, fixture.oldVersion, function(error, result) {
-    if(error) {
-      return callback(error);
-    }
-    assert.deepEqual(fixture.expectedResult, result);
+    assert.error(error);
     callback();
   });
 }
