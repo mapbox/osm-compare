@@ -5,6 +5,7 @@
     "indent": ["error", 2],
     "global-require": 1,
     "consistent-return": 0,
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "camelcase": 0
   }
 }
