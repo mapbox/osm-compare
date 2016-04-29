@@ -1,7 +1,14 @@
 'use strict';
+
+module.exports = compare_tag;
+
 /**
- * Calls back with `{'result:significant_tag': true}` if the object edited has a significant tag.
- */
+* Identify edits to a significant tag.
+* @param {object} newVersion Features new version in GeoJSON.
+* @param {object} oldVersion Features old version in GeoJSON.
+* @param {Function} callback called with (error, result).
+* @returns {undefined} calls callback.
+*/
 function compare_tag(newVersion, oldVersion, callback) {
 
   if (!newVersion || !oldVersion) {
@@ -21,5 +28,3 @@ function compare_tag(newVersion, oldVersion, callback) {
     callback(null, {});
   }
 }
-
-module.exports = compare_tag;
