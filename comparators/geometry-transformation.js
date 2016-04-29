@@ -6,6 +6,8 @@ var turfArea = require('turf-area');
 var turfEnvelope = require('turf-envelope');
 var turfCentroid = require('turf-centroid');
 
+module.exports = geometryTransformation;
+
 function getFeatureSize(feature) {
   if (!feature || !feature.geometry) {
     return 0;
@@ -16,7 +18,11 @@ function getFeatureSize(feature) {
 }
 
 /**
-* To flag unusually large geometry changes or movements.
+* Identify large geometry changes or movements.
+* @param {object} newVersion Features new version in GeoJSON.
+* @param {object} oldVersion Features old version in GeoJSON.
+* @param {Function} callback called with (error, result).
+* @returns {undefined} calls callback.
 */
 function geometryTransformation(newVersion, oldVersion, callback) {
 
@@ -49,5 +55,3 @@ function geometryTransformation(newVersion, oldVersion, callback) {
     }
   });
 }
-
-module.exports = geometryTransformation;

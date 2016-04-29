@@ -2,6 +2,8 @@
 var turfArea = require('turf-area');
 var turfEnvelope = require('turf-envelope');
 
+module.exports = compare_properties;
+
 function getFeatureSize(feature) {
   if (!feature || !feature.geometry) {
     return 0;
@@ -28,8 +30,13 @@ function getPropertyValue(feature) {
   return minimumScore;
 }
 
+
 /**
-* To flag significant tag changes to large features.
+* Identify significant tag changes to features.
+* @param {object} newVersion Features new version in GeoJSON.
+* @param {object} oldVersion Features old version in GeoJSON.
+* @param {Function} callback called with (error, result).
+* @returns {undefined} calls callback.
 */
 function compare_properties(newVersion, oldVersion, callback) {
 
@@ -56,5 +63,3 @@ function compare_properties(newVersion, oldVersion, callback) {
     }
   });
 }
-
-module.exports = compare_properties;

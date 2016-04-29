@@ -17,8 +17,13 @@ function getFeatureSize(feature) {
   return area;
 }
 
+
 /**
-* To flag unusually large geometry changes or movements.
+* Identify large geometry changes or movements.
+* @param {object} newVersion Features new version in GeoJSON.
+* @param {object} oldVersion Features old version in GeoJSON.
+* @param {Function} callback called with (error, result).
+* @returns {undefined} calls callback.
 */
 function compare_geometries(newVersion, oldVersion, callback) {
 

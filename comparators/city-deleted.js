@@ -2,6 +2,13 @@
 
 module.exports = cityDeleted;
 
+/**
+* Identify deletion of a city.
+* @param {object} newVersion Features new version in GeoJSON.
+* @param {object} oldVersion Features old version in GeoJSON.
+* @param {Function} callback called with (error, result).
+* @returns {undefined} calls callback.
+*/
 function cityDeleted(newVersion, oldVersion, callback) {
 
   if (!newVersion || !oldVersion) {
