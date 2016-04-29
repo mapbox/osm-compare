@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "TAP_TIMEOUT=600 tap --coverage tests/*.js",
-    "lint": "eslint index.js comparetors/*.js tests/*.js",
+    "lint": "eslint index.js comparators/*.js tests/*.js",
     "pretest": "npm run lint"
   },
   "repository": {
