@@ -1,0 +1,148 @@
+{
+  "compareFunction": "compare_geometries",
+  "fixtures": [
+    {
+      "description": "https://github.com/mapbox/vandalism-dynamosm/issues/30#issue-143151719",
+      "expectedResult": {
+        "result:compare_geometries": {
+          "areaDelta": -691365.1578817668,
+          "centroidDisplacement": 0,
+          "geometryTransformation": -19358224.42068947
+        }
+      },
+      "newVersion": {
+        "id": 157811322,
+        "type": "way",
+        "typeId": 2,
+        "tags": {},
+        "refs": [],
+        "version": 28,
+        "timestamp": 1458154348000,
+        "uid": 3488478,
+        "user": "SanjeevKumarT",
+        "changeset": 37879988,
+        "deleted": true
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "id": "way!157811322!27",
+        "properties": {
+          "ref": "NH966",
+          "foot": "yes",
+          "name": "Nilambur-Calicut-Mannarkkad Road",
+          "horse": "yes",
+          "lanes": "2",
+          "access": "yes",
+          "oneway": "no",
+          "bicycle": "yes",
+          "highway": "trunk",
+          "ref:old": "NH213",
+          "surface": "asphalt",
+          "cycleway": "no",
+          "maxspeed": "70",
+          "sidewalk": "none",
+          "osm:type": "way",
+          "osm:id": 157811322,
+          "osm:version": 27,
+          "osm:changeset": 35485084,
+          "osm:timestamp": 1448105804000,
+          "osm:uid": 477038,
+          "osm:user": "manuvarkey"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              76.1995939,
+              10.977214
+            ],
+            [
+              76.2001961,
+              10.9770442
+            ],
+            [
+              76.2004852,
+              10.9770387
+            ],
+            [
+              76.2007245,
+              10.9770819
+            ],
+            [
+              76.2013438,
+              10.9773181
+            ],
+            [
+              76.2019519,
+              10.9776483
+            ],
+            [
+              76.2021053,
+              10.9777037
+            ],
+            [
+              76.204409,
+              10.9779411
+            ],
+            [
+              76.2047931,
+              10.978091
+            ],
+            [
+              76.2057169,
+              10.9782767
+            ],
+            [
+              76.2061989,
+              10.9783164
+            ],
+            [
+              76.2070447,
+              10.9781717
+            ],
+            [
+              76.2073667,
+              10.978073
+            ],
+            [
+              76.2087997,
+              10.9774472
+            ],
+            [
+              76.2092473,
+              10.9772746
+            ],
+            [
+              76.2110255,
+              10.9762814
+            ],
+            [
+              76.2116822,
+              10.9759489
+            ],
+            [
+              76.2136125,
+              10.9754021
+            ],
+            [
+              76.2151992,
+              10.9750155
+            ],
+            [
+              76.215514,
+              10.9750051
+            ],
+            [
+              76.216369,
+              10.9752093
+            ],
+            [
+              76.2167566,
+              10.9755445
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}
