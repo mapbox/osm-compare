@@ -27,12 +27,12 @@ test('Test compare functions with common fixtures', function(assert) {
 function testFixture(assert, fixture, callback) {
   var dirname = path.join(__dirname, '..', 'comparators');
   var files = fs.readdirSync(dirname);
+  files = files.filter(function(filename) { return /.js$/.test(filename); });
 
   var compareQueue = queue(1);
   files.forEach(function(filename) {
-    console.log('filename: ', filename);
     compareFunction = filename.split('.')[0];
-    var compareFunctionPath = path.join('../', 'comparators', compareFunction);
+    var compareFunctionPath = path.join(__dirname, '../', 'comparators', compareFunction);
     var compareFunction = require(compareFunctionPath);
     compareQueue.defer(testFixtureOnCompareFunction, assert, fixture, compareFunction, callback);
   });
