@@ -23,15 +23,18 @@ test('Test compare functions', function(assert) {
 
 
 function processFixtureFile(assert, jsonData, callback) {
-  var fixtureQueue = queue(5);  // Process more than one fixture in a file.
+  // Fixtures with empty string as compareFunction as run on all compare functions.
+  if (jsonData.compareFunction === '') {
+    return callback();
+  }
 
+  var fixtureQueue = queue(5);  // Process more than one fixture in a file.
   // ToFix: "../" is not very intuitive.
   var compareFunctionPath = path.join('../', 'comparators', jsonData.compareFunction);
   var compareFunction = require(compareFunctionPath);
   jsonData.fixtures.forEach(function (fixture) {
     fixtureQueue.defer(processFixture, assert, compareFunction, fixture);
   });
-
   fixtureQueue.awaitAll(function() {
     callback();
   });
