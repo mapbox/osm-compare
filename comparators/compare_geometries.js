@@ -6,6 +6,8 @@ var turfArea = require('turf-area');
 var turfEnvelope = require('turf-envelope');
 var turfCentroid = require('turf-centroid');
 
+module.exports = compare_geometries;
+
 function getFeatureSize(feature) {
   if (!feature || !feature.geometry) {
     return 0;
@@ -19,7 +21,12 @@ function getFeatureSize(feature) {
 * To flag unusually large geometry changes or movements.
 */
 function compare_geometries(newVersion, oldVersion, callback) {
-  // When a feature is deleted, it does not have a geometry.
+
+  if (!newVersion || !oldVersion) {
+    return callback(null, {});
+  }
+
+  // Note: When a feature is deleted, it does not have a geometry.
   var newArea = getFeatureSize(newVersion);
   var oldArea = getFeatureSize(oldVersion);
   var areaDelta = newArea - oldArea;
@@ -43,5 +50,3 @@ function compare_geometries(newVersion, oldVersion, callback) {
     }
   });
 }
-
-module.exports = compare_geometries;

@@ -25,12 +25,18 @@ function getPropertyValue(feature) {
       return prioritizedProperties.length - prioritizedProperties.indexOf(prioritizedProperties[i]);
     }
   }
+  return minimumScore;
 }
 
 /**
 * To flag significant tag changes to large features.
 */
 function compare_properties(newVersion, oldVersion, callback) {
+
+  if (!newVersion || !oldVersion) {
+    return callback(null, {});
+  }
+
   // Calculate and return the value of propertyTransformation.
   var newFeatureSize = getFeatureSize(newVersion);
   var oldFeatureSize = getFeatureSize(oldVersion);

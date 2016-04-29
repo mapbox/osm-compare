@@ -1,4 +1,7 @@
 'use strict';
+
+module.exports = cityDeleted;
+
 function cityDeleted(newVersion, oldVersion, callback) {
 
   if (!newVersion || !oldVersion) {
@@ -23,4 +26,3 @@ function cityDeleted(newVersion, oldVersion, callback) {
     });
   }
 }
-module.exports = cityDeleted;
