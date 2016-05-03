@@ -1,0 +1,208 @@
+{
+    "compareFunction": "landmark",
+    "fixtures": [
+        {
+            "description": "Changed object had no landmark score",
+            "newVersion": {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 2,
+                    "osm:changeset": 37338289,
+                    "osm:timestamp": 1456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -49.9747202,
+                      -24.867769
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 3,
+                    "osm:changeset": 59124892,
+                    "osm:timestamp": 2456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -49.5747202,
+                      -24.467769
+                    ]
+                }
+            },
+            "expectedResult": {}
+        },
+        {
+            "description": "Changed object has wikipedia tag that doesnt exist in our database",
+            "newVersion": {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "wikipedia": "foobar",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 2,
+                    "osm:changeset": 37338289,
+                    "osm:timestamp": 1456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                    -77.03667,
+                    38.89766
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "wikipedia": "foobar",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 3,
+                    "osm:changeset": 59124892,
+                    "osm:timestamp": 2456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -77.03667,
+                        38.89766
+                    ]
+                }
+            },
+            "expectedResult": {}
+        },
+        {
+            "description": "Changed object has wikipedia tag and is near the expected location",
+            "newVersion": {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "wikipedia": "en:White House",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 2,
+                    "osm:changeset": 37338289,
+                    "osm:timestamp": 1456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -77.03667,
+                        38.89766
+                    ]
+                }
+            },
+            "oldVersion":
+            {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "wikipedia": "en:White House",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 3,
+                    "osm:changeset": 59124892,
+                    "osm:timestamp": 2456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -77.03667,
+                        38.89766
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:wikipedia_score": 35.4
+            }
+        },
+        {
+            "description": "Changed object has wikidata tag and is near the expected location",
+            "newVersion": {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "wikidata": "Q35525",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 2,
+                    "osm:changeset": 37338289,
+                    "osm:timestamp": 1456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -77.03667,
+                        38.89766
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "id": "node!4007681408!2",
+                "properties": {
+                    "name": "Colônia Terra Nova",
+                    "place": "suburb",
+                    "wikidata": "Q35525",
+                    "osm:type": "node",
+                    "osm:id": 4007681408,
+                    "osm:version": 3,
+                    "osm:changeset": 59124892,
+                    "osm:timestamp": 2456016744000,
+                    "osm:uid": 701711,
+                    "osm:user": "luisgustavo1968"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -77.03667,
+                        38.89766
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:wikipedia_score": 35.4
+            }
+        }
+    ]
+}
