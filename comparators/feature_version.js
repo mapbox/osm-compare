@@ -10,12 +10,17 @@ module.exports = feature_version;
 * @returns {undefined} calls callback.
 */
 function feature_version(newVersion, oldVersion, callback) {
-
-  if (!newVersion) {
+  var version = -1;
+  var result = {};
+  if (newVersion) {
+    version = newVersion.properties ? newVersion.properties['osm:version'] : newVersion['version'];
+    result = {'result:feature_version': version};
+    return callback(null, result);
+  } else if (oldVersion) {
+    version = oldVersion.properties ? oldVersion.properties['osm:version'] : oldVersion['version'];
+    result = {'result:feature_version': version};
+    return callback(null, result);
+  } else {
     return callback(null, {});
   }
-
-  var version = newVersion.properties ? newVersion.properties['osm:version'] : newVersion['version'];
-  var result = {'result:feature_version': version};
-  callback(null, result);
 }

@@ -2,61 +2,91 @@
   "compareFunction": "feature_version",
   "fixtures": [
     {
-        "description": "Test with deleted feature",
-        "expectedResult": {
-            "result:feature_version": 13
+      "description": "Test with newVersion null and an oldVersion",
+      "expectedResult": {
+        "result:feature_version": 1
+      },
+      "newVersion": null,
+      "oldVersion": {
+        "type": "Feature",
+        "id": "node!4134915318!1",
+        "properties": {
+          "amenity": "restaurant",
+          "building": "yes",
+          "name": "Birds on Nest",
+          "osm:type": "node",
+          "osm:id": 4134915318,
+          "osm:version": 1,
+          "osm:changeset": 38718496,
+          "osm:timestamp": 1461131796000,
+          "osm:uid": 3844122,
+          "osm:user": "ryan_S"
         },
-        "newVersion": {
-            "id": 158230039,
-            "type": "node",
-            "typeId": 1,
-            "tags": {},
-            "refs": [],
-            "version": 13,
-            "timestamp": 1455477064000,
-            "uid": 3627372,
-            "user": "ELBORICUA61357",
-            "changeset": 37210478,
-            "lat": 42.8864468,
-            "lon": -78.8783689,
-            "deleted": true
-        },
-        "oldVersion": {
-            "id": 158230039,
-            "type": "node",
-            "typeId": 1,
-            "tags": {
-                "ele": "183",
-                "name": "Buffalo",
-                "is_in": "Erie,New York,N.Y.,NY,USA",
-                "place": "city",
-                "gnis:id": "973345",
-                "name:en": "Buffalo",
-                "name:ru": "Буффало",
-                "name:uk": "Баффало",
-                "wikidata": "Q40435",
-                "gnis:Class": "Populated Place",
-                "population": "276059",
-                "alt_name:ru": "Баффало",
-                "gnis:County": "Erie",
-                "gnis:ST_num": "36",
-                "import_uuid": "bb7269ee-502a-5391-8056-e3ce0e66489c",
-                "gnis:ST_alpha": "NY",
-                "is_in:country": "United States",
-                "gnis:County_num": "029",
-                "is_in:continent": "North America",
-                "census:population": "276059;2006",
-                "is_in:country_code": "US"
-            },
-            "refs": [],
-            "version": 12,
-            "timestamp": 1437413549000,
-            "uid": 145231,
-            "user": "woodpeck_repair",
-            "changeset": 32759264,
-            "lat": 42.8864468,
-            "lon": -78.87836890000001
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.9843716,
+            11.0089059
+          ]
         }
+      }
+    },
+    {
+      "description": "Test with deleted feature",
+      "expectedResult": {
+        "result:feature_version": 13
+      },
+      "newVersion": {
+        "id": 158230039,
+        "type": "node",
+        "typeId": 1,
+        "tags": {},
+        "refs": [],
+        "version": 13,
+        "timestamp": 1455477064000,
+        "uid": 3627372,
+        "user": "ELBORICUA61357",
+        "changeset": 37210478,
+        "lat": 42.8864468,
+        "lon": -78.8783689,
+        "deleted": true
+      },
+      "oldVersion": {
+        "id": 158230039,
+        "type": "node",
+        "typeId": 1,
+        "tags": {
+          "ele": "183",
+          "name": "Buffalo",
+          "is_in": "Erie,New York,N.Y.,NY,USA",
+          "place": "city",
+          "gnis:id": "973345",
+          "name:en": "Buffalo",
+          "name:ru": "Буффало",
+          "name:uk": "Баффало",
+          "wikidata": "Q40435",
+          "gnis:Class": "Populated Place",
+          "population": "276059",
+          "alt_name:ru": "Баффало",
+          "gnis:County": "Erie",
+          "gnis:ST_num": "36",
+          "import_uuid": "bb7269ee-502a-5391-8056-e3ce0e66489c",
+          "gnis:ST_alpha": "NY",
+          "is_in:country": "United States",
+          "gnis:County_num": "029",
+          "is_in:continent": "North America",
+          "census:population": "276059;2006",
+          "is_in:country_code": "US"
+        },
+        "refs": [],
+        "version": 12,
+        "timestamp": 1437413549000,
+        "uid": 145231,
+        "user": "woodpeck_repair",
+        "changeset": 32759264,
+        "lat": 42.8864468,
+        "lon": -78.87836890000001
+      }
     },
     {
       "description": "Test with feature with version 1",
