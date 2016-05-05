@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = mapper_since;
+module.exports = new_mapper;
 
 /** Identify if a user is a new mapper on OpenStreetMap.
 * @param {object} newVersion New version of a feature in GeoJSON.
@@ -8,7 +8,7 @@ module.exports = mapper_since;
 * @param {function} callback Called with (error, result).
 * @returns {undefined} calls callback.
 */
-function mapper_since(newVersion, oldVersion, callback) {
+function new_mapper(newVersion, oldVersion, callback) {
   /*
   User IDs on OpenStreetMap are in serial order.
   Our friend 'nammala' is a mapper since December 25, 2015 and has a user ID of 3479270.
@@ -23,7 +23,7 @@ function mapper_since(newVersion, oldVersion, callback) {
 
   var nammala = 3479270;
   var uid = newVersion.properties ? newVersion.properties['osm:uid'] : newVersion['uid'];
-  var result = {'result:mapper_since': {
+  var result = {'result:new_mapper': {
     'newMapper': uid > nammala
   }};
   callback(null, result);
