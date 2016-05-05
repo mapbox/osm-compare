@@ -15,5 +15,6 @@ module.exports = {
   'compare_geometries': require('./comparators/compare_geometries'),
   'highway_deleted': require('./comparators/highway_deleted'),
   'mapper_since': require('./comparators/mapper_since'),
-  'feature_version': require('./comparators/feature_version')
+  'feature_version': require('./comparators/feature_version'),
+  'infrequent_key_value': require('./comparators/infrequent_key_value')
 };
