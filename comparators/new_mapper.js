@@ -11,8 +11,8 @@ module.exports = new_mapper;
 function new_mapper(newVersion, oldVersion, callback) {
   /*
   User IDs on OpenStreetMap are in serial order.
-  Our friend 'nammala' is a mapper since December 25, 2015 and has a user ID of 3479270.
-  So, using this as a reference, a mapper is considered 'new mapper' if the user ID is less than 'nammala'.
+  Our friend 'vidhatri' is a mapper since March 18, 2016 and has a user ID of 3725157.
+  So, using this as a reference, a mapper is considered 'new mapper' if the user ID is less than 'vidhatri'.
   Else, the mapper is not a 'new mapper'.
   */
 
@@ -21,10 +21,10 @@ function new_mapper(newVersion, oldVersion, callback) {
     return callback(null, {});
   }
 
-  var nammala = 3479270;
+  var vidhatri = 3725157;
   var uid = newVersion.properties ? newVersion.properties['osm:uid'] : newVersion['uid'];
   var result = {'result:new_mapper': {
-    'newMapper': uid > nammala
+    'newMapper': uid > vidhatri
   }};
   callback(null, result);
 }

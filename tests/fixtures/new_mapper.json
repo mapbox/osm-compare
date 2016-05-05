@@ -10,24 +10,22 @@
       },
       "newVersion": {
         "type": "Feature",
-        "id": "node!4134915318!1",
+        "id": "node!4068479353!1",
         "properties": {
-          "amenity": "restaurant",
-          "building": "yes",
-          "name": "Birds on Nest",
+          "name": "Bharath petroleum corrporation limited",
           "osm:type": "node",
-          "osm:id": 4134915318,
+          "osm:id": 4068479353,
           "osm:version": 1,
-          "osm:changeset": 38718496,
-          "osm:timestamp": 1461131796000,
-          "osm:uid": 3844122,
-          "osm:user": "ryan_S"
+          "osm:changeset": 37940578,
+          "osm:timestamp": 1458401724000,
+          "osm:uid": 3725157,
+          "osm:user": "vidhatri"
         },
         "geometry": {
           "type": "Point",
           "coordinates": [
-            76.9843716,
-            11.0089059
+            77.0600562,
+            28.5415608
           ]
         }
       },
