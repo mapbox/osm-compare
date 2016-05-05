@@ -1,12 +1,12 @@
 {
-  "compareFunction": "key_values",
+  "compareFunction": "infrequent_key_value",
   "fixtures": [
     {
       "description": "Test for values of tags",
       "expectedResult": {
-        "result:tag_values": {
-          "infrequentTagCount": 1,
-          "infrequentTags": {
+        "result:infrequent_key_value": {
+          "infrequentCount": 1,
+          "infrequentKeyValue": {
             "highway": ["trunk"]
           }
         }
