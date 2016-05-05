@@ -13,5 +13,6 @@ module.exports = {
   'city_deleted': require('./comparators/city_deleted'),
   'compare_properties': require('./comparators/compare_properties'),
   'compare_geometries': require('./comparators/compare_geometries'),
-  'highway_deleted': require('./comparators/highway_deleted')
+  'highway_deleted': require('./comparators/highway_deleted'),
+  'mapper_since': require('./comparators/mapper_since')
 };
