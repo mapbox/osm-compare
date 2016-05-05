@@ -1,0 +1,78 @@
+{
+  "compareFunction": "mapper_since",
+  "fixtures": [
+    {
+      "description": "Test result for a old mapper",
+      "expectedResult": {
+        "result:mapper_since": {
+          "newMapper": false
+        }
+      },
+      "newVersion": {
+        "type": "Feature",
+        "id": "node!3352016856!17",
+        "properties": {
+          "addr:city": "Bangalore",
+          "addr:housenumber": "221, 2nd Floor",
+          "addr:landmark": "Above State Bank of India Women's Branch",
+          "addr:postcode": "560038",
+          "addr:street": "13th Cross, 2nd Main",
+          "name": "Mapbox",
+          "name:hi": "मापबॉक्स",
+          "name:kn": "ಮ್ಯಾಪ್ ಬಾಕ್ಸ್",
+          "name:ru": "Мапбокс",
+          "name:ta": "மேப்பாக்ஸ்",
+          "name:uk": "Мапбокс",
+          "office": "company",
+          "website": "http://www.mapbox.com",
+          "osm:type": "node",
+          "osm:id": 3352016856,
+          "osm:version": 17,
+          "osm:changeset": 37973531,
+          "osm:timestamp": 1458555614000,
+          "osm:uid": 1087876,
+          "osm:user": "bkowshik"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.6368034,
+            12.9810816
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "id": "node!3352016856!16",
+        "properties": {
+          "addr:city": "Bangalore",
+          "addr:housenumber": "221, 2nd Floor",
+          "addr:landmark": "Above State Bank of India Women's Branch",
+          "addr:street": "13th Cross, 2nd Main",
+          "name": "Mapbox",
+          "name:hi": "मापबॉक्स",
+          "name:kn": "ಮ್ಯಾಪ್ ಬಾಕ್ಸ್",
+          "name:ru": "Мапбокс",
+          "name:ta": "மேப்பாக்ஸ்",
+          "name:uk": "Мапбокс",
+          "office": "company",
+          "website": "http://www.mapbox.com",
+          "osm:type": "node",
+          "osm:id": 3352016856,
+          "osm:version": 16,
+          "osm:changeset": 36991977,
+          "osm:timestamp": 1454572727000,
+          "osm:uid": 1306,
+          "osm:user": "PlaneMad"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.6368034,
+            12.9810816
+          ]
+        }
+      }
+    }
+  ]
+}
