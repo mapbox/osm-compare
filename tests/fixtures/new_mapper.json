@@ -1,10 +1,10 @@
 {
-  "compareFunction": "mapper_since",
+  "compareFunction": "new_mapper",
   "fixtures": [
     {
       "description": "Test result for a new mapper",
       "expectedResult": {
-        "result:mapper_since": {
+        "result:new_mapper": {
           "newMapper": true
         }
       },
@@ -36,7 +36,7 @@
     {
       "description": "Test result for a old mapper",
       "expectedResult": {
-        "result:mapper_since": {
+        "result:new_mapper": {
           "newMapper": false
         }
       },
