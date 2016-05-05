@@ -2,6 +2,38 @@
   "compareFunction": "mapper_since",
   "fixtures": [
     {
+      "description": "Test result for a new mapper",
+      "expectedResult": {
+        "result:mapper_since": {
+          "newMapper": true
+        }
+      },
+      "newVersion": {
+        "type": "Feature",
+        "id": "node!4134915318!1",
+        "properties": {
+          "amenity": "restaurant",
+          "building": "yes",
+          "name": "Birds on Nest",
+          "osm:type": "node",
+          "osm:id": 4134915318,
+          "osm:version": 1,
+          "osm:changeset": 38718496,
+          "osm:timestamp": 1461131796000,
+          "osm:uid": 3844122,
+          "osm:user": "ryan_S"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.9843716,
+            11.0089059
+          ]
+        }
+      },
+      "oldVersion": null
+    },
+    {
       "description": "Test result for a old mapper",
       "expectedResult": {
         "result:mapper_since": {
