@@ -22,7 +22,6 @@ function low_zoom_features(newVersion, oldVersion, callback) {
   for (var key in newVersion.properties) {
     if (newVersion.properties.hasOwnProperty(key)) {
       // Check if key is part of interestedFeatures.
-      console.log(key);
       if (key in interestedFeatures && interestedFeatures[key].indexOf(newVersion.properties[key]) !== -1) {
         lowZoomCount += 1;
         // Add the key, value to lowZoomFeatures.
