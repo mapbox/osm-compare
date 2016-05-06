@@ -1,14 +1,12 @@
 {
-  "compareFunction": "infrequent_key_value",
+  "compareFunction": "uncommon_tags",
   "fixtures": [
     {
       "description": "Test for values of tags",
       "expectedResult": {
-        "result:infrequent_key_value": {
-          "infrequentCount": 1,
-          "infrequentKeyValue": {
-            "highway": ["trunk"]
-          }
+        "result:uncommon_tags": {
+          "uncommonCount": 0,
+          "uncommonTags": {}
         }
       },
       "newVersion": {

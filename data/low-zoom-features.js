@@ -6,7 +6,7 @@ var lowZoomFeatures = {
   'natural': ['water', 'wood'],
   'waterway': ['riverbank'],
   'boundary': ['disputed', 'national_park'],
-  'highway': ['motorway'],
+  'highway': ['motorway', 'trunk'],
   'place': ['continent', 'ocean', 'sea', 'country', 'state', 'city'],
   'aeroway': ['aerodrome'],
   'landuse': ['reservoir']
