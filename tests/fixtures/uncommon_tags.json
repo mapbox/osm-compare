@@ -5,10 +5,8 @@
       "description": "Test for values of tags",
       "expectedResult": {
         "result:uncommon_tags": {
-          "uncommonCount": 1,
-          "uncommonTags": {
-            "highway": ["trunk"]
-          }
+          "uncommonCount": 0,
+          "uncommonTags": {}
         }
       },
       "newVersion": {
