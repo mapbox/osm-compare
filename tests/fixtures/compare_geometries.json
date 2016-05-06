@@ -2,7 +2,7 @@
   "compareFunction": "compare_geometries",
   "fixtures": [
     {
-      "description": "https://github.com/mapbox/vandalism-dynamosm/issues/30#issue-143151719",
+      "description": "Compare geometry change with deleted way",
       "expectedResult": {
         "result:compare_geometries": {
           "areaDelta": -691365.1578817668,
