@@ -7,7 +7,8 @@
         "result:compare_geometries": {
           "areaDelta": -691365.1578817668,
           "centroidDisplacement": 0,
-          "geometryTransformation": -19358224.42068947
+          "geometryTransformation": -19358224.42068947,
+          "cfVersion": 2
         }
       },
       "newVersion": {

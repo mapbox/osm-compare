@@ -27,6 +27,8 @@ function getFeatureSize(feature) {
 */
 function compare_geometries(newVersion, oldVersion, callback) {
 
+  var cfVersion = 2;
+
   if (!newVersion || !oldVersion) {
     return callback(null, {});
   }
@@ -49,6 +51,7 @@ function compare_geometries(newVersion, oldVersion, callback) {
 
   callback(null, {
     'result:compare_geometries': {
+      'cfVersion': cfVersion,
       'areaDelta': areaDelta,
       'centroidDisplacement': centroidDisplacement,
       'geometryTransformation': geometryTransformation
