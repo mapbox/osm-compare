@@ -53,7 +53,7 @@ function landmark_score(newVersion, oldVersion, callback) {
     if (record) {
       result['result:landmark_score'] = {
         'cfVersion': cfVersion,
-        'wikipedia_score': record.score
+        'score': record.score
       };
     }
 

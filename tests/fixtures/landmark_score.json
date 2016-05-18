@@ -151,7 +151,7 @@
             "expectedResult": {
                 "result:landmark_score": {
                   "cfVersion": 2,
-                  "wikipedia_score": 35.4
+                  "score": 35.4
                 }
             }
         },
@@ -206,7 +206,7 @@
             "expectedResult": {
                 "result:landmark_score": {
                   "cfVersion": 2,
-                  "wikipedia_score": 35.4
+                  "score": 35.4
                 }
             }
         }
