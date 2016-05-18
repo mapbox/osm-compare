@@ -13,6 +13,8 @@ module.exports = low_zoom_features;
 */
 function low_zoom_features(newVersion, oldVersion, callback) {
 
+  var cfVersion = 2;
+
   if (!newVersion || !newVersion.properties) {
     return callback(null, {});
   }
@@ -35,6 +37,7 @@ function low_zoom_features(newVersion, oldVersion, callback) {
   }
   var result = {
     'result:low_zoom_features': {
+      'cfVersion': cfVersion,
       'lowZoomCount': lowZoomCount,
       'lowZoomFeatures': lowZoomFeatures
     }

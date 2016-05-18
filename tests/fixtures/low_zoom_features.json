@@ -5,6 +5,7 @@
       "description": "Test low zoom features with city",
       "expectedResult": {
         "result:low_zoom_features": {
+          "cfVersion": 2,
           "lowZoomCount": 1,
           "lowZoomFeatures": {
             "place": [
