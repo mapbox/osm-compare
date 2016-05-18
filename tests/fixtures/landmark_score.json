@@ -1,5 +1,5 @@
 {
-    "compareFunction": "landmark",
+    "compareFunction": "landmark_score",
     "fixtures": [
         {
             "description": "Changed object had no landmark score",
@@ -149,7 +149,10 @@
                 }
             },
             "expectedResult": {
-                "result:wikipedia_score": 35.4
+                "result:landmark_score": {
+                  "cfVersion": 2,
+                  "score": 35.4
+                }
             }
         },
         {
@@ -201,7 +204,10 @@
                 }
             },
             "expectedResult": {
-                "result:wikipedia_score": 35.4
+                "result:landmark_score": {
+                  "cfVersion": 2,
+                  "score": 35.4
+                }
             }
         }
     ]

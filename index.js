@@ -9,7 +9,7 @@ module.exports = {
   'user_changesets': require('./comparators/user_changesets'),
   'count_tag': require('./comparators/count_tag'),
   'delete_create': require('./comparators/delete_create'),
-  'landmark': require('./comparators/landmark'),
+  'landmark_score': require('./comparators/landmark_score'),
   'city_deleted': require('./comparators/city_deleted'),
   'compare_properties': require('./comparators/compare_properties'),
   'compare_geometries': require('./comparators/compare_geometries'),
