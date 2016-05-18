@@ -11,6 +11,9 @@ var turfCentroid = require('turf-centroid');
 * @returns {undefined} calls callback.
 */
 function landmark_score(newVersion, oldVersion, callback) {
+
+  var cfVersion = 2;
+
   var db = new sqlite.Database('landmarks.spatialite');
   var result = {};
 
@@ -48,7 +51,10 @@ function landmark_score(newVersion, oldVersion, callback) {
     }
 
     if (record) {
-      result['result:landmark_score'] = record.score;
+      result['result:landmark_score'] = {
+        'cfVersion': cfVersion,
+        'wikipedia_score': record.score
+      };
     }
 
     db.close();
