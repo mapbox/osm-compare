@@ -5,6 +5,7 @@
       "description": "Test for values of tags",
       "expectedResult": {
         "result:uncommon_tags": {
+          "cfVersion": 2,
           "uncommonCount": 0,
           "uncommonTags": {}
         }
