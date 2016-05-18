@@ -46,7 +46,7 @@ function processFixture(assert, compareFunction, fixture, callback) {
     if (err) {
       return callback(err);
     }
-    assert.deepEqual(fixture.expectedResult, result, fixture.description);
+    assert.deepEqual(result, fixture.expectedResult, fixture.description);
     callback();
   });
 }
