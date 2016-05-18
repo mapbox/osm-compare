@@ -9,6 +9,9 @@ module.exports = new_mapper;
 * @returns {undefined} calls callback.
 */
 function new_mapper(newVersion, oldVersion, callback) {
+
+  var cfVersion = 2;
+
   /*
   User IDs on OpenStreetMap are in serial order.
   Our friend 'vidhatri' is a mapper since March 18, 2016 and has a user ID of 3725157.
@@ -24,6 +27,7 @@ function new_mapper(newVersion, oldVersion, callback) {
   var vidhatri = 3725157;
   var uid = newVersion.properties ? newVersion.properties['osm:uid'] : newVersion['uid'];
   var result = {'result:new_mapper': {
+    'cfVersion': cfVersion,
     'newMapper': uid > vidhatri
   }};
   callback(null, result);

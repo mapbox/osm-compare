@@ -10,15 +10,28 @@ module.exports = feature_version;
 * @returns {undefined} calls callback.
 */
 function feature_version(newVersion, oldVersion, callback) {
+
+  var cfVersion = 2;
+
   var version = -1;
   var result = {};
   if (newVersion) {
     version = newVersion.properties ? newVersion.properties['osm:version'] : newVersion['version'];
-    result = {'result:feature_version': version};
+    result = {
+      'result:feature_version': {
+        'cfVersion': cfVersion,
+        'version': version
+      }
+    };
     return callback(null, result);
   } else if (oldVersion) {
     version = oldVersion.properties ? oldVersion.properties['osm:version'] : oldVersion['version'];
-    result = {'result:feature_version': version};
+    result = {
+      'result:feature_version': {
+        'cfVersion': cfVersion,
+        'version': version
+      }
+    };
     return callback(null, result);
   } else {
     return callback(null, {});

@@ -16,16 +16,25 @@ Compare functions output the following:
 2. `result` - Object containing key value pairs representing findings of the compare function or an empty object.
 
 
+#### Versioning
+The version of the compare function is returned as part of the result as `cfVersion`. Every time a compare function is modified, we increment the `cfVersion`.
+
 A sample compare function would look something like this:
 
 ```
-function checkPlaceRemoval(newVersion, oldVersion, callback) {
-    var oldProps = oldVersion.properties;
-    var newProps = newVersion.properties;
-    var result = {};
-    if (oldProps.hasOwnProperty('place') && !newProps.hasOwnProperty('place')) {
-        result['result:place_removed'] = true;
-    }
-    return callback(null, result);
+function place_removed(newVersion, oldVersion, callback) {
+
+  var cfVersion = 2;
+
+  var oldProps = oldVersion.properties;
+  var newProps = newVersion.properties;
+  var placeRemoved = false;
+  if (oldProps.hasOwnProperty('place') && !newProps.hasOwnProperty('place')) {
+    placeRemoved = true;
+  }
+  return callback(null, {'result:place_removed': {
+    'cfVersion': cfVersion,
+    'placeRemoved': placeRemoved
+  }});
 }
 ```

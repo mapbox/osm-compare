@@ -4,7 +4,10 @@
     {
       "description": "Test with newVersion null and an oldVersion",
       "expectedResult": {
-        "result:feature_version": 1
+        "result:feature_version": {
+          "cfVersion": 2,
+          "version": 1
+        }
       },
       "newVersion": null,
       "oldVersion": {
@@ -34,7 +37,10 @@
     {
       "description": "Test with deleted feature",
       "expectedResult": {
-        "result:feature_version": 13
+        "result:feature_version": {
+          "cfVersion": 2,
+          "version": 13
+        }
       },
       "newVersion": {
         "id": 158230039,
@@ -91,7 +97,10 @@
     {
       "description": "Test with feature with version 1",
       "expectedResult": {
-        "result:feature_version": 1
+        "result:feature_version": {
+          "cfVersion": 2,
+          "version": 1
+        }
       },
       "newVersion": {
         "type": "Feature",
@@ -121,7 +130,11 @@
     {
       "description": "Test with a pretty mature feature",
       "expectedResult": {
-        "result:feature_version": 17
+        "result:feature_version": {
+          "cfVersion": 2,
+          "version": 17
+        }
+
       },
       "newVersion": {
         "type": "Feature",

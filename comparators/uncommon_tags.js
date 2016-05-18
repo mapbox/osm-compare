@@ -12,6 +12,9 @@ module.exports = uncommon_tags;
 * @returns {undefined} Calls callback.
 */
 function uncommon_tags(newVersion, oldVersion, callback) {
+
+  var cfVersion = 2;
+
   if (!newVersion || !newVersion.properties) {
     return callback(null, {});
   }
@@ -34,6 +37,7 @@ function uncommon_tags(newVersion, oldVersion, callback) {
   }
   var result = {
     'result:uncommon_tags': {
+      'cfVersion': cfVersion,
       'uncommonCount': uncommonCount,
       'uncommonTags': uncommonTags
     }

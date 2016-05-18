@@ -5,6 +5,7 @@
       "description": "Test result for a new mapper",
       "expectedResult": {
         "result:new_mapper": {
+          "cfVersion": 2,
           "newMapper": true
         }
       },
@@ -37,6 +38,7 @@
       "description": "Test result for a old mapper",
       "expectedResult": {
         "result:new_mapper": {
+          "cfVersion": 2,
           "newMapper": false
         }
       },
