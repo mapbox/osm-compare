@@ -1,5 +1,5 @@
 {
-    "compareFunction": "landmark",
+    "compareFunction": "landmark_score",
     "fixtures": [
         {
             "description": "Changed object had no landmark score",
