@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "properties": {
-    "result:wikipedia_score": 2.9
+    "result:landmark_score": 2.9
   },
   "features": [
     {

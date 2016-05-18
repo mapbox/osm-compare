@@ -4,11 +4,12 @@ var sqlite = require('sqlite3');
 var turfCentroid = require('turf-centroid');
 
 /**
-* Checks for existence of feature in a local SQLite database of wikipedia landmarks.
-* If the feature exists, calls back with a result of the wikipedia score. eg:
-* {'result:wikipedia_score': 100}
+* Checks for existence of feature in a local SQLite database of wikipedia landmarks and when the feature exists, calls back with a result of the wikipedia score.
+* @param {object} newVersion Features new version in GeoJSON.
+* @param {object} oldVersion Features old version in GeoJSON.
+* @param {Function} callback called with (error, result).
+* @returns {undefined} calls callback.
 */
-
 function landmark_score(newVersion, oldVersion, callback) {
   var db = new sqlite.Database('landmarks.spatialite');
   var result = {};
@@ -47,7 +48,7 @@ function landmark_score(newVersion, oldVersion, callback) {
     }
 
     if (record) {
-      result['result:wikipedia_score'] = record.score;
+      result['result:landmark_score'] = record.score;
     }
 
     db.close();

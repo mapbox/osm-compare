@@ -3,7 +3,7 @@
   "properties": {
     "result:count_tag": 1,
     "result:significant_place": 195,
-    "result:wikipedia_score": 3.4
+    "result:landmark_score": 3.4
   },
   "features": [
     {

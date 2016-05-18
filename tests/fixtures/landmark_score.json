@@ -149,7 +149,7 @@
                 }
             },
             "expectedResult": {
-                "result:wikipedia_score": 35.4
+                "result:landmark_score": 35.4
             }
         },
         {
@@ -201,7 +201,7 @@
                 }
             },
             "expectedResult": {
-                "result:wikipedia_score": 35.4
+                "result:landmark_score": 35.4
             }
         }
     ]
