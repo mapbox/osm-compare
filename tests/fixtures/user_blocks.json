@@ -4,7 +4,10 @@
         {
             "description": "Test feature edit by a blocked mapper",
             "expectedResult": {
-                "result:user_blocks": true
+                "result:user_blocks": {
+                  "blocks": true,
+                  "cfVersion": 1
+                }
             },
             "newVersion": {
                 "type": "Feature",
@@ -31,7 +34,10 @@
         {
             "description": "Test feature edit by a not blocked mapper",
             "expectedResult": {
-                "result:user_blocks": 0
+                "result:user_blocks": {
+                  "cfVersion": 1,
+                  "blocks": 0
+                }
             },
             "newVersion": {
                 "type": "Feature",
