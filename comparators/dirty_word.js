@@ -15,12 +15,9 @@ function dirty_word(newVersion, oldVersion, callback) {
   if (dirtyWords.indexOf(newVersion.properties.name) !== -1) {
     count = 1;
   }
-  console.log(newVersion);
   callback(null, {
     'result:dirty_word': {
       'count': count
     }
   });
 }
-
-
