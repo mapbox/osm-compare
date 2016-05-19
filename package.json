@@ -21,7 +21,9 @@
     "turf-area": "^1.1.1",
     "turf-centroid": "^1.1.0",
     "turf-distance": "^1.1.0",
-    "turf-envelope": "^1.0.2"
+    "turf-envelope": "^1.0.2",
+    "turf-featurecollection": "^1.0.1",
+    "turf-within": "^3.0.5"
   },
   "devDependencies": {
     "eslint": "^2.8.0",

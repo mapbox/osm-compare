@@ -1,0 +1,52 @@
+{
+  "compareFunction": "priority_area",
+  "fixtures": [
+    {
+      "description": "The White House is in a priority area",
+      "expectedResult": {
+        "result:priority_area": {
+          "priority_area": true
+        }
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "tourism": "attraction",
+          "name": "White House"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.036,
+            38.897
+          ]
+        }
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Bangalore is not in priority area",
+      "expectedResult": {
+        "result:priority_area": {
+          "priority_area": false
+        }
+      },
+      "newVersion": {
+        "type": "Feature",
+        "id": "node!3401391999!18",
+        "properties": {
+          "place": "city",
+          "name": "Bangalore"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            77.5912997,
+            12.9791198
+          ]
+        }
+      },
+      "oldVersion": null
+    }
+  ]
+}
