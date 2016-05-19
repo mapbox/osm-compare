@@ -38,3 +38,28 @@ function place_removed(newVersion, oldVersion, callback) {
   }});
 }
 ```
+
+### How do I create a compare function?
+1. Clone this repository with `git clone https://github.com/mapbox/compare-geojson`
+2. `cd compare-geojson`
+3. `npm install`
+4. Create a new JSON fixture in the directory `tests/fixtures/` in the format below:
+```
+{
+    "compareFunction": "< compare function name >",
+    "fixtures": [
+        {
+            "description": "Description of this test",
+            "expectedResult": < Result of the compare function>,
+            "newVersion": {
+                < GeoJSON of new version of the feature >
+            },
+            "oldVersion": {
+                < GeoJSON of old version of the feature >
+            }
+        }
+    ]
+}
+```
+5. Write your compare function in the directory `comparators` in the format explained above.
+6. Test your new compare function with `npm test`.
