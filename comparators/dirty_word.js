@@ -10,6 +10,9 @@ module.exports = dirty_word;
 * @returns {undefined} calls callback.
 */
 function dirty_word(newVersion, oldVersion, callback) {
+  if (!newVersion || !newVersion.properties) {
+    return callback(null, {});
+  }
   var dirtyWords = ['shit', 'dirty', 'fuck'];
   var count = 0;
   if (dirtyWords.indexOf(newVersion.properties.name) !== -1) {
