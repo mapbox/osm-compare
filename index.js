@@ -19,6 +19,6 @@ module.exports = {
   'uncommon_tags': require('./comparators/uncommon_tags'),
   'low_zoom_features': require('./comparators/low_zoom_features'),
   'user_blocks': require('./comparators/user_blocks'),
-  'dirty_words': require('./comparators/dirty_words'),
+  'dirty_word': require('./comparators/dirty_word'),
   'priority_area': require('./comparators/priority_area')
 };
