@@ -5,7 +5,8 @@
       "description": "The White House is in a priority area",
       "expectedResult": {
         "result:priority_area": {
-          "priority_area": true
+          "priority_area": true,
+          "cfVersion": 1
         }
       },
       "newVersion": {
@@ -28,7 +29,8 @@
       "description": "Bangalore is not in priority area",
       "expectedResult": {
         "result:priority_area": {
-          "priority_area": false
+          "priority_area": false,
+          "cfVersion": 1
         }
       },
       "newVersion": {

@@ -17,6 +17,8 @@ module.exports = priority_area;
 */
 function priority_area(newVersion, oldVersion, callback) {
 
+  var cfVersion = 1;
+
   // Exit if the feature has been deleted
   if (!newVersion || !newVersion.geometry) return callback(null, {});
 
@@ -29,6 +31,7 @@ function priority_area(newVersion, oldVersion, callback) {
 
   return callback(null, {
     'result:priority_area': {
+      'cfVersion': cfVersion,
       'priority_area': result
     }
   });

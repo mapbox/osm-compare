@@ -10,6 +10,9 @@ module.exports = dirty_word;
 * @returns {undefined} calls callback.
 */
 function dirty_word(newVersion, oldVersion, callback) {
+
+  var cfVersion = 1;
+
   if (!newVersion || !newVersion.properties) {
     return callback(null, {});
   }
@@ -20,6 +23,7 @@ function dirty_word(newVersion, oldVersion, callback) {
   }
   callback(null, {
     'result:dirty_word': {
+      'cfVersion': cfVersion,
       'count': count
     }
   });
