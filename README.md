@@ -51,3 +51,10 @@ curl -s https://s3.amazonaws.com/vandalism-dynamosm-support/landmarks.spatialite
 * Create a new test fixture in the directory `tests/fixtures/`
 * Create a new compare function in the directory `comparators/`
 * Test your new compare function with `npm test`
+
+
+### How do I test a compare function?
+* `cd compare-geojson/tests/`
+* Create new fixture file in `tests/fixtures/` folder (check other fixtures for format).
+* Update name of compare function you want to run the fixture against.
+* Test your fixture with `node test_compare_function.js fixtures/new_mapper.json`
