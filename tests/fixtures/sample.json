@@ -1,0 +1,11 @@
+{
+    "compareFunction": "Name of the compare function",
+    "fixtures": [
+        {
+            "description": "Description of this test fixture",
+            "expectedResult": {},
+            "newVersion": {},
+            "oldVersion": {}
+        }
+    ]
+}
