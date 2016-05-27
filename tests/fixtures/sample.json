@@ -1,8 +1,8 @@
 {
-    "compareFunction": "Name of the compare function",
+    "compareFunction": "",
     "fixtures": [
         {
-            "description": "Description of this test fixture",
+            "description": "",
             "expectedResult": {},
             "newVersion": {},
             "oldVersion": {}
