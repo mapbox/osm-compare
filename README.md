@@ -47,7 +47,6 @@ function place_removed(newVersion, oldVersion, callback) {
 * Clone this repository with `git clone https://github.com/mapbox/compare-geojson`
 * `cd compare-geojson`
 * `npm install`
-* Fetch landmarks database with `curl -s https://s3.amazonaws.com/vandalism-dynamosm-support/landmarks.spatialite -o landmarks.spatialite`
 * Check if all tests pass before making your changes with `npm test`
 * Create a new test fixture in the directory `tests/fixtures/`
 * Create a new compare function in the directory `comparators/`
