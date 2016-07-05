@@ -1,4 +1,4 @@
-# Compare-GeoJSON
+# osm-compare
 
 
 [![Circle CI](https://circleci.com/gh/mapbox/compare-geojson.svg?style=svg)](https://circleci.com/gh/mapbox/compare-geojson)
