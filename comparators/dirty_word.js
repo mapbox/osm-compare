@@ -3,7 +3,7 @@
 module.exports = dirty_word;
 
 /**
-* Identify deletion of a city.
+* Identify potentially "dirty" words in any of the name tags.
 * @param {object} newVersion Features new version in GeoJSON.
 * @param {object} oldVersion Features old version in GeoJSON.
 * @param {Function} callback called with (error, result).
@@ -11,16 +11,24 @@ module.exports = dirty_word;
 */
 function dirty_word(newVersion, oldVersion, callback) {
 
-  var cfVersion = 1;
+  var cfVersion = 2;
 
   if (!newVersion || !newVersion.properties) {
     return callback(null, {});
   }
-  var dirtyWords = ['shit', 'dirty', 'fuck'];
+  var dirtyWords = ['shit', 'fuck', 'gangbang', 'gang-bang', 'pokemon', 'pokémon'];
   var count = 0;
-  if (dirtyWords.indexOf(newVersion.properties.name) !== -1) {
-    count = 1;
-  }
+  var keys = Object.keys(newVersion.properties);
+  keys.forEach(function(key) {
+    if (key.indexOf('name') !== -1) {
+      var name = newVersion.properties[key];
+      name.split(' ').forEach(function(word) {
+        if (dirtyWords.indexOf(word.toLowerCase()) !== -1) {
+          count++;
+        }
+      });
+    }
+  });
   callback(null, {
     'result:dirty_word': {
       'cfVersion': cfVersion,
