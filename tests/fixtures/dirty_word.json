@@ -5,7 +5,7 @@
             "description": "Test for dirty words in the 'name' tag",
             "expectedResult": {
                 "result:dirty_word": {
-                    "cfVersion": 1,
+                    "cfVersion": 2,
                     "count": 1
                 }
             },
@@ -95,7 +95,7 @@
             "description": "Test for dirty words in the 'name' tag without dirty word",
             "expectedResult": {
                 "result:dirty_word": {
-                    "cfVersion": 1,
+                    "cfVersion": 2,
                     "count": 0
                 }
             },
