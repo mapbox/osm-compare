@@ -36,24 +36,24 @@ function landmark_score(newVersion, oldVersion, callback) {
     query = 'SELECT score FROM mb_landmark WHERE qid=? LIMIT 1;';
     args = [theVersion.properties['wikidata']];
 
-    db.get(query, args, function(err, record) {
-      if (err) {
-        db.close();
-        return callback(err);
-      }
+    // db.get(query, args, function(err, record) {
+    //   if (err) {
+    //     db.close();
+    //     return callback(err);
+    //   }
 
-      if (record) {
-        result['result:landmark_score']['cfVersion'] = cfVersion;
-        result['result:landmark_score']['score'] = record.score;
-        result['result:landmark_score']['DBwikidata'] = 1;
-        // {
-        //   'cfVersion': cfVersion,
-        //   'score': record.score
-        // };
-      }
+    //   if (record) {
+    //     result['result:landmark_score']['cfVersion'] = cfVersion;
+    //     result['result:landmark_score']['score'] = record.score;
+    //     result['result:landmark_score']['DBwikidata'] = 1;
+    //     // {
+    //     //   'cfVersion': cfVersion,
+    //     //   'score': record.score
+    //     // };
+    //   }
       callback(null, result);
-      db.close();
-    });
+    //   db.close();
+    // });
   } else if (theVersion.properties['wikipedia']) {
     result['result:landmark_score']['wikipedia'] = 1;
     // If there's a `wikipedia` tag try to match on label + location
@@ -63,21 +63,21 @@ function landmark_score(newVersion, oldVersion, callback) {
 
     query1 = 'SELECT score FROM mb_landmark WHERE label_en=? LIMIT 1;';
     args1 = [theVersion.properties['wikipedia'].slice(+3)];
-    db.get(query1, args1, function(err, record) {
-      if (err) {
-        db.close();
-        return callback(err);
-      }
+    // db.get(query1, args1, function(err, record) {
+    //   if (err) {
+    //     db.close();
+    //     return callback(err);
+    //   }
 
-      if (record) {
-        result['result:landmark_score']['DBwikipedia'] = 1;// {
-        //   'cfVersion': cfVersion,
-        //   'score': record.score
-        // };
-      }
+    //   if (record) {
+    //     result['result:landmark_score']['DBwikipedia'] = 1;// {
+    //     //   'cfVersion': cfVersion,
+    //     //   'score': record.score
+    //     // };
+    //   }
       callback(null, result);
-      db.close();
-    });
+    //   db.close();
+    // });
 
   }
 }
