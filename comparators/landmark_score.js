@@ -51,7 +51,8 @@ function landmark_score(newVersion, oldVersion, callback) {
     //     //   'score': record.score
     //     // };
     //   }
-      callback(null, result);
+      console.log("compareResult" + JSON.stringify(result, null, 2));
+      //callback(null, result);
     //   db.close();
     // });
   } else if (theVersion.properties['wikipedia']) {
@@ -75,7 +76,8 @@ function landmark_score(newVersion, oldVersion, callback) {
     //     //   'score': record.score
     //     // };
     //   }
-      callback(null, result);
+      console.log("compareResult" + JSON.stringify(result, null, 2));
+      //callback(null, result);
     //   db.close();
     // });
 
