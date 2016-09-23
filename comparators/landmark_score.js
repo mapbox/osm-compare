@@ -51,8 +51,8 @@ function landmark_score(newVersion, oldVersion, callback) {
     //     //   'score': record.score
     //     // };
     //   }
-      console.log("compareResult" + JSON.stringify(result, null, 2));
-      callback(null, result);
+    console.log('compareResult' + JSON.stringify(result, null, 2));
+    callback(null, result);
     //   db.close();
     // });
   } else if (theVersion.properties['wikipedia']) {
@@ -64,23 +64,22 @@ function landmark_score(newVersion, oldVersion, callback) {
 
     query1 = 'SELECT score FROM mb_landmark WHERE label_en=? LIMIT 1;';
     args1 = [theVersion.properties['wikipedia'].slice(+3)];
-    // db.get(query1, args1, function(err, record) {
-    //   if (err) {
-    //     db.close();
-    //     return callback(err);
-    //   }
+    db.get(query1, args1, function(err, record) {
+      if (err) {
+        db.close();
+        return callback(err);
+      }
 
-    //   if (record) {
-    //     result['result:landmark_score']['DBwikipedia'] = 1;// {
-    //     //   'cfVersion': cfVersion,
-    //     //   'score': record.score
-    //     // };
-    //   }
-      console.log("compareResult" + JSON.stringify(result, null, 2));
-      callback(null, result);
-    //   db.close();
-    // });
-
+      if (record) {
+        result['result:landmark_score']['DBwikipedia'] = 1;// {
+        //   'cfVersion': cfVersion,
+        //   'score': record.score
+        // };
+      }
+      db.close();
+    });
+    console.log('compareResult' + JSON.stringify(result, null, 2));
+    callback(null, result);
   }
 }
 
