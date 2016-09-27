@@ -36,25 +36,20 @@ function landmark_score(newVersion, oldVersion, callback) {
     query = 'SELECT score FROM mb_landmark WHERE qid=? LIMIT 1;';
     args = [theVersion.properties['wikidata']];
 
-    // db.get(query, args, function(err, record) {
-    //   if (err) {
-    //     db.close();
-    //     return callback(err);
-    //   }
+    db.get(query, args, function(err, record) {
+      if (err) {
+        db.close();
+        return callback(err);
+      }
 
-    //   if (record) {
-    //     result['result:landmark_score']['cfVersion'] = cfVersion;
-    //     result['result:landmark_score']['score'] = record.score;
-    //     result['result:landmark_score']['DBwikidata'] = 1;
-    //     // {
-    //     //   'cfVersion': cfVersion,
-    //     //   'score': record.score
-    //     // };
-    //   }
-    console.log('compareResult' + JSON.stringify(result, null, 2));
+      if (record) {
+        result['result:landmark_score']['cfVersion'] = cfVersion;
+        result['result:landmark_score']['score'] = record.score;
+        result['result:landmark_score']['DBwikidata'] = 1;
+      }
+      db.close();
+    });
     callback(null, result);
-    //   db.close();
-    // });
   } else if (theVersion.properties['wikipedia']) {
     result['result:landmark_score']['wikipedia'] = 1;
     // If there's a `wikipedia` tag try to match on label + location
@@ -71,14 +66,10 @@ function landmark_score(newVersion, oldVersion, callback) {
       }
 
       if (record) {
-        result['result:landmark_score']['DBwikipedia'] = 1;// {
-        //   'cfVersion': cfVersion,
-        //   'score': record.score
-        // };
+        result['result:landmark_score']['DBwikipedia'] = 1;
       }
       db.close();
     });
-    console.log('compareResult' + JSON.stringify(result, null, 2));
     callback(null, result);
   }
 }
