@@ -67,6 +67,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
       if (record) {
         result['result:landmark_score']['DBwikipedia'] = 1;
+        result['result:landmark_score']['score'] = record.score;
       }
       db.close();
     });
