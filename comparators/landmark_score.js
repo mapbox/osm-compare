@@ -14,7 +14,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
   var cfVersion = 2;
 
-  var db = new sqlite.Database('landmarksupdate.spatialite');
+  var db = new sqlite.Database('landmarks.spatialite');
   var result = {};
   result['result:landmark_score'] = {};
 
