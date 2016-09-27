@@ -14,7 +14,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
   var cfVersion = 2;
 
-  var db = new sqlite.Database('landmarks.spatialite');
+  var db = new sqlite.Database('landmarksupdate.spatialite');
   var result = {};
   result['result:landmark_score'] = {};
 
@@ -47,9 +47,9 @@ function landmark_score(newVersion, oldVersion, callback) {
         result['result:landmark_score']['score'] = record.score;
         result['result:landmark_score']['DBwikidata'] = 1;
       }
+      callback(null, result);
       db.close();
     });
-    callback(null, result);
   } else if (theVersion.properties['wikipedia']) {
     result['result:landmark_score']['wikipedia'] = 1;
     // If there's a `wikipedia` tag try to match on label + location
@@ -69,9 +69,9 @@ function landmark_score(newVersion, oldVersion, callback) {
         result['result:landmark_score']['DBwikipedia'] = 1;
         result['result:landmark_score']['score'] = record.score;
       }
+      callback(null, result);
       db.close();
     });
-    callback(null, result);
   }
 }
 
