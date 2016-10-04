@@ -20,5 +20,6 @@ module.exports = {
   'low_zoom_features': require('./comparators/low_zoom_features'),
   'user_blocks': require('./comparators/user_blocks'),
   'dirty_word': require('./comparators/dirty_word'),
-  'priority_area': require('./comparators/priority_area')
+  'priority_area': require('./comparators/priority_area'),
+  'name_modified': require('./comparators/name_modified')
 };
