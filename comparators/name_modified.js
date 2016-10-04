@@ -19,6 +19,7 @@ var compareJSON = function(obj1, obj2) {
 */
 function name_modified(newVersion, oldVersion, callback) {
   var result = {};
+  result['result:name_modified'] = {};
   var cfVersion = 2;
 
   if (!newVersion || !oldVersion) {
@@ -49,15 +50,14 @@ function name_modified(newVersion, oldVersion, callback) {
   arr = compareJSON(oldVersionNames, newVersionNames);
 
   for (var obj in arr) {
-    result['result:' + obj] = 1;
+    result['result:name_modified'][obj] = 1;
   }
 
   arr = compareJSON(newVersionNames, oldVersionNames);
 
   for (obj in arr) {
-    result['result:' + obj] = 1;
+    result['result:name_modified'][obj] = 1;
   }
-
   callback(null, result);
 }
 
