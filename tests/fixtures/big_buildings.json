@@ -1,0 +1,159 @@
+{
+  "compareFunction": "big_buildings",
+  "fixtures": [{
+    "description": "Test big buildings",
+    "newVersion": {
+      "type": "Feature",
+      "properties": {
+        "building": "yes",
+        "addr:province": "Huamanga",
+        "addr:housenumber": 10,
+        "addr:full": "Asoc. Micaela Bastidas MZ D1, Lt 10",
+        "addr:district": "Jesús Nazareno",
+        "addr:street": "Jr. S. Rosa de Lima",
+        "addr:postcode": "05011"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-74.21691866464, -13.15067938123],
+            [-74.21658829794, -13.15114551595],
+            [-74.21759636893, -13.1518220887],
+            [-74.21771629656, -13.15190354884],
+            [-74.21798669944, -13.15152340127],
+            [-74.21792221005, -13.15148040836],
+            [-74.21798330527, -13.15139329112],
+            [-74.21691866464, -13.15067938123]
+          ]
+        ]
+      }
+    },
+    "oldVersion": {
+      "type": "Feature",
+      "properties": {
+        "building": "yes",
+        "addr:province": "Huamanga",
+        "addr:housenumber": 10,
+        "addr:full": "Asoc. Micaela Bastidas MZ D1, Lt 10",
+        "addr:district": "Jesús Nazareno",
+        "addr:street": "Jr. S. Rosa de Lima",
+        "addr:postcode": "05011"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-74.21747974338, -13.15135578908],
+            [-74.21745054338, -13.15139698908],
+            [-74.21753964338, -13.15145678908],
+            [-74.21755024338, -13.15146398908],
+            [-74.21757414338, -13.15143038908],
+            [-74.21756844338, -13.15142658908],
+            [-74.21757384338, -13.15141888908],
+            [-74.21747974338, -13.15135578908]
+          ]
+        ]
+      }
+    },
+    "expectedResult": {
+      "result:big_buildings": true
+    }
+  }, {
+    "description": "Test big buildings",
+    "newVersion": {
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "properties": {
+          "building": "yes",
+          "addr:province": "Huamanga",
+
+          "addr:housenumber": 10,
+          "addr:full": "Asoc. Micaela Bastidas MZ D1, Lt 10",
+          "addr:district": "Jesús Nazareno",
+          "addr:street": "Jr. S. Rosa de Lima",
+          "addr:postcode": "05011"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [-74.21747974338, -13.15135578908],
+              [-74.21740472316742, -13.151422059028356],
+              [-74.21753964338, -13.15145678908],
+              [-74.21755024338, -13.15146398908],
+              [-74.21757414338, -13.15143038908],
+              [-74.21756844338, -13.15142658908],
+              [-74.21757384338, -13.15141888908],
+              [-74.21747974338, -13.15135578908]
+            ]
+          ]
+        }
+      }]
+    },
+    "oldVersion": {
+      "type": "Feature",
+      "properties": {
+        "building": "yes",
+        "addr:province": "Huamanga",
+        "addr:housenumber": 10,
+        "addr:full": "Asoc. Micaela Bastidas MZ D1, Lt 10",
+        "addr:district": "Jesús Nazareno",
+        "addr:street": "Jr. S. Rosa de Lima",
+        "addr:postcode": "05011"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-74.21747974338, -13.15135578908],
+            [-74.21745054338, -13.15139698908],
+            [-74.21753964338, -13.15145678908],
+            [-74.21755024338, -13.15146398908],
+            [-74.21757414338, -13.15143038908],
+            [-74.21756844338, -13.15142658908],
+            [-74.21757384338, -13.15141888908],
+            [-74.21747974338, -13.15135578908]
+          ]
+        ]
+      }
+    },
+    "expectedResult": {
+      "result:big_buildings": false
+    }
+  }, {
+    "description": "Test big buildings",
+    "newVersion": {
+      "type": "Feature",
+      "properties": {
+        "building": "yes",
+        "addr:province": "Huamanga",
+        "addr:housenumber": 10,
+        "addr:full": "Asoc. Micaela Bastidas MZ D1, Lt 10",
+        "addr:district": "Jesús Nazareno",
+        "addr:street": "Jr. S. Rosa de Lima",
+        "addr:postcode": "05011"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-74.21691866464, -13.15067938123],
+            [-74.21658829794, -13.15114551595],
+            [-74.21759636893, -13.1518220887],
+            [-74.21771629656, -13.15190354884],
+            [-74.21798669944, -13.15152340127],
+            [-74.21792221005, -13.15148040836],
+            [-74.21798330527, -13.15139329112],
+            [-74.21691866464, -13.15067938123]
+          ]
+        ]
+      }
+    },
+    "oldVersion": null,
+    "expectedResult": {
+      "result:big_buildings": true
+    }
+  }]
+}
