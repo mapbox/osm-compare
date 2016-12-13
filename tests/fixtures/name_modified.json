@@ -1271,7 +1271,10 @@
       }
    },
    "expectedResult":{
-
+      "result:name_modified": {
+           "name": 1,
+           "name:de": 1
+      }
    }
 },
 {
@@ -2544,7 +2547,11 @@
       }
    },
    "expectedResult":{
-
+      "result:name_modified": {
+        "name": 1,
+        "name:de": 1,
+        "name:en": 1
+      }
    }
 }
 ]

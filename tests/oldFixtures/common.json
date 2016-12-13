@@ -1,0 +1,48 @@
+{
+    "compareFunction": "",
+    "fixtures": [
+        {
+            "description": "Test newVersion and oldVersion is null",
+            "newVersion": null,
+            "oldVersion": null
+        },
+        {
+            "description": "Test newVersion is null",
+            "newVersion": {
+                "id": 158230039,
+                "type": "node",
+                "typeId": 1,
+                "tags": {},
+                "refs": [],
+                "version": 13,
+                "timestamp": 1455477064000,
+                "uid": 3627372,
+                "user": "ELBORICUA61357",
+                "changeset": 37210478,
+                "lat": 42.8864468,
+                "lon": -78.8783689,
+                "deleted": true
+            },
+            "oldVersion": null
+        },
+        {
+            "description": "Test oldVersion is null",
+            "newVersion": null,
+            "oldVersion": {
+                "id": 158230039,
+                "type": "node",
+                "typeId": 1,
+                "tags": {},
+                "refs": [],
+                "version": 13,
+                "timestamp": 1455477064000,
+                "uid": 3627372,
+                "user": "ELBORICUA61357",
+                "changeset": 37210478,
+                "lat": 42.8864468,
+                "lon": -78.8783689,
+                "deleted": true
+            }
+        }
+    ]
+}
