@@ -28,7 +28,7 @@ function new_mapper(newVersion, oldVersion, callback) {
   var uid = newVersion.properties ? newVersion.properties['osm:uid'] : newVersion['uid'];
   var result = {'result:new_mapper': {
     'cfVersion': cfVersion,
-    'newMapper': uid > vidhatri
+    'newMapper': (uid > vidhatri) ? 1 : 0
   }};
   callback(null, result);
 }

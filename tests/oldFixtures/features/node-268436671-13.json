@@ -1,0 +1,76 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "result:count_tag": 1,
+    "result:significant_place": 195,
+    "result:landmark_score": {
+      "cfVersion": 2,
+      "score": 3.4
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node!268436671!13",
+      "properties": {
+        "is_in": "Slovenia, Europe",
+        "is_in:continent": "Europe",
+        "is_in:country": "Slovenia",
+        "is_in:country_code": "SI",
+        "name": "Ljutomer",
+        "name:de": "Luttenberg in der Steiermark",
+        "name:ru": "Лютомер",
+        "name:sl": "Ljutomer",
+        "place": "town",
+        "population": "3400",
+        "source:population": "http://www.stat.si/KrajevnaImena/",
+        "wikipedia": "sl:Ljutomer",
+        "osm:type": "node",
+        "osm:id": 268436671,
+        "osm:version": 13,
+        "osm:changeset": 37946199,
+        "osm:timestamp": 1458423454000,
+        "osm:uid": 127299,
+        "osm:user": "Batareikin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.1967404,
+          46.5187046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node!268436671!12",
+      "properties": {
+        "name": "Ljutomer",
+        "is_in": "Slovenia, Europe",
+        "place": "town",
+        "name:de": "Luttenberg in der Steiermark",
+        "name:sl": "Ljutomer",
+        "wikipedia": "sl:Ljutomer",
+        "population": "3400",
+        "is_in:country": "Slovenia",
+        "is_in:continent": "Europe",
+        "source:population": "http://www.stat.si/KrajevnaImena/",
+        "is_in:country_code": "SI",
+        "osm:type": "node",
+        "osm:id": 268436671,
+        "osm:version": 12,
+        "osm:changeset": 27920813,
+        "osm:timestamp": 1420406991000,
+        "osm:uid": 2146151,
+        "osm:user": "Joško Horvat"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.1967404,
+          46.5187046
+        ]
+      }
+    }
+  ]
+}
