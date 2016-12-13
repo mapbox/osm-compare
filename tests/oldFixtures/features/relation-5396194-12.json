@@ -1,0 +1,506 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "result:count_tag": 1
+  },
+  "features": [
+    {
+      "id": 5396194,
+      "type": "relation",
+      "typeId": 3,
+      "tags": {
+        "admin_level": "8",
+        "boundary": "administrative",
+        "capital": "2",
+        "name": "Washington",
+        "type": "boundary"
+      },
+      "refs": [
+        {
+          "id": 158368533,
+          "typeId": 1,
+          "type": "node",
+          "role": "label"
+        },
+        {
+          "id": 66418778,
+          "typeId": 2,
+          "type": "way",
+          "role": "admin_centre"
+        },
+        {
+          "id": 361219094,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 227389909,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361651567,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 362492267,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361651565,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 328881111,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 329043115,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 228590774,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 376483330,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 228590777,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 366535652,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 376483320,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 386726418,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361219095,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207733,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 227389912,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 362195715,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 362501161,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207738,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207744,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207735,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 9650734,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361099822,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361099823,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 228129977,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 228129975,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361100104,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361100105,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 362828811,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361100106,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361100279,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 362828842,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361100280,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361100281,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 9650912,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 61973742,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 363657015,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 363657020,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        }
+      ],
+      "version": 12,
+      "timestamp": 1451407661000,
+      "uid": 289775,
+      "user": "trial",
+      "changeset": 36245417,
+      "properties": {
+        "type": "boundary",
+        "name": "Washington",
+        "capital": "2",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "osm:type": "relation",
+        "osm:id": 5396194,
+        "osm:version": 12,
+        "osm:changeset": 36245417,
+        "osm:timestamp": 1451407661000,
+        "osm:uid": 289775,
+        "osm:user": "trial"
+      }
+    },
+    {
+      "id": 5396194,
+      "type": "relation",
+      "typeId": 3,
+      "tags": {
+        "admin_level": "8",
+        "boundary": "administrative",
+        "name": "Washington",
+        "type": "boundary"
+      },
+      "refs": [
+        {
+          "id": 158368533,
+          "typeId": 1,
+          "type": "node",
+          "role": "label"
+        },
+        {
+          "id": 66418778,
+          "typeId": 2,
+          "type": "way",
+          "role": "admin_centre"
+        },
+        {
+          "id": 361219094,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 227389909,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361651567,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 362492267,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361651565,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 328881111,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 329043115,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 228590774,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 376483330,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 228590777,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 366535652,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 376483320,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 386726418,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361219095,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207733,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 227389912,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 362195715,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 362501161,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207738,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207744,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 60207735,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 9650734,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361099822,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361099823,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 228129977,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 228129975,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361100104,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361100105,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 362828811,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361100106,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361100279,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 362828842,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 361100280,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 361100281,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 9650912,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 61973742,
+          "typeId": 2,
+          "type": "way"
+        },
+        {
+          "id": 363657015,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        },
+        {
+          "id": 363657020,
+          "typeId": 2,
+          "type": "way",
+          "role": "outer"
+        }
+      ],
+      "version": 11,
+      "timestamp": 1450579066000,
+      "uid": 85673,
+      "user": "Bored",
+      "changeset": 36057493,
+      "properties": {
+        "type": "boundary",
+        "name": "Washington",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "osm:type": "relation",
+        "osm:id": 5396194,
+        "osm:version": 11,
+        "osm:changeset": 36057493,
+        "osm:timestamp": 1450579066000,
+        "osm:uid": 85673,
+        "osm:user": "Bored"
+      }
+    }
+  ]
+}
