@@ -21,9 +21,9 @@ jsonData.fixtures.forEach(function (fixture) {
     if (error) console.log(error);
     console.log('actual', JSON.stringify(result), '\n');
     if (JSON.stringify(fixture.expectedResult) !== JSON.stringify(result)) {
-        console.log('Test failed! Actual is not expected!');
+      console.log('Test failed! Actual is not expected!');
     } else {
-        console.log('Test passed! Actual is same as expected');
+      console.log('Test passed! Actual is same as expected');
     }
   });
 });
