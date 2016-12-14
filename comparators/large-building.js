@@ -10,7 +10,7 @@ function largeBuilding(newVersion, oldVersion, callback) {
   }
   var area = turfArea(newVersion);
 
-  if (area > 100000 && newVersion.properties.hasOwnProperty('building')) {
+  if (area > 1500 && newVersion.properties.hasOwnProperty('building')) {
     result['result:large-building'] = area;
   }
   return callback(null, result);
