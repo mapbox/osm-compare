@@ -3,7 +3,11 @@
 module.exports = addedWebsite;
 
 function addedWebsite(newVersion, oldVersion, callback) {
-  if (newVersion && newVersion.properties && 'website' in newVersion.properties) {
+  if (oldVersion && oldVersion.properties && newVersion && newVersion.properties && oldVersion.properties.website === newVersion.properties.website) {
+    callback(null, {});
+  } else if (newVersion && newVersion.properties && 'website' in newVersion.properties) {
+    callback(null, {'result:added-website': true});
+  } else if (oldVersion && oldVersion.properties && ('website' in oldVersion.properties) && newVersion && newVersion.properties && !('website' in newVersion.properties)) {
     callback(null, {'result:added-website': true});
   } else {
     callback(null, {});
