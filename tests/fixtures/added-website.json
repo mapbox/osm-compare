@@ -1,0 +1,41 @@
+{
+  "compareFunction": "added-website",
+  "fixtures": [
+    {
+      "description": "test node having website",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "website": "http://example.com"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": {},
+      "expectedResult": {
+        "result:added-website": true
+      }
+    },
+    {
+      "description": "test node without website",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": {},
+      "expectedResult": {}
+    }
+   ]
+}
