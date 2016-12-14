@@ -1,0 +1,125 @@
+{
+   "compareFunction":"large-building",
+   "fixtures":[
+      {
+         "Description":"This is a too large building input that should be caught",
+         "oldVersion": null,
+         "newVersion":{
+              "type":"Feature",
+              "properties":{
+                 "building":"yes"
+              },
+              "geometry":{
+                 "type":"Polygon",
+                 "coordinates":[
+                    [
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ]
+                    ]
+                 ]
+              }
+         },
+         "expectedResult":{
+           "result:large-building": 143145029782.25003
+         }
+      },
+      {
+         "Description":"This is a small building input that should not be caught",
+         "oldVersion": null,
+         "newVersion":{
+              "type":"Feature",
+              "properties":{
+                 "building":"yes"
+              },
+              "geometry":{
+                 "type":"Polygon",
+                 "coordinates":[
+                    [
+                       [
+                         -118.36797058582306,
+                         33.81124046079714
+                       ],
+                       [
+                         -118.36797058582306,
+                         33.81136971841298
+                       ],
+                       [
+                         -118.36779892444609,
+                         33.81136971841298
+                       ],
+                       [
+                         -118.36779892444609,
+                         33.81124046079714
+                       ],
+                       [
+                         -118.36797058582306,
+                         33.81124046079714
+                       ]
+                    ]
+                 ]
+              }
+         },
+         "expectedResult":{
+
+         }
+      },
+      {
+         "Description":"This is a too large water body input that should not be caught",
+         "oldVersion": null,
+         "newVersion":{
+              "type":"Feature",
+              "properties":{
+                 "natural":"water"
+              },
+              "geometry":{
+                 "type":"Polygon",
+                 "coordinates":[
+                    [
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ]
+                    ]
+                 ]
+              }
+         },
+         "expectedResult":{
+
+         }
+      }
+   ]
+}
