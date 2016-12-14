@@ -1,3 +1,5 @@
+'use strict';
+
 var turfArea = require('turf-area');
 module.exports = largeBuilding;
 
