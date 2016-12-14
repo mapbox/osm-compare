@@ -3,7 +3,6 @@ module.exports = disputedBorderDeleted;
 
 function disputedBorderDeleted(newVersion, oldVersion, callback) {
   var result = {};
-  result['result:disputed_border_deleted'] = {};
 
   if (!newVersion && !oldVersion) {
   // None of old version or new Version present
