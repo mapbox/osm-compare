@@ -3,7 +3,7 @@ module.exports = disputedBorderTagChanged;
 
 function disputedBorderTagChanged(newVersion, oldVersion, callback) {
   var result = {};
-  result['result:disputed_border_tag'] = {};
+  result['result:disputed_border_tag_modified'] = {};
 
   if (!newVersion && !oldVersion) {
   // None of old version or new Version present
@@ -18,19 +18,10 @@ function disputedBorderTagChanged(newVersion, oldVersion, callback) {
   */
     if (oldVersion.properties && oldVersion.properties['disputed']) {
       if (oldVersion.properties['disputed'] !== null) {
-        result['result:disputed_border_tag']['modified'] = true;
+        result['result:disputed_border_tag_modified'] = true;
       }
     }
 
-  } else if (!newVersion && oldVersion) {
-  // Only old Version is present, which indicates feature has been deleted
-  /*
-    Comparing the tags
-    Creating a result object
-  */
-    if (oldVersion.properties && oldVersion.properties['disputed']) {
-      result['result:disputed_border_tag']['deleted'] = true;
-    }
   } else { return callback(null, { }); }
 
 
