@@ -48,7 +48,7 @@ Compare functions output the following:
 ### How do I test a single compare function against a new fixture?
 * `cd compare-geojson/tests/`
 * Create new fixture file in `tests/fixtures/` folder (check tests/fixtures/example.json for format)
-* Test your fixture with `node test_compare_function.js fixtures/example.json`
+* Test your fixture with `node tests/test_compare_function.js tests/fixtures/example.json`
 
 
 ### How do I build an npm package?
