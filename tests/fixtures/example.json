@@ -1,0 +1,21 @@
+{
+    "compareFunction": "example",
+    "fixtures": [
+        {
+            "description": "Description of this fixture",
+            "newVersion": {},
+            "oldVersion": {},
+            "expectedResult": {
+                "result:example": {}
+            }
+        },
+        {
+            "description": "Description of another fixture",
+            "newVersion": {},
+            "oldVersion": {},
+            "expectedResult": {
+                "result:example": {}
+            }
+        }
+    ]
+}

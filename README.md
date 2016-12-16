@@ -5,6 +5,7 @@
 
 
 Compare functions are small atomic functions that are designed identify what changed during a feature edit on OpenStreetMap. Compare functions can be broadly split up into two categories:
+
 1. Property (tags) checking compare function
 2. Geometry checking compare functions
 
@@ -19,29 +20,19 @@ Compare functions output the following:
 1. `error` - Error if any during processing or `null`.
 2. `result` - Object containing key value pairs representing findings of the compare function or an empty object.
 
-
-#### Versioning
-The version of the compare function is returned as part of the result as `cfVersion`. Every time a compare function is modified, we increment the value of `cfVersion`.
-
-A sample compare function would look something like this:
-
-```
-function place_removed(newVersion, oldVersion, callback) {
-
-  var cfVersion = 2;
-
-  var oldProps = oldVersion.properties;
-  var newProps = newVersion.properties;
-  var placeRemoved = false;
-  if (oldProps.hasOwnProperty('place') && !newProps.hasOwnProperty('place')) {
-    placeRemoved = true;
-  }
-  return callback(null, {'result:place_removed': {
-    'cfVersion': cfVersion,
-    'placeRemoved': placeRemoved
-  }});
+```sh
+# Format of compare function result where value can be primary data types or objects
+{
+    'result:comparator_name': value
 }
+
+# Format of compare function if no result, (default)
+{
+    'result:comparator_name': {}
+}
+
 ```
+
 
 ### How do I create a new compare function?
 * Clone this repository with `git clone https://github.com/mapbox/compare-geojson`
@@ -49,19 +40,18 @@ function place_removed(newVersion, oldVersion, callback) {
 * `npm install`
 * Check if all tests pass before making your changes with `npm test`
 * Create a new test fixture in the directory `tests/fixtures/`
-* Create a new compare function in the directory `comparators/`
+* Create a new compare function in the directory `comparators/` (check comparators/example.js for format)
 * Test your new compare function with `npm test`
-
+* Add your new comparator to `index.js`
+* Push to a new branch on Github and create a Pull Request
 
 ### How do I test a single compare function against a new fixture?
 * `cd compare-geojson/tests/`
-* Create new fixture file in `tests/fixtures/` folder (check other fixtures for format).
-* Update name of compare function you want to run the fixture against.
-* Test your fixture with `node test_compare_function.js fixtures/new_mapper.json`
+* Create new fixture file in `tests/fixtures/` folder (check tests/fixtures/example.json for format)
+* Test your fixture with `node test_compare_function.js fixtures/example.json`
 
 
 ### How do I build an npm package?
-- Add your new comparator to `index.js`
 - We use [Semantic Versioning Specification](http://semver.org/) for versioning releases.
 - Create an appropriate version of the npm package with `npm version [major|minor|patch]`.
 - Push the package tag commit with `git push --tags`
