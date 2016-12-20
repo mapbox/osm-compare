@@ -32,7 +32,7 @@
       },
       "oldVersion": null,
       "expectedResult": {
-        "result.invalidHighwayTags": true
+        "result:invalidHighwayTags": true
       }
     },
     {
