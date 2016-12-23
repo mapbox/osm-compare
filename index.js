@@ -7,5 +7,6 @@ module.exports = {
   'disputed_border_deleted': require('./comparators/disputed-border-deleted'),
   'invalid_highway_tags': require('./comparators/invalid-highway-tags'),
   'large_building': require('./comparators/large-building'),
-  'major_road_changed': require('./comparators/major_road_changed')
+  'major_road_changed': require('./comparators/major_road_changed'),
+  'path_road_changed': require('./comparators/path_road_changed')
 };
