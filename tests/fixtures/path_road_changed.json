@@ -1,5 +1,5 @@
 {
-  "compareFunction": "minor_road_changed",
+  "compareFunction": "path_road_changed",
   "fixtures": [
     {
         "description": "",
@@ -410,7 +410,7 @@
             }
         },
         "expectedResult" : {
-          "result:minor_road_changed": {
+          "result:path_road_changed": {
             "modified": true,
             "from": "path",
             "to": "footway"

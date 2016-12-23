@@ -1,7 +1,7 @@
 'use strict';
 
 
-var MINOR_ROAD_TYPES = [
+var PATH_ROAD_TYPES = [
   'pedestrian',
   'footway',
   'cycleway',
@@ -13,27 +13,27 @@ function getHighwayType(feature) {
   return feature.properties.highway;
 }
 
-function isMinorRoad(feature) {
+function isPathRoad(feature) {
   var highwayType = getHighwayType(feature);
-  return MINOR_ROAD_TYPES.indexOf(highwayType) !== -1;
+  return PATH_ROAD_TYPES.indexOf(highwayType) !== -1;
 }
 
-function minorRoadChanged(newVersion, oldVersion, callback) {
+function pathRoadChanged(newVersion, oldVersion, callback) {
   var result = {};
-  result['result:minor_road_changed'] = {};
+  result['result:path_road_changed'] = {};
 
   if (!oldVersion && !newVersion) {
     return callback(null, {});
   }
 
   if (oldVersion && !newVersion) {
-    // Don't care about minor road deletions.
+    // Don't care about path road deletions.
     return callback(null, {});
   }
 
   if (!oldVersion && newVersion) {
-    if (isMinorRoad(newVersion)) {
-      result['result:minor_road_changed'].added = true;
+    if (isPathRoad(newVersion)) {
+      result['result:path_road_changed'].added = true;
 
       return callback(null, result);
     }
@@ -43,11 +43,11 @@ function minorRoadChanged(newVersion, oldVersion, callback) {
     var newHighwayType = getHighwayType(newVersion);
     var oldHighwayType = getHighwayType(oldVersion);
 
-    if (isMinorRoad(oldVersion) || isMinorRoad(newVersion)) {
+    if (isPathRoad(oldVersion) || isPathRoad(newVersion)) {
       if (oldHighwayType !== newHighwayType) {
-        result['result:minor_road_changed'].modified = true;
-        result['result:minor_road_changed'].from = oldHighwayType;
-        result['result:minor_road_changed'].to = newHighwayType;
+        result['result:path_road_changed'].modified = true;
+        result['result:path_road_changed'].from = oldHighwayType;
+        result['result:path_road_changed'].to = newHighwayType;
 
         return callback(null, result);
       }
@@ -57,4 +57,4 @@ function minorRoadChanged(newVersion, oldVersion, callback) {
   return callback(null, {});
 }
 
-module.exports = minorRoadChanged;
+module.exports = pathRoadChanged;
