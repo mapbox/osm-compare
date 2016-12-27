@@ -2,7 +2,7 @@
     "compareFunction": "name_modified",
     "fixtures": [
 {
-   "description":"Description of this fixture",
+   "description":"Check name changed is identified",
    "newVersion":{
       "type":"Feature",
       "id":"relation!4008256!18",
@@ -1271,6 +1271,7 @@
       }
    },
    "expectedResult":{
+      "result:escalate": true,
       "result:name_modified": {
            "name": 1,
            "name:de": 1
@@ -2547,6 +2548,7 @@
       }
    },
    "expectedResult":{
+      "result:escalate": true,
       "result:name_modified": {
         "name": 1,
         "name:de": 1,

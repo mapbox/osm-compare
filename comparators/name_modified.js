@@ -51,12 +51,14 @@ function name_modified(newVersion, oldVersion, callback) {
 
   for (var obj in arr) {
     result['result:name_modified'][obj] = 1;
+    result['result:escalate'] = true;
   }
 
   arr = compareJSON(newVersionNames, oldVersionNames);
 
   for (obj in arr) {
     result['result:name_modified'][obj] = 1;
+    result['result:escalate'] = true;
   }
   callback(null, result);
 }
