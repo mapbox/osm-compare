@@ -33,7 +33,7 @@ function placeEdited(newVersion, oldVersion, callback) {
     return callback(null, {});
   }
   geometryChanged = getGeometryChanged(newVersion, oldVersion);
-  nameChanged = getNameChanged;
+  nameChanged = getNameChanged(newVersion, oldVersion);
   if (isPlace && (isDeleted || isAdded || geometryChanged || nameChanged)) {
     // One could set the value to something more specific rather than 'true'
     return callback(null, {
