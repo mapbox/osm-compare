@@ -18,7 +18,7 @@ var _ = require('lodash');
   - The feature geometry moves **or**
   - One of the feature's `name*` tags changes or is removed
 */
-function placeChanged(newVersion, oldVersion, callback) {
+function placeEdited(newVersion, oldVersion, callback) {
   var isDeleted = !newVersion ? true : false;
   var isAdded = !oldVersion ? true : false;
   var isPlace, geometryChanged, nameChanged;
