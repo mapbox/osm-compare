@@ -16,7 +16,6 @@
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
-    "d3-queue": "^3.0.3",
     "moment": "^2.17.1",
     "queue-async": "^1.2.1",
     "request": "^2.72.0",
