@@ -34,29 +34,24 @@ function getAccountCreated(userID, callback) {
 }
 
 function pokemonFootway(newVersion, oldVersion, callback) {
-  // Yeah. moment.js is wierd, months start from zero
+  // Yeah. moment.js is wierd, month start from zero
   var newUserDate = moment([2016, 11, 23]);
-  try {
-    if (newVersion.properties.highway === 'footway' && newVersion.properties['osm:version'] === 1) {
 
-      var q = queue(1);
-      q.defer(getAccountCreated, newVersion.properties['osm:uid']);
-      q.awaitAll(function (error, results) {
-        var accountCreated = results[0];
-        if (accountCreated.unix() >= newUserDate.unix()) {
-          return callback(null, {
-            'result:pokemonFootway': true,
-            'result:escalate': true
-          });
-        } else {
-          return callback(null, {});
-        }
-      });
-    } else {
-      return callback(null, {});
-    }
-  } catch (error) {
-    console.log(String(error));
+  if (newVersion && newVersion.properties && newVersion.properties.highway === 'footway' && newVersion.properties['osm:version'] === 1) {
+    var q = queue(1);
+    q.defer(getAccountCreated, newVersion.properties['osm:uid']);
+    q.awaitAll(function (error, results) {
+      var accountCreated = results[0];
+      if (accountCreated.unix() >= newUserDate.unix()) {
+        return callback(null, {
+          'result:pokemonFootway': true,
+          'result:escalate': true
+        });
+      } else {
+        return callback(null, {});
+      }
+    });
+  } else {
     return callback(null, {});
   }
 }
