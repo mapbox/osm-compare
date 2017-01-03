@@ -34,6 +34,7 @@ function getAccountCreated(userID, callback) {
 }
 
 function pokemonFootway(newVersion, oldVersion, callback) {
+  // Yeah. moment.js is wierd, months start from zero
   var newUserDate = moment([2016, 11, 23]);
   try {
     if (newVersion.properties.highway === 'footway' && newVersion.properties['osm:version'] === 1) {
