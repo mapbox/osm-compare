@@ -120,7 +120,7 @@
       },
       "oldVersion": null,
       "expectedResult": {
-        "result:pokemonFootway": true,
+        "result:pokemon_footway": true,
         "result:escalate": true
       }
     }
