@@ -1,6 +1,6 @@
 {
   "name": "compare-geojson",
-  "version": "4.2.0",
+  "version": "4.3.0-0",
   "description": "Compare a features new and old versions in GeoJSON",
   "main": "index.js",
   "scripts": {
