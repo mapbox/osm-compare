@@ -11,7 +11,7 @@ var _ = require('lodash');
     - place=suburb
     - place=hamlet
     - **and**
-    
+
 - Any of the following are true:
   - The feature is deleted **or**
   - The feature is added **or**
@@ -19,8 +19,8 @@ var _ = require('lodash');
   - One of the feature's `name*` tags changes or is removed
 */
 function placeEdited(newVersion, oldVersion, callback) {
-  var isDeleted = !newVersion ? true : false;
-  var isAdded = !oldVersion ? true : false;
+  var isDeleted = !newVersion;
+  var isAdded = !oldVersion;
   var isPlace, geometryChanged, nameChanged;
   if (isAdded) {
     isPlace = getIsPlace(newVersion);
@@ -37,7 +37,7 @@ function placeEdited(newVersion, oldVersion, callback) {
   if (isPlace && (isDeleted || isAdded || geometryChanged || nameChanged)) {
     // One could set the value to something more specific rather than 'true'
     return callback(null, {
-      'result:place_edited': true 
+      'result:place_edited': true
     });
   } else {
     return callback(null, {});
@@ -50,7 +50,7 @@ function getIsPlace(geojson) {
     'town',
     'village',
     'suburb',
-    'hamlet'    
+    'hamlet'
   ];
   return geojson.properties &&
     geojson.properties.place &&
@@ -88,7 +88,7 @@ function getNameChanged(newVersion, oldVersion) {
         nameChanged = true;
         break;
       }
-    }    
+    }
   }
   return nameChanged;
 }
