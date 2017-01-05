@@ -8,5 +8,6 @@ module.exports = {
   'invalid_highway_tags': require('./comparators/invalid-highway-tags'),
   'large_building': require('./comparators/large-building'),
   'major_road_changed': require('./comparators/major_road_changed'),
-  'path_road_changed': require('./comparators/path_road_changed')
+  'path_road_changed': require('./comparators/path_road_changed'),
+  'place_edited': require('./comparators/place-edited')
 };
