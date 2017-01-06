@@ -1,6 +1,6 @@
 {
   "name": "compare-geojson",
-  "version": "4.3.0",
+  "version": "4.4.1",
   "description": "Compare a features new and old versions in GeoJSON",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "moment": "^2.17.1",
+    "lodash": "^4.17.3",
     "queue-async": "^1.2.1",
     "request": "^2.72.0",
     "sax": "^1.2.1",
