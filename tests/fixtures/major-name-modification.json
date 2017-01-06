@@ -35,7 +35,10 @@
         },
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:levenshtein_distance": 1,
+        "result:major_name_modification": true
+      }
     },
     {
       "description": "Test minor name modification with case",
