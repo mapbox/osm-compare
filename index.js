@@ -12,6 +12,6 @@ module.exports = {
   'major_lake_changed': require('./comparators/major-lake-modified'),
   'pokemon_footway': require('./comparators/pokemon-footway'),
   'place_edited': require('./comparators/place-edited'),
-  'major_name_modification': require('./comparators/major_name_modification'),
+  'major_name_modification': require('./comparators/major-name-modification'),
   'wikidata': require('./comparators/wikidata')
 };
