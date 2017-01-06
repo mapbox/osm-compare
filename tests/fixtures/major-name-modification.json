@@ -1,0 +1,88 @@
+{
+  "compareFunction": "major-name-modification",
+  "fixtures": [
+    {
+      "description": "Test no name modification",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      },
+      "expectedResult": {}
+    },
+    {
+      "description": "Test minor name modification",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:levenshtein_distance": 1,
+        "result:major_name_modification": true
+      }
+    },
+    {
+      "description": "Test minor name modification with case",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "BANGALURU"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:escalate": true,
+        "result:levenshtein_distance": 8,
+        "result:major_name_modification": true
+      }
+    },
+    {
+      "description": "Test major name modification",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "San Francisco"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:escalate": true,
+        "result:levenshtein_distance": 10,
+        "result:major_name_modification": true
+      }
+    }
+  ]
+}
