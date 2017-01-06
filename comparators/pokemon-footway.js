@@ -44,8 +44,7 @@ function pokemonFootway(newVersion, oldVersion, callback) {
       }
       if (accountCreated.unix() >= newUserDate.unix()) {
         return callback(null, {
-          'result:pokemon_footway': true,
-          'result:escalate': true
+          'result:pokemon_footway': true
         });
       } else {
         return callback(null, {});
