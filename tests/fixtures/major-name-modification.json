@@ -6,14 +6,16 @@
       "newVersion": {
         "type": "Feature",
         "properties": {
-          "name": "Bengaluru"
+          "name": "Bengaluru",
+          "wikidata": "Q40435"
         },
         "geometry": null
       },
       "oldVersion": {
         "type": "Feature",
         "properties": {
-          "name": "Bengaluru"
+          "name": "Bengaluru",
+          "wikidata": "Q40435"
         },
         "geometry": null
       },
@@ -24,14 +26,16 @@
       "newVersion": {
         "type": "Feature",
         "properties": {
-          "name": "Bangaluru"
+          "name": "Bangaluru",
+          "wikidata": "Q40435"
         },
         "geometry": null
       },
       "oldVersion": {
         "type": "Feature",
         "properties": {
-          "name": "Bengaluru"
+          "name": "Bengaluru",
+          "wikidata": "Q40435"
         },
         "geometry": null
       },
@@ -45,14 +49,16 @@
       "newVersion": {
         "type": "Feature",
         "properties": {
-          "name": "BANGALURU"
+          "name": "BANGALURU",
+          "wikidata": "Q40435"
         },
         "geometry": null
       },
       "oldVersion": {
         "type": "Feature",
         "properties": {
-          "name": "Bengaluru"
+          "name": "Bengaluru",
+          "wikidata": "Q40435"
         },
         "geometry": null
       },
@@ -67,6 +73,30 @@
       "newVersion": {
         "type": "Feature",
         "properties": {
+          "name": "Bangaluru",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "San Francisco",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:escalate": true,
+        "result:levenshtein_distance": 10,
+        "result:major_name_modification": true
+      }
+    },
+    {
+      "description": "Test major name modification without wikidata",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
           "name": "Bangaluru"
         },
         "geometry": null
@@ -78,11 +108,7 @@
         },
         "geometry": null
       },
-      "expectedResult": {
-        "result:escalate": true,
-        "result:levenshtein_distance": 10,
-        "result:major_name_modification": true
-      }
+      "expectedResult": {}
     }
   ]
 }
