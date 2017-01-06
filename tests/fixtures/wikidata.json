@@ -1,0 +1,39 @@
+{
+  "compareFunction": "wikidata",
+  "fixtures": [
+    {
+      "description": "wikidata tag deleted",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:wikidata_deleted": true
+      }
+    },
+    {
+      "description": "wikidata tag added",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "expectedResult": {}
+    }
+  ]
+}
