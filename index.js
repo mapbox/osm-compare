@@ -13,5 +13,6 @@ module.exports = {
   'pokemon_footway': require('./comparators/pokemon-footway'),
   'place_edited': require('./comparators/place-edited'),
   'major_name_modification': require('./comparators/major-name-modification'),
-  'wikidata': require('./comparators/wikidata')
+  'wikidata': require('./comparators/wikidata'),
+  'null_island': require('./comparators/null-island')
 };
