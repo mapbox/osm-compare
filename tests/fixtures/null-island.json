@@ -4,26 +4,21 @@
     {
       "description": "A way in null island",
       "newVersion": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -2.197265625,
-                  -2.3284603685731593
-                ],
-                [
-                  2.8564453125,
-                  -2.218683588558448
-                ]
-              ]
-            }
-          }
-        ]
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -2.197265625,
+              -2.3284603685731593
+            ],
+            [
+              2.8564453125,
+              -2.218683588558448
+            ]
+          ]
+        }
       },
       "oldVersion": null,
       "expectedResult": {
@@ -33,31 +28,21 @@
     {
       "description": "A way that's not in null island",
       "newVersion": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "FeatureCollection",
-            "features": [
-              {
-                "type": "Feature",
-                "properties": {},
-                "geometry": {
-                  "type": "LineString",
-                  "coordinates": [
-                    [
-                      37.880859375,
-                      23.160563309048314
-                    ],
-                    [
-                      48.251953125,
-                      31.87755764334002
-                    ]
-                  ]
-                }
-              }
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              37.880859375,
+              23.160563309048314
+            ],
+            [
+              48.251953125,
+              31.87755764334002
             ]
-          }
-        ]
+          ]
+        }
       },
       "oldVersion": null,
       "expectedResult": {
