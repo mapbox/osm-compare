@@ -1,7 +1,7 @@
 # osm-compare
 
 
-[![Circle CI](https://circleci.com/gh/mapbox/compare-geojson.svg?style=svg)](https://circleci.com/gh/mapbox/compare-geojson)
+[![Circle CI](https://circleci.com/gh/mapbox/osm-compare.svg?style=svg)](https://circleci.com/gh/mapbox/osm-compare)
 
 
 Compare functions are small atomic functions that are designed identify what changed during a feature edit on OpenStreetMap. Compare functions can be broadly split up into two categories:
@@ -35,8 +35,8 @@ Compare functions output the following:
 
 
 ### How do I create a new compare function?
-* Clone this repository with `git clone https://github.com/mapbox/compare-geojson`
-* `cd compare-geojson`
+* Clone this repository with `git clone https://github.com/mapbox/osm-compare`
+* `cd osm-compare`
 * `npm install`
 * Check if all tests pass before making your changes with `npm test`
 * Create a new test fixture in the directory `tests/fixtures/`
