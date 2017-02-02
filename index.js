@@ -14,5 +14,6 @@ module.exports = {
   'place_edited': require('./comparators/place-edited'),
   'major_name_modification': require('./comparators/major-name-modification'),
   'wikidata': require('./comparators/wikidata'),
-  'null_island': require('./comparators/null-island')
+  'null_island': require('./comparators/null-island'),
+  'pokemon_edits': require('./comparators/pokemon_edits')
 };
