@@ -17,7 +17,7 @@ function majorNameModification(newVersion, oldVersion, callback) {
   var modification = 100.0 * distance / length;
 
   // If modification is greater than 50%, it is a major name modification.
-  if (modification >= 50) {
+  if (modification >= 50 && newVersion.properties['osm:version'] > 10) {
     return callback(null, {
       'result:major_name_modification': true,
       'result:levenshtein_distance': distance,
