@@ -50,7 +50,33 @@
         "type": "Feature",
         "properties": {
           "name": "BANGALURU",
+          "wikidata": "Q40435",
+          "osm:version": 9
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru",
           "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:escalate": false,
+        "result:levenshtein_distance": 8,
+        "result:major_name_modification": true
+      }
+    },
+    {
+      "description": "Test minor name modification with case",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "BANGALURU",
+          "wikidata": "Q40435",
+          "osm:version": 11
         },
         "geometry": null
       },
@@ -74,7 +100,8 @@
         "type": "Feature",
         "properties": {
           "name": "Bangaluru",
-          "wikidata": "Q40435"
+          "wikidata": "Q40435",
+          "osm:version": 12
         },
         "geometry": null
       },
