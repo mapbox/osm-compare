@@ -10,7 +10,7 @@ var _ = require('lodash');
     - place=village
     - place=suburb
     - place=hamlet
-    - **and**
+    - place=island
 
 - Any of the following are true:
   - The feature is deleted **or**
@@ -50,7 +50,8 @@ function getIsPlace(geojson) {
     'town',
     'village',
     'suburb',
-    'hamlet'
+    'hamlet',
+    'island'
   ];
   return geojson.properties &&
     geojson.properties.place &&
