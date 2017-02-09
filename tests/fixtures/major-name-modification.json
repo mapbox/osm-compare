@@ -8,7 +8,7 @@
         "properties": {
           "name": "Bengaluru",
           "wikidata": "Q40435",
-          "osm:version": 9
+          "osm:version": 12
         },
         "geometry": null
       },
@@ -29,7 +29,7 @@
         "properties": {
           "name": "Bangaluru",
           "wikidata": "Q40435",
-          "osm:version": 9
+          "osm:version": 12
         },
         "geometry": null
       },
@@ -53,31 +53,7 @@
         "properties": {
           "name": "BANGALURU",
           "wikidata": "Q40435",
-          "osm:version": 9
-        },
-        "geometry": null
-      },
-      "oldVersion": {
-        "type": "Feature",
-        "properties": {
-          "name": "Bengaluru",
-          "wikidata": "Q40435"
-        },
-        "geometry": null
-      },
-      "expectedResult": {
-        "result:levenshtein_distance": 8,
-        "result:major_name_modification": true
-      }
-    },
-    {
-      "description": "Test minor name modification with case",
-      "newVersion": {
-        "type": "Feature",
-        "properties": {
-          "name": "BANGALURU",
-          "wikidata": "Q40435",
-          "osm:version": 11
+          "osm:version": 12
         },
         "geometry": null
       },
@@ -96,7 +72,7 @@
       }
     },
     {
-      "description": "Test major name modification",
+      "description": "Test major name modification with version more than 10",
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -116,6 +92,30 @@
       },
       "expectedResult": {
         "result:escalate": true,
+        "result:levenshtein_distance": 10,
+        "result:major_name_modification": true
+      }
+    },
+      {
+      "description": "Test major name modification with version less than 10",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru",
+          "wikidata": "Q40435",
+          "osm:version": 8
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "San Francisco",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
         "result:levenshtein_distance": 10,
         "result:major_name_modification": true
       }
