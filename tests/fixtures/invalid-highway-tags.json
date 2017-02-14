@@ -36,11 +36,11 @@
       }
     },
     {
-      "description": "Test for a validy tag in highway=yes",
+      "description": "Test for a valid tag in highway=yes",
       "newVersion": {
         "type": "Feature",
         "properties": {
-          "highway": "yes"
+          "highway": "trunk"
         },
         "geometry": {
           "type": "LineString",

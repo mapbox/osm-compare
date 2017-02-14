@@ -4,7 +4,6 @@ module.exports = invalidHighwayTags;
 function invalidHighwayTags(newVersion, oldVersion, callback) {
   var result = {};
   var validHighwayTags = [
-    'yes',
     'motorway',
     'trunk',
     'primary',
