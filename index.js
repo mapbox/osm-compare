@@ -15,5 +15,6 @@ module.exports = {
   'major_name_modification': require('./comparators/major-name-modification'),
   'wikidata': require('./comparators/wikidata'),
   'null_island': require('./comparators/null-island'),
-  'pokemon_edits': require('./comparators/pokemon_edits')
+  'pokemon_edits': require('./comparators/pokemon_edits'),
+  'dragged_highway_waterway': require('./comparators/dragged_highway_waterway')
 };
