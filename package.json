@@ -1,6 +1,6 @@
 {
   "name": "compare-geojson",
-  "version": "4.6.2",
+  "version": "4.7.1",
   "description": "Compare a features new and old versions in GeoJSON",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
+    "geopoint": "^1.0.1",
     "levenshtein": "^1.0.5",
     "lodash": "^4.17.3",
     "moment": "^2.17.1",
