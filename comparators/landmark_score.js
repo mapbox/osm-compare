@@ -16,7 +16,6 @@ function landmark_score(newVersion, oldVersion, callback) {
 
   var db = new sqlite.Database('landmarks.spatialite');
   var result = {};
-  result['result:landmark_score'] = {};
 
   // This should probably run through both?
   var theVersion = [newVersion, oldVersion].filter(function (v) {
@@ -30,8 +29,7 @@ function landmark_score(newVersion, oldVersion, callback) {
   theVersion = theVersion[0];
 
   var query, args, query1, args1;
-  if (theVersion.properties['wikidata']) {
-    result['result:landmark_score']['wikidata'] = 1;
+  if (theVersion.properties['wikidata'] && theVersion.properties['osm:version'] > 10) {
     // If there's a `wikidata` tag we can search for the wikidata ID (`qid` in the database) directly
     query = 'SELECT score FROM mb_landmark WHERE qid=? LIMIT 1;';
     args = [theVersion.properties['wikidata']];
@@ -43,15 +41,12 @@ function landmark_score(newVersion, oldVersion, callback) {
       }
 
       if (record) {
-        result['result:landmark_score']['cfVersion'] = cfVersion;
-        result['result:landmark_score']['score'] = record.score;
-        result['result:landmark_score']['DBwikidata'] = 1;
+        result['result:landmark_score'] = true;
       }
       callback(null, result);
       db.close();
     });
-  } else if (theVersion.properties['wikipedia']) {
-    result['result:landmark_score']['wikipedia'] = 1;
+  } else if (theVersion.properties['wikipedia'] && theVersion.properties['osm:version'] > 10) {
     // If there's a `wikipedia` tag try to match on label + location
     //if (theVersion.geometry.type != 'node') {
     //  theVersion.geometry = turfCentroid(theVersion).geometry;
@@ -66,12 +61,13 @@ function landmark_score(newVersion, oldVersion, callback) {
       }
 
       if (record) {
-        result['result:landmark_score']['DBwikipedia'] = 1;
-        result['result:landmark_score']['score'] = record.score;
+        result['result:landmark_score'] = true;
       }
       callback(null, result);
       db.close();
     });
+  } else {
+    return callback(null, result);
   }
 }
 
