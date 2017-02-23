@@ -4,7 +4,8 @@
 var PATH_ROAD_TYPES = [
   'pedestrian',
   'footway',
-  'cycleway'
+  'cycleway',
+  'path'
 ];
 
 function getHighwayType(feature) {
