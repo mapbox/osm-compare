@@ -10,7 +10,7 @@
     {
       "description": "Test lake present in landmarks",
       "expectedResult": {
-        "result:osm-landmark": true,
+        "result:osm_landmarks": true,
         "result:feature": "lake"
       },
       "newVersion": {
@@ -39,7 +39,7 @@
     {
       "description": "Test lake present in landmarks in oldVersion",
       "expectedResult": {
-        "result:osm-landmark": true,
+        "result:osm_landmarks": true,
         "result:feature": "lake"
       },
       "newVersion": null,
