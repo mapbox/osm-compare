@@ -6,9 +6,17 @@ module.exports = osmLandmarks;
 
 function osmLandmarks(newVersion, oldVersion, callback) {
   var result = {};
+  var featureID, featureType;
 
-  var featureID = String(newVersion.properties['osm:id']);
-  var featureType = String(newVersion.properties['osm:type']);
+  if (newVersion && newVersion.properties && ('osm:id' in newVersion.properties) && ('osm:type' in newVersion.properties)) {
+    featureID = String(newVersion.properties['osm:id']);
+    featureType = newVersion.properties['osm:type'];
+  } else if (oldVersion && oldVersion.properties && ('osm:id' in oldVersion.properties) && ('osm:type' in oldVersion.properties)) {
+    featureID = String(oldVersion.properties['osm:id']);
+    featureType = oldVersion.properties['osm:type'];
+  } else {
+    return callback(null, result);
+  }
 
   getLakes(function (error, lakes) {
     if (error) return callback(null, result);
