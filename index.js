@@ -13,7 +13,7 @@ module.exports = {
   'pokemon_footway': require('./comparators/pokemon-footway'),
   'place_edited': require('./comparators/place-edited'),
   'major_name_modification': require('./comparators/major-name-modification'),
-  'wikidata': require('./comparators/wikidata'),
+  'wikidata_wikipedia_tag_deleted': require('./comparators/wikidata_wikipedia_tag_deleted'),
   'null_island': require('./comparators/null-island'),
   'pokemon_edits': require('./comparators/pokemon_edits'),
   'dragged_highway_waterway': require('./comparators/dragged_highway_waterway'),

@@ -1,5 +1,5 @@
 {
-  "compareFunction": "wikidata",
+  "compareFunction": "wikidata_wikipedia_tag_deleted",
   "fixtures": [
     {
       "description": "wikidata tag deleted",
@@ -16,7 +16,7 @@
         "geometry": null
       },
       "expectedResult": {
-        "result:wikidata_deleted": true
+        "result:wikidata_wikipedia_tag_deleted": true
       }
     },
     {
@@ -34,6 +34,24 @@
         "geometry": null
       },
       "expectedResult": {}
+    },
+    {
+      "description": "wikipedia tag deleted",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "wikipedia": "en:abc"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:wikidata_wikipedia_tag_deleted": true
+      }
     }
   ]
 }

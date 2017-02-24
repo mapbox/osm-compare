@@ -6,7 +6,7 @@ module.exports = majorNameModification;
 
 function majorNameModification(newVersion, oldVersion, callback) {
 
-  if (!newVersion || !newVersion.properties || !newVersion.properties.name || !newVersion.properties.wikidata) return callback(null, {});
+  if (!newVersion || !newVersion.properties || !newVersion.properties.name || (!(newVersion.properties.wikidata ||  newVersion.properties.wikipedia))) return callback(null, {});
   if (!oldVersion || !oldVersion.properties || !oldVersion.properties.name) return callback(null, {});
 
   // If the name tag was not modified
