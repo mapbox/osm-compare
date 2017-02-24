@@ -3,7 +3,10 @@
   "fixtures": [
     {
       "description": "Test lake present in landmarks",
-      "expectedResult": {"result:osm-landmark": true},
+      "expectedResult": {
+        "result:osm-landmark": true,
+        "result:feature": "lake"
+      },
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -16,7 +19,7 @@
     },
     {
       "description": "Test lake not present in landmarks",
-      "expectedResult": {"result:osm-landmark": false},
+      "expectedResult": {},
       "newVersion": {
         "type": "Feature",
         "properties": {
