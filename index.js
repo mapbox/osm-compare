@@ -18,5 +18,6 @@ module.exports = {
   'pokemon_edits': require('./comparators/pokemon_edits'),
   'dragged_highway_waterway': require('./comparators/dragged_highway_waterway'),
   'added_place': require('./comparators/added_place'),
-  'modified_place_wikidata': require('./comparators/modified-place-wikidata')
+  'modified_place_wikidata': require('./comparators/modified-place-wikidata'),
+  'osm_landmarks': require('./comparators/osm-landmarks'),
 };
