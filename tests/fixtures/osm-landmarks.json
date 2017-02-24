@@ -1,0 +1,31 @@
+{
+  "compareFunction": "osm-landmarks",
+  "fixtures": [
+    {
+      "description": "Test lake present in landmarks",
+      "expectedResult": {"result:osm-landmark": true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3987743,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test lake not present in landmarks",
+      "expectedResult": {"result:osm-landmark": false},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1857615,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    }
+  ]
+}
