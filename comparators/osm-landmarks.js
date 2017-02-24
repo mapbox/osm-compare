@@ -24,7 +24,7 @@ function osmLandmarks(newVersion, oldVersion, callback) {
     for (var i = 0; i < lakes.length; i++) {
       if (lakes[i][0] === featureID && lakes[i][1] === featureType) {
         return callback(null, {
-          'result:osm-landmark': true,
+          'result:osm_landmarks': true,
           'result:feature': 'lake'
         });
       }
