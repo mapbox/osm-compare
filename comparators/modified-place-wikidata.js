@@ -15,4 +15,5 @@ function modifiedPlaceWikidata(newVersion, oldVersion, callback) {
       });
     }
   }
+  return callback(null, {});
 }

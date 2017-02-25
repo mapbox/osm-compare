@@ -123,9 +123,7 @@
         ]
       }
     },
-    "expectedResult": {
-      "result:modifiedPlaceWikidata": false
-    }
+    "expectedResult": {}
   }]
 
 }
