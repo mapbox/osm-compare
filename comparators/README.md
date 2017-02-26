@@ -71,3 +71,7 @@ Reports when a feature having any of these tags ['natural', 'water', 'highway', 
 ### wikidata_wikipedia_tag_deleted
 
 Reports when any of wikidata / wikipedia tag is deleted.
+
+### modified-place-wikidata
+
+Reports when `wikidata` tag is added, deleted or modified for a place type feature. It also reports when `place` tag is added to a feature which has `wikidata` tag in new version.

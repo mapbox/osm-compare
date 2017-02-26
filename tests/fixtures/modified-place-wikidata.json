@@ -1,0 +1,111 @@
+{
+  "compareFunction":"modified-place-wikidata",
+  "fixtures":[
+    {
+      "description":"wikidata tag modified",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q79"
+        },
+        "geometry":null
+      },
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata": true
+      }
+    },
+    {
+      "description":"wikidata tag added to a place feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
+      },
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata": true
+      }
+    },
+    {
+      "description":"place tag added to a wikidata feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
+      },
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "wikidata":"Q70"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata": true
+      }
+    },
+    {
+      "description":"wikidata tag deleted from a place feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city"
+        },
+        "geometry":null
+      },
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q70"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata": true
+      }
+    },
+    {
+      "description":"someother tag added to a wikidata feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "administrative":"boundary",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
+      },
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "wikidata":"Q70"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+
+      }
+    }
+  ]
+}
