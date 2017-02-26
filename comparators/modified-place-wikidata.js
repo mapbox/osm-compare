@@ -10,8 +10,8 @@ function modifiedPlaceWikidata(newVersion, oldVersion, callback) {
   //This comparator will only look at modifications to Wikidata tags to features with place tag.
 
 
-  // This if condition handles for new additions of place tag for features that already have wikidata tag
-  if ('wikidata' in oldVersion.properties && !(oldVersion.properties.hasOwnProperty('place')) && 'wikidata' in newVersion.properties && 'place' in newVersion.properties) {
+  // This if condition handles for new additions of place tag for features that have wikidata tag
+  if (!(oldVersion.properties.hasOwnProperty('place')) && 'wikidata' in newVersion.properties && 'place' in newVersion.properties) {
     return callback(null, {
       'result:modifiedPlaceWikidata': true
     });
