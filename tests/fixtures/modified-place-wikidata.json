@@ -1,129 +1,111 @@
 {
-  "compareFunction": "modified-place-wikidata",
-  "fixtures": [{
-    "Description": "This a modification of wikidata tag for features that have place tag.Should be flagged",
-    "oldVersion": {
-      "type": "Feature",
-      "properties": {
-        "building": "yes",
-        "place": "New York",
-        "wikidata": "Q60",
-        "boundary": "administrative"
+  "compareFunction":"modified-place-wikidata",
+  "fixtures":[
+    {
+      "description":"wikidata tag modified",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q79"
+        },
+        "geometry":null
       },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-124.49707031249999,
-              37.19533058280065
-            ],
-            [-124.49707031249999,
-              41.04621681452063
-            ],
-            [-120.62988281249999,
-              41.04621681452063
-            ],
-            [-120.62988281249999,
-              37.19533058280065
-            ],
-            [-124.49707031249999,
-              37.19533058280065
-            ]
-          ]
-        ]
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata":true
       }
     },
-    "newVersion": {
-      "type": "Feature",
-      "properties": {
-        "place": "New York",
-        "wikidata": "Q70",
-        "boundary": "administrative"
+    {
+      "description":"wikidata tag added to a place feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
       },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-124.49707031249999,
-              37.19533058280065
-            ],
-            [-124.49707031249999,
-              41.04621681452063
-            ],
-            [-120.62988281249999,
-              41.04621681452063
-            ],
-            [-120.62988281249999,
-              37.19533058280065
-            ],
-            [-124.49707031249999,
-              37.19533058280065
-            ]
-          ]
-        ]
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata":true
       }
     },
-    "expectedResult": {
-      "result:modifiedPlaceWikidata": true
-    }
-  }, {
-    "Description": "This a modification of wikidata tag for features that have no place tag.Should not be flagged",
-    "oldVersion": {
-      "building": "yes",
-      "wikidata": "Q60"
-    },
-    "geometry": {
-      "type": "Polygon",
-      "coordinates": [
-        [
-          [-118.36797058582306,
-            33.81124046079714
-          ],
-          [-118.36797058582306,
-            33.81136971841298
-          ],
-          [-118.36779892444609,
-            33.81136971841298
-          ],
-          [-118.36779892444609,
-            33.81124046079714
-          ],
-          [-118.36797058582306,
-            33.81124046079714
-          ]
-        ]
-      ]
-    },
-    "newVersion": {
-      "type": "Feature",
-      "properties": {
-        "building": "yes",
-        "wikidata": "Q70"
+    {
+      "description":"place tag added to a wikidata feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
       },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [-118.36797058582306,
-              33.81124046079714
-            ],
-            [-118.36797058582306,
-              33.81136971841298
-            ],
-            [-118.36779892444609,
-              33.81136971841298
-            ],
-            [-118.36779892444609,
-              33.81124046079714
-            ],
-            [-118.36797058582306,
-              33.81124046079714
-            ]
-          ]
-        ]
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "wikidata":"Q70"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata":true
       }
     },
-    "expectedResult": {}
-  }]
+    {
+      "description":"wikidata tag deleted from a place feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city"
+        },
+        "geometry":null
+      },
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "place":"city",
+          "wikidata":"Q70"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
+        "result:modifiedPlaceWikidata":true
+      }
+    },
+    {
+      "description":"someother tag added to a wikidata feature",
+      "newVersion":{
+        "type":"Feature",
+        "properties":{
+          "administrative":"boundary",
+          "wikidata":"Q40435"
+        },
+        "geometry":null
+      },
+      "oldVersion":{
+        "type":"Feature",
+        "properties":{
+          "wikidata":"Q70"
+        },
+        "geometry":null
+      },
+      "expectedResult":{
 
+      }
+    }
+  ]
 }

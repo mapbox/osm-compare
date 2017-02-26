@@ -11,20 +11,24 @@ function modifiedPlaceWikidata(newVersion, oldVersion, callback) {
 
 
   // This if condition handles for new additions of place tag for features that already have wikidata tag
-  if ('wikidata' in oldVersion.properties && !('place' in oldVersion.properties && 'wikidata' in newVersion.properties && 'place' in newVersion.properties)){
+  if ('wikidata' in oldVersion.properties && !('place' in oldVersion.properties) && 'wikidata' in newVersion.properties && 'place' in newVersion.properties) {
     return callback(null, {
       'result:modifiedPlaceWikidata': true
     });
   }
-  
   // Handles when a place feature is given a new wikidata tag
-  if ('place' in oldVersion.properties && !('wikidata' in oldVersion.properties) && 'place' in newVersion.properties && 'wikidata' in newVersion.properties){
+  if ('place' in oldVersion.properties && !('wikidata' in oldVersion.properties) && 'place' in newVersion.properties && 'wikidata' in newVersion.properties) {
     return callback(null, {
       'result:modifiedPlaceWikidata': true
-    })
+    });
 
   }
-
+  // Handles when wikidata tag is deleted for place features
+  if ('place' in oldVersion.properties && 'wikidata' in oldVersion.properties && 'place' in newVersion.properties && !('wikidata' in newVersion.properties)) {
+    return callback(null, {
+      'result:modifiedPlaceWikidata': true
+    });
+  }
   // Handles modifications to wikidata tag for features with place tag
   if ('wikidata' in oldVersion.properties && 'wikidata' in newVersion.properties && 'place' in oldVersion.properties && 'place' in newVersion.properties) {
     if (oldVersion.properties.wikidata !== newVersion.properties.wikidata) {
