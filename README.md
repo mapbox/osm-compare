@@ -43,6 +43,7 @@ Compare functions output the following:
 * Create a new compare function in the directory `comparators/` (check comparators/example.js for format)
 * Test your new compare function with `npm test`
 * Add your new comparator to `index.js`
+* Along with a brief description of the comparator, add it to [comparators/README.md](https://github.com/mapbox/osm-compare/blob/master/comparators/README.md)
 * Push to a new branch on Github and create a Pull Request
 
 ### How do I test a single compare function against a new fixture?
