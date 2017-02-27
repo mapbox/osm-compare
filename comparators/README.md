@@ -75,3 +75,6 @@ Reports when any of wikidata / wikipedia tag is deleted.
 ### modified-place-wikidata
 
 Reports when `wikidata` tag is added, deleted or modified for a place type feature. It also reports when `place` tag is added to a feature which has `wikidata` tag in new version.
+
+### osm-landmarks
+Reports when any feature in the [osm-landmarks list](https://github.com/osmlab/osm-landmarks) is edited.
