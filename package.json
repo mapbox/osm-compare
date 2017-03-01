@@ -16,11 +16,12 @@
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
+    "d3-queue": "^3.0.3",
     "geopoint": "^1.0.1",
     "levenshtein": "^1.0.5",
     "lodash": "^4.17.3",
     "moment": "^2.17.1",
-    "osm-landmarks": "^0.1.0",
+    "osm-landmarks": "^0.3.0",
     "queue-async": "^1.2.1",
     "request": "^2.72.0",
     "sax": "^1.2.1",

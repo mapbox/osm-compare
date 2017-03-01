@@ -1,6 +1,9 @@
 'use strict';
 
+var queue = require('d3-queue').queue;
 var getLakes = require('osm-landmarks').getLakes;
+var getAirports = require('osm-landmarks').getAirports;
+var getRestaurants = require('osm-landmarks').getRestaurants;
 
 module.exports = osmLandmarks;
 
@@ -18,18 +21,26 @@ function osmLandmarks(newVersion, oldVersion, callback) {
     return callback(null, result);
   }
 
-  getLakes(function (error, lakes) {
-    if (error) return callback(null, result);
+  var q = queue(1);
 
-    for (var i = 0; i < lakes.length; i++) {
-      if (lakes[i][0] === featureID && lakes[i][1] === featureType) {
-        return callback(null, {
-          'result:osm_landmarks': true,
-          'result:feature': 'lake'
-        });
+  q.defer(getLakes);
+  q.defer(getAirports);
+  q.defer(getRestaurants);
+
+  q.awaitAll(function(err, results) {
+    if (err)
+      console.log(err);
+
+    for (var i = 0; i < results.length; i++) {
+      for (var j = 0; j < results[i].length; j++) {
+        if (results[i][j][0] === featureID && results[i][j][1] === featureType) {
+          return callback(null, {
+            'result:osm_landmarks': true
+          });
+        }
       }
     }
 
-    return callback(null, result);
+    return callback(null, {});
   });
 }
