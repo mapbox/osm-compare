@@ -22,5 +22,6 @@ module.exports = {
   'osm_landmarks': require('./comparators/osm-landmarks'),
   'modifiedMonument': require('./comparators/modifiedMonument'),
   'invalid_tag_combination': require('./comparators/invalid-tag-combination'),
-  'water_feature_by_new_user': require('./comparators/water-feature-by-new-user')
+  'water_feature_by_new_user': require('./comparators/water-feature-by-new-user'),
+  'commonTagValues': require('./comparators/common_tag_values.js')
 };
