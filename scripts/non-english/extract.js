@@ -8,7 +8,7 @@ module.exports = function (tileLayers, tile, writeData, done) {
         if (feature.properties.hasOwnProperty('name:en')) {
             var name = feature.properties['name:en'];
             for (var j = 0; j < name.length; j++) {
-                if (name.charCodeAt(j) > 127) {
+                if (name.charCodeAt(j) > 255) {
                     results.push(JSON.stringify(feature));
                     break;
                 }
