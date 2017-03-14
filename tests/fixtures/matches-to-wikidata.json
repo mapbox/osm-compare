@@ -1,0 +1,75 @@
+{
+  "compareFunction": "matches-to-wikidata",
+  "fixtures": [
+    {
+      "description": "Test feature with no Wikidata tag",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "id": "node!4007681408!2",
+        "properties": {
+          "name": "Colônia Terra Nova",
+          "place": "suburb"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature that does not exist in local Wikidata database",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "id": "way!24464264!33",
+        "properties": {
+          "name": "Liwonde National Park",
+          "wikidata": "Q2739189"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature exists in local Wikidata database but OSM featues does not have a name",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "id": "node!4007681408!2",
+        "properties": {
+          "place": "suburb"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature exists in local Wikidata database and OSM feature with name tag match",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "id": "node!4007681408!2",
+        "properties": {
+          "name": "Colônia Terra Nova",
+          "place": "suburb"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature exists in local Wikidata database and OSM feature with name tag does not match",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "id": "node!4007681408!2",
+        "properties": {
+          "name": "Terra Nova",
+          "place": "suburb",
+          "wikidata": "Q35525"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    }
+  ]
+}
