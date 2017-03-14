@@ -78,3 +78,6 @@ Reports when `wikidata` tag is added, deleted or modified for a place type featu
 
 ### osm-landmarks
 Reports when any feature in the [osm-landmarks list](https://github.com/osmlab/osm-landmarks) is edited.
+
+### invalid-tag-combination
+Reports when a feature has two uncommon primary tag combinations. Ex: `0.06 %` of features with `building` also have `historic` tag.
