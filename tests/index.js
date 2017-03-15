@@ -22,6 +22,28 @@ test('Test compare functions', function(assert) {
   });
 });
 
+test('Test basic fixture', function(assert) {
+  var dirname = path.join(__dirname, '/../comparators/');
+  var comparators = fs.readdirSync(dirname);
+  comparators.forEach(function(comparator) {
+    var compareFunctionPath = path.join(__dirname, '/../comparators/', comparator);
+    try {
+      var compareFunction = require(compareFunctionPath);
+      var jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '/basicFixture.json'), 'utf-8'));
+      var comparatorQueue = queue(1);
+      jsonData.fixtures.forEach(function(fixture) {
+        comparatorQueue.defer(compareFunction, fixture.oldVersion, fixture.newVersion);
+      });
+      comparatorQueue.awaitAll(function(err, result) {
+        assert.ifError(err);
+      });
+
+    } catch (e) {
+      console.log('exception');
+    }
+  });
+  assert.end();
+});
 
 function processFixtureFile(assert, jsonData, callback) {
   // Fixtures with empty string as compareFunction as run on all compare functions.

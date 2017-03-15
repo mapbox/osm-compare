@@ -1,0 +1,49 @@
+{
+    "fixtures": [
+        {
+            "description": "Fixture without old Version",
+            "newVersion": {
+                "properties": {
+                    "id": 76273,
+                    "type": "node"
+                },
+                "geometry": null
+            },
+            "oldVersion": null
+        },
+        {
+            "description": "Fixture without old Version",
+            "oldVersion": {
+                "properties": {
+                    "id": 76273,
+                    "type": "node"
+                },
+                "geometry": null
+            },
+            "newVersion": null
+        },
+        {
+            "description": "Fixture with old Version and new Version",
+            "oldVersion": {
+                "properties": {
+                    "id": 76273,
+                    "type": "node"
+                },
+                "geometry": null
+            },
+            "newVersion": {
+                "properties": {
+                    "id": 7628793,
+                    "type": "node"
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    76.9843716,
+                    11.0089059
+                  ]
+                }
+            }
+        }
+    ]
+}
