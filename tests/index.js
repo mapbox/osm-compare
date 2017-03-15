@@ -6,6 +6,8 @@ var queue = require('queue-async');
 var path = require('path');
 var fs = require('fs');
 
+var comparators = require('../index');
+
 test('Test compare functions', function(assert) {
   var fileQueue = queue(1);  // Read one fixture file at a time.
 
@@ -24,23 +26,16 @@ test('Test compare functions', function(assert) {
 
 test('Test basic fixture', function(assert) {
   var dirname = path.join(__dirname, '/../comparators/');
-  var comparators = fs.readdirSync(dirname);
-  comparators.forEach(function(comparator) {
-    var compareFunctionPath = path.join(__dirname, '/../comparators/', comparator);
-    try {
-      var compareFunction = require(compareFunctionPath);
-      var jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '/basicFixture.json'), 'utf-8'));
-      var comparatorQueue = queue(1);
-      jsonData.fixtures.forEach(function(fixture) {
-        comparatorQueue.defer(compareFunction, fixture.oldVersion, fixture.newVersion);
-      });
-      comparatorQueue.awaitAll(function(err, result) {
-        assert.ifError(err);
-      });
-
-    } catch (e) {
-      console.log('exception');
-    }
+  Object.keys(comparators).forEach(function(comparator) {
+    var compareFunction = comparators[comparator];
+    var jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '/basicFixture.json'), 'utf-8'));
+    var comparatorQueue = queue(1);
+    jsonData.fixtures.forEach(function(fixture) {
+      comparatorQueue.defer(compareFunction, fixture.oldVersion, fixture.newVersion);
+    });
+    comparatorQueue.awaitAll(function(err, result) {
+      assert.ifError(err);
+    });
   });
   assert.end();
 });

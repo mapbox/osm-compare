@@ -1,7 +1,34 @@
 {
     "fixtures": [
         {
-            "description": "Fixture without old Version",
+            "description": "Fixture without old Version and having null geometry",
+            "newVersion": {
+                "properties": {
+                    "id": 76273,
+                    "type": "node"
+                }
+            },
+            "oldVersion": null
+        },
+        {
+            "description": "Fixture without old Version and having geometry",
+            "newVersion": {
+                "properties": {
+                    "id": 76273,
+                    "type": "node"
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    78.98437,
+                    91.00899
+                  ]
+                }
+            },
+            "oldVersion": null
+        },
+        {
+            "description": "Fixture with old Version and having null geometry",
             "newVersion": {
                 "properties": {
                     "id": 76273,
@@ -9,10 +36,16 @@
                 },
                 "geometry": null
             },
-            "oldVersion": null
+            "oldVersion": {
+                "properties": {
+                    "id": 68736,
+                    "type": "way"
+                },
+                "geometry": null
+            }
         },
         {
-            "description": "Fixture without old Version",
+            "description": "Fixture without new Version and having null geometry",
             "oldVersion": {
                 "properties": {
                     "id": 76273,
@@ -23,13 +56,19 @@
             "newVersion": null
         },
         {
-            "description": "Fixture with old Version and new Version",
+            "description": "Fixture with old Version and new Version and non null geometries",
             "oldVersion": {
                 "properties": {
                     "id": 76273,
                     "type": "node"
                 },
-                "geometry": null
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    76.9843716,
+                    11.0089059
+                  ]
+                }
             },
             "newVersion": {
                 "properties": {
