@@ -5,7 +5,7 @@ module.exports = largeBuilding;
 
 function largeBuilding(newVersion, oldVersion, callback) {
   var result = {};
-  if (!newVersion) {
+  if (!newVersion || !newVersion.hasOwnProperty('geometry') || newVersion['geometry'] === null) {
     return callback(null, result);
   }
   var area = turfArea(newVersion);
