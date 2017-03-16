@@ -25,19 +25,18 @@ test('Test compare functions', function(assert) {
 });
 
 test('Test basic fixture', function(assert) {
-  var dirname = path.join(__dirname, '/../comparators/');
+  var comparatorQueue = queue(10);
   Object.keys(comparators).forEach(function(comparator) {
     var compareFunction = comparators[comparator];
     var jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '/basicFixture.json'), 'utf-8'));
-    var comparatorQueue = queue(1);
     jsonData.fixtures.forEach(function(fixture) {
       comparatorQueue.defer(compareFunction, fixture.oldVersion, fixture.newVersion);
     });
-    comparatorQueue.awaitAll(function(err, result) {
-      assert.ifError(err);
-    });
   });
-  assert.end();
+  comparatorQueue.awaitAll(function(err, result) {
+    assert.ifError(err);
+    assert.end();
+  });
 });
 
 function processFixtureFile(assert, jsonData, callback) {
