@@ -29,7 +29,7 @@ function nameMatchesToWikidata(newVersion, oldVersion, callback) {
       if (!error && response && (response.statusCode === 200)) {
         var wikidataFeature = JSON.parse(body);
         var wikidataName = getWikidataName(wikidataFeature, wikidataID);
-        if (osmName === wikidataName) return callback(null, {
+        if (osmName !== wikidataName) return callback(null, {
           'result:name_matches_to_wikidata': false
         });
       }
