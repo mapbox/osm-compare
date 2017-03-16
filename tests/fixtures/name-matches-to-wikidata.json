@@ -1,0 +1,40 @@
+{
+  "compareFunction": "name-matches-to-wikidata",
+  "fixtures": [
+    {
+      "description": "Test OSM name different from Wikidata name",
+      "expectedResult": {
+        "result:name_matches_to_wikidata": false
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 427818536,
+          "osm:type": "way",
+          "name": "Central Park",
+          "wikidata": "Q160409"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test OSM name matches with alternate name on Wikidata. Ex: Bengaluru",
+      "expectedResult": {},
+      "newVersion": null,
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature with no Wikidata tag",
+      "expectedResult": {},
+      "newVersion": null,
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature with Wikidata tag and not a name modification",
+      "expectedResult": {},
+      "newVersion": null,
+      "oldVersion": null
+    }
+  ]
+}
