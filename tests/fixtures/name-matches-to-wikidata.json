@@ -12,7 +12,8 @@
           "osm:id": 427818536,
           "osm:type": "way",
           "name": "Central Park is now something else",
-          "wikidata": "Q160409"
+          "wikidata": "Q160409",
+          "osm:version": 1
         },
         "geometry": null
       },
@@ -55,8 +56,9 @@
         "properties": {
           "osm:id": 3401391999,
           "osm:type": "node",
-          "name": "Bengaluru",
-          "osm:version": 2
+          "name": "Bengaluru is somethong else",
+          "osm:version": 2,
+          "wikidata": "Q1355"
         },
         "geometry": null
       },
@@ -65,22 +67,26 @@
         "properties": {
           "osm:id": 3401391999,
           "osm:type": "node",
-          "name": "Bengaluru",
-          "osm:version": 1
+          "name": "Bengaluru is somethong else",
+          "osm:version": 1,
+          "wikidata": "Q1355"
         },
         "geometry": null
       }
     },
     {
       "description": "Test new feature with Wikidata",
-      "expectedResult": {},
+      "expectedResult": {
+        "result:name_matches_to_wikidata": false
+      },
       "newVersion": {
         "type": "Feature",
         "properties": {
           "osm:id": 3401391999,
           "osm:type": "node",
-          "name": "Bengaluru",
-          "osm:version": 1
+          "name": "Bengaluru is something else",
+          "osm:version": 1,
+          "wikidata": "Q1355"
         },
         "geometry": null
       },

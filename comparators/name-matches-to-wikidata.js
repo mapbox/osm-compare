@@ -33,6 +33,11 @@ function nameMatchesToWikidata(newVersion, oldVersion, callback) {
 
   if (!newVersion) return callback(null, result);
 
+  // Check if feature is newly created.
+  if (newVersion.properties['osm:version'] !== 1) {
+    if (!oldVersion || (newVersion.properties['name'] === oldVersion.properties['name'])) return callback(null, result);
+  }
+
   if (newVersion.properties.hasOwnProperty('wikidata') && newVersion.properties.hasOwnProperty('name')) {
 
     var osmName = newVersion.properties['name'];
