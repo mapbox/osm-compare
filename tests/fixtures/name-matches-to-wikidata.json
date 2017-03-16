@@ -19,21 +19,71 @@
       "oldVersion": null
     },
     {
-      "description": "Test OSM name matches with alternate name on Wikidata. Ex: Bengaluru",
+      "description": "Test OSM name matches with aliases on Wikidata",
       "expectedResult": {},
-      "newVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3401391999,
+          "osm:type": "node",
+          "name": "Bengaluru",
+          "wikidata": "Q1355"
+        },
+        "geometry": null
+      },
       "oldVersion": null
     },
     {
       "description": "Test feature with no Wikidata tag",
       "expectedResult": {},
-      "newVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3401391999,
+          "osm:type": "node",
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      },
       "oldVersion": null
     },
     {
       "description": "Test feature with Wikidata tag and not a name modification",
       "expectedResult": {},
-      "newVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3401391999,
+          "osm:type": "node",
+          "name": "Bengaluru",
+          "osm:version": 2
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3401391999,
+          "osm:type": "node",
+          "name": "Bengaluru",
+          "osm:version": 1
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test new feature with Wikidata",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3401391999,
+          "osm:type": "node",
+          "name": "Bengaluru",
+          "osm:version": 1
+        },
+        "geometry": null
+      },
       "oldVersion": null
     }
   ]

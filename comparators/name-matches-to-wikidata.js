@@ -14,6 +14,20 @@ function getWikidataName(feature, id) {
     return undefined;
 }
 
+function getWikidataAliasNames(feature, id) {
+  var names = [];
+  if (feature.hasOwnProperty('entities') &&
+      feature['entities'].hasOwnProperty(id) &&
+      feature['entities'][id].hasOwnProperty(['aliases']) &&
+      feature['entities'][id]['aliases'].hasOwnProperty('en')) {
+    var aliases = feature['entities'][id]['aliases']['en'];
+    for (var i = 0; i < aliases.length; i++) {
+      names.push(aliases[i]['value']);
+    }
+  }
+  return names;
+}
+
 function nameMatchesToWikidata(newVersion, oldVersion, callback) {
   var result = {};
 
@@ -29,7 +43,9 @@ function nameMatchesToWikidata(newVersion, oldVersion, callback) {
       if (!error && response && (response.statusCode === 200)) {
         var wikidataFeature = JSON.parse(body);
         var wikidataName = getWikidataName(wikidataFeature, wikidataID);
-        if (osmName !== wikidataName) return callback(null, {
+        var wikidataAliasNames = getWikidataAliasNames(wikidataFeature, wikidataID);
+
+        if ((osmName !== wikidataName) && (wikidataAliasNames.indexOf(osmName) === -1)) return callback(null, {
           'result:name_matches_to_wikidata': false
         });
       }
