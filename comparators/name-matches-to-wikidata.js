@@ -5,13 +5,13 @@ var request = require('request');
 module.exports = nameMatchesToWikidata;
 
 function getWikidataName(feature, id) {
-    if (feature.hasOwnProperty('entities') &&
-        feature['entities'].hasOwnProperty(id) &&
-        feature['entities'][id].hasOwnProperty(['labels']) &&
-        feature['entities'][id]['labels'].hasOwnProperty('en'))
-        return feature['entities'][id]['labels']['en']['value'];
-    else
-        return undefined;
+  if (feature.hasOwnProperty('entities') &&
+      feature['entities'].hasOwnProperty(id) &&
+      feature['entities'][id].hasOwnProperty(['labels']) &&
+      feature['entities'][id]['labels'].hasOwnProperty('en'))
+    return feature['entities'][id]['labels']['en']['value'];
+  else
+    return undefined;
 }
 
 function nameMatchesToWikidata(newVersion, oldVersion, callback) {
