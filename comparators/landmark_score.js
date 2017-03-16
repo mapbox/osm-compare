@@ -2,6 +2,7 @@
 
 var sqlite = require('sqlite3');
 var turfCentroid = require('turf-centroid');
+var join = require('path').join;
 
 /**
 * Checks for existence of feature in a local SQLite database of wikipedia landmarks and when the feature exists, calls back with a result of the wikipedia score.
@@ -13,8 +14,7 @@ var turfCentroid = require('turf-centroid');
 function landmark_score(newVersion, oldVersion, callback) {
 
   var cfVersion = 2;
-
-  var db = new sqlite.Database('landmarks.spatialite');
+  var db = new sqlite.Database(join(__dirname, '..', 'landmarks.spatialite'));
   var result = {};
 
   // This should probably run through both?
