@@ -28,8 +28,10 @@ function osmLandmarks(newVersion, oldVersion, callback) {
   q.defer(getRestaurants);
 
   q.awaitAll(function(err, results) {
-    if (err)
+    if (err) {
       console.log(err);
+      return callback(err, {});
+    }
 
     for (var i = 0; i < results.length; i++) {
       for (var j = 0; j < results[i].length; j++) {
