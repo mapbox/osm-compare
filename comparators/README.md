@@ -81,3 +81,6 @@ Reports when any feature in the [osm-landmarks list](https://github.com/osmlab/o
 
 ### invalid-tag-combination
 Reports when a feature has two uncommon primary tag combinations. Ex: `0.06 %` of features with `building` also have `historic` tag.
+
+### water-feature-by-new-user
+Report when a new user creates a new water feature.
