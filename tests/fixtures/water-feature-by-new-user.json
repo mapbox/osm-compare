@@ -76,6 +76,24 @@
         "geometry": null
       },
       "oldVersion": null
+    },
+    {
+      "description": "Test new pond created by a new user",
+      "expectedResult": {
+        "result:water_feature_by_new_user": true
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 469253887,
+          "osm:type": "way",
+          "osm:version": 1,
+          "osm:user": "deered",
+          "landuse": "pond"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
     }
   ]
 }
