@@ -14,7 +14,12 @@ var join = require('path').join;
 function landmark_score(newVersion, oldVersion, callback) {
 
   var cfVersion = 2;
-  var db = new sqlite.Database(join(__dirname, '..', 'landmarks.spatialite'));
+  var db;
+  try {
+    db = new sqlite.Database(join(__dirname, '..', 'landmarks.spatialite'));
+  } catch (err) {
+    return callback(err, {});
+  }
   var result = {};
 
   // This should probably run through both?
