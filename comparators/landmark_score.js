@@ -18,6 +18,7 @@ function landmark_score(newVersion, oldVersion, callback) {
   try {
     db = new sqlite.Database(join(__dirname, '..', 'landmarks.spatialite'));
   } catch (err) {
+    console.log('Landmarks error', err);
     return callback(err, {});
   }
   var result = {};
@@ -41,6 +42,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
     db.get(query, args, function(err, record) {
       if (err) {
+        console.log('Landmarks error', err);
         db.close();
         return callback(err);
       }
@@ -61,6 +63,7 @@ function landmark_score(newVersion, oldVersion, callback) {
     args1 = [theVersion.properties['wikipedia'].slice(+3)];
     db.get(query1, args1, function(err, record) {
       if (err) {
+        console.log('Landmarks error', err);
         db.close();
         return callback(err);
       }
