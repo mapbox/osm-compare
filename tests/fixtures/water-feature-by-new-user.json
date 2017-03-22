@@ -1,0 +1,81 @@
+{
+  "compareFunction": "water-feature-by-new-user",
+  "fixtures": [
+    {
+      "description": "Test new lake created by a new user",
+      "expectedResult": {
+        "result:water_feature_by_new_user": true
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 469253887,
+          "osm:type": "way",
+          "osm:version": 1,
+          "osm:user": "deered",
+          "natural": "water"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test existing lake modified by a new user",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 469253887,
+          "osm:type": "way",
+          "osm:version": 2,
+          "osm:user": "deered",
+          "name": "nope",
+          "water": "lake"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 469253887,
+          "osm:type": "way",
+          "osm:version": 1,
+          "osm:user": "deered",
+          "water": "lake"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test new not-lake created by a new user",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 469253887,
+          "osm:type": "way",
+          "osm:version": 1,
+          "osm:user": "deered"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test new lake created by a not new user",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 469253887,
+          "osm:type": "way",
+          "osm:version": 1,
+          "osm:user": "Canvec_s_longiaru",
+          "natural": "water"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    }
+  ]
+}
