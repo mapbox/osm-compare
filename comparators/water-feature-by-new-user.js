@@ -33,7 +33,7 @@ function waterFeatureByNewUser(newVersion, oldVersion, callback) {
   // What is the number of changesets of a user to be considered a new user?
   var MINIMUM_CHANGESET_COUNT = 10;
 
-  if (newVersion.properties['osm:version'] !== 1) return callback(null, {});
+  if (!newVersion || newVersion.properties['osm:version'] !== 1) return callback(null, {});
 
   if (isWaterFeature(newVersion)) {
     var user = newVersion.properties['osm:user'];
