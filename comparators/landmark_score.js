@@ -43,8 +43,8 @@ function landmark_score(newVersion, oldVersion, callback) {
       if (record) {
         result['result:landmark_score'] = true;
       }
-      callback(null, result);
       db.close();
+      callback(null, result);
     });
   } else if (theVersion.properties['wikipedia'] && theVersion.properties['osm:version'] > 10) {
     // If there's a `wikipedia` tag try to match on label + location
@@ -63,10 +63,11 @@ function landmark_score(newVersion, oldVersion, callback) {
       if (record) {
         result['result:landmark_score'] = true;
       }
-      callback(null, result);
       db.close();
+      callback(null, result);
     });
   } else {
+    db.close();
     return callback(null, result);
   }
 }
