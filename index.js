@@ -21,5 +21,6 @@ module.exports = {
   'modified_place_wikidata': require('./comparators/modified-place-wikidata'),
   'osm_landmarks': require('./comparators/osm-landmarks'),
   'modifiedMonument': require('./comparators/modifiedMonument'),
-  'invalid_tag_combination': require('./comparators/invalid-tag-combination')
+  'invalid_tag_combination': require('./comparators/invalid-tag-combination'),
+  'water_feature_by_new_user': require('./comparators/water-feature-by-new-user')
 };
