@@ -3,7 +3,7 @@
   "fixtures": [
     {
       "description": "Test empty feature versions",
-      "expectedResult": {},
+      "expectedResult": {"result:osm_landmarks": false},
       "newVersion": null,
       "oldVersion": null
     },
@@ -24,7 +24,7 @@
     },
     {
       "description": "Test lake not present in landmarks",
-      "expectedResult": {},
+      "expectedResult": {"result:osm_landmarks": false},
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -52,7 +52,7 @@
     },
     {
       "description": "Test lake not present in landmarks",
-      "expectedResult": {},
+      "expectedResult": {"result:osm_landmarks": false},
       "newVersion": null,
       "oldVersion": {
         "type": "Feature",
@@ -80,7 +80,7 @@
     },
     {
       "description": "Test airport not present in landmarks",
-      "expectedResult": {},
+      "expectedResult": {"result:osm_landmarks": false},
       "newVersion": null,
       "oldVersion": {
         "type": "Feature",
@@ -108,7 +108,7 @@
     },
     {
       "description": "Test restaurant not present in landmarks",
-      "expectedResult": {},
+      "expectedResult": {"result:osm_landmarks": false},
       "newVersion": null,
       "oldVersion": {
         "type": "Feature",
