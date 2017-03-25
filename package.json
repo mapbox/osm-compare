@@ -30,6 +30,7 @@
     "csv": "^1.1.1",
     "d3-queue": "^3.0.3",
     "feature-filter": "^2.2.0",
+    "geojson-polygon-self-intersections": "^1.1.1",
     "geopoint": "^1.0.1",
     "levenshtein": "^1.0.5",
     "lodash": "^4.17.3",
