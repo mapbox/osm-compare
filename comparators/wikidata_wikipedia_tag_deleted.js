@@ -2,17 +2,16 @@
 
 module.exports = wikidata_wikipedia_tag_deleted;
 
-function wikidata_wikipedia_tag_deleted(newVersion, oldVersion, callback) {
-
-  if (!newVersion || !newVersion.properties) return callback(null, {});
-  if (!oldVersion || !oldVersion.properties) return callback(null, {});
+function wikidata_wikipedia_tag_deleted(newVersion, oldVersion) {
+  if (!newVersion || !newVersion.properties) return {};
+  if (!oldVersion || !oldVersion.properties) return {};
 
   if (('wikidata' in oldVersion.properties && !('wikidata' in newVersion.properties)) ||
      ('wikipedia' in oldVersion.properties && !('wikipedia' in newVersion.properties))) {
-    return callback(null, {
+    return {
       'result:wikidata_wikipedia_tag_deleted': true
-    });
+    };
   }
 
-  return callback(null, {});
+  return {};
 }

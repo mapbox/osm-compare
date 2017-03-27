@@ -1,5 +1,5 @@
 {
-  "compareFunction": "water-feature-by-new-user",
+  "compareFunction": "water_feature_by_new_user",
   "fixtures": [
     {
       "description": "Test new lake created by a new user",

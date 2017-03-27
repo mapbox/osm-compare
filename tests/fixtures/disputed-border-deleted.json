@@ -1,5 +1,5 @@
 {
-  "compareFunction": "disputed-border-deleted",
+  "compareFunction": "disputed_border_deleted",
   "fixtures": [
   {
     "description": "Checks for deleted disputed borders",

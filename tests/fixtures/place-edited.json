@@ -1,5 +1,5 @@
 {
-    "compareFunction": "place-edited",
+    "compareFunction": "place_edited",
     "fixtures": [
         {
             "description": "Flags place edited - geometry changed",

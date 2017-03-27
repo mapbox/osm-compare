@@ -1,5 +1,5 @@
 {
-  "compareFunction":"modified-place-wikidata",
+  "compareFunction":"modified_place_wikidata",
   "fixtures":[
     {
       "description":"wikidata tag modified",
