@@ -46,27 +46,27 @@ var lakeIds = [
 
 module.exports = majorLakeModified;
 
-function majorLakeModified(newVersion, oldVersion, callback) {
+function majorLakeModified(newVersion, oldVersion) {
   var obj = {};
   if (newVersion) {
     obj = newVersion;
   } else if (oldVersion) {
     obj = oldVersion;
   } else {
-    return callback(null, {});
+    return {};
   }
   if (!obj.properties || !obj.properties['osm:type'] || !obj.properties['osm:id']) {
-    return callback(null, {});
+    return {};
   }
   var props = obj.properties;
   var osmType = props['osm:type'];
   var osmId = props['osm:id'];
   if (osmType === 'relation' && lakeIds.indexOf(osmId) !== -1) {
-    return callback(null, {
-      'result:major-lake-modified': true,
+    return {
+      'result:major_lake_modified': true,
       'result:escalate': true
-    });
+    };
   } else {
-    return callback(null, {});
+    return {};
   }
 }
