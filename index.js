@@ -10,7 +10,7 @@ module.exports = {
   'large_building': wrapsync(require('./comparators/large-building')),
   'major_road_changed': require('./comparators/major_road_changed'),
   'path_road_changed': require('./comparators/path_road_changed'),
-  'major_lake_changed': require('./comparators/major-lake-modified'),
+  'major_lake_changed': wrapsync(require('./comparators/major-lake-modified')),
   'pokemon_footway': require('./comparators/pokemon-footway'),
   'place_edited': require('./comparators/place-edited'),
   'major_name_modification': require('./comparators/major-name-modification'),
