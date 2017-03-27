@@ -11,15 +11,15 @@
             "description": "Feature with valid highway tag",
             "newVersion": {"properties": {"highway" : "primary"}},
             "oldVersion": {},
-            "expectedResult": {
-                "result:common_tag_values": true
-            }
+            "expectedResult": {}
         },
         {
             "description": "Feature with invalid highway tag",
             "newVersion": {"properties": {"highway" : "random"}},
             "oldVersion": {},
-            "expectedResult": {}
+            "expectedResult": {
+                "result:commonTagValues": true
+            }
         }
     ]
 }
