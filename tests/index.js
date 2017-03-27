@@ -99,8 +99,8 @@ function processFixtureFile(assert, jsonData, callback) {
 
   var fixtureQueue = queue(5);  // Process more than one fixture in a file.
   // ToFix: "../" is not very intuitive.
-  var compareFunctionPath = path.join('../', 'comparators', jsonData.compareFunction);
-  var compareFunction = require(compareFunctionPath);
+  var compareFunction = comparators[jsonData.compareFunction];
+  if (typeof compareFunction !== 'function') console.error('Not compare function', jsonData.compareFunction);
   jsonData.fixtures.forEach(function (fixture) {
     fixtureQueue.defer(processFixture, assert, compareFunction, fixture);
   });

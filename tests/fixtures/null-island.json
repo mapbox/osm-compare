@@ -1,5 +1,5 @@
 {
-  "compareFunction": "null-island",
+  "compareFunction": "null_island",
   "fixtures": [
     {
       "description": "A way in null island",

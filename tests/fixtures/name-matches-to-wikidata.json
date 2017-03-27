@@ -1,5 +1,5 @@
 {
-  "compareFunction": "name-matches-to-wikidata",
+  "compareFunction": "name_matches_to_wikidata",
   "fixtures": [
     {
       "description": "Test OSM name different from Wikidata name",

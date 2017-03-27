@@ -1,5 +1,5 @@
 {
-  "compareFunction": "pokemon-footway",
+  "compareFunction": "pokemon_footway",
   "fixtures": [
     {
       "description": "Looking for highway = footway with version != 1 and new mapper",

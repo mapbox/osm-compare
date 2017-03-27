@@ -1,5 +1,5 @@
 {
-   "compareFunction":"large-building",
+   "compareFunction":"large_building",
    "fixtures":[
       {
          "Description":"This is a too large building input that should be caught",

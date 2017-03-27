@@ -1,5 +1,5 @@
 {
-  "compareFunction": "added-website",
+  "compareFunction": "addedWebsite",
   "fixtures": [
     {
       "description": "test node having website",
