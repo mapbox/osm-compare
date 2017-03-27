@@ -19,7 +19,7 @@ module.exports = {
   'pokemon_edits': wrapsync(require('./comparators/pokemon_edits')),
   'dragged_highway_waterway': require('./comparators/dragged_highway_waterway'),
   'added_place': wrapsync(require('./comparators/added_place')),
-  'modified_place_wikidata': require('./comparators/modified-place-wikidata'),
+  'modified_place_wikidata': wrapsync(require('./comparators/modified-place-wikidata')),
   'osm_landmarks': require('./comparators/osm-landmarks'),
   'modifiedMonument': require('./comparators/modifiedMonument'),
   'invalid_tag_combination': require('./comparators/invalid-tag-combination'),
