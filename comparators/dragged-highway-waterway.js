@@ -3,11 +3,11 @@
 module.exports = draggedHighwayWaterway;
 var Geopoint = require('geopoint');
 var threshold = 10;
-function draggedHighwayWaterway(newVersion, oldVersion, callback) {
+function draggedHighwayWaterway(newVersion, oldVersion) {
   var result = {};
 
   if (!newVersion) {
-    return callback(null, result);
+    return result;
   }
 
   if (newVersion.properties &&
@@ -26,5 +26,5 @@ function draggedHighwayWaterway(newVersion, oldVersion, callback) {
       }
     }
   }
-  callback(null, result);
+  return result;
 }
