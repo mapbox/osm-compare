@@ -1,5 +1,5 @@
 {
-  "compareFunction": "major-lake-modified",
+  "compareFunction": "major_lake_changed",
   "fixtures": [
     {
       "description": "major lake modified",

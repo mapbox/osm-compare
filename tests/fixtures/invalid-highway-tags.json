@@ -1,5 +1,5 @@
 {
-  "compareFunction": "invalid-highway-tags",
+  "compareFunction": "invalid_highway_tags",
   "fixtures": [
     {
       "description": "Looking for the highway with invalid tag highway=junction ",
