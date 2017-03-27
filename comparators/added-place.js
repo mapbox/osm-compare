@@ -2,23 +2,23 @@
 
 module.exports = addedPlace;
 
-function addedPlace(newVersion, oldVersion, callback) {
+function addedPlace(newVersion, oldVersion) {
   if (!newVersion) {
-    return callback(null, {});
+    return {};
   }
   if (oldVersion) {
     if ('place' in newVersion.properties && !('place' in oldVersion.properties)) {
       if (newVersion.properties['place'] === 'city' ||
             newVersion.properties['place'] === 'town' ||
             newVersion.properties['place'] === 'country') {
-        return callback(null, {'result:added-place': true});
+        return {'result:addedPlace': true};
       }
     }
   } else if ('place' in newVersion.properties &&
         (newVersion.properties['place'] === 'city' ||
          newVersion.properties['place'] === 'town' ||
          newVersion.properties['place'] === 'country')) {
-    return callback(null, {'result:added-place': true});
+    return {'result:addedPlace': true};
   }
-  return callback(null, {});
+  return {};
 }
