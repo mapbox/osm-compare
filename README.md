@@ -47,7 +47,7 @@ Compare functions output the following:
 * Push to a new branch on Github and create a Pull Request
 
 ### How do I test a single compare function against a new fixture?
-* `cd compare-geojson/tests/`
+* `cd osm-compare/tests/`
 * Create new fixture file in `tests/fixtures/` folder (check tests/fixtures/example.json for format)
 * Test your fixture with `node tests/test_compare_function.js tests/fixtures/example.json`
 
@@ -56,4 +56,4 @@ Compare functions output the following:
 - We use [Semantic Versioning Specification](http://semver.org/) for versioning releases.
 - Create an appropriate version of the npm package with `npm version [major|minor|patch]`.
 - Push the package tag commit with `git push --tags`
-- [Publish the NPM package](https://www.npmjs.com/package/compare-geojson) with `npm publish`
+- [Publish the NPM package](https://www.npmjs.com/package/osm-compare) with `npm publish`
