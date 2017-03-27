@@ -7,7 +7,8 @@
     "test": "TAP_TIMEOUT=600 tap --coverage tests/*.js",
     "lint": "eslint ./*/*.js",
     "pretest": "npm run lint",
-    "postinstall": "./scripts/download_landmarks.sh && python ./scripts/download_common_tag_values.py"
+    "postinstall": "./scripts/download_landmarks.sh",
+    "prepare-tags": "pip install -r requirements.txt && python ./scripts/download_common_tag_values.py"
   },
   "repository": {
     "type": "git",

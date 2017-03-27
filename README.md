@@ -1,5 +1,10 @@
 # osm-compare
 
+### Install
+
+* `npm install compare-geojson`
+
+### What is this?
 
 [![Circle CI](https://circleci.com/gh/mapbox/osm-compare.svg?style=svg)](https://circleci.com/gh/mapbox/osm-compare)
 
@@ -57,3 +62,9 @@ Compare functions output the following:
 - Create an appropriate version of the npm package with `npm version [major|minor|patch]`.
 - Push the package tag commit with `git push --tags`
 - [Publish the NPM package](https://www.npmjs.com/package/compare-geojson) with `npm publish`
+
+### Build tag metadata
+
+osm-compare uses [TagInfo](taginfo.openstreetmap.org) to fetch metadata about tag combinations and score. These are stored in `common_tag_values/`. To regenerate this:
+
+* `npm run prepare-tags`
