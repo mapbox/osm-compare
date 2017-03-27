@@ -1,5 +1,5 @@
 {
-    "compareFunction": "common_tag_values",
+    "compareFunction": "common-tag-values",
     "fixtures": [
         {
             "description": "Feature with no new version and old version",

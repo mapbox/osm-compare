@@ -39,6 +39,37 @@ test('Test basic fixture', function(assert) {
   });
 });
 
+test('Test export modules if hyphenated', function(assert) {
+  Object.keys(comparators).forEach(function(comparator) {
+    assert.ifError(!(/^[a-z]+(-[a-z]+)*$/.test(comparator)));
+  });
+  assert.end();
+});
+
+test('Test if exported compare functions available', function(assert) {
+  var dirname = path.join(__dirname, '../comparators/');
+  var files = fs.readdirSync(dirname);
+  Object.keys(comparators).forEach(function(comparator) {
+    var err = false;
+    if (files.indexOf(comparator + '.js') === -1)
+      err = true;
+    assert.ifError(err);
+  });
+  assert.end();
+});
+
+test('Test if compare function test present', function(assert) {
+  var dirname = path.join(__dirname, '/fixtures/');
+  var files = fs.readdirSync(dirname);
+  Object.keys(comparators).forEach(function(comparator) {
+    var err = false;
+    if (files.indexOf(comparator + '.json') === -1)
+      err = true;
+    assert.ifError(err);
+  });
+  assert.end();
+});
+
 function processFixtureFile(assert, jsonData, callback) {
   // Fixtures with empty string as compareFunction as run on all compare functions.
   if (jsonData.compareFunction === '') {

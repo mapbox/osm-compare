@@ -1,5 +1,5 @@
 {
-  "compareFunction": "path_road_changed",
+  "compareFunction": "path-road-changed",
   "fixtures": [
     {
         "description": "",

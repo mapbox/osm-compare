@@ -1,5 +1,5 @@
 {
-    "compareFunction": "name_modified",
+    "compareFunction": "name-modified",
     "fixtures": [
 {
    "description":"Description of this fixture",

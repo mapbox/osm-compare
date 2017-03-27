@@ -1,5 +1,5 @@
 {
-  "compareFunction": "wikidata_wikipedia_tag_deleted",
+  "compareFunction": "wikidata-wikipedia-tag-deleted",
   "fixtures": [
     {
       "description": "wikidata tag deleted",

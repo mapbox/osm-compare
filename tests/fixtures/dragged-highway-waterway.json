@@ -1,5 +1,5 @@
 {
-  "compareFunction": "dragged_highway_waterway",
+  "compareFunction": "dragged-highway-waterway",
   "fixtures": [
   {
     "description": "Checks for highways where nodes got dragged accidentally",

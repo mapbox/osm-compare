@@ -1,5 +1,5 @@
 {
-  "compareFunction": "added_place",
+  "compareFunction": "added-place",
   "fixtures": [
     {
       "description": "No old version, new version",

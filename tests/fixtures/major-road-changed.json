@@ -1,5 +1,5 @@
 {
-  "compareFunction": "major_road_changed",
+  "compareFunction": "major-road-changed",
   "fixtures": [
     {
       "description": "major road modified",

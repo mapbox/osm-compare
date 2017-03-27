@@ -1,5 +1,5 @@
 {
-    "compareFunction": "modifiedMonument",
+    "compareFunction": "modified-monument",
     "fixtures": [
         {
             "description": "Checks is monument is modified which is > version 10",

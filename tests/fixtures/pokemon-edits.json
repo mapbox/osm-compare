@@ -1,5 +1,5 @@
 {
-  "compareFunction": "pokemon_edits",
+  "compareFunction": "pokemon-edits",
   "fixtures": [
   {
     "description": "pokemon edits",
