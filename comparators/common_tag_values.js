@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var join = require('path').join;
 
 module.exports = commonTagValues;
 
@@ -16,7 +17,7 @@ function commonTagValues(newVersion, oldVersion, callback) {
     var tag = primaryTags[i];
 
     if (tag in newVersion.properties) {
-      var data = fs.readFileSync('common_tag_values/' + tag + '.json');
+      var data = fs.readFileSync(join(__dirname, '..', 'common_tag_values/' + tag + '.json'));
       var commonValues = JSON.parse(data.toString()).data;
       var value = newVersion.properties[tag];
       for (var j = commonValues.length - 1; j >= 0; j--) {
