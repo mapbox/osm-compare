@@ -1,7 +1,12 @@
 # osm-compare
 
 
+**DEPRECATED! Go to [@mapbox/osm-compare](https://www.npmjs.com/package/@mapbox/osm-compare)**
+
+---
+
 [![Circle CI](https://circleci.com/gh/mapbox/osm-compare.svg?style=svg)](https://circleci.com/gh/mapbox/osm-compare)
+
 
 
 Compare functions are small atomic functions that are designed identify what changed during a feature edit on OpenStreetMap. Compare functions can be broadly split up into two categories:
@@ -57,3 +62,7 @@ Compare functions output the following:
 - Create an appropriate version of the npm package with `npm version [major|minor|patch]`.
 - Push the package tag commit with `git push --tags`
 - [Publish the NPM package](https://www.npmjs.com/package/compare-geojson) with `npm publish`
+
+---
+
+**DEPRECATED! Go to [@mapbox/osm-compare](https://www.npmjs.com/package/@mapbox/osm-compare)**
