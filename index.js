@@ -2,7 +2,6 @@
 
 module.exports = {
   'landmark_score': require('./comparators/landmark_score'),
-  'name_modified': require('./comparators/name_modified'),
   'disputed_border_tag_changed': require('./comparators/disputed-border-tag-changed'),
   'disputed_border_deleted': require('./comparators/disputed-border-deleted'),
   'invalid_highway_tags': require('./comparators/invalid-highway-tags'),
