@@ -1,6 +1,7 @@
 # osm-compare
 
 
+![](https://img.shields.io/npm/v/@mapbox/osm-compare.svg)
 [![Circle CI](https://circleci.com/gh/mapbox/osm-compare.svg?style=svg)](https://circleci.com/gh/mapbox/osm-compare)
 
 
