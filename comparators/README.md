@@ -44,7 +44,7 @@ Reports when `name` tag is modified for a feature having wikidata / wikipedia ta
 
 Reports when a road belonging to one of the major roads listed in compare-function is modified or deleted. Considers only version > 10.
 
-### name_modified
+### name_modified _disabled_
 
 Reports when name tag (any language) is added, modified or deleted.
 
