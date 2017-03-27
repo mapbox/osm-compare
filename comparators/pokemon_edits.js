@@ -8,13 +8,13 @@ function hasPokename(name) {
     name.match(/(P|p)ok(é|e)/g);
 }
 
-function pokemonEdits(newVersion, oldVersion, callback) {
+function pokemonEdits(newVersion, oldVersion) {
   var result = {};
   result['result:pokemonEdits'] = {};
 
   if (!newVersion && !oldVersion) {
     // None of old version or new Version present
-    return callback(null, {});
+    return {};
   }
   if (newVersion) {
     var pass = filtered_tags.reduce(function(accum, tag) {
@@ -26,12 +26,12 @@ function pokemonEdits(newVersion, oldVersion, callback) {
         if (prop.indexOf('name') === 0) {
           if (hasPokename(newVersion.properties[prop])) {
             result['result:pokemonEdits'] = true;
-            return callback(null, result);
+            return result;
           }
         }
       }
     }
   }
 
-  callback(null, {});
+  return {};
 }
