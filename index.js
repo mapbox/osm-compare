@@ -17,7 +17,7 @@ module.exports = {
   'wikidata_wikipedia_tag_deleted': wrapsync(require('./comparators/wikidata_wikipedia_tag_deleted')),
   'null_island': require('./comparators/null-island'),
   'pokemon_edits': wrapsync(require('./comparators/pokemon_edits')),
-  'dragged_highway_waterway': require('./comparators/dragged_highway_waterway'),
+  'dragged_highway_waterway': wrapsync(require('./comparators/dragged_highway_waterway')),
   'added_place': wrapsync(require('./comparators/added_place')),
   'modified_place_wikidata': wrapsync(require('./comparators/modified-place-wikidata')),
   'osm_landmarks': require('./comparators/osm-landmarks'),
