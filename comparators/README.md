@@ -84,3 +84,6 @@ Reports when a feature has two uncommon primary tag combinations. Ex: `0.06 %` o
 
 ### water-feature-by-new-user
 Report when a new user creates a new water feature.
+
+### invalid-tag-modification
+Reports when a feature's primary tag is modified between newVersion and oldVersion of the feature.
