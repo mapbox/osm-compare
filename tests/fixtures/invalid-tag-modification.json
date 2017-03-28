@@ -1,0 +1,99 @@
+{
+  "compareFunction": "invalid-tag-modification",
+  "fixtures": [
+    {
+      "description": "Test modification to primary tag of a feature",
+      "expectedResult": {
+        "result:invalid_tag_modification": true
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "yes"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "railway": "yes"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test modification to primary tag's value of a feature",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "yes"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "no"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test feature with no primary tag",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test deletion of primary tag of a feature",
+      "expectedResult": {"result:invalid_tag_modification":true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru",
+          "highway": "yes"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test addition of primary tag of a feature",
+      "expectedResult": {"result:invalid_tag_modification":true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru",
+          "highway": "yes"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru"
+        },
+        "geometry": null
+      }
+    }
+  ]
+}
