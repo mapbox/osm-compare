@@ -20,7 +20,6 @@ module.exports = {
   'dragged_highway_waterway': wrapsync(require('./comparators/dragged_highway_waterway')),
   'added_place': wrapsync(require('./comparators/added_place')),
   'modified_place_wikidata': wrapsync(require('./comparators/modified_place_wikidata')),
-  'osm_landmarks': require('./comparators/osm_landmarks'),
   'modified_monument': wrapsync(require('./comparators/modified_monument')),
   'invalid_tag_combination': require('./comparators/invalid_tag_combination'),
   'water_feature_by_new_user': require('./comparators/water_feature_by_new_user'),
