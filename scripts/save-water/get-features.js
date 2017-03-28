@@ -8,7 +8,7 @@ var request = require('request');
 
 if (!argv.lakes) {
     console.log('');
-    console.log('node features.js OPTIONS');
+    console.log('node get-features.js OPTIONS');
     console.log('');
     console.log('  OPTIONS');
     console.log('    --lakes lakes.json');
@@ -39,20 +39,25 @@ function getUserDetails(user, callback) {
 
 function getFeatures(feature, callback) {
     var features = [];
-    features.push(feature.properties['@id']);
-    features.push(feature.properties['@type']);
-    features.push(feature.properties['@version']);
+    if (feature.properties.hasOwnProperty('from_way') && (feature.properties['from_way'] === false)) {
+        features.push(feature.properties['orig_id']);
+        features.push('relation');
+    } else {
+        features.push(feature.properties['id']);
+        features.push(feature.properties['type']);
+    }
+    features.push(feature.properties['version']);
     features.push(turf.area(feature).toFixed(2));
     features.push(turf.coordAll(feature).length);
     features.push(turf.area(turf.bboxPolygon(turf.bbox(feature))).toFixed(2));
     features.push(feature.properties.hasOwnProperty('name') ? feature.properties['name'] : undefined);
-    features.push(feature.properties['@changeset']);
-    features.push(feature.properties['@timestamp']);
-    features.push(feature.properties['@uid']);
-    features.push(feature.properties['@user']);
+    features.push(feature.properties['changeset']);
+    features.push(feature.properties['timestamp_seconds_since_epoch']);
+    features.push(feature.properties['uid']);
+    features.push(feature.properties['user']);
 
     var userQ = queue(1);
-    userQ.defer(getUserDetails, feature.properties['@user']);
+    userQ.defer(getUserDetails, feature.properties['user']);
     userQ.awaitAll(function (error, userDetails) {
         userDetails = userDetails[0];
         features.push(userDetails['changeset_count']);
