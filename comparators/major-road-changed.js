@@ -30,7 +30,7 @@ function isMajorRoad(feature) {
 
 function majorRoadChanged(newVersion, oldVersion, callback) {
   var result = {};
-  result['result:major_road_changed'] = {};
+  result['result:major-road-changed'] = {};
 
   if (!oldVersion && !newVersion) {
     return callback(null, {});
@@ -49,9 +49,9 @@ function majorRoadChanged(newVersion, oldVersion, callback) {
 
     if (oldVersionNumber > TRIGGER_AFTER_VERSION && isMajorRoad(oldVersion)) {
       if (oldHighwayType !== newHighwayType) {
-        result['result:major_road_changed'].modified = true;
-        result['result:major_road_changed'].from = oldHighwayType;
-        result['result:major_road_changed'].to = newHighwayType;
+        result['result:major-road-changed'].modified = true;
+        result['result:major-road-changed'].from = oldHighwayType;
+        result['result:major-road-changed'].to = newHighwayType;
 
         return callback(null, result);
       }
@@ -60,8 +60,8 @@ function majorRoadChanged(newVersion, oldVersion, callback) {
 
   if (oldVersion && !newVersion) {
     if (oldVersionNumber > TRIGGER_AFTER_VERSION && isMajorRoad(oldVersion)) {
-      result['result:major_road_changed'].deleted = true;
-      result['result:major_road_changed'].version = oldVersionNumber;
+      result['result:major-road-changed'].deleted = true;
+      result['result:major-road-changed'].version = oldVersionNumber;
 
       return callback(null, result);
     }

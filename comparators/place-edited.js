@@ -37,7 +37,7 @@ function placeEdited(newVersion, oldVersion, callback) {
   if (isPlace && (isDeleted || isAdded || geometryChanged || nameChanged)) {
     // One could set the value to something more specific rather than 'true'
     return callback(null, {
-      'result:place_edited': true
+      'result:place-edited': true
     });
   } else {
     return callback(null, {});

@@ -5,7 +5,7 @@
     "description": "Checks for deleted disputed borders",
     "newVersion": null ,
     "oldVersion": {
-"type": "Feature",
+        "type": "Feature",
         "id": "way!304171558!6",
         "properties": {
             "admin_level": "2",
@@ -222,7 +222,7 @@
 
     },
        "expectedResult": {
-      "result:disputed_border_deleted":true  }
+      "result:disputed-border-deleted":true  }
   }
   ]
 }

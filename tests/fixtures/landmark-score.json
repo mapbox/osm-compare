@@ -148,7 +148,7 @@
         }
       },
       "expectedResult": {
-        "result:landmark_score": true
+        "result:landmark-score": true
       }
     },
     {

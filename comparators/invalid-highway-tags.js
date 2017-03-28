@@ -48,7 +48,7 @@ function invalidHighwayTags(newVersion, oldVersion, callback) {
     'turning_circle'
   ];
   if (newVersion && newVersion.properties && newVersion.properties['highway'] && validHighwayTags.indexOf(newVersion.properties.highway) === -1) {
-    result['result:invalidHighwayTags'] = true;
+    result['result:invalid-highway-tags'] = true;
   }
   callback(null, result);
 }

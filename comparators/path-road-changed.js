@@ -19,7 +19,7 @@ function isPathRoad(feature) {
 
 function pathRoadChanged(newVersion, oldVersion, callback) {
   var result = {};
-  result['result:path_road_changed'] = {};
+  result['result:path-road-changed'] = {};
 
   if (!oldVersion && !newVersion) {
     return callback(null, {});
@@ -32,7 +32,7 @@ function pathRoadChanged(newVersion, oldVersion, callback) {
 
   if (!oldVersion && newVersion) {
     if (isPathRoad(newVersion)) {
-      result['result:path_road_changed'].added = true;
+      result['result:path-road-changed'].added = true;
 
       return callback(null, result);
     }
@@ -44,9 +44,9 @@ function pathRoadChanged(newVersion, oldVersion, callback) {
 
     if (isPathRoad(oldVersion) || isPathRoad(newVersion)) {
       if (oldHighwayType !== newHighwayType) {
-        result['result:path_road_changed'].modified = true;
-        result['result:path_road_changed'].from = oldHighwayType;
-        result['result:path_road_changed'].to = newHighwayType;
+        result['result:path-road-changed'].modified = true;
+        result['result:path-road-changed'].from = oldHighwayType;
+        result['result:path-road-changed'].to = newHighwayType;
 
         return callback(null, result);
       }

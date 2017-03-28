@@ -17,11 +17,11 @@ function disputedBorderTagChanged(newVersion, oldVersion, callback) {
   */
     if (oldVersion.properties && oldVersion.properties['disputed']) {
       if (oldVersion.properties['disputed'] !== null) {
-        result['result:disputed_border_tag_modified'] = true;
+        result['result:disputed-border-tag-changed'] = true;
       }
     }
 
-  } else { return callback(null, { }); }
+  } else { return callback(null, {}); }
 
 
   callback(null, result);

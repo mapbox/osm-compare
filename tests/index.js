@@ -5,6 +5,7 @@ var test = require('tap').test;
 var queue = require('queue-async');
 var path = require('path');
 var fs = require('fs');
+var isEmpty = require('lodash').isEmpty;
 
 var comparators = require('../index');
 
@@ -66,6 +67,26 @@ test('Test if compare function test present', function(assert) {
     if (files.indexOf(comparator + '.json') === -1)
       err = true;
     assert.ifError(err);
+  });
+  assert.end();
+});
+
+test('Test results returned by compare functions', function(assert) {
+  /* This test mandates compare function to return either empty result or result
+    with `result:cf-name atleast`*/
+
+  var dirname = path.join(__dirname, '/fixtures/');
+  Object.keys(comparators).forEach(function(comparator) {
+    var jsonData = JSON.parse(fs.readFileSync(path.join(dirname, comparator + '.json'), 'utf-8'));
+    var success_result = true;
+    jsonData.fixtures.forEach(function (fixture) {
+      if (!isEmpty(fixture.expectedResult)) {
+        if (!(fixture.expectedResult.hasOwnProperty('result:' + comparator))) {
+          success_result = false;
+        }
+      }
+    });
+    assert.equal(success_result, true, 'Success result present');
   });
   assert.end();
 });

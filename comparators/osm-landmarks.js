@@ -37,7 +37,7 @@ function osmLandmarks(newVersion, oldVersion, callback) {
       for (var j = 0; j < results[i].length; j++) {
         if (results[i][j][0] === featureID && results[i][j][1] === featureType) {
           return callback(null, {
-            'result:osm_landmarks': true
+            'result:osm-landmarks': true
           });
         }
       }

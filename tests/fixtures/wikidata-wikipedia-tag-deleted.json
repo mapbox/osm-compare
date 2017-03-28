@@ -16,7 +16,7 @@
         "geometry": null
       },
       "expectedResult": {
-        "result:wikidata_wikipedia_tag_deleted": true
+        "result:wikidata-wikipedia-tag-deleted": true
       }
     },
     {
@@ -50,7 +50,7 @@
         "geometry": null
       },
       "expectedResult": {
-        "result:wikidata_wikipedia_tag_deleted": true
+        "result:wikidata-wikipedia-tag-deleted": true
       }
     }
   ]

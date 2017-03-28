@@ -440,7 +440,7 @@
     },
     "expectedResult": {
 
-      "result:disputed_border_tag_modified": true    
+      "result:disputed-border-tag-changed": true    
 }
   }  ]
 }

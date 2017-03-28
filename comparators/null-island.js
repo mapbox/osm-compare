@@ -15,6 +15,6 @@ function nullIsland(newVersion, oldVersion, callback) {
   var inside = turfInside(center, polygon);
 
   callback(null, {
-    'result:null_island': inside
+    'result:null-island': inside
   });
 }

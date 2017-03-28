@@ -51,7 +51,7 @@ function nameMatchesToWikidata(newVersion, oldVersion, callback) {
         var wikidataAliasNames = getWikidataAliasNames(wikidataFeature, wikidataID);
 
         if ((osmName !== wikidataName) && (wikidataAliasNames.indexOf(osmName) === -1)) return callback(null, {
-          'result:name_matches_to_wikidata': false
+          'result:name-matches-to-wikidata': false
         });
       }
       return callback(null, result);

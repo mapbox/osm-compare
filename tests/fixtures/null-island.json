@@ -22,7 +22,7 @@
       },
       "oldVersion": null,
       "expectedResult": {
-        "result:null_island": true
+        "result:null-island": true
       }
     },
     {
@@ -46,7 +46,7 @@
       },
       "oldVersion": null,
       "expectedResult": {
-        "result:null_island": false
+        "result:null-island": false
       }
     }
   ]

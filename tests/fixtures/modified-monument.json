@@ -34,7 +34,7 @@
                 }
             },
             "expectedResult": {
-                "result:modifiedMonument": true
+                "result:modified-monument": true
             }
         },
         {
@@ -56,7 +56,7 @@
                 }
             },
             "expectedResult": {
-                "result:modifiedMonument": true
+                "result:modified-monument": true
             }
         },
         {

@@ -48,7 +48,7 @@
             }
         },
     "expectedResult" : {
-      "result:pokemonEdits": true
+      "result:pokemon-edits": true
     }
   },
   {

@@ -4,7 +4,7 @@
     {
       "description": "Test new lake created by a new user",
       "expectedResult": {
-        "result:water_feature_by_new_user": true
+        "result:water-feature-by-new-user": true
       },
       "newVersion": {
         "type": "Feature",
@@ -80,7 +80,7 @@
     {
       "description": "Test new pond created by a new user",
       "expectedResult": {
-        "result:water_feature_by_new_user": true
+        "result:water-feature-by-new-user": true
       },
       "newVersion": {
         "type": "Feature",

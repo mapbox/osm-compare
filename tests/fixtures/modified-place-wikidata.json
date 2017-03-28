@@ -20,7 +20,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified-place-wikidata": true
       }
     },
     {
@@ -41,7 +41,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified-place-wikidata": true
       }
     },
     {
@@ -62,7 +62,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified-place-wikidata": true
       }
     },
     {
@@ -83,7 +83,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified-place-wikidata": true
       }
     },
     {

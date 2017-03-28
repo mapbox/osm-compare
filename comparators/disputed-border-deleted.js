@@ -15,9 +15,9 @@ function disputedBorderDeleted(newVersion, oldVersion, callback) {
     Creating a result object
   */
     if (oldVersion.properties && oldVersion.properties['disputed']) {
-      result['result:disputed_border_deleted'] = true;
+      result['result:disputed-border-deleted'] = true;
     }
-  } else { return callback(null, { }); }
+  } else { return callback(null, {}); }
 
 
   callback(null, result);

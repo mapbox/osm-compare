@@ -4,7 +4,7 @@
     {
       "description": "Test OSM name different from Wikidata name",
       "expectedResult": {
-        "result:name_matches_to_wikidata": false
+        "result:name-matches-to-wikidata": false
       },
       "newVersion": {
         "type": "Feature",
@@ -77,7 +77,7 @@
     {
       "description": "Test new feature with Wikidata",
       "expectedResult": {
-        "result:name_matches_to_wikidata": false
+        "result:name-matches-to-wikidata": false
       },
       "newVersion": {
         "type": "Feature",

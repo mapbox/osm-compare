@@ -43,7 +43,7 @@ function waterFeatureByNewUser(newVersion, oldVersion, callback) {
       if (error) return callback(null, {});
 
       if (userDetails['changeset_count'] <= MINIMUM_CHANGESET_COUNT) {
-        return callback(null, {'result:water_feature_by_new_user': true});
+        return callback(null, {'result:water-feature-by-new-user': true});
       } else {
         return callback(null, {});
       }

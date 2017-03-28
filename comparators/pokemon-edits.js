@@ -10,7 +10,7 @@ function hasPokename(name) {
 
 function pokemonEdits(newVersion, oldVersion, callback) {
   var result = {};
-  result['result:pokemonEdits'] = {};
+  result['result:pokemon-edits'] = {};
 
   if (!newVersion && !oldVersion) {
     // None of old version or new Version present
@@ -25,7 +25,7 @@ function pokemonEdits(newVersion, oldVersion, callback) {
       for (var prop in newVersion.properties) {
         if (prop.indexOf('name') === 0) {
           if (hasPokename(newVersion.properties[prop])) {
-            result['result:pokemonEdits'] = true;
+            result['result:pokemon-edits'] = true;
             return callback(null, result);
           }
         }

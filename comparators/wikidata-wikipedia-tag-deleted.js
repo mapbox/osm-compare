@@ -10,7 +10,7 @@ function wikidata_wikipedia_tag_deleted(newVersion, oldVersion, callback) {
   if (('wikidata' in oldVersion.properties && !('wikidata' in newVersion.properties)) ||
      ('wikipedia' in oldVersion.properties && !('wikipedia' in newVersion.properties))) {
     return callback(null, {
-      'result:wikidata_wikipedia_tag_deleted': true
+      'result:wikidata-wikipedia-tag-deleted': true
     });
   }
 

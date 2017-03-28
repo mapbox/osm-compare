@@ -534,7 +534,7 @@
         }
       },
       "expectedResult": {
-        "result:major_lake_modified": true,
+        "result:major-lake-modified": true,
         "result:escalate": true
       }
     },

@@ -534,7 +534,7 @@
         }
       },
       "expectedResult": {
-        "result:major_road_changed": {
+        "result:major-road-changed": {
           "modified": true,
           "from": "secondary",
           "to": "tertiary"
@@ -810,7 +810,7 @@
         }
       },
       "expectedResult": {
-        "result:major_road_changed": {
+        "result:major-road-changed": {
           "deleted": true,
           "version": 23
         }

@@ -21,7 +21,7 @@ function commonTagValues(newVersion, oldVersion, callback) {
       var value = newVersion.properties[tag];
       for (var j = commonValues.length - 1; j >= 0; j--) {
         if (commonValues[j]['value'] === value && commonValues[j]['count'] > 10000) {
-          result['result:commonTagValues'] = true;
+          result['result:common-tag-values'] = true;
         }
       }
     }

@@ -28,7 +28,7 @@ function invalidTagCombination(newVersion, oldVersion, callback) {
 
         var count = parseFloat(rows[rowIndex][columnIndex]);
 
-        if (isNaN(count) || (count < MIN_COUNT)) return callback(null, {'result:invalid_tag_combination': true});
+        if (isNaN(count) || (count < MIN_COUNT)) return callback(null, {'result:invalid-tag-combination': true});
       }
     }
     return callback(null, result);

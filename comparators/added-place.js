@@ -11,14 +11,14 @@ function addedPlace(newVersion, oldVersion, callback) {
       if (newVersion.properties['place'] === 'city' ||
             newVersion.properties['place'] === 'town' ||
             newVersion.properties['place'] === 'country') {
-        return callback(null, {'result:addedPlace': true});
+        return callback(null, {'result:added-place': true});
       }
     }
   } else if ('place' in newVersion.properties &&
         (newVersion.properties['place'] === 'city' ||
          newVersion.properties['place'] === 'town' ||
          newVersion.properties['place'] === 'country')) {
-    return callback(null, {'result:addedPlace': true});
+    return callback(null, {'result:added-place': true});
   }
   return callback(null, {});
 }

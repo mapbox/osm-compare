@@ -20,14 +20,14 @@ function majorNameModification(newVersion, oldVersion, callback) {
   process.stderr.write('# version ' + newVersion.properties['osm:version']);
   if (modification >= 50 && newVersion.properties['osm:version'] > 10) {
     return callback(null, {
-      'result:major_name_modification': true,
+      'result:major-name-modification': true,
       'result:levenshtein_distance': distance,
       'result:escalate': true
     });
   }
 
   return callback(null, {
-    'result:major_name_modification': true,
+    'result:major-name-modification': true,
     'result:levenshtein_distance': distance
   });
 }

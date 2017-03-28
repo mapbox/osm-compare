@@ -41,7 +41,7 @@ function landmark_score(newVersion, oldVersion, callback) {
       }
 
       if (record) {
-        result['result:landmark_score'] = true;
+        result['result:landmark-score'] = true;
       }
       db.close();
       callback(null, result);
@@ -61,7 +61,7 @@ function landmark_score(newVersion, oldVersion, callback) {
       }
 
       if (record) {
-        result['result:landmark_score'] = true;
+        result['result:landmark-score'] = true;
       }
       db.close();
       callback(null, result);

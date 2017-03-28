@@ -12,7 +12,7 @@
             "newVersion": {"properties": {"highway" : "primary"}},
             "oldVersion": {},
             "expectedResult": {
-                "result:commonTagValues": true
+                "result:common-tag-values": true
             }
         },
         {
