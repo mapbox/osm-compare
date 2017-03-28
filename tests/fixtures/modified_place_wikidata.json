@@ -1,5 +1,5 @@
 {
-  "compareFunction":"modified-place-wikidata",
+  "compareFunction":"modified_place_wikidata",
   "fixtures":[
     {
       "description":"wikidata tag modified",
@@ -20,7 +20,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified_place_wikidata": true
       }
     },
     {
@@ -41,7 +41,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified_place_wikidata": true
       }
     },
     {
@@ -62,7 +62,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified_place_wikidata": true
       }
     },
     {
@@ -83,7 +83,7 @@
         "geometry":null
       },
       "expectedResult":{
-        "result:modifiedPlaceWikidata": true
+        "result:modified_place_wikidata": true
       }
     },
     {

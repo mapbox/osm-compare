@@ -1,12 +1,12 @@
 'use strict';
 module.exports = disputedBorderTagChanged;
 
-function disputedBorderTagChanged(newVersion, oldVersion, callback) {
+function disputedBorderTagChanged(newVersion, oldVersion) {
   var result = {};
 
   if (!newVersion && !oldVersion) {
   // None of old version or new Version present
-    return callback(null, {});
+    return {};
   }
   if (newVersion && oldVersion) {
   // Both new Version and old Version are present, which indicates feature has been modified
@@ -17,12 +17,11 @@ function disputedBorderTagChanged(newVersion, oldVersion, callback) {
   */
     if (oldVersion.properties && oldVersion.properties['disputed']) {
       if (oldVersion.properties['disputed'] !== null) {
-        result['result:disputed_border_tag_modified'] = true;
+        result['result:disputed_border_tag_changed'] = true;
       }
     }
 
-  } else { return callback(null, { }); }
+  } else { return {}; }
 
-
-  callback(null, result);
+  return result;
 }

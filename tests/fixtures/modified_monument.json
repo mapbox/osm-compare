@@ -1,5 +1,5 @@
 {
-    "compareFunction": "modifiedMonument",
+    "compareFunction": "modified_monument",
     "fixtures": [
         {
             "description": "Checks is monument is modified which is > version 10",
@@ -34,7 +34,7 @@
                 }
             },
             "expectedResult": {
-                "result:modifiedMonument": true
+                "result:modified_monument": true
             }
         },
         {
@@ -56,7 +56,7 @@
                 }
             },
             "expectedResult": {
-                "result:modifiedMonument": true
+                "result:modified_monument": true
             }
         },
         {

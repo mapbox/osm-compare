@@ -1,5 +1,5 @@
 {
-  "compareFunction": "major-name-modification",
+  "compareFunction": "major_name_modification",
   "fixtures": [
     {
       "description": "Test no name modification",

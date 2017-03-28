@@ -2,14 +2,14 @@
 
 module.exports = addedWebsite;
 
-function addedWebsite(newVersion, oldVersion, callback) {
+function addedWebsite(newVersion, oldVersion) {
   if (oldVersion && oldVersion.properties && newVersion && newVersion.properties && oldVersion.properties.website === newVersion.properties.website) {
-    callback(null, {});
+    return {};
   } else if (newVersion && newVersion.properties && 'website' in newVersion.properties) {
-    callback(null, {'result:added-website': true});
+    return {'result:added_website': true};
   } else if (oldVersion && oldVersion.properties && ('website' in oldVersion.properties) && newVersion && newVersion.properties && !('website' in newVersion.properties)) {
-    callback(null, {'result:added-website': true});
+    return {'result:added_website': true};
   } else {
-    callback(null, {});
+    return {};
   }
 }

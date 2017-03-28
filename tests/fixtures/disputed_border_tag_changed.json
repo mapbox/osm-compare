@@ -1,5 +1,5 @@
 {
-  "compareFunction": "disputed-border-tag-changed",
+  "compareFunction": "disputed_border_tag_changed",
   "fixtures": [
   {
     "description": "Checks for tag changes for disputed borders",
@@ -440,7 +440,7 @@
     },
     "expectedResult": {
 
-      "result:disputed_border_tag_modified": true    
+      "result:disputed_border_tag_changed": true    
 }
   }  ]
 }

@@ -28,7 +28,7 @@
       },
       "oldVersion": null,
       "expectedResult": {
-        "result:addedPlace": true
+        "result:added_place": true
       }
     },
     {
@@ -67,7 +67,7 @@
         }
       },
       "expectedResult": {
-        "result:addedPlace": true
+        "result:added_place": true
       }
     },
     {

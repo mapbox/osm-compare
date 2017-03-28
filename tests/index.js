@@ -5,6 +5,7 @@ var test = require('tap').test;
 var queue = require('queue-async');
 var path = require('path');
 var fs = require('fs');
+var isEmpty = require('lodash').isEmpty;
 
 var comparators = require('../index');
 
@@ -39,6 +40,59 @@ test('Test basic fixture', function(assert) {
   });
 });
 
+test('Check if exported modules use underscore', function(assert) {
+  Object.keys(comparators).forEach(function(comparator) {
+    assert.ifError(!(/^[a-z]+(_[a-z]+)*$/.test(comparator)));
+  });
+  assert.end();
+});
+
+test('Check if exported compare functions are available', function(assert) {
+  var dirname = path.join(__dirname, '../comparators/');
+  var files = fs.readdirSync(dirname);
+  Object.keys(comparators).forEach(function(comparator) {
+    var err = false;
+    if (files.indexOf(comparator + '.js') === -1) {
+      err = true;
+    }
+    assert.ifError(err);
+  });
+  assert.end();
+});
+
+test('Check if all compare functions have fixtures', function(assert) {
+  var dirname = path.join(__dirname, '/fixtures/');
+  var files = fs.readdirSync(dirname);
+  Object.keys(comparators).forEach(function(comparator) {
+    var err = false;
+    if (files.indexOf(comparator + '.json') === -1)
+      err = true;
+    assert.ifError(err);
+  });
+  assert.end();
+});
+
+test('Check if result returned by compare functions matches the name', function(assert) {
+  /* This test mandates compare function to return either empty result or result
+    with `result:cf-name atleast`*/
+
+  var dirname = path.join(__dirname, '/fixtures/');
+  Object.keys(comparators).forEach(function(comparator) {
+    var jsonData = JSON.parse(fs.readFileSync(path.join(dirname, comparator + '.json'), 'utf-8'));
+    var success_result = true;
+    jsonData.fixtures.forEach(function (fixture) {
+      if (!isEmpty(fixture.expectedResult)) {
+        if (!(fixture.expectedResult.hasOwnProperty('result:' + comparator))) {
+          console.log(comparator);
+          success_result = false;
+        }
+      }
+    });
+    assert.equal(success_result, true, 'Success result present');
+  });
+  assert.end();
+});
+
 function processFixtureFile(assert, jsonData, callback) {
   // Fixtures with empty string as compareFunction as run on all compare functions.
   if (jsonData.compareFunction === '') {
@@ -47,8 +101,8 @@ function processFixtureFile(assert, jsonData, callback) {
 
   var fixtureQueue = queue(5);  // Process more than one fixture in a file.
   // ToFix: "../" is not very intuitive.
-  var compareFunctionPath = path.join('../', 'comparators', jsonData.compareFunction);
-  var compareFunction = require(compareFunctionPath);
+  var compareFunction = comparators[jsonData.compareFunction];
+  if (typeof compareFunction !== 'function') console.error('Not compare function', jsonData.compareFunction);
   jsonData.fixtures.forEach(function (fixture) {
     fixtureQueue.defer(processFixture, assert, compareFunction, fixture);
   });

@@ -1,5 +1,5 @@
 {
-  "compareFunction": "osm-landmarks",
+  "compareFunction": "osm_landmarks",
   "fixtures": [
     {
       "description": "Test empty feature versions",

@@ -17,24 +17,24 @@ function isPathRoad(feature) {
   return PATH_ROAD_TYPES.indexOf(highwayType) !== -1;
 }
 
-function pathRoadChanged(newVersion, oldVersion, callback) {
+function pathRoadChanged(newVersion, oldVersion) {
   var result = {};
   result['result:path_road_changed'] = {};
 
   if (!oldVersion && !newVersion) {
-    return callback(null, {});
+    return {};
   }
 
   if (oldVersion && !newVersion) {
     // Don't care about path road deletions.
-    return callback(null, {});
+    return {};
   }
 
   if (!oldVersion && newVersion) {
     if (isPathRoad(newVersion)) {
       result['result:path_road_changed'].added = true;
 
-      return callback(null, result);
+      return result;
     }
   }
 
@@ -48,12 +48,12 @@ function pathRoadChanged(newVersion, oldVersion, callback) {
         result['result:path_road_changed'].from = oldHighwayType;
         result['result:path_road_changed'].to = newHighwayType;
 
-        return callback(null, result);
+        return result;
       }
     }
   }
 
-  return callback(null, {});
+  return {};
 }
 
 module.exports = pathRoadChanged;

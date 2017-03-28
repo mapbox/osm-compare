@@ -1,5 +1,5 @@
 {
-  "compareFunction": "added-website",
+  "compareFunction": "added_website",
   "fixtures": [
     {
       "description": "test node having website",
@@ -18,7 +18,7 @@
       },
       "oldVersion": null,
       "expectedResult": {
-        "result:added-website": true
+        "result:added_website": true
       }
     },
     {
@@ -64,7 +64,7 @@
         }
       },
       "expectedResult": {
-        "result:added-website": true
+        "result:added_website": true
       }
     },
     {
@@ -94,7 +94,7 @@
         }
       },
       "expectedResult": {
-        "result:added-website": true
+        "result:added_website": true
       }
     },
     {
@@ -122,7 +122,7 @@
         }
       },
       "expectedResult": {
-        "result:added-website": true
+        "result:added_website": true
       }
     },
     {

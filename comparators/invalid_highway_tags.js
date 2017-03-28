@@ -1,7 +1,7 @@
 'use strict';
 module.exports = invalidHighwayTags;
 
-function invalidHighwayTags(newVersion, oldVersion, callback) {
+function invalidHighwayTags(newVersion, oldVersion) {
   var result = {};
   var validHighwayTags = [
     'motorway',
@@ -48,8 +48,8 @@ function invalidHighwayTags(newVersion, oldVersion, callback) {
     'turning_circle'
   ];
   if (newVersion && newVersion.properties && newVersion.properties['highway'] && validHighwayTags.indexOf(newVersion.properties.highway) === -1) {
-    result['result:invalidHighwayTags'] = true;
+    result['result:invalid_highway_tags'] = true;
   }
-  callback(null, result);
+  return result;
 }
 

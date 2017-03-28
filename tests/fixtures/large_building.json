@@ -1,5 +1,5 @@
 {
-   "compareFunction":"large-building",
+   "compareFunction":"large_building",
    "fixtures":[
       {
          "Description":"This is a too large building input that should be caught",
@@ -38,7 +38,7 @@
               }
          },
          "expectedResult":{
-           "result:large-building": 143145029782.25003
+           "result:large_building": 143145029782.25003
          }
       },
       {

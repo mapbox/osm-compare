@@ -1,11 +1,11 @@
 {
-  "compareFunction": "disputed-border-deleted",
+  "compareFunction": "disputed_border_deleted",
   "fixtures": [
   {
     "description": "Checks for deleted disputed borders",
     "newVersion": null ,
     "oldVersion": {
-"type": "Feature",
+        "type": "Feature",
         "id": "way!304171558!6",
         "properties": {
             "admin_level": "2",

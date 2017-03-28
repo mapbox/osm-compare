@@ -1,5 +1,5 @@
 {
-  "compareFunction": "invalid-highway-tags",
+  "compareFunction": "invalid_highway_tags",
   "fixtures": [
     {
       "description": "Looking for the highway with invalid tag highway=junction ",
@@ -32,7 +32,7 @@
       },
       "oldVersion": null,
       "expectedResult": {
-        "result:invalidHighwayTags": true
+        "result:invalid_highway_tags": true
       }
     },
     {
@@ -65,9 +65,7 @@
         }
       },
       "oldVersion": null,
-      "expectedResult": {
-        
-      }
+      "expectedResult": {}
     }
   ]
 }
