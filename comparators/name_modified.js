@@ -17,13 +17,13 @@ var compareJSON = function(obj1, obj2) {
 * @param {Function} callback called with (error, result).
 * @returns {undefined} calls callback.
 */
-function name_modified(newVersion, oldVersion, callback) {
+function name_modified(newVersion, oldVersion) {
   var result = {};
   result['result:name_modified'] = {};
   var cfVersion = 2;
 
   if (!newVersion || !oldVersion) {
-    return callback(null, {});
+    return {};
   }
   var newVersionNames = {};
   var oldVersionNames = {};
@@ -58,7 +58,7 @@ function name_modified(newVersion, oldVersion, callback) {
   for (obj in arr) {
     result['result:name_modified'][obj] = 1;
   }
-  callback(null, result);
+  return result;
 }
 
 module.exports = name_modified;

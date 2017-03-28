@@ -18,7 +18,7 @@ var _ = require('lodash');
   - The feature geometry moves **or**
   - One of the feature's `name*` tags changes or is removed
 */
-function placeEdited(newVersion, oldVersion, callback) {
+function placeEdited(newVersion, oldVersion) {
   var isDeleted = !newVersion;
   var isAdded = !oldVersion;
   var isPlace, geometryChanged, nameChanged;
@@ -30,17 +30,17 @@ function placeEdited(newVersion, oldVersion, callback) {
     isPlace = getIsPlace(newVersion) || getIsPlace(oldVersion);
   }
   if (!isPlace) {
-    return callback(null, {});
+    return {};
   }
   geometryChanged = getGeometryChanged(newVersion, oldVersion);
   nameChanged = getNameChanged(newVersion, oldVersion);
   if (isPlace && (isDeleted || isAdded || geometryChanged || nameChanged)) {
     // One could set the value to something more specific rather than 'true'
-    return callback(null, {
+    return {
       'result:place_edited': true
-    });
+    };
   } else {
-    return callback(null, {});
+    return {};
   }
 }
 

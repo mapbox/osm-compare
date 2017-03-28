@@ -6,11 +6,11 @@ module.exports = commonTagValues;
 
 var primaryTags = ['highway'];
 
-function commonTagValues(newVersion, oldVersion, callback) {
+function commonTagValues(newVersion, oldVersion) {
   var result = {};
 
   if (!newVersion || !newVersion.properties)
-    return callback(null, result);
+    return result;
 
   for (var i = primaryTags.length - 1; i >= 0; i--) {
     var tag = primaryTags[i];
@@ -27,5 +27,5 @@ function commonTagValues(newVersion, oldVersion, callback) {
     }
   }
 
-  return callback(null, result);
+  return result;
 }
