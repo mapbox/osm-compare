@@ -1,0 +1,46 @@
+{
+  "compareFunction": "invalid_tag_combination",
+  "fixtures": [
+    {
+      "description": "Test feature with invalid tag combination with count less than 1",
+      "expectedResult": {
+        "result:invalid_tag_combination": true
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "tourism": "yes",
+          "amenity": "yes"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature with invalid tag combination with count greater than 1",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "sport": "yes",
+          "leisure": "yes"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature with no primary tags",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Hello, world!",
+          "version": "1"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    }
+  ]
+}

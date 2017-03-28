@@ -4,7 +4,7 @@ var test = require('tap').test;
 var queue = require('queue-async');
 var path = require('path');
 var fs = require('fs');
-
+var comparators = require('../index');
 
 test('Test compare functions with common fixtures', function(assert) {
   var dirname = path.join(__dirname, '/fixtures/');
@@ -30,12 +30,10 @@ function testFixture(assert, fixture, callback) {
   files = files.filter(function(filename) { return /.js$/.test(filename); });
 
   var compareQueue = queue(1);
-  files.forEach(function(filename) {
-    var compareFunctionName = filename.split('.')[0];
-    var compareFunctionPath = path.join(__dirname, '../', 'comparators', compareFunctionName);
-    var compareFunction = require(compareFunctionPath);
-    compareQueue.defer(testFixtureOnCompareFunction, assert, fixture, compareFunction, callback);
+  Object.keys(comparators).forEach(function(comparator) {
+    compareQueue.defer(testFixtureOnCompareFunction, assert, fixture, comparators[comparator], callback);
   });
+
   compareQueue.awaitAll(function() {
     callback();
   });

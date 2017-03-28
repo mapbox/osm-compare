@@ -1,0 +1,112 @@
+{
+  "compareFunction": "added_place",
+  "fixtures": [
+    {
+      "description": "No old version, new version",
+      "newVersion": null,
+      "oldVersion": null,
+      "expectedResult": {}
+    },
+    {
+      "description": "Checks for added place tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1234,
+          "osm:type": "node",
+          "osm:uid": 123,
+          "osm:changeset": 123,
+          "place": "city"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10,
+            10
+          ]
+        }
+      },
+      "oldVersion": null,
+      "expectedResult": {
+        "result:added_place": true
+      }
+    },
+    {
+      "description": "Checks for added place tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1234,
+          "osm:type": "node",
+          "osm:uid": 123,
+          "osm:changeset": 123,
+          "place": "city"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10,
+            10
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1234,
+          "osm:type": "node",
+          "osm:uid": 124,
+          "osm:changeset": 124
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11,
+            11
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:added_place": true
+      }
+    },
+    {
+      "description": "Place in old and new version",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1234,
+          "osm:type": "node",
+          "osm:uid": 123,
+          "osm:changeset": 123,
+          "place": "city"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10,
+            10
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1234,
+          "osm:type": "node",
+          "osm:uid": 124,
+          "osm:changeset": 124,
+          "place": "city"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            11,
+            11
+          ]
+        }
+      },
+      "expectedResult": {}
+    }
+  ]
+}

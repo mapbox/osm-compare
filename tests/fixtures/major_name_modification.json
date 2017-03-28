@@ -1,0 +1,166 @@
+{
+  "compareFunction": "major_name_modification",
+  "fixtures": [
+    {
+      "description": "Test no name modification",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru",
+          "wikidata": "Q40435",
+          "osm:version": 12
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {}
+    },
+    {
+      "description": "Test minor name modification",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru",
+          "wikidata": "Q40435",
+          "osm:version": 12
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:major_name_modification": true,
+        "result:levenshtein_distance": 1
+      }
+    },
+    {
+      "description": "Test minor name modification with case",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "BANGALURU",
+          "wikidata": "Q40435",
+          "osm:version": 12
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bengaluru",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:major_name_modification": true,
+        "result:levenshtein_distance": 8,
+        "result:escalate": true
+      }
+    },
+    {
+      "description": "Test major name modification with version more than 10",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru",
+          "wikidata": "Q40435",
+          "osm:version": 12
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "San Francisco",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:major_name_modification": true,
+        "result:levenshtein_distance": 10,
+        "result:escalate": true
+      }
+    },
+    {
+      "description": "Test major name modification with version less than 10",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru",
+          "wikidata": "Q40435",
+          "osm:version": 8
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "San Francisco",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:major_name_modification": true,
+        "result:levenshtein_distance": 10
+      }
+    },
+    {
+      "description": "Test major name modification without wikidata and wikipedia",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "San Francisco"
+        },
+        "geometry": null
+      },
+      "expectedResult": {}
+    },
+    {
+      "description": "Test major name modification with version less than 10 and having wikipedia tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bangaluru",
+          "wikipedia": "en:Bangaluru",
+          "osm:version": 8
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "San Francisco",
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:major_name_modification": true,
+        "result:levenshtein_distance": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "compareFunction": "osm_landmarks",
+  "fixtures": [
+    {
+      "description": "Test empty feature versions",
+      "expectedResult": {},
+      "newVersion": null,
+      "oldVersion": null
+    },
+    {
+      "description": "Test lake present in landmarks",
+      "expectedResult": {
+        "result:osm_landmarks": true
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3987743,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test lake not present in landmarks",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1857615,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test lake present in landmarks in oldVersion",
+      "expectedResult": {
+        "result:osm_landmarks": true
+      },
+      "newVersion": null,
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 3987743,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test lake not present in landmarks",
+      "expectedResult": {},
+      "newVersion": null,
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1857615,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test airport present in landmarks",
+      "expectedResult": {
+        "result:osm_landmarks": true
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 217455233,
+          "osm:type": "way"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test airport not present in landmarks",
+      "expectedResult": {},
+      "newVersion": null,
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1857,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "Test restaurant present in landmarks",
+      "expectedResult": {
+        "result:osm_landmarks": true
+      },
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 2361952103,
+          "osm:type": "node"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test restaurant not present in landmarks",
+      "expectedResult": {},
+      "newVersion": null,
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:id": 1857615,
+          "osm:type": "relation"
+        },
+        "geometry": null
+      }
+    }
+  ]
+}

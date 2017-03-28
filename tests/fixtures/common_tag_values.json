@@ -1,0 +1,25 @@
+{
+    "compareFunction": "common_tag_values",
+    "fixtures": [
+        {
+            "description": "Feature with no new version and old version",
+            "newVersion": {},
+            "oldVersion": {},
+            "expectedResult": {}
+        },
+        {
+            "description": "Feature with valid highway tag",
+            "newVersion": {"properties": {"highway" : "primary"}},
+            "oldVersion": {},
+            "expectedResult": {
+                "result:common_tag_values": true
+            }
+        },
+        {
+            "description": "Feature with invalid highway tag",
+            "newVersion": {"properties": {"highway" : "random"}},
+            "oldVersion": {},
+            "expectedResult": {}
+        }
+    ]
+}

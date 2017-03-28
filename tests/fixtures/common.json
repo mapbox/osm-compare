@@ -31,7 +31,7 @@
             "description": "Test oldVersion is null",
             "newVersion": null,
             "oldVersion": {
-                "propeerties": {
+                "properties": {
                     "id": 158230039,
                     "type": "node",
                     "typeId": 1,

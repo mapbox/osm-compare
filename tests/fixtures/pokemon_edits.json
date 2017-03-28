@@ -1,0 +1,104 @@
+{
+  "compareFunction": "pokemon_edits",
+  "fixtures": [
+  {
+    "description": "pokemon edits",
+        "newVersion": {
+            "type": "Feature",
+            "id": "node!4412655090!2",
+            "properties": {
+                "tourism": "hotel",
+                "name:": "poké",
+                "osm:type": "node",
+                "osm:id": 4412655090,
+                "osm:version": 2,
+                "osm:changeset": 43885598,
+                "osm:timestamp": 1479870698000,
+                "osm:uid": 1306,
+                "osm:user": "PlaneMad"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    72.5451861,
+                    23.2005836
+                ]
+            }
+        },
+        "oldVersion": {
+            "type": "Feature",
+            "id": "node!4412655090!1",
+            "properties": {
+                "tourism": "hotel",
+                "name": "Washington Park",
+                "osm:type": "node",
+                "osm:id": 4412655090,
+                "osm:version": 1,
+                "osm:changeset": 42338212,
+                "osm:timestamp": 1474519696000,
+                "osm:uid": 4112063,
+                "osm:user": "kailashdhirwani"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    72.5451861,
+                    23.2005836
+                ]
+            }
+        },
+    "expectedResult" : {
+      "result:pokemon_edits": true
+    }
+  },
+  {
+    "description": "not pokemon edits",
+        "newVersion": {
+            "type": "Feature",
+            "id": "node!4412655090!2",
+            "properties": {
+                "tourism": "hotel",
+                "name:": "A2B",
+                "osm:type": "node",
+                "osm:id": 4412655090,
+                "osm:version": 2,
+                "osm:changeset": 43885598,
+                "osm:timestamp": 1479870698000,
+                "osm:uid": 1306,
+                "osm:user": "PlaneMad"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    72.5451861,
+                    23.2005836
+                ]
+            }
+        },
+        "oldVersion": {
+            "type": "Feature",
+            "id": "node!4412655090!1",
+            "properties": {
+                "tourism": "hotel",
+                "name": "Washington Park",
+                "osm:type": "node",
+                "osm:id": 4412655090,
+                "osm:version": 1,
+                "osm:changeset": 42338212,
+                "osm:timestamp": 1474519696000,
+                "osm:uid": 4112063,
+                "osm:user": "kailashdhirwani"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    72.5451861,
+                    23.2005836
+                ]
+            }
+        },
+    "expectedResult" : {
+    }
+  }
+    ]
+}

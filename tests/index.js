@@ -40,26 +40,27 @@ test('Test basic fixture', function(assert) {
   });
 });
 
-test('Test export modules if hyphenated', function(assert) {
+test('Check if exported modules use underscore', function(assert) {
   Object.keys(comparators).forEach(function(comparator) {
-    assert.ifError(!(/^[a-z]+(-[a-z]+)*$/.test(comparator)));
+    assert.ifError(!(/^[a-z]+(_[a-z]+)*$/.test(comparator)));
   });
   assert.end();
 });
 
-test('Test if exported compare functions available', function(assert) {
+test('Check if exported compare functions are available', function(assert) {
   var dirname = path.join(__dirname, '../comparators/');
   var files = fs.readdirSync(dirname);
   Object.keys(comparators).forEach(function(comparator) {
     var err = false;
-    if (files.indexOf(comparator + '.js') === -1)
+    if (files.indexOf(comparator + '.js') === -1) {
       err = true;
+    }
     assert.ifError(err);
   });
   assert.end();
 });
 
-test('Test if compare function test present', function(assert) {
+test('Check if all compare functions have fixtures', function(assert) {
   var dirname = path.join(__dirname, '/fixtures/');
   var files = fs.readdirSync(dirname);
   Object.keys(comparators).forEach(function(comparator) {
@@ -71,7 +72,7 @@ test('Test if compare function test present', function(assert) {
   assert.end();
 });
 
-test('Test results returned by compare functions', function(assert) {
+test('Check if result returned by compare functions matches the name', function(assert) {
   /* This test mandates compare function to return either empty result or result
     with `result:cf-name atleast`*/
 
@@ -82,6 +83,7 @@ test('Test results returned by compare functions', function(assert) {
     jsonData.fixtures.forEach(function (fixture) {
       if (!isEmpty(fixture.expectedResult)) {
         if (!(fixture.expectedResult.hasOwnProperty('result:' + comparator))) {
+          console.log(comparator);
           success_result = false;
         }
       }

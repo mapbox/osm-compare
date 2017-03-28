@@ -1,0 +1,187 @@
+{
+  "compareFunction": "added_website",
+  "fixtures": [
+    {
+      "description": "test node having website",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "website": "http://example.com"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": null,
+      "expectedResult": {
+        "result:added_website": true
+      }
+    },
+    {
+      "description": "test node without website",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": null,
+      "expectedResult": {}
+    },
+    {
+      "description": "test adding the website to existing Feature",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "website": "http://example.com"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:added_website": true
+      }
+    },
+    {
+      "description": "test modifying the website to existing Feature",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "website": "http://example.com"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {"website": "http://openstreetmap.org"},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:added_website": true
+      }
+    },
+    {
+      "description": "test delete website of existing feature",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {"website": "http://openstreetmap.org"},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:added_website": true
+      }
+    },
+    {
+      "description": "test translation added with website",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+            "website": "http://openstreetmap.org",
+            "name": "openstreetmap"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {"website": "http://openstreetmap.org"},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "expectedResult": {}
+    },
+    {
+      "description": "test translation added without website",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+            
+            "name": "openstreetmap"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            76.85708999633789,
+            16.828531862816284
+          ]
+        }
+      },
+      "expectedResult": {}
+    }
+   ]
+}

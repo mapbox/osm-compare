@@ -1,0 +1,57 @@
+{
+  "compareFunction": "wikidata_wikipedia_tag_deleted",
+  "fixtures": [
+    {
+      "description": "wikidata tag deleted",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:wikidata_wikipedia_tag_deleted": true
+      }
+    },
+    {
+      "description": "wikidata tag added",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "wikidata": "Q40435"
+        },
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "expectedResult": {}
+    },
+    {
+      "description": "wikipedia tag deleted",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "wikipedia": "en:abc"
+        },
+        "geometry": null
+      },
+      "expectedResult": {
+        "result:wikidata_wikipedia_tag_deleted": true
+      }
+    }
+  ]
+}

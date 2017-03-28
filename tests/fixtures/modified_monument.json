@@ -1,0 +1,98 @@
+{
+    "compareFunction": "modified_monument",
+    "fixtures": [
+        {
+            "description": "Checks is monument is modified which is > version 10",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "historic": "monument",
+                    "osm:version": 11,
+                    "name": "noname"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "historic": "monument",
+                    "osm:version": 10,
+                    "name": "Taj Mahal"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_monument": true
+            }
+        },
+        {
+            "description": "Checks if monument > version 10 is deleted",
+            "newVersion": null,
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "historic": "monument",
+                    "osm:version": 11,
+                    "name": "Taj Mahal"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_monument": true
+            }
+        },
+        {
+            "description": "Dont flag if monument version is less than 10",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "historic": "monument",
+                    "osm:version": 9,
+                    "name": "Taj Mahal"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "historic": "monument",
+                    "osm:version": 8,
+                    "name": "Taj Mahal"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+            }
+        }
+    ]
+}
