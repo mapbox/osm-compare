@@ -3,7 +3,7 @@
 var featureCollection = require('../lib/feature-collection');
 var area = require('turf-area');
 var intersect  = require('turf-intersect');
-var cover = require('@mapbox/tile-cover');
+var cover = require('tile-cover');
 
 var limits = {
   min_zoom: 16,
