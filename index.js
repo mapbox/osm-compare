@@ -30,5 +30,6 @@ module.exports = {
   'name_modified': wrapsync(require('./comparators/name_modified.js')),
   'osm_landmarks': require('./comparators/osm_landmarks.js'),
   'invalid_tag_modification': require('./comparators/invalid_tag_modification'),
-  'invalid_name': require('./comparators/invalid_name')
+  'invalid_name': require('./comparators/invalid_name'),
+  'feature_overlap': require('./comparators/feature_overlap.js')
 };

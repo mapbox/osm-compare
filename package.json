@@ -23,6 +23,8 @@
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
+    "@mapbox/tile-cover": "^3.0.1",
+    "@mapbox/vt2geojson": "^1.1.0",
     "csv": "^1.1.1",
     "d3-queue": "^3.0.3",
     "geopoint": "^1.0.1",
@@ -31,6 +33,7 @@
     "lodash.isempty": "^4.4.0",
     "moment": "^2.17.1",
     "naughty-words": "^1.0.1",
+    "nock": "^9.0.11",
     "osm-landmarks": "^0.3.1",
     "queue-async": "^1.2.1",
     "request": "^2.72.0",
@@ -44,6 +47,7 @@
     "turf-featurecollection": "^1.0.1",
     "turf-inside": "^3.0.12",
     "turf-point": "^2.0.1",
+    "turf-intersect": "^3.0.12",
     "turf-within": "^3.0.5"
   },
   "devDependencies": {
