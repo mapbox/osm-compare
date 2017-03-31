@@ -34,6 +34,7 @@
     "turf-envelope": "^1.0.2",
     "turf-featurecollection": "^1.0.1",
     "turf-inside": "^3.0.12",
+    "turf-point": "^2.0.1",
     "turf-within": "^3.0.5"
   },
   "devDependencies": {

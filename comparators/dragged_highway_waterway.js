@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = draggedHighwayWaterway;
-var Geopoint = require('geopoint');
+var turfPoint = require('turf-point');
+var turfDistance = require('turf-distance');
 var threshold = 10;
 function draggedHighwayWaterway(newVersion, oldVersion) {
   var result = {};
@@ -18,9 +19,9 @@ function draggedHighwayWaterway(newVersion, oldVersion) {
     newVersion.geometry.hasOwnProperty('coordinates') &&
     newVersion.geometry.coordinates.length > 1) {
     for (var i = 0; i < newVersion.geometry.coordinates.length - 1; i++) {
-      var point1 = new Geopoint(newVersion.geometry.coordinates[i][1], newVersion.geometry.coordinates[i][0]);
-      var point2 = new Geopoint(newVersion.geometry.coordinates[i + 1][1], newVersion.geometry.coordinates[i + 1][0]);
-      var distance = point1.distanceTo(point2, true);
+      var point1 = turfPoint(newVersion.geometry.coordinates[i]);
+      var point2 = turfPoint(newVersion.geometry.coordinates[i + 1]);
+      var distance = turfDistance(point1, point2, 'kilometers');
       if (distance > threshold) {
         result['result:dragged_highway_waterway'] = true;
       }
