@@ -20,7 +20,7 @@ function feature_overlap(newVersion, oldVersion, callback) {
       if (err)
         return callback(err);
       var overlaps = getOverLappingFeatures(newVersion, result);
-      return callback(null, {'result:feature_overlap': overlaps});
+      return callback(null, {'result:feature_overlap': overlaps.length});
     });
   } else {
     return callback(null, {});
