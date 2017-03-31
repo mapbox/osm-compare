@@ -5,7 +5,10 @@
       "description": "feature_overlap return result",
       "newVersion": {
         "type": "Feature",
-        "properties": {},
+        "properties": {
+          "osm:version" : 1,
+          "natural": "water"
+        },
         "geometry": {
           "type": "Polygon",
           "coordinates": [
