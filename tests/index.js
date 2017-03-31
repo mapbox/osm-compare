@@ -10,13 +10,13 @@ var nock = require('nock');
 
 var comparators = require('../index');
 
-nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')
-    .get('/16/46886/30383.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNpcWt1bWc4bjAzOXNmdG04bng4dHVhZ3EifQ.bJK6rpjNmiP3kW2pROdScg')
-.reply(200, fs.readFileSync(path.join(__dirname, 'result_feature_overlap.pbf')));
+// nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')
+//     .get('/16/46886/30383.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNpcWt1bWc4bjAzOXNmdG04bng4dHVhZ3EifQ.bJK6rpjNmiP3kW2pROdScg')
+// .reply(200, fs.readFileSync(path.join(__dirname, 'result_feature_overlap.pbf')));
 
-nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')
-    .get('/16/46782/30751.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNpcWt1bWc4bjAzOXNmdG04bng4dHVhZ3EifQ.bJK6rpjNmiP3kW2pROdScg')
-.reply(200, fs.readFileSync(path.join(__dirname, 'basic_fixture.pbf')));
+// nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')
+//     .get('/16/46782/30751.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNpcWt1bWc4bjAzOXNmdG04bng4dHVhZ3EifQ.bJK6rpjNmiP3kW2pROdScg')
+// .reply(200, fs.readFileSync(path.join(__dirname, 'basic_fixture.pbf')));
 
 test('Test compare functions', function(assert) {
   var fileQueue = queue(1);  // Read one fixture file at a time.
