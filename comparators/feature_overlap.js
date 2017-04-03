@@ -47,17 +47,32 @@ function feature_overlap(newVersion, oldVersion, callback) {
 
 function getOverLappingFeatures(incomingFeature, featureCollections) {
   var overlaps = [];
+  var relationMembers = [];
+  if (incomingFeature['properties']['osm:type'] === 'relation') {
+    incomingFeature.properties.relations.forEach(function (relationMember) {
+      relationMembers.push(Number(relationMember['properties']['ref']));
+    });
+  }
+
   if (featureCollections) {
     featureCollections.forEach(function (featureCollection) {
       featureCollection.features.forEach(function (feature) {
         var intersection = intersect(incomingFeature, feature);
         if (intersection) {
           if (area(intersection) > 0) {
-            overlaps.push(feature);
+            var id = feature.id.toString();
+            id = id.substring(0, id.length - 1);
+            if (relationMembers.indexOf(id) === -1) {
+              overlaps.push(feature);
+            } else {
+              console.log(id);
+            }
           }
         }
       });
     });
   }
+  console.log(relationMembers);
+  console.log(overlaps);
   return overlaps;
 }
