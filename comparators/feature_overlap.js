@@ -38,7 +38,7 @@ function feature_overlap(newVersion, oldVersion, callback) {
       if (overlaps.length > 0)
         return callback(null, {'result:feature_overlap': overlaps.length});
       else
-        return callback();
+        return callback(null, {});
     });
   } else {
     return callback(null, {});
@@ -52,27 +52,39 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
     incomingFeature.properties.relations.forEach(function (relationMember) {
       relationMembers.push(Number(relationMember['properties']['ref']));
     });
-  }
-
-  if (featureCollections) {
+    if (featureCollections) {
+      incomingFeature.properties.relations.forEach(function (relationMember) {
+        featureCollections.forEach(function (featureCollection) {
+          featureCollection.features.forEach(function (feature) {
+            var intersection = intersect(relationMember, feature);
+            if (intersection) {
+              if (area(intersection) > 0) {
+                var id = feature.id.toString();
+                id = parseInt(id.substring(0, id.length - 1));
+                if (relationMembers.indexOf(id) === -1) {
+                  overlaps.push(feature);
+                }
+              }
+            }
+          });
+        });
+      });
+    }
+  } else if (featureCollections) {
     featureCollections.forEach(function (featureCollection) {
       featureCollection.features.forEach(function (feature) {
         var intersection = intersect(incomingFeature, feature);
         if (intersection) {
           if (area(intersection) > 0) {
             var id = feature.id.toString();
-            id = id.substring(0, id.length - 1);
+            id = parseInt(id.substring(0, id.length - 1));
             if (relationMembers.indexOf(id) === -1) {
               overlaps.push(feature);
-            } else {
-              console.log(id);
             }
           }
         }
       });
     });
   }
-  console.log(relationMembers);
-  console.log(overlaps);
   return overlaps;
 }
