@@ -30,8 +30,8 @@ function commonTagValues(newVersion, oldVersion) {
       var commonValues = JSON.parse(data.toString()).data;
       var value = newVersion.properties[tag];
       for (var j = commonValues.length - 1; j >= 0; j--) {
-        if (commonValues[j]['value'] === value && commonValues[j]['count'] > 10000) {
-          result['result:common_tag_values'] = true;
+        if (commonValues[j]['value'] === value && !(commonValues[j]['fraction'] <= 0.0 && commonValues[j]['in_wiki'] === false)) {
+          result = {};
         }
       }
     }
