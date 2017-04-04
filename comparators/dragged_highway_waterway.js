@@ -29,6 +29,7 @@ function hasDrag(feature) {
     // The feature has a drag if distance is greater than threshold.
     if (distance > threshold) return true;
   }
+  return false;
 }
 function draggedHighwayWaterway(newVersion, oldVersion) {
   var result = {};
