@@ -7,10 +7,7 @@ var _ = require('lodash');
 - If a feature has these tags
     - place=city
     - place=town
-    - place=village
     - place=suburb
-    - place=hamlet
-    - place=island
 
 - Any of the following are true:
   - The feature is deleted **or**
@@ -48,10 +45,7 @@ function getIsPlace(geojson) {
   var placeValues = [
     'city',
     'town',
-    'village',
-    'suburb',
-    'hamlet',
-    'island'
+    'suburb'
   ];
   return geojson.properties &&
     geojson.properties.place &&
@@ -93,4 +87,3 @@ function getNameChanged(newVersion, oldVersion) {
   }
   return nameChanged;
 }
-
