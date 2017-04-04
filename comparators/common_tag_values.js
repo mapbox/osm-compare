@@ -19,7 +19,7 @@ function commonTagValues(newVersion, oldVersion) {
     return result;
 
   var primary_tag_present = false;
-  result['result:commonTagValues'] = true;
+  result['result:common_tag_values'] = true;
 
   for (var i = primaryTags.length - 1; i >= 0; i--) {
     var tag = primaryTags[i];

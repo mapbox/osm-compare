@@ -4,6 +4,7 @@ var wrapsync = require('./lib/wrapsync');
 
 module.exports = {
   'landmark_score': require('./comparators/landmark_score'),
+<<<<<<< 6fcb194ff2ccea60254308b7f0f6b9a432b7c710
   'disputed_border_tag_changed': wrapsync(require('./comparators/disputed_border_tag_changed')),
   'disputed_border_deleted': wrapsync(require('./comparators/disputed_border_deleted')),
   'invalid_highway_tags': wrapsync(require('./comparators/invalid_highway_tags')),
