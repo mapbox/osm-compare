@@ -15,15 +15,15 @@ var compareFunctionPath = path.join('../', 'comparators', jsonData.compareFuncti
 var compareFunction = require(compareFunctionPath);
 
 jsonData.fixtures.forEach(function (fixture) {
-  compareFunction(fixture.newVersion, fixture.oldVersion, function(error, result) {
-    console.log(fixture.description);
-    console.log('expected', fixture.expectedResult);
-    if (error) console.log(error);
-    console.log('actual', JSON.stringify(result), '\n');
-    if (JSON.stringify(fixture.expectedResult) !== JSON.stringify(result)) {
-      console.log('Test failed! Actual is not expected!');
-    } else {
-      console.log('Test passed! Actual is same as expected');
-    }
-  });
+  var result = compareFunction(fixture.newVersion, fixture.oldVersion);
+
+  console.log(fixture.description);
+  console.log('expected', fixture.expectedResult);
+
+  console.log('actual', JSON.stringify(result), '\n');
+  if (JSON.stringify(fixture.expectedResult) !== JSON.stringify(result)) {
+    console.log('Test failed! Actual is not expected!');
+  } else {
+    console.log('Test passed! Actual is same as expected');
+  }
 });
