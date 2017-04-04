@@ -10,7 +10,7 @@
                     "osm:type": "node",
                     "osm:uid": 123,
                     "osm:changeset": 123,
-                    "place": "village"
+                    "place": "suburb"
                 },
                 "geometry": {
                     "type": "Point",
@@ -27,7 +27,7 @@
                     "osm:type": "node",
                     "osm:uid": 124,
                     "osm:changeset": 124,
-                    "place": "village"
+                    "place": "suburb"
                 },
                 "geometry": {
                     "type": "Point",
@@ -121,6 +121,6 @@
             "expectedResult": {
                 "result:place_edited": true
             }
-        }        
+        }
     ]
 }
