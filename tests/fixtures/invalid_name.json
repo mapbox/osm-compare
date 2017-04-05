@@ -1,0 +1,29 @@
+{
+  "compareFunction": "invalid_name",
+  "fixtures": [
+    {
+      "description": "Test feature with name tag but without profanity",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Hello, world!"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature with profanity in name tag",
+      "expectedResult": {"result:invalid_name": true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "xxx"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    }
+  ]
+}

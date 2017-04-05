@@ -29,5 +29,6 @@ module.exports = {
   'name_matches_to_wikidata': require('./comparators/name_matches_to_wikidata.js'),
   'name_modified': wrapsync(require('./comparators/name_modified.js')),
   'osm_landmarks': require('./comparators/osm_landmarks.js'),
-  'invalid_tag_modification': require('./comparators/invalid_tag_modification')
+  'invalid_tag_modification': require('./comparators/invalid_tag_modification'),
+  'invalid_name': require('./comparators/invalid_name')
 };
