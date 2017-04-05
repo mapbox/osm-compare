@@ -48,6 +48,7 @@ function feature_overlap(newVersion, oldVersion, callback) {
 function getOverLappingFeatures(incomingFeature, featureCollections) {
   var overlaps = [];
   var relationMembers = [];
+  relationMembers.push(incomingFeature['properties']['osm:id']);
   if (incomingFeature['properties']['osm:type'] === 'relation') {
     incomingFeature.properties.relations.forEach(function (relationMember) {
       relationMembers.push(Number(relationMember['properties']['ref']));
