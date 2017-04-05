@@ -24,6 +24,30 @@
         "geometry": null
       },
       "oldVersion": null
+    },
+    {
+      "description": "Test feature with profanity in name:* tag",
+      "expectedResult": {"result:invalid_name": true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name:ko": "강간"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature with profanity in name:* tag when naughty-words does not exist for the locale",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name:kn": "xxx"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
     }
   ]
 }
