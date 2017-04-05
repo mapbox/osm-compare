@@ -18,7 +18,7 @@ Reports when a feature with `disputed` tag has been modified .
 
 ### dragged_highway_waterway
 
-Reports when a highway/waterway feature contains internode distance > 10 km.
+Reports when the new version of highway/waterway contains internode distance > 10 km.
 
 ### invalid-highway-tags
 

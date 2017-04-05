@@ -4,14 +4,17 @@ module.exports = draggedHighwayWaterway;
 var turfPoint = require('turf-point');
 var turfDistance = require('turf-distance');
 var threshold = 10;
-function draggedHighwayWaterway(newVersion, oldVersion) {
-  var result = {};
 
-  if (!newVersion) {
-    return result;
+function draggedHighwayWaterway(newVersion, oldVersion) {
+  try {
+    if (JSON.stringify(newVersion.geometry) === JSON.stringify(oldVersion.geometry)) return {};
+  } catch (error) {
+    // NOTE: Catching any errors from ^
+    console.log(error);
   }
 
-  if (newVersion.properties &&
+  if (newVersion &&
+    newVersion.properties &&
     (newVersion.properties.hasOwnProperty('highway') ||
     newVersion.properties.hasOwnProperty('waterway')) &&
     newVersion.properties['osm:type'] === 'way' &&
@@ -21,11 +24,10 @@ function draggedHighwayWaterway(newVersion, oldVersion) {
     for (var i = 0; i < newVersion.geometry.coordinates.length - 1; i++) {
       var point1 = turfPoint(newVersion.geometry.coordinates[i]);
       var point2 = turfPoint(newVersion.geometry.coordinates[i + 1]);
+
       var distance = turfDistance(point1, point2, 'kilometers');
-      if (distance > threshold) {
-        result['result:dragged_highway_waterway'] = true;
-      }
+      if (distance > threshold) return {'result:dragged_highway_waterway': true};
     }
   }
-  return result;
+  return {};
 }
