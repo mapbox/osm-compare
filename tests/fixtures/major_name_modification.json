@@ -67,8 +67,7 @@
       },
       "expectedResult": {
         "result:major_name_modification": true,
-        "result:levenshtein_distance": 8,
-        "result:escalate": true
+        "result:levenshtein_distance": 8
       }
     },
     {
@@ -92,8 +91,7 @@
       },
       "expectedResult": {
         "result:major_name_modification": true,
-        "result:levenshtein_distance": 10,
-        "result:escalate": true
+        "result:levenshtein_distance": 10
       }
     },
     {

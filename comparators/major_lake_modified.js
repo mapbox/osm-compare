@@ -63,8 +63,7 @@ function majorLakeModified(newVersion, oldVersion) {
   var osmId = props['osm:id'];
   if (osmType === 'relation' && lakeIds.indexOf(osmId) !== -1) {
     return {
-      'result:major_lake_modified': true,
-      'result:escalate': true
+      'result:major_lake_modified': true
     };
   } else {
     return {};
