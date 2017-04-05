@@ -2,12 +2,6 @@
   "compareFunction": "dragged_highway_waterway",
   "fixtures": [
     {
-      "description": "Checks for highways where nodes got dragged accidentally",
-      "newVersion": null,
-      "oldVersion": null,
-      "expectedResult": {}
-    },
-    {
       "description": "Checks for highways where nodes got dragged accidentally but less than the threshold",
       "newVersion": {
         "type": "Feature",
@@ -7748,7 +7742,7 @@
       }
     },
     {
-      "description": "Check drag introduced in new version",
+      "description": "Check drag not introduced in new version",
       "newVersion": {
         "type": "Feature",
         "id": "way!203586564!4",
@@ -7757,7 +7751,7 @@
           "intermittent": "yes",
           "osm:type": "way",
           "osm:id": 203586564,
-          "osm:version": 4,
+          "osm:version": 5,
           "osm:changeset": 47210331,
           "osm:timestamp": 1490643087000,
           "osm:uid": 5566893,
