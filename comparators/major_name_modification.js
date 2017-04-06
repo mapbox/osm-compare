@@ -21,13 +21,9 @@ function majorNameModification(newVersion, oldVersion) {
   if (modification >= 50 && newVersion.properties['osm:version'] > 10) {
     return {
       'result:major_name_modification': true,
-      'result:levenshtein_distance': distance,
-      'result:escalate': true
+      'result:levenshtein_distance': distance
     };
   }
 
-  return {
-    'result:major_name_modification': true,
-    'result:levenshtein_distance': distance
-  };
+  return {};
 }

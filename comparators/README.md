@@ -38,7 +38,7 @@ Reports when a relation belonging to a set of major lakes is added, modified or 
 
 ### major-name-modification
 
-Reports when `name` tag is modified for a feature having wikidata / wikipedia tag.  Escalates when name modification > 50% and version > 10
+Reports when `name` tag is modified > 50% and version > 10 for a feature having wikidata / wikipedia tag.
 
 ### major_road_changed
 
