@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/osm-compare",
-  "version": "6.2.2",
+  "version": "6.2.3",
   "description": "Compare a features new and old versions in GeoJSON",
   "main": "index.js",
   "scripts": {
