@@ -104,7 +104,7 @@
         "geometry":null
       },
       "expectedResult":{
-
+        "result:modified_place_wikidata": false
       }
     }
   ]

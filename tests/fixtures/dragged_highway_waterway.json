@@ -60,7 +60,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:dragged_highway_waterway": false
+      }
     },
     {
       "description": "Checks for highways where nodes got dragged accidentally",
@@ -7798,7 +7800,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:dragged_highway_waterway": false
+      }
     }
   ]
 }

@@ -18,12 +18,11 @@ var compareJSON = function(obj1, obj2) {
 * @returns {undefined} calls callback.
 */
 function name_modified(newVersion, oldVersion) {
-  var result = {};
-  result['result:name_modified'] = {};
+  var result = {'result:name_modified': false};
   var cfVersion = 2;
 
   if (!newVersion || !oldVersion) {
-    return {};
+    return result;
   }
   var newVersionNames = {};
   var oldVersionNames = {};

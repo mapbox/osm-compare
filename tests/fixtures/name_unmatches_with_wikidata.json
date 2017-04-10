@@ -1,10 +1,10 @@
 {
-  "compareFunction": "name_matches_to_wikidata",
+  "compareFunction": "name_unmatches_with_wikidata",
   "fixtures": [
     {
       "description": "Test OSM name different from Wikidata name",
       "expectedResult": {
-        "result:name_matches_to_wikidata": false
+        "result:name_unmatches_with_wikidata": true
       },
       "newVersion": {
         "type": "Feature",
@@ -21,7 +21,9 @@
     },
     {
       "description": "Test OSM name matches with aliases on Wikidata",
-      "expectedResult": {},
+      "expectedResult": {
+        "result:name_unmatches_with_wikidata": false
+      },
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -36,7 +38,9 @@
     },
     {
       "description": "Test feature with no Wikidata tag",
-      "expectedResult": {},
+      "expectedResult": {
+        "result:name_unmatches_with_wikidata": false
+      },
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -50,7 +54,9 @@
     },
     {
       "description": "Test feature with Wikidata tag and not a name modification",
-      "expectedResult": {},
+      "expectedResult": {
+        "result:name_unmatches_with_wikidata": false
+      },
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -77,7 +83,7 @@
     {
       "description": "Test new feature with Wikidata",
       "expectedResult": {
-        "result:name_matches_to_wikidata": false
+        "result:name_unmatches_with_wikidata": true
       },
       "newVersion": {
         "type": "Feature",

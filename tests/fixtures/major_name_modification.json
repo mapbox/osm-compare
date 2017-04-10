@@ -20,7 +20,9 @@
         },
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:major_name_modification": false
+      }
     },
     {
       "description": "Test minor name modification",
@@ -41,7 +43,9 @@
         },
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:major_name_modification": false
+      }
     },
     {
       "description": "Test minor name modification with case",
@@ -110,7 +114,9 @@
         },
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:major_name_modification": false
+      }
     },
     {
       "description": "Test major name modification without wikidata and wikipedia",
@@ -128,7 +134,9 @@
         },
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:major_name_modification": false
+      }
     },
     {
       "description": "Test major name modification with version less than 10 and having wikipedia tag",
@@ -149,7 +157,9 @@
         },
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:major_name_modification": false
+      }
     }
   ]
 }

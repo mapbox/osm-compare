@@ -33,7 +33,9 @@
         "properties": {},
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:wikidata_wikipedia_tag_deleted": false
+      }
     },
     {
       "description": "wikipedia tag deleted",

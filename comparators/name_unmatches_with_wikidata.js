@@ -2,7 +2,7 @@
 
 var request = require('request');
 
-module.exports = nameMatchesToWikidata;
+module.exports = nameUnmatchesWithWikidata;
 
 function getWikidataName(feature, id) {
   if (feature.hasOwnProperty('entities') &&
@@ -28,8 +28,8 @@ function getWikidataAliasNames(feature, id) {
   return names;
 }
 
-function nameMatchesToWikidata(newVersion, oldVersion, callback) {
-  var result = {};
+function nameUnmatchesWithWikidata(newVersion, oldVersion, callback) {
+  var result = {'result:name_unmatches_with_wikidata': false};
 
   if (!newVersion) return callback(null, result);
 
@@ -51,7 +51,7 @@ function nameMatchesToWikidata(newVersion, oldVersion, callback) {
         var wikidataAliasNames = getWikidataAliasNames(wikidataFeature, wikidataID);
 
         if ((osmName !== wikidataName) && (wikidataAliasNames.indexOf(osmName) === -1)) return callback(null, {
-          'result:name_matches_to_wikidata': false
+          'result:name_unmatches_with_wikidata': true
         });
       }
       return callback(null, result);

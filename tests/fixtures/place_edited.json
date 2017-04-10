@@ -78,6 +78,7 @@
                 }
             },
             "expectedResult": {
+                "result:place_edited": false
             }
         },
         {

@@ -65,7 +65,9 @@
         }
       },
       "oldVersion": null,
-      "expectedResult": {}
+      "expectedResult": {
+        "result:invalid_highway_tags": false
+      }
     }
   ]
 }

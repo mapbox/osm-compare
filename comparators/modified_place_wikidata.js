@@ -3,8 +3,9 @@
 module.exports = modifiedPlaceWikidata;
 
 function modifiedPlaceWikidata(newVersion, oldVersion) {
-  if (!newVersion || !newVersion.properties) return {};
-  if (!oldVersion || !oldVersion.properties) return {};
+  var result = {'result:modified_place_wikidata': false};
+  if (!newVersion || !newVersion.properties) return result;
+  if (!oldVersion || !oldVersion.properties) return result;
   // Assumption: Place features with edited wikidata tag need to flagged
   // Target: Finding suspicious edits that mistag wikidata value
   //This comparator will only look at modifications to Wikidata tags to features with place tag.
@@ -42,5 +43,5 @@ function modifiedPlaceWikidata(newVersion, oldVersion) {
       };
     }
   }
-  return {};
+  return result;
 }

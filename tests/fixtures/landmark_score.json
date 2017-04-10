@@ -47,7 +47,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:landmark_score": false
+      }
     },
     {
       "description": "Changed object has wikipedia tag that doesnt exist in our database",
@@ -97,7 +99,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:landmark_score": false
+      }
     },
     {
       "description": "Changed object has wikipedia tag and is near the expected location",
@@ -199,7 +203,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:landmark_score": false
+      }
     },
     {
       "description": "Changed object has wikidata tag that doesnt exist in our database",
@@ -1565,7 +1571,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:landmark_score": false
+      }
     }
   ]
 }

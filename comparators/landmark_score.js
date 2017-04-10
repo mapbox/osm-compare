@@ -15,7 +15,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
   var cfVersion = 2;
   var db = new sqlite.Database(join(__dirname, '..', 'landmarks.spatialite'));
-  var result = {};
+  var result = {'result:landmark_score': false};
 
   // This should probably run through both?
   var theVersion = [newVersion, oldVersion].filter(function (v) {
@@ -24,7 +24,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
   if (theVersion.length === 0) {
     db.close();
-    return callback(null, {});
+    return callback(null, result);
   }
   theVersion = theVersion[0];
 
@@ -41,7 +41,7 @@ function landmark_score(newVersion, oldVersion, callback) {
       }
 
       if (record) {
-        result['result:landmark_score'] = true;
+        result = {'result:landmark_score': true};
       }
       db.close();
       callback(null, result);
@@ -61,7 +61,7 @@ function landmark_score(newVersion, oldVersion, callback) {
       }
 
       if (record) {
-        result['result:landmark_score'] = true;
+        result = {'result:landmark_score': true};
       }
       db.close();
       callback(null, result);

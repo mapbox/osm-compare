@@ -2,11 +2,11 @@
 module.exports = disputedBorderDeleted;
 
 function disputedBorderDeleted(newVersion, oldVersion) {
-  var result = {};
+  var result = {'result:disputed_border_deleted': false};
 
   if (!newVersion && !oldVersion) {
   // None of old version or new Version present
-    return {};
+    return result;
   }
   if (!newVersion && oldVersion) {
   // Only old Version is present, which indicates feature has been deleted
@@ -15,9 +15,9 @@ function disputedBorderDeleted(newVersion, oldVersion) {
     Creating a result object
   */
     if (oldVersion.properties && oldVersion.properties['disputed']) {
-      result['result:disputed_border_deleted'] = true;
+      return {'result:disputed_border_deleted': true};
     }
-  } else { return {}; }
+  }
 
   return result;
 }

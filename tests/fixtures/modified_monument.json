@@ -92,6 +92,7 @@
                 }
             },
             "expectedResult": {
+                "result:modified_monument": false
             }
         }
     ]

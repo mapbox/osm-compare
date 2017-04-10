@@ -29,7 +29,9 @@
         }
       },
       "oldVersion": null,
-      "expectedResult": {}
+      "expectedResult": {
+        "result:pokemon_footway": false
+      }
     },
     {
       "description": "Looking for highway != footway with version != 1 and new mapper",
@@ -59,7 +61,9 @@
         }
       },
       "oldVersion": null,
-      "expectedResult": {}
+      "expectedResult": {
+        "result:pokemon_footway": false
+      }
     },
     {
       "description": "Looking for highway = footway with version = 1 and old mapper",
@@ -89,7 +93,9 @@
         }
       },
       "oldVersion": null,
-      "expectedResult": {}
+      "expectedResult": {
+        "result:pokemon_footway": false
+      }
     },
     {
       "description": "Looking for highway = footway with version = 1 and new mapper",

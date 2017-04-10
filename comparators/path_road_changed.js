@@ -18,16 +18,15 @@ function isPathRoad(feature) {
 }
 
 function pathRoadChanged(newVersion, oldVersion) {
-  var result = {};
-  result['result:path_road_changed'] = {};
+  var result = {'result:path_road_changed': false};
 
   if (!oldVersion && !newVersion) {
-    return {};
+    return result;
   }
 
   if (oldVersion && !newVersion) {
     // Don't care about path road deletions.
-    return {};
+    return result;
   }
 
   if (!oldVersion && newVersion) {
@@ -53,7 +52,7 @@ function pathRoadChanged(newVersion, oldVersion) {
     }
   }
 
-  return {};
+  return result;
 }
 
 module.exports = pathRoadChanged;

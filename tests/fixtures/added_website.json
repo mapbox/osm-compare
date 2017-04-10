@@ -35,7 +35,9 @@
         }
       },
       "oldVersion": null,
-      "expectedResult": {}
+      "expectedResult": {
+        "result:added_website": false
+      }
     },
     {
       "description": "test adding the website to existing Feature",
@@ -152,7 +154,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:added_website": false
+      }
     },
     {
       "description": "test translation added without website",
@@ -181,7 +185,9 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": {
+        "result:added_website": false
+      }
     }
    ]
 }

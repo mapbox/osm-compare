@@ -78,7 +78,7 @@
               }
          },
          "expectedResult":{
-
+          "result:large_building": false
          }
       },
       {
@@ -118,7 +118,7 @@
               }
          },
          "expectedResult":{
-
+            "result:large_building": false
          }
       }
    ]

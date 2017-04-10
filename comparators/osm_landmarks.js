@@ -8,7 +8,7 @@ var getRestaurants = require('osm-landmarks').getRestaurants;
 module.exports = osmLandmarks;
 
 function osmLandmarks(newVersion, oldVersion, callback) {
-  var result = {};
+  var result = {'result:osm_landmarks': false};
   var featureID, featureType;
 
   if (newVersion && newVersion.properties && ('osm:id' in newVersion.properties) && ('osm:type' in newVersion.properties)) {
@@ -30,7 +30,7 @@ function osmLandmarks(newVersion, oldVersion, callback) {
   q.awaitAll(function(err, results) {
     if (err) {
       console.log(err);
-      return callback(err, {});
+      return callback(err, result);
     }
 
     for (var i = 0; i < results.length; i++) {
@@ -43,6 +43,6 @@ function osmLandmarks(newVersion, oldVersion, callback) {
       }
     }
 
-    return callback(null, {});
+    return callback(null, result);
   });
 }
