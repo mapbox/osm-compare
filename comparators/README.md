@@ -87,3 +87,6 @@ Report when a new user creates a new water feature.
 
 ### invalid-tag-modification
 Reports when a feature's primary tag is modified between newVersion and oldVersion of the feature.
+
+### invalid_name
+Report if a values of `name` or `name:*` for a feature have any profanity.
