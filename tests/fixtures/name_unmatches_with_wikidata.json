@@ -21,9 +21,7 @@
     },
     {
       "description": "Test OSM name matches with aliases on Wikidata",
-      "expectedResult": {
-        "result:name_unmatches_with_wikidata": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -38,9 +36,7 @@
     },
     {
       "description": "Test feature with no Wikidata tag",
-      "expectedResult": {
-        "result:name_unmatches_with_wikidata": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -54,9 +50,7 @@
     },
     {
       "description": "Test feature with Wikidata tag and not a name modification",
-      "expectedResult": {
-        "result:name_unmatches_with_wikidata": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {

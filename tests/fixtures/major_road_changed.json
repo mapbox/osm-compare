@@ -1348,9 +1348,7 @@
           ]
         }
       },
-      "expectedResult": {
-        "result:major_road_changed": false
-      }
+      "expectedResult": false
     },
     {
       "description": "major road failure - not major road",
@@ -1884,9 +1882,7 @@
           ]
         }
       },
-      "expectedResult": {
-        "result:major_road_changed": false
-      }
+      "expectedResult": false
     }
   ]
 }

@@ -18,9 +18,7 @@
     },
     {
       "description": "Test feature with invalid tag combination with count greater than 1",
-      "expectedResult": {
-        "result:invalid_tag_combination": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -33,9 +31,7 @@
     },
     {
       "description": "Test feature with no primary tags",
-      "expectedResult": {
-        "result:invalid_tag_combination": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {

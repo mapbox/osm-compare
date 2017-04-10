@@ -15,7 +15,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
   var cfVersion = 2;
   var db = new sqlite.Database(join(__dirname, '..', 'landmarks.spatialite'));
-  var result = {'result:landmark_score': false};
+  var result = false;
 
   // This should probably run through both?
   var theVersion = [newVersion, oldVersion].filter(function (v) {

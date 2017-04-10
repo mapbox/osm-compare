@@ -18,7 +18,7 @@ function isPathRoad(feature) {
 }
 
 function pathRoadChanged(newVersion, oldVersion) {
-  var result = {'result:path_road_changed': false};
+  var result = false;
 
   if (!oldVersion && !newVersion) {
     return result;
@@ -31,10 +31,11 @@ function pathRoadChanged(newVersion, oldVersion) {
 
   if (!oldVersion && newVersion) {
     if (isPathRoad(newVersion)) {
-      result['result:path_road_changed'] = {};
-      result['result:path_road_changed'].added = true;
-
-      return result;
+      return {
+        'result:path_road_changed': {
+          'added': true
+        }
+      };
     }
   }
 
@@ -44,12 +45,13 @@ function pathRoadChanged(newVersion, oldVersion) {
 
     if (isPathRoad(oldVersion) || isPathRoad(newVersion)) {
       if (oldHighwayType !== newHighwayType) {
-        result['result:path_road_changed'] = {};
-        result['result:path_road_changed'].modified = true;
-        result['result:path_road_changed'].from = oldHighwayType;
-        result['result:path_road_changed'].to = newHighwayType;
-
-        return result;
+        return {
+          'result:path_road_changed': {
+            'modified': true,
+            'from': oldHighwayType,
+            'to': newHighwayType
+          }
+        };
       }
     }
   }

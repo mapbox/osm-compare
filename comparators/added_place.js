@@ -3,7 +3,7 @@
 module.exports = addedPlace;
 
 function addedPlace(newVersion, oldVersion) {
-  var result = {'result:added_place': false};
+  var result = false;
   if (!newVersion) {
     return result;
   }

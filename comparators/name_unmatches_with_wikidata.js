@@ -29,7 +29,7 @@ function getWikidataAliasNames(feature, id) {
 }
 
 function nameUnmatchesWithWikidata(newVersion, oldVersion, callback) {
-  var result = {'result:name_unmatches_with_wikidata': false};
+  var result = false;
 
   if (!newVersion) return callback(null, result);
 

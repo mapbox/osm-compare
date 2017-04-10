@@ -30,7 +30,7 @@ function getUserDetails(user, callback) {
 }
 
 function waterFeatureByNewUser(newVersion, oldVersion, callback) {
-  var result = {'result:water_feature_by_new_user': false};
+  var result = false;
   // What is the number of changesets of a user to be considered a new user?
   var MINIMUM_CHANGESET_COUNT = 10;
 

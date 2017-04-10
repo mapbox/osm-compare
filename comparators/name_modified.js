@@ -20,7 +20,7 @@ var compareJSON = function(obj1, obj2) {
 * @returns {undefined} calls callback.
 */
 function name_modified(newVersion, oldVersion) {
-  var result = {'result:name_modified': false};
+  var result = {};
   var cfVersion = 2;
 
   if (!newVersion || !oldVersion) {
@@ -62,7 +62,7 @@ function name_modified(newVersion, oldVersion) {
     result['result:name_modified'][obj] = 1;
   }
   if (isEmpty(result['result:name_modified'])) {
-    result = {'result:name_modified': false};
+    result = false;
   }
   return result;
 }

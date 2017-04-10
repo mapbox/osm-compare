@@ -9,7 +9,7 @@ function hasPokename(name) {
 }
 
 function pokemonEdits(newVersion, oldVersion) {
-  var result = {'result:pokemon_edits': false};
+  var result = false;
 
   if (!newVersion && !oldVersion) {
     // None of old version or new Version present
@@ -24,8 +24,7 @@ function pokemonEdits(newVersion, oldVersion) {
       for (var prop in newVersion.properties) {
         if (prop.indexOf('name') === 0) {
           if (hasPokename(newVersion.properties[prop])) {
-            result['result:pokemon_edits'] = true;
-            return result;
+            return {'result:pokemon_edits': true};
           }
         }
       }

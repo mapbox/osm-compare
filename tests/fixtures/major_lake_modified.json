@@ -805,9 +805,7 @@
           ]
         }
       },
-      "expectedResult": {
-        "result:major_lake_modified": false
-      }
+      "expectedResult": false
     },
     {
       "description": "major road failure - low version number",
@@ -1341,9 +1339,7 @@
           ]
         }
       },
-      "expectedResult": {
-        "result:major_lake_modified": false
-      }
+      "expectedResult": false
     },
     {
       "description": "major road failure - not major road",
@@ -1877,9 +1873,7 @@
           ]
         }
       },
-      "expectedResult": {
-        "result:major_lake_modified": false
-      }
+      "expectedResult": false
     }
   ]
 }

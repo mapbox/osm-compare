@@ -8,7 +8,7 @@ var getRestaurants = require('osm-landmarks').getRestaurants;
 module.exports = osmLandmarks;
 
 function osmLandmarks(newVersion, oldVersion, callback) {
-  var result = {'result:osm_landmarks': false};
+  var result = false;
   var featureID, featureType;
 
   if (newVersion && newVersion.properties && ('osm:id' in newVersion.properties) && ('osm:type' in newVersion.properties)) {

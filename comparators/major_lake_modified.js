@@ -47,7 +47,7 @@ var lakeIds = [
 module.exports = majorLakeModified;
 
 function majorLakeModified(newVersion, oldVersion) {
-  var result = {'result:major_lake_modified': false};
+  var result = false;
   var obj = {};
   if (newVersion) {
     obj = newVersion;

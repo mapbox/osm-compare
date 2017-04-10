@@ -3,7 +3,7 @@
 module.exports = invalidName;
 
 function invalidName(newVersion, oldVersion, callback) {
-  var result = {'result:invalid_name': false};
+  var result = false;
   // Not interested if there isn't a newVersion.
   if (!newVersion) return callback(null, result);
 

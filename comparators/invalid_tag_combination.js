@@ -6,7 +6,7 @@ var path = require('path');
 
 module.exports = invalidTagCombination;
 function invalidTagCombination(newVersion, oldVersion, callback) {
-  var result = {'result:invalid_tag_combination': false};
+  var result = false;
   // What should be the minimum value of count to be a valid tag combination.
   var MIN_COUNT = 1;
 

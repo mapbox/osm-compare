@@ -4,7 +4,7 @@ var turfArea = require('turf-area');
 module.exports = largeBuilding;
 
 function largeBuilding(newVersion, oldVersion) {
-  var result = {'result:large_building': false};
+  var result = false;
   if (!newVersion || !newVersion.hasOwnProperty('geometry') || newVersion['geometry'] === null) {
     return result;
   }

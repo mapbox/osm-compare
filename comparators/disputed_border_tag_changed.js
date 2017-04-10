@@ -2,7 +2,7 @@
 module.exports = disputedBorderTagChanged;
 
 function disputedBorderTagChanged(newVersion, oldVersion) {
-  var result = {'result:disputed_border_tag_changed': false};
+  var result = false;
 
   if (!newVersion && !oldVersion) {
   // None of old version or new Version present

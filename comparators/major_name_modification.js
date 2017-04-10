@@ -5,7 +5,7 @@ var Levenshtein = require('levenshtein');
 module.exports = majorNameModification;
 
 function majorNameModification(newVersion, oldVersion) {
-  var result = {'result:major_name_modification': false};
+  var result = false;
 
   if (!newVersion || !newVersion.properties || !newVersion.properties.name || (!(newVersion.properties.wikidata ||  newVersion.properties.wikipedia))) return result;
   if (!oldVersion || !oldVersion.properties || !oldVersion.properties.name) return result;

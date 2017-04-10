@@ -33,7 +33,7 @@ function getAccountCreated(userID, callback) {
 }
 
 function pokemonFootway(newVersion, oldVersion, callback) {
-  var result = {'result:pokemon_footway': false};
+  var result = false;
   // Yeah. moment.js is wierd, month start from zero
   var newUserDate = moment([2016, 11, 23]);
 

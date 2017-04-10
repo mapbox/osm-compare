@@ -21,9 +21,7 @@
     },
     {
       "description": "Test existing lake modified by a new user",
-      "expectedResult": {
-        "result:water_feature_by_new_user": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -50,9 +48,7 @@
     },
     {
       "description": "Test new not-lake created by a new user",
-      "expectedResult": {
-        "result:water_feature_by_new_user": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -67,9 +63,7 @@
     },
     {
       "description": "Test new lake created by a not new user",
-      "expectedResult": {
-        "result:water_feature_by_new_user": false
-      },
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {

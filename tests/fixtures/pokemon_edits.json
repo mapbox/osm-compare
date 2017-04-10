@@ -97,9 +97,7 @@
                 ]
             }
         },
-    "expectedResult" : {
-        "result:pokemon_edits": false
-    }
+    "expectedResult" : false
   }
     ]
 }

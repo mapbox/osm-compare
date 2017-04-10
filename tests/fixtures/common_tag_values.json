@@ -5,17 +5,13 @@
             "description": "Feature with no new version and old version",
             "newVersion": {},
             "oldVersion": {},
-            "expectedResult": {
-                "result:common_tag_values": false
-            }
+            "expectedResult": false
         },
         {
             "description": "Feature with valid highway tag",
             "newVersion": {"properties": {"highway" : "primary"}},
             "oldVersion": {},
-            "expectedResult": {
-                "result:common_tag_values": false
-            }
+            "expectedResult": false
         },
         {
             "description": "Feature with invalid highway tag",

@@ -2,7 +2,7 @@
 module.exports = invalidHighwayTags;
 
 function invalidHighwayTags(newVersion, oldVersion) {
-  var result = {'result:invalid_highway_tags': false};
+  var result = false;
   var validHighwayTags = [
     'motorway',
     'trunk',

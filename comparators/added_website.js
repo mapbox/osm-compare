@@ -3,7 +3,7 @@
 module.exports = addedWebsite;
 
 function addedWebsite(newVersion, oldVersion) {
-  var result = {'result:added_website': false};
+  var result = false;
   if (oldVersion && oldVersion.properties && newVersion && newVersion.properties && oldVersion.properties.website === newVersion.properties.website) {
     return result;
   } else if (newVersion && newVersion.properties && 'website' in newVersion.properties) {

@@ -3,7 +3,7 @@
 module.exports = modifiedPlaceWikidata;
 
 function modifiedPlaceWikidata(newVersion, oldVersion) {
-  var result = {'result:modified_place_wikidata': false};
+  var result = false;
   if (!newVersion || !newVersion.properties) return result;
   if (!oldVersion || !oldVersion.properties) return result;
   // Assumption: Place features with edited wikidata tag need to flagged
