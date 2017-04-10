@@ -114,6 +114,7 @@ function processFixtureFile(assert, jsonData, callback) {
 function processFixture(assert, compareFunction, fixture, callback) {
   compareFunction(fixture.newVersion, fixture.oldVersion, function(err, result) {
     if (err) {
+      assert.ifError(err);
       return callback(err);
     }
     assert.deepEqual(result, fixture.expectedResult, fixture.description);

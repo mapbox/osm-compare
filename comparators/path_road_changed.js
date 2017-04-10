@@ -31,6 +31,7 @@ function pathRoadChanged(newVersion, oldVersion) {
 
   if (!oldVersion && newVersion) {
     if (isPathRoad(newVersion)) {
+      result['result:path_road_changed'] = {};
       result['result:path_road_changed'].added = true;
 
       return result;
@@ -43,6 +44,7 @@ function pathRoadChanged(newVersion, oldVersion) {
 
     if (isPathRoad(oldVersion) || isPathRoad(newVersion)) {
       if (oldHighwayType !== newHighwayType) {
+        result['result:path_road_changed'] = {};
         result['result:path_road_changed'].modified = true;
         result['result:path_road_changed'].from = oldHighwayType;
         result['result:path_road_changed'].to = newHighwayType;

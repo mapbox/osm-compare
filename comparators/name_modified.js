@@ -1,5 +1,7 @@
 'use strict';
 
+var isEmpty = require('lodash.isempty');
+
 var compareJSON = function(obj1, obj2) {
   var ret = {};
   for (var i in obj2) {
@@ -48,6 +50,8 @@ function name_modified(newVersion, oldVersion) {
   var arr = {};
   arr = compareJSON(oldVersionNames, newVersionNames);
 
+  result['result:name_modified'] = {};
+
   for (var obj in arr) {
     result['result:name_modified'][obj] = 1;
   }
@@ -56,6 +60,9 @@ function name_modified(newVersion, oldVersion) {
 
   for (obj in arr) {
     result['result:name_modified'][obj] = 1;
+  }
+  if (isEmpty(result['result:name_modified'])) {
+    result = {'result:name_modified': false};
   }
   return result;
 }
