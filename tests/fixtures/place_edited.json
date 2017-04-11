@@ -77,8 +77,7 @@
                     ]
                 }
             },
-            "expectedResult": {
-            }
+            "expectedResult": false
         },
         {
             "description": "Flags place edited - name changed",

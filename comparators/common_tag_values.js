@@ -13,13 +13,13 @@ var primaryTags = [
 ];
 
 function commonTagValues(newVersion, oldVersion) {
-  var result = {};
+  var result = false;
 
   if (!newVersion || !newVersion.properties)
-    return result;
+    return false;
 
   var primary_tag_present = false;
-  result['result:common_tag_values'] = true;
+  result = {'result:common_tag_values': true};
 
   for (var i = primaryTags.length - 1; i >= 0; i--) {
     var tag = primaryTags[i];
@@ -31,12 +31,12 @@ function commonTagValues(newVersion, oldVersion) {
       var value = newVersion.properties[tag];
       for (var j = commonValues.length - 1; j >= 0; j--) {
         if (commonValues[j]['value'] === value && !(commonValues[j]['fraction'] <= 0.0 && commonValues[j]['in_wiki'] === false)) {
-          result = {};
+          return false;
         }
       }
     }
   }
   if (!primary_tag_present)
-    result = {};
+    return false;
   return result;
 }

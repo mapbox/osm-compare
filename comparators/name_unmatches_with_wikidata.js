@@ -2,7 +2,7 @@
 
 var request = require('request');
 
-module.exports = nameMatchesToWikidata;
+module.exports = nameUnmatchesWithWikidata;
 
 function getWikidataName(feature, id) {
   if (feature.hasOwnProperty('entities') &&
@@ -28,14 +28,12 @@ function getWikidataAliasNames(feature, id) {
   return names;
 }
 
-function nameMatchesToWikidata(newVersion, oldVersion, callback) {
-  var result = {};
-
-  if (!newVersion) return callback(null, result);
+function nameUnmatchesWithWikidata(newVersion, oldVersion, callback) {
+  if (!newVersion) return callback(null, false);
 
   // Check if feature is newly created.
   if (newVersion.properties['osm:version'] !== 1) {
-    if (!oldVersion || (newVersion.properties['name'] === oldVersion.properties['name'])) return callback(null, result);
+    if (!oldVersion || (newVersion.properties['name'] === oldVersion.properties['name'])) return callback(null, false);
   }
 
   if (newVersion.properties.hasOwnProperty('wikidata') && newVersion.properties.hasOwnProperty('name')) {
@@ -51,12 +49,12 @@ function nameMatchesToWikidata(newVersion, oldVersion, callback) {
         var wikidataAliasNames = getWikidataAliasNames(wikidataFeature, wikidataID);
 
         if ((osmName !== wikidataName) && (wikidataAliasNames.indexOf(osmName) === -1)) return callback(null, {
-          'result:name_matches_to_wikidata': false
+          'result:name_unmatches_with_wikidata': true
         });
       }
-      return callback(null, result);
+      return callback(null, false);
     });
   } else {
-    return callback(null, result);
+    return callback(null, false);
   }
 }

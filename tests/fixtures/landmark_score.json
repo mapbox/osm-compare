@@ -47,7 +47,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     },
     {
       "description": "Changed object has wikipedia tag that doesnt exist in our database",
@@ -97,7 +97,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     },
     {
       "description": "Changed object has wikipedia tag and is near the expected location",
@@ -199,7 +199,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     },
     {
       "description": "Changed object has wikidata tag that doesnt exist in our database",
@@ -1565,7 +1565,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     }
   ]
 }

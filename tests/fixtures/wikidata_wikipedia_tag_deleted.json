@@ -33,7 +33,7 @@
         "properties": {},
         "geometry": null
       },
-      "expectedResult": {}
+      "expectedResult": false
     },
     {
       "description": "wikipedia tag deleted",

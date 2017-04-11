@@ -29,15 +29,12 @@ function isMajorRoad(feature) {
 }
 
 function majorRoadChanged(newVersion, oldVersion) {
-  var result = {};
-  result['result:major_road_changed'] = {};
-
   if (!oldVersion && !newVersion) {
-    return {};
+    return false;
   }
 
   if (!oldVersion && newVersion) {
-    return {};
+    return false;
   }
 
   var oldVersionNumber = getVersion(oldVersion);
@@ -49,25 +46,29 @@ function majorRoadChanged(newVersion, oldVersion) {
 
     if (oldVersionNumber > TRIGGER_AFTER_VERSION && isMajorRoad(oldVersion)) {
       if (oldHighwayType !== newHighwayType) {
-        result['result:major_road_changed'].modified = true;
-        result['result:major_road_changed'].from = oldHighwayType;
-        result['result:major_road_changed'].to = newHighwayType;
-
-        return result;
+        return {
+          'result:major_road_changed': {
+            'modified': true,
+            'from': oldHighwayType,
+            'to': newHighwayType
+          }
+        };
       }
     }
   }
 
   if (oldVersion && !newVersion) {
     if (oldVersionNumber > TRIGGER_AFTER_VERSION && isMajorRoad(oldVersion)) {
-      result['result:major_road_changed'].deleted = true;
-      result['result:major_road_changed'].version = oldVersionNumber;
-
-      return result;
+      return {
+        'result:major_road_changed': {
+          'deleted': true,
+          'version': oldVersionNumber
+        }
+      };
     }
   }
 
-  return {};
+  return false;
 }
 
 module.exports = majorRoadChanged;

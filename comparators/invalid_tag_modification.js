@@ -19,8 +19,7 @@ function getPrimaryTags(properties) {
 
 
 function invalidTagModification(newVersion, oldVersion, callback) {
-  var result = {};
-  if (!newVersion || !oldVersion) return callback(null, result);
+  if (!newVersion || !oldVersion) return callback(null, false);
 
   var primaryTags = getPrimaryTags(oldVersion.properties);
   // Check if all primary tags are retained in newVersion.
@@ -28,5 +27,5 @@ function invalidTagModification(newVersion, oldVersion, callback) {
     if (!(primaryTags[i] in newVersion.properties)) return callback(null, {'result:invalid_tag_modification': true});
   }
 
-  return callback(null, {});
+  return callback(null, false);
 }

@@ -27,7 +27,7 @@ function placeEdited(newVersion, oldVersion) {
     isPlace = getIsPlace(newVersion) || getIsPlace(oldVersion);
   }
   if (!isPlace) {
-    return {};
+    return false;
   }
   geometryChanged = getGeometryChanged(newVersion, oldVersion);
   nameChanged = getNameChanged(newVersion, oldVersion);
@@ -37,7 +37,7 @@ function placeEdited(newVersion, oldVersion) {
       'result:place_edited': true
     };
   } else {
-    return {};
+    return false;
   }
 }
 

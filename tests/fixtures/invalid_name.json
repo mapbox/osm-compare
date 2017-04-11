@@ -3,7 +3,7 @@
   "fixtures": [
     {
       "description": "Test feature with name tag but without profanity",
-      "expectedResult": {},
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -39,7 +39,7 @@
     },
     {
       "description": "Test feature with profanity in name:* tag when naughty-words does not exist for the locale",
-      "expectedResult": {},
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {

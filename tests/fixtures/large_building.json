@@ -77,9 +77,7 @@
                  ]
               }
          },
-         "expectedResult":{
-
-         }
+         "expectedResult":false
       },
       {
          "Description":"This is a too large water body input that should not be caught",
@@ -117,9 +115,7 @@
                  ]
               }
          },
-         "expectedResult":{
-
-         }
+         "expectedResult": false
       }
    ]
 }

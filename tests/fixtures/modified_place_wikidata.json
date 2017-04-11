@@ -103,9 +103,7 @@
         },
         "geometry":null
       },
-      "expectedResult":{
-
-      }
+      "expectedResult": false
     }
   ]
 }

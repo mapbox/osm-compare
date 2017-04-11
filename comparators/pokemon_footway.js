@@ -40,17 +40,17 @@ function pokemonFootway(newVersion, oldVersion, callback) {
     getAccountCreated(newVersion.properties['osm:uid'], function (error, accountCreated) {
       if (error) {
         console.log(String(error));
-        return callback(null, {});
+        return callback(null, false);
       }
       if (accountCreated.unix() >= newUserDate.unix()) {
         return callback(null, {
           'result:pokemon_footway': true
         });
       } else {
-        return callback(null, {});
+        return callback(null, false);
       }
     });
   } else {
-    return callback(null, {});
+    return callback(null, false);
   }
 }

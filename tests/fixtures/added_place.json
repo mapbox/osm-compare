@@ -5,7 +5,7 @@
       "description": "No old version, new version",
       "newVersion": null,
       "oldVersion": null,
-      "expectedResult": {}
+      "expectedResult": false
     },
     {
       "description": "Checks for added place tag",
@@ -106,7 +106,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     }
   ]
 }

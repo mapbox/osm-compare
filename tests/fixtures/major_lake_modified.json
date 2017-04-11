@@ -805,7 +805,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     },
     {
       "description": "major road failure - low version number",
@@ -1339,7 +1339,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     },
     {
       "description": "major road failure - not major road",
@@ -1873,7 +1873,7 @@
           ]
         }
       },
-      "expectedResult": {}
+      "expectedResult": false
     }
   ]
 }

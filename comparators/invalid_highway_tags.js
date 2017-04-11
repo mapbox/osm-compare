@@ -2,7 +2,6 @@
 module.exports = invalidHighwayTags;
 
 function invalidHighwayTags(newVersion, oldVersion) {
-  var result = {};
   var validHighwayTags = [
     'motorway',
     'trunk',
@@ -48,8 +47,8 @@ function invalidHighwayTags(newVersion, oldVersion) {
     'turning_circle'
   ];
   if (newVersion && newVersion.properties && newVersion.properties['highway'] && validHighwayTags.indexOf(newVersion.properties.highway) === -1) {
-    result['result:invalid_highway_tags'] = true;
+    return {'result:invalid_highway_tags': true};
   }
-  return result;
+  return false;
 }
 

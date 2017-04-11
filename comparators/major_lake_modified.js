@@ -53,10 +53,10 @@ function majorLakeModified(newVersion, oldVersion) {
   } else if (oldVersion) {
     obj = oldVersion;
   } else {
-    return {};
+    return false;
   }
   if (!obj.properties || !obj.properties['osm:type'] || !obj.properties['osm:id']) {
-    return {};
+    return false;
   }
   var props = obj.properties;
   var osmType = props['osm:type'];
@@ -66,6 +66,6 @@ function majorLakeModified(newVersion, oldVersion) {
       'result:major_lake_modified': true
     };
   } else {
-    return {};
+    return false;
   }
 }

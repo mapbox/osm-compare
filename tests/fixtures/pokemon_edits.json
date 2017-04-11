@@ -97,8 +97,7 @@
                 ]
             }
         },
-    "expectedResult" : {
-    }
+    "expectedResult" : false
   }
     ]
 }

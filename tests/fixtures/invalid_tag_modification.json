@@ -23,7 +23,7 @@
     },
     {
       "description": "Test modification to primary tag's value of a feature",
-      "expectedResult": {},
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -41,7 +41,7 @@
     },
     {
       "description": "Test feature with no primary tag",
-      "expectedResult": {},
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -78,7 +78,7 @@
     },
     {
       "description": "Test addition of primary tag of a feature",
-      "expectedResult": {},
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -97,7 +97,7 @@
     },
     {
       "description": "Test addition of a second primary tag to a feature",
-      "expectedResult": {},
+      "expectedResult": false,
       "newVersion": {
         "type": "Feature",
         "properties": {

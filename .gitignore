@@ -1,3 +1,4 @@
 node_modules
 *.log
 *.spatialite
+*.DS_Store

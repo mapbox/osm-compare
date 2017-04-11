@@ -45,9 +45,7 @@
         }
       },
       "oldVersion": null,
-      "expectedResult": {
-        "result:null_island": false
-      }
+      "expectedResult": false
     }
   ]
 }
