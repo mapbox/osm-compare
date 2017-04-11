@@ -132,6 +132,22 @@
         },
         "geometry": null
       }
+    },
+    {
+      "description": "When all properties of a feature are removed, assuming that the feature is being moved to a relation",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "railway": "yes"
+        },
+        "geometry": null
+      }
     }
   ]
 }
