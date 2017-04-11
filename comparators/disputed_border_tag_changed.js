@@ -2,11 +2,9 @@
 module.exports = disputedBorderTagChanged;
 
 function disputedBorderTagChanged(newVersion, oldVersion) {
-  var result = false;
-
   if (!newVersion && !oldVersion) {
   // None of old version or new Version present
-    return result;
+    return false;
   }
   if (newVersion && oldVersion) {
   // Both new Version and old Version are present, which indicates feature has been modified
@@ -23,5 +21,5 @@ function disputedBorderTagChanged(newVersion, oldVersion) {
 
   }
 
-  return result;
+  return false;
 }

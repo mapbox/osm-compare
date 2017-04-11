@@ -24,7 +24,7 @@ function landmark_score(newVersion, oldVersion, callback) {
 
   if (theVersion.length === 0) {
     db.close();
-    return callback(null, result);
+    return callback(null, false);
   }
   theVersion = theVersion[0];
 
@@ -68,7 +68,7 @@ function landmark_score(newVersion, oldVersion, callback) {
     });
   } else {
     db.close();
-    return callback(null, result);
+    return callback(null, false);
   }
 }
 

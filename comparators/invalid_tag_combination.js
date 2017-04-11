@@ -6,11 +6,10 @@ var path = require('path');
 
 module.exports = invalidTagCombination;
 function invalidTagCombination(newVersion, oldVersion, callback) {
-  var result = false;
   // What should be the minimum value of count to be a valid tag combination.
   var MIN_COUNT = 1;
 
-  if (!newVersion) return callback(null, result);
+  if (!newVersion) return callback(null, false);
 
   csv.parse(fs.readFileSync(path.join(__dirname, 'tag-combinations.csv')), function (error, rows) {
     var tags = Object.keys(newVersion.properties);
@@ -31,6 +30,6 @@ function invalidTagCombination(newVersion, oldVersion, callback) {
         if (isNaN(count) || (count < MIN_COUNT)) return callback(null, {'result:invalid_tag_combination': true});
       }
     }
-    return callback(null, result);
+    return callback(null, false);
   });
 }

@@ -29,14 +29,12 @@ function isMajorRoad(feature) {
 }
 
 function majorRoadChanged(newVersion, oldVersion) {
-  var result = false;
-
   if (!oldVersion && !newVersion) {
-    return result;
+    return false;
   }
 
   if (!oldVersion && newVersion) {
-    return result;
+    return false;
   }
 
   var oldVersionNumber = getVersion(oldVersion);
@@ -70,7 +68,7 @@ function majorRoadChanged(newVersion, oldVersion) {
     }
   }
 
-  return result;
+  return false;
 }
 
 module.exports = majorRoadChanged;

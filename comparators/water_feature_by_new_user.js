@@ -30,26 +30,25 @@ function getUserDetails(user, callback) {
 }
 
 function waterFeatureByNewUser(newVersion, oldVersion, callback) {
-  var result = false;
   // What is the number of changesets of a user to be considered a new user?
   var MINIMUM_CHANGESET_COUNT = 10;
 
-  if (!newVersion || newVersion.properties['osm:version'] !== 1) return callback(null, result);
+  if (!newVersion || newVersion.properties['osm:version'] !== 1) return callback(null, false);
 
   if (isWaterFeature(newVersion)) {
     var user = newVersion.properties['osm:user'];
 
     getUserDetails(user, function (error, userDetails) {
       // Return back from the compare function with no results.
-      if (error) return callback(null, result);
+      if (error) return callback(null, false);
 
       if (userDetails['changeset_count'] <= MINIMUM_CHANGESET_COUNT) {
         return callback(null, {'result:water_feature_by_new_user': true});
       } else {
-        return callback(null, result);
+        return callback(null, false);
       }
     });
   } else {
-    return callback(null, result);
+    return callback(null, false);
   }
 }

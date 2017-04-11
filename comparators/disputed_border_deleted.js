@@ -2,11 +2,9 @@
 module.exports = disputedBorderDeleted;
 
 function disputedBorderDeleted(newVersion, oldVersion) {
-  var result = false;
-
   if (!newVersion && !oldVersion) {
   // None of old version or new Version present
-    return result;
+    return false;
   }
   if (!newVersion && oldVersion) {
   // Only old Version is present, which indicates feature has been deleted
@@ -19,5 +17,5 @@ function disputedBorderDeleted(newVersion, oldVersion) {
     }
   }
 
-  return result;
+  return false;
 }

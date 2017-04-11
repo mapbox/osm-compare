@@ -3,9 +3,8 @@
 module.exports = addedPlace;
 
 function addedPlace(newVersion, oldVersion) {
-  var result = false;
   if (!newVersion) {
-    return result;
+    return false;
   }
   if (oldVersion) {
     if ('place' in newVersion.properties && !('place' in oldVersion.properties)) {
@@ -21,5 +20,5 @@ function addedPlace(newVersion, oldVersion) {
          newVersion.properties['place'] === 'country')) {
     return {'result:added_place': true};
   }
-  return result;
+  return false;
 }

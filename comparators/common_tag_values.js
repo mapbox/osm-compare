@@ -16,7 +16,7 @@ function commonTagValues(newVersion, oldVersion) {
   var result = false;
 
   if (!newVersion || !newVersion.properties)
-    return result;
+    return false;
 
   var primary_tag_present = false;
   result = {'result:common_tag_values': true};
@@ -31,12 +31,12 @@ function commonTagValues(newVersion, oldVersion) {
       var value = newVersion.properties[tag];
       for (var j = commonValues.length - 1; j >= 0; j--) {
         if (commonValues[j]['value'] === value && !(commonValues[j]['fraction'] <= 0.0 && commonValues[j]['in_wiki'] === false)) {
-          result = false;
+          return false;
         }
       }
     }
   }
   if (!primary_tag_present)
-    result = false;
+    return false;
   return result;
 }

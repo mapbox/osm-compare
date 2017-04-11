@@ -3,9 +3,8 @@
 module.exports = invalidName;
 
 function invalidName(newVersion, oldVersion, callback) {
-  var result = false;
   // Not interested if there isn't a newVersion.
-  if (!newVersion) return callback(null, result);
+  if (!newVersion) return callback(null, false);
 
   var properties = newVersion.properties;
   for (var key in properties) {
@@ -31,5 +30,5 @@ function invalidName(newVersion, oldVersion, callback) {
 
     }
   }
-  return callback(null, result);
+  return callback(null, false);
 }

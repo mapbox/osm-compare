@@ -33,7 +33,6 @@ function getAccountCreated(userID, callback) {
 }
 
 function pokemonFootway(newVersion, oldVersion, callback) {
-  var result = false;
   // Yeah. moment.js is wierd, month start from zero
   var newUserDate = moment([2016, 11, 23]);
 
@@ -41,17 +40,17 @@ function pokemonFootway(newVersion, oldVersion, callback) {
     getAccountCreated(newVersion.properties['osm:uid'], function (error, accountCreated) {
       if (error) {
         console.log(String(error));
-        return callback(null, result);
+        return callback(null, false);
       }
       if (accountCreated.unix() >= newUserDate.unix()) {
         return callback(null, {
           'result:pokemon_footway': true
         });
       } else {
-        return callback(null, result);
+        return callback(null, false);
       }
     });
   } else {
-    return callback(null, result);
+    return callback(null, false);
   }
 }

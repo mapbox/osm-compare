@@ -29,13 +29,11 @@ function getWikidataAliasNames(feature, id) {
 }
 
 function nameUnmatchesWithWikidata(newVersion, oldVersion, callback) {
-  var result = false;
-
-  if (!newVersion) return callback(null, result);
+  if (!newVersion) return callback(null, false);
 
   // Check if feature is newly created.
   if (newVersion.properties['osm:version'] !== 1) {
-    if (!oldVersion || (newVersion.properties['name'] === oldVersion.properties['name'])) return callback(null, result);
+    if (!oldVersion || (newVersion.properties['name'] === oldVersion.properties['name'])) return callback(null, false);
   }
 
   if (newVersion.properties.hasOwnProperty('wikidata') && newVersion.properties.hasOwnProperty('name')) {
@@ -54,9 +52,9 @@ function nameUnmatchesWithWikidata(newVersion, oldVersion, callback) {
           'result:name_unmatches_with_wikidata': true
         });
       }
-      return callback(null, result);
+      return callback(null, false);
     });
   } else {
-    return callback(null, result);
+    return callback(null, false);
   }
 }

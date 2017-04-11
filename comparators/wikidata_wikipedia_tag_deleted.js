@@ -3,9 +3,8 @@
 module.exports = wikidata_wikipedia_tag_deleted;
 
 function wikidata_wikipedia_tag_deleted(newVersion, oldVersion) {
-  var result = false;
-  if (!newVersion || !newVersion.properties) return result;
-  if (!oldVersion || !oldVersion.properties) return result;
+  if (!newVersion || !newVersion.properties) return false;
+  if (!oldVersion || !oldVersion.properties) return false;
 
   if (('wikidata' in oldVersion.properties && !('wikidata' in newVersion.properties)) ||
      ('wikipedia' in oldVersion.properties && !('wikipedia' in newVersion.properties))) {
@@ -14,5 +13,5 @@ function wikidata_wikipedia_tag_deleted(newVersion, oldVersion) {
     };
   }
 
-  return result;
+  return false;
 }
