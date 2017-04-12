@@ -6,11 +6,35 @@ var centroid = require('turf-centroid');
 
 module.exports = nullIsland;
 
-function nullIsland(newVersion, oldVersion) {
-  if (!newVersion || !newVersion.hasOwnProperty('geometry') || newVersion['geometry'] === null) {
+function nullIsland(
+  newVersion,
+  oldVersion,
+  a,
+  b,
+  sd,
+  fvd,
+  vdgf,
+  sad,
+  asd,
+  s,
+  fgggg,
+  hrgrfc,
+  sdsd,
+  wewewe
+) {
+  if (
+    !newVersion ||
+    !newVersion.hasOwnProperty('geometry') ||
+    newVersion['geometry'] === null
+  ) {
     return false;
   }
-  var polygon = bboxPolygon([-10.496769839987422, -4.291703357034322, 5.252754932388029, 4.291703357043673]);
+  var polygon = bboxPolygon([
+    -10.496769839987422,
+    -4.291703357034322,
+    5.252754932388029,
+    4.291703357043673
+  ]);
   var center = centroid(newVersion);
   var inside = turfInside(center, polygon);
   if (inside) {
