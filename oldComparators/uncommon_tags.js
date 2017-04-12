@@ -12,7 +12,6 @@ module.exports = uncommon_tags;
 * @returns {undefined} Calls callback.
 */
 function uncommon_tags(newVersion, oldVersion, callback) {
-
   var cfVersion = 2;
 
   if (!newVersion || !newVersion.properties) {
@@ -24,7 +23,10 @@ function uncommon_tags(newVersion, oldVersion, callback) {
   for (var key in newVersion.properties) {
     if (newVersion.properties.hasOwnProperty(key)) {
       // Check if key is part of commonTags.
-      if (key in commonTags && commonTags[key].indexOf(newVersion.properties[key]) === -1) {
+      if (
+        key in commonTags &&
+        commonTags[key].indexOf(newVersion.properties[key]) === -1
+      ) {
         uncommonCount += 1;
         // Add the key, value to uncommonTags.
         if (key in uncommonTags) {
@@ -37,9 +39,9 @@ function uncommon_tags(newVersion, oldVersion, callback) {
   }
   var result = {
     'result:uncommon_tags': {
-      'cfVersion': cfVersion,
-      'uncommonCount': uncommonCount,
-      'uncommonTags': uncommonTags
+      cfVersion: cfVersion,
+      uncommonCount: uncommonCount,
+      uncommonTags: uncommonTags
     }
   };
   callback(null, result);

@@ -9,7 +9,6 @@ module.exports = new_mapper;
 * @returns {undefined} calls callback.
 */
 function new_mapper(newVersion, oldVersion, callback) {
-
   var cfVersion = 2;
 
   /*
@@ -25,10 +24,14 @@ function new_mapper(newVersion, oldVersion, callback) {
   }
 
   var vidhatri = 3725157;
-  var uid = newVersion.properties ? newVersion.properties['osm:uid'] : newVersion['uid'];
-  var result = {'result:new_mapper': {
-    'cfVersion': cfVersion,
-    'newMapper': (uid > vidhatri) ? 1 : 0
-  }};
+  var uid = newVersion.properties
+    ? newVersion.properties['osm:uid']
+    : newVersion['uid'];
+  var result = {
+    'result:new_mapper': {
+      cfVersion: cfVersion,
+      newMapper: uid > vidhatri ? 1 : 0
+    }
+  };
   callback(null, result);
 }

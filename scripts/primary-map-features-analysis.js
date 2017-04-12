@@ -11,16 +11,15 @@ if (!argv.counts) {
   console.log('  OPTIONS');
   console.log('    --counts counts.csv');
   console.log('');
-  return;
+  throw new Error('USAGE: error');
 }
 
 // Statistics for number of counts that are zero, less than 1 and greater than 1.
 var stats = [0, 0, 0];
 
-csv.parse(fs.readFileSync(argv.counts), function (error, rows) {
+csv.parse(fs.readFileSync(argv.counts), function(error, rows) {
   var header = [];
   for (var i = 0; i < rows.length; i++) {
-
     if (header.length === 0) {
       header = rows[i];
       continue;

@@ -48,9 +48,9 @@ function majorRoadChanged(newVersion, oldVersion) {
       if (oldHighwayType !== newHighwayType) {
         return {
           'result:major_road_changed': {
-            'modified': true,
-            'from': oldHighwayType,
-            'to': newHighwayType
+            modified: true,
+            from: oldHighwayType,
+            to: newHighwayType
           }
         };
       }
@@ -61,8 +61,8 @@ function majorRoadChanged(newVersion, oldVersion) {
     if (oldVersionNumber > TRIGGER_AFTER_VERSION && isMajorRoad(oldVersion)) {
       return {
         'result:major_road_changed': {
-          'deleted': true,
-          'version': oldVersionNumber
+          deleted: true,
+          version: oldVersionNumber
         }
       };
     }

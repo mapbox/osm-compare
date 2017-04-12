@@ -13,20 +13,42 @@ if (!argv.output) {
   console.log('  OPTIONS');
   console.log('    --output counts.csv');
   console.log('');
-  return;
+  throw new Error('USAGE: error');
 }
 
 // From: https://wiki.openstreetmap.org/wiki/Map_Features
 var features = [
-  'aerialway', 'aeroway', 'amenity', 'barrier', 'boundary', 'building', 'craft', 'emergency',
-  'geological', 'highway', 'historic', 'landuse', 'leisure', 'man_made', 'military', 'natural',
-  'office', 'places', 'power', 'public_transport', 'railway', 'route', 'shop', 'sport',
-  'tourism', 'waterway'
+  'aerialway',
+  'aeroway',
+  'amenity',
+  'barrier',
+  'boundary',
+  'building',
+  'craft',
+  'emergency',
+  'geological',
+  'highway',
+  'historic',
+  'landuse',
+  'leisure',
+  'man_made',
+  'military',
+  'natural',
+  'office',
+  'places',
+  'power',
+  'public_transport',
+  'railway',
+  'route',
+  'shop',
+  'sport',
+  'tourism',
+  'waterway'
 ];
 
 function readURL(url, callback) {
   console.log(url);
-  request(url, function (error, response, body) {
+  request(url, function(error, response, body) {
     if (error) callback(error);
 
     var counts = [];
@@ -41,7 +63,6 @@ function readURL(url, callback) {
           if (combinations[j]['other_key'] === features[i]) {
             counts[i] = 100.0 * combinations[j]['to_fraction'];
           }
-
         }
       }
 
@@ -59,15 +80,14 @@ for (var i = 0; i < features.length; i++) {
   q.defer(readURL, featureURL);
 }
 
-q.awaitAll(function (error, results) {
+q.awaitAll(function(error, results) {
   if (error) console.log(error);
 
   results = [features].concat(results);
-  csv.stringify(results, function (error, resultsAsString) {
+  csv.stringify(results, function(error, resultsAsString) {
     fs.writeFileSync(argv.output, resultsAsString);
   });
 });
-
 
 /*
 

@@ -21,15 +21,26 @@ function getPropertyValue(feature) {
   }
 
   // The items are sorted in decendening order of priority. The first item in the list is the of highest priority.
-  var prioritizedProperties = ['disputed', 'admin_level', 'natural', 'waterway', 'boundary', 'highway', 'place', 'aeroway', 'railway', 'ref'];
+  var prioritizedProperties = [
+    'disputed',
+    'admin_level',
+    'natural',
+    'waterway',
+    'boundary',
+    'highway',
+    'place',
+    'aeroway',
+    'railway',
+    'ref'
+  ];
   for (var i = 0; i < prioritizedProperties.length; i++) {
     if (prioritizedProperties[i] in feature.properties) {
-      return prioritizedProperties.length - prioritizedProperties.indexOf(prioritizedProperties[i]);
+      return prioritizedProperties.length -
+        prioritizedProperties.indexOf(prioritizedProperties[i]);
     }
   }
   return minimumScore;
 }
-
 
 /**
 * Identify significant tag changes to features.
@@ -39,7 +50,6 @@ function getPropertyValue(feature) {
 * @returns {undefined} calls callback.
 */
 function compare_properties(newVersion, oldVersion, callback) {
-
   if (!newVersion || !oldVersion) {
     return callback(null, {});
   }
@@ -53,13 +63,17 @@ function compare_properties(newVersion, oldVersion, callback) {
 
   var propertyDelta = newPropertyValue - oldPropertyValue;
 
-  var version = newVersion.properties ? newVersion.properties['osm:version'] : newVersion.version;
-  var propertyTransformation = propertyDelta ? propertyDelta * version : version;
+  var version = newVersion.properties
+    ? newVersion.properties['osm:version']
+    : newVersion.version;
+  var propertyTransformation = propertyDelta
+    ? propertyDelta * version
+    : version;
 
   callback(null, {
     'result:compare_properties': {
-      'propertyDelta': propertyDelta,
-      'propertyTransformation': propertyTransformation
+      propertyDelta: propertyDelta,
+      propertyTransformation: propertyTransformation
     }
   });
 }

@@ -12,7 +12,6 @@ module.exports = low_zoom_features;
 * @returns {undefined} Calls callback.
 */
 function low_zoom_features(newVersion, oldVersion, callback) {
-
   var cfVersion = 2;
 
   if (!newVersion || !newVersion.properties) {
@@ -24,7 +23,10 @@ function low_zoom_features(newVersion, oldVersion, callback) {
   for (var key in newVersion.properties) {
     if (newVersion.properties.hasOwnProperty(key)) {
       // Check if key is part of interestedFeatures.
-      if (key in interestedFeatures && interestedFeatures[key].indexOf(newVersion.properties[key]) !== -1) {
+      if (
+        key in interestedFeatures &&
+        interestedFeatures[key].indexOf(newVersion.properties[key]) !== -1
+      ) {
         lowZoomCount += 1;
         // Add the key, value to lowZoomFeatures.
         if (key in lowZoomFeatures) {
@@ -37,9 +39,9 @@ function low_zoom_features(newVersion, oldVersion, callback) {
   }
   var result = {
     'result:low_zoom_features': {
-      'cfVersion': cfVersion,
-      'lowZoomCount': lowZoomCount,
-      'lowZoomFeatures': lowZoomFeatures
+      cfVersion: cfVersion,
+      lowZoomCount: lowZoomCount,
+      lowZoomFeatures: lowZoomFeatures
     }
   };
   callback(null, result);

@@ -2,7 +2,6 @@
 module.exports = placeEdited;
 var _ = require('lodash');
 
-
 /*
 - If a feature has these tags
     - place=city
@@ -42,15 +41,10 @@ function placeEdited(newVersion, oldVersion) {
 }
 
 function getIsPlace(geojson) {
-  var placeValues = [
-    'city',
-    'town',
-    'suburb'
-  ];
+  var placeValues = ['city', 'town', 'suburb'];
   return geojson.properties &&
     geojson.properties.place &&
     placeValues.indexOf(geojson.properties.place) !== -1;
-
 }
 
 function getGeometryChanged(newVersion, oldVersion) {

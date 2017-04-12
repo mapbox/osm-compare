@@ -12,14 +12,19 @@ var turfCentroid = require('turf-centroid');
 */
 
 function compare_geometry(newVersion, oldVersion, callback) {
-  if (!newVersion || !('geometry' in newVersion) || !oldVersion || !('geometry' in oldVersion)) {
+  if (
+    !newVersion ||
+    !('geometry' in newVersion) ||
+    !oldVersion ||
+    !('geometry' in oldVersion)
+  ) {
     callback(null, {});
   } else {
-
     var distance = turfDistance(
       turfCentroid(newVersion),
       turfCentroid(oldVersion),
-      'kilometers');
+      'kilometers'
+    );
 
     if (distance > 0.001) {
       callback(null, {
