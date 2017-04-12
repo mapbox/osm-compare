@@ -3,7 +3,6 @@
 var lowZoomFeatures = {
   disputed: ['yes'],
   admin_level: [3, 2],
-
   natural: ['water', 'wood'],
   waterway: ['riverbank'],
   boundary: ['disputed', 'national_park'],
