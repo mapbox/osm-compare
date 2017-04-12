@@ -8,8 +8,10 @@ var fields = ['oldVersion', 'newVersion', 'result'];
 var comparators = require('../index');
 
 if (process.argv.length !== 5) {
-  console.log('\nUsage: node run_compare_function.js comparator_name path/to/fixturedump numberOfFixtures \n');
-  return;
+  console.log(
+    '\nUsage: node run_compare_function.js comparator_name path/to/fixturedump numberOfFixtures \n'
+  );
+  throw new Error('Usage error');
 }
 
 var compareFunction = comparators[process.argv[2]];
@@ -65,9 +67,9 @@ function readFile(dirname, filename, callback) {
     compareFunction(newVersion, oldVersion, function(error, result) {
       if (Object.keys(result).length !== 0) {
         var obj = {
-          'oldVersion': JSON.stringify(oldVersion),
-          'newVersion': JSON.stringify(newVersion),
-          'result': JSON.stringify(result)
+          oldVersion: JSON.stringify(oldVersion),
+          newVersion: JSON.stringify(newVersion),
+          result: JSON.stringify(result)
         };
         arr.push(obj);
       }

@@ -1,12 +1,6 @@
 'use strict';
 
-
-var PATH_ROAD_TYPES = [
-  'pedestrian',
-  'footway',
-  'cycleway',
-  'path'
-];
+var PATH_ROAD_TYPES = ['pedestrian', 'footway', 'cycleway', 'path'];
 
 function getHighwayType(feature) {
   return feature.properties.highway;
@@ -31,7 +25,7 @@ function pathRoadChanged(newVersion, oldVersion) {
     if (isPathRoad(newVersion)) {
       return {
         'result:path_road_changed': {
-          'added': true
+          added: true
         }
       };
     }
@@ -45,9 +39,9 @@ function pathRoadChanged(newVersion, oldVersion) {
       if (oldHighwayType !== newHighwayType) {
         return {
           'result:path_road_changed': {
-            'modified': true,
-            'from': oldHighwayType,
-            'to': newHighwayType
+            modified: true,
+            from: oldHighwayType,
+            to: newHighwayType
           }
         };
       }

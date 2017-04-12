@@ -10,13 +10,19 @@ module.exports = dirty_word;
 * @returns {undefined} calls callback.
 */
 function dirty_word(newVersion, oldVersion, callback) {
-
   var cfVersion = 2;
 
   if (!newVersion || !newVersion.properties) {
     return callback(null, {});
   }
-  var dirtyWords = ['shit', 'fuck', 'gangbang', 'gang-bang', 'pokemon', 'pokémon'];
+  var dirtyWords = [
+    'shit',
+    'fuck',
+    'gangbang',
+    'gang-bang',
+    'pokemon',
+    'pokémon'
+  ];
   var count = 0;
   var keys = Object.keys(newVersion.properties);
   keys.forEach(function(key) {
@@ -31,8 +37,8 @@ function dirty_word(newVersion, oldVersion, callback) {
   });
   callback(null, {
     'result:dirty_word': {
-      'cfVersion': cfVersion,
-      'count': count
+      cfVersion: cfVersion,
+      count: count
     }
   });
 }

@@ -1,6 +1,13 @@
 'use strict';
 
-var filtered_tags = ['natural', 'water', 'highway', 'building', 'leisure', 'tourism'];
+var filtered_tags = [
+  'natural',
+  'water',
+  'highway',
+  'building',
+  'leisure',
+  'tourism'
+];
 module.exports = pokemonEdits;
 
 function hasPokename(name) {
@@ -14,9 +21,12 @@ function pokemonEdits(newVersion, oldVersion) {
     return false;
   }
   if (newVersion) {
-    var pass = filtered_tags.reduce(function(accum, tag) {
-      return (tag in newVersion.properties) || accum;
-    }, false);
+    var pass = filtered_tags.reduce(
+      function(accum, tag) {
+        return tag in newVersion.properties || accum;
+      },
+      false
+    );
 
     if (pass) {
       for (var prop in newVersion.properties) {

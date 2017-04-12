@@ -8,7 +8,7 @@ module.exports = pokemonFootway;
 
 function getAccountCreated(userID, callback) {
   var url = ' http://api.openstreetmap.org/api/0.6/user/' + userID;
-  request(url, function (error, response, body) {
+  request(url, function(error, response, body) {
     if (error) return callback(error);
 
     if (!error && response.statusCode === 200) {
@@ -16,7 +16,9 @@ function getAccountCreated(userID, callback) {
 
       var parser = sax.createStream(true);
       parser.on('opentag', function(element) {
-        if ('attributes' in element && ('account_created' in element.attributes)) {
+        if (
+          'attributes' in element && 'account_created' in element.attributes
+        ) {
           accountCreated = element.attributes.account_created;
         }
       });
@@ -25,7 +27,6 @@ function getAccountCreated(userID, callback) {
       });
       parser.write(body);
       parser.end();
-
     } else {
       return callback(null, null);
     }
@@ -36,20 +37,28 @@ function pokemonFootway(newVersion, oldVersion, callback) {
   // Yeah. moment.js is wierd, month start from zero
   var newUserDate = moment([2016, 11, 23]);
 
-  if (newVersion && newVersion.properties && newVersion.properties.highway === 'footway' && newVersion.properties['osm:version'] === 1) {
-    getAccountCreated(newVersion.properties['osm:uid'], function (error, accountCreated) {
-      if (error) {
-        console.log(String(error));
-        return callback(null, false);
+  if (
+    newVersion &&
+    newVersion.properties &&
+    newVersion.properties.highway === 'footway' &&
+    newVersion.properties['osm:version'] === 1
+  ) {
+    getAccountCreated(
+      newVersion.properties['osm:uid'],
+      function(error, accountCreated) {
+        if (error) {
+          console.log(String(error));
+          return callback(null, false);
+        }
+        if (accountCreated.unix() >= newUserDate.unix()) {
+          return callback(null, {
+            'result:pokemon_footway': true
+          });
+        } else {
+          return callback(null, false);
+        }
       }
-      if (accountCreated.unix() >= newUserDate.unix()) {
-        return callback(null, {
-          'result:pokemon_footway': true
-        });
-      } else {
-        return callback(null, false);
-      }
-    });
+    );
   } else {
     return callback(null, false);
   }

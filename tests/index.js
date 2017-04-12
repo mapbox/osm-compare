@@ -10,13 +10,17 @@ var isEmpty = require('lodash').isEmpty;
 var comparators = require('../index');
 
 test('Test compare functions', function(assert) {
-  var fileQueue = queue(1);  // Read one fixture file at a time.
+  var fileQueue = queue(1); // Read one fixture file at a time.
 
   var dirname = path.join(__dirname, '/fixtures/');
   var files = fs.readdirSync(dirname);
-  files = files.filter(function(filename) { return /.json$/.test(filename); });
+  files = files.filter(function(filename) {
+    return /.json$/.test(filename);
+  });
   files.forEach(function(filename) {
-    var jsonData = JSON.parse(fs.readFileSync(path.join(dirname, filename), 'utf-8'));
+    var jsonData = JSON.parse(
+      fs.readFileSync(path.join(dirname, filename), 'utf-8')
+    );
     fileQueue.defer(processFixtureFile, assert, jsonData);
   });
 
@@ -29,9 +33,15 @@ test('Test basic fixture', function(assert) {
   var comparatorQueue = queue(10);
   Object.keys(comparators).forEach(function(comparator) {
     var compareFunction = comparators[comparator];
-    var jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '/basicFixture.json'), 'utf-8'));
+    var jsonData = JSON.parse(
+      fs.readFileSync(path.join(__dirname, '/basicFixture.json'), 'utf-8')
+    );
     jsonData.fixtures.forEach(function(fixture) {
-      comparatorQueue.defer(compareFunction, fixture.oldVersion, fixture.newVersion);
+      comparatorQueue.defer(
+        compareFunction,
+        fixture.oldVersion,
+        fixture.newVersion
+      );
     });
   });
   comparatorQueue.awaitAll(function(err, result) {
@@ -42,7 +52,7 @@ test('Test basic fixture', function(assert) {
 
 test('Check if exported modules use underscore', function(assert) {
   Object.keys(comparators).forEach(function(comparator) {
-    assert.ifError(!(/^[a-z]+(_[a-z]+)*$/.test(comparator)));
+    assert.ifError(!/^[a-z]+(_[a-z]+)*$/.test(comparator));
   });
   assert.end();
 });
@@ -65,8 +75,7 @@ test('Check if all compare functions have fixtures', function(assert) {
   var files = fs.readdirSync(dirname);
   Object.keys(comparators).forEach(function(comparator) {
     var err = false;
-    if (files.indexOf(comparator + '.json') === -1)
-      err = true;
+    if (files.indexOf(comparator + '.json') === -1) err = true;
     assert.ifError(err);
   });
   assert.end();
@@ -78,11 +87,13 @@ test('Check if result returned by compare functions matches the name', function(
 
   var dirname = path.join(__dirname, '/fixtures/');
   Object.keys(comparators).forEach(function(comparator) {
-    var jsonData = JSON.parse(fs.readFileSync(path.join(dirname, comparator + '.json'), 'utf-8'));
+    var jsonData = JSON.parse(
+      fs.readFileSync(path.join(dirname, comparator + '.json'), 'utf-8')
+    );
     var success_result = true;
-    jsonData.fixtures.forEach(function (fixture) {
+    jsonData.fixtures.forEach(function(fixture) {
       if (!isEmpty(fixture.expectedResult)) {
-        if (!(fixture.expectedResult.hasOwnProperty('result:' + comparator))) {
+        if (!fixture.expectedResult.hasOwnProperty('result:' + comparator)) {
           console.log(comparator);
           success_result = false;
         }
@@ -99,11 +110,12 @@ function processFixtureFile(assert, jsonData, callback) {
     return callback();
   }
 
-  var fixtureQueue = queue(5);  // Process more than one fixture in a file.
+  var fixtureQueue = queue(5); // Process more than one fixture in a file.
   // ToFix: "../" is not very intuitive.
   var compareFunction = comparators[jsonData.compareFunction];
-  if (typeof compareFunction !== 'function') console.error('Not compare function', jsonData.compareFunction);
-  jsonData.fixtures.forEach(function (fixture) {
+  if (typeof compareFunction !== 'function')
+    console.error('Not compare function', jsonData.compareFunction);
+  jsonData.fixtures.forEach(function(fixture) {
     fixtureQueue.defer(processFixture, assert, compareFunction, fixture);
   });
   fixtureQueue.awaitAll(function() {
@@ -112,12 +124,16 @@ function processFixtureFile(assert, jsonData, callback) {
 }
 
 function processFixture(assert, compareFunction, fixture, callback) {
-  compareFunction(fixture.newVersion, fixture.oldVersion, function(err, result) {
-    if (err) {
-      assert.ifError(err);
-      return callback(err);
+  compareFunction(
+    fixture.newVersion,
+    fixture.oldVersion,
+    function(err, result) {
+      if (err) {
+        assert.ifError(err);
+        return callback(err);
+      }
+      assert.deepEqual(result, fixture.expectedResult, fixture.description);
+      callback();
     }
-    assert.deepEqual(result, fixture.expectedResult, fixture.description);
-    callback();
-  });
+  );
 }

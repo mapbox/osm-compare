@@ -31,7 +31,11 @@ function runObjectTest(assert, content, callback) {
       console.log('error', err);
     }
     for (var prop in expectedProperties) {
-      assert.deepEqual(result[prop], expectedProperties[prop], prop + ' as expected');
+      assert.deepEqual(
+        result[prop],
+        expectedProperties[prop],
+        prop + ' as expected'
+      );
     }
     callback(null, null);
   });

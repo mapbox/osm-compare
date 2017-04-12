@@ -13,7 +13,8 @@ function invalidName(newVersion, oldVersion, callback) {
     // TODO: Having English as the default locale for now.
     if (key === 'name') {
       naughtyWords = require('naughty-words/en.json');
-      if (naughtyWords.indexOf(properties[key]) !== -1) return callback(null, {'result:invalid_name': true});
+      if (naughtyWords.indexOf(properties[key]) !== -1)
+        return callback(null, {'result:invalid_name': true});
     } else if (key.indexOf('name') === 0) {
       // Splitting 'name:ko' into ['name', 'ko']
       var locale = key.split(':')[1];
@@ -23,11 +24,11 @@ function invalidName(newVersion, oldVersion, callback) {
 
       try {
         naughtyWords = require(filename);
-        if (naughtyWords.indexOf(properties[key]) !== -1) return callback(null, {'result:invalid_name': true});
+        if (naughtyWords.indexOf(properties[key]) !== -1)
+          return callback(null, {'result:invalid_name': true});
       } catch (error) {
         // TODO: naughty-words for the locale does not exist. Skip for now.
       }
-
     }
   }
   return callback(null, false);

@@ -12,14 +12,15 @@ var join = require('path').join;
 * @returns {undefined} calls callback.
 */
 function landmark_score(newVersion, oldVersion, callback) {
-
   var cfVersion = 2;
   var db = new sqlite.Database(join(__dirname, '..', 'landmarks.spatialite'));
   var result = false;
 
   // This should probably run through both?
-  var theVersion = [newVersion, oldVersion].filter(function (v) {
-    return v && 'properties' in v && (v.properties.wikipedia || v.properties.wikidata);
+  var theVersion = [newVersion, oldVersion].filter(function(v) {
+    return v &&
+      'properties' in v &&
+      (v.properties.wikipedia || v.properties.wikidata);
   });
 
   if (theVersion.length === 0) {
@@ -29,7 +30,10 @@ function landmark_score(newVersion, oldVersion, callback) {
   theVersion = theVersion[0];
 
   var query, args, query1, args1;
-  if (theVersion.properties['wikidata'] && theVersion.properties['osm:version'] > 10) {
+  if (
+    theVersion.properties['wikidata'] &&
+    theVersion.properties['osm:version'] > 10
+  ) {
     // If there's a `wikidata` tag we can search for the wikidata ID (`qid` in the database) directly
     query = 'SELECT score FROM mb_landmark WHERE qid=? LIMIT 1;';
     args = [theVersion.properties['wikidata']];
@@ -46,7 +50,10 @@ function landmark_score(newVersion, oldVersion, callback) {
       db.close();
       callback(null, result);
     });
-  } else if (theVersion.properties['wikipedia'] && theVersion.properties['osm:version'] > 10) {
+  } else if (
+    theVersion.properties['wikipedia'] &&
+    theVersion.properties['osm:version'] > 10
+  ) {
     // If there's a `wikipedia` tag try to match on label + location
     //if (theVersion.geometry.type != 'node') {
     //  theVersion.geometry = turfCentroid(theVersion).geometry;

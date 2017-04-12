@@ -17,7 +17,6 @@ function getFeatureSize(feature) {
   return area;
 }
 
-
 /**
 * Identify large geometry changes or movements.
 * @param {object} newVersion Features new version in GeoJSON.
@@ -26,7 +25,6 @@ function getFeatureSize(feature) {
 * @returns {undefined} calls callback.
 */
 function compare_geometries(newVersion, oldVersion, callback) {
-
   var cfVersion = 2;
 
   if (!newVersion || !oldVersion) {
@@ -42,19 +40,29 @@ function compare_geometries(newVersion, oldVersion, callback) {
   if (newVersion && oldVersion && newVersion.geometry && oldVersion.geometry) {
     var newCentroid = turfCentroid(newVersion);
     var oldCentroid = turfCentroid(oldVersion);
-    centroidDisplacement = turfDistance(newCentroid, oldCentroid, 'kilometers') * 1000;
+    centroidDisplacement = turfDistance(
+      newCentroid,
+      oldCentroid,
+      'kilometers'
+    ) * 1000;
   }
-  var version = newVersion.properties ? newVersion.properties['osm:version'] : newVersion.version;
+  var version = newVersion.properties
+    ? newVersion.properties['osm:version']
+    : newVersion.version;
   var geometryTransformation = version;
-  if (areaDelta) { geometryTransformation = geometryTransformation * areaDelta; }
-  if (centroidDisplacement) { geometryTransformation = geometryTransformation * centroidDisplacement; }
+  if (areaDelta) {
+    geometryTransformation = geometryTransformation * areaDelta;
+  }
+  if (centroidDisplacement) {
+    geometryTransformation = geometryTransformation * centroidDisplacement;
+  }
 
   callback(null, {
     'result:compare_geometries': {
-      'cfVersion': cfVersion,
-      'areaDelta': areaDelta,
-      'centroidDisplacement': centroidDisplacement,
-      'geometryTransformation': geometryTransformation
+      cfVersion: cfVersion,
+      areaDelta: areaDelta,
+      centroidDisplacement: centroidDisplacement,
+      geometryTransformation: geometryTransformation
     }
   });
 }
