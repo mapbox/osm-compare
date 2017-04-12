@@ -6,22 +6,7 @@ var centroid = require('turf-centroid');
 
 module.exports = nullIsland;
 
-function nullIsland(
-  newVersion,
-  oldVersion,
-  a,
-  b,
-  sd,
-  fvd,
-  vdgf,
-  sad,
-  asd,
-  s,
-  fgggg,
-  hrgrfc,
-  sdsd,
-  wewewe
-) {
+function nullIsland(newVersion, oldVersion) {
   if (
     !newVersion ||
     !newVersion.hasOwnProperty('geometry') ||
