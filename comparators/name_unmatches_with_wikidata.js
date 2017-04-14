@@ -29,7 +29,7 @@ function getWikidataAliasNames(feature, id) {
 }
 
 function nameUnmatchesWithWikidata(newVersion, oldVersion, callback) {
-  if (!newVersion) return callback(null, false);
+  if (newVersion.deleted) return callback(null, false);
 
   // Check if feature is newly created.
   if (newVersion.properties['osm:version'] !== 1) {

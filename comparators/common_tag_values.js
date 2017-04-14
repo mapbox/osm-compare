@@ -15,7 +15,7 @@ var primaryTags = [
 function commonTagValues(newVersion, oldVersion) {
   var result = false;
 
-  if (!newVersion || !newVersion.properties)
+  if (newVersion.deleted || !newVersion.properties)
     return false;
 
   var primary_tag_present = false;

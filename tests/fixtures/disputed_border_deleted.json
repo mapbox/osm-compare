@@ -3,7 +3,7 @@
   "fixtures": [
   {
     "description": "Checks for deleted disputed borders",
-    "newVersion": null ,
+    "newVersion": {"deleted": true} ,
     "oldVersion": {
         "type": "Feature",
         "id": "way!304171558!6",

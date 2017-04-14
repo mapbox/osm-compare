@@ -16,7 +16,7 @@ var _ = require('lodash');
   - One of the feature's `name*` tags changes or is removed
 */
 function placeEdited(newVersion, oldVersion) {
-  var isDeleted = !newVersion;
+  var isDeleted = newVersion.deleted;
   var isAdded = !oldVersion;
   var isPlace, geometryChanged, nameChanged;
   if (isAdded) {
@@ -54,7 +54,7 @@ function getIsPlace(geojson) {
 }
 
 function getGeometryChanged(newVersion, oldVersion) {
-  if (!newVersion || !oldVersion) {
+  if (newVersion.deleted || !oldVersion) {
     return false;
   }
   var oldGeom = oldVersion.geometry;
@@ -65,7 +65,7 @@ function getGeometryChanged(newVersion, oldVersion) {
 }
 
 function getNameChanged(newVersion, oldVersion) {
-  if (!newVersion || !oldVersion) {
+  if (newVersion.deleted || !oldVersion) {
     return false;
   }
   var nameChanged = false;

@@ -48,7 +48,7 @@ module.exports = majorLakeModified;
 
 function majorLakeModified(newVersion, oldVersion) {
   var obj = {};
-  if (newVersion) {
+  if (!newVersion.deleted) {
     obj = newVersion;
   } else if (oldVersion) {
     obj = oldVersion;

@@ -4,7 +4,7 @@ module.exports = invalidName;
 
 function invalidName(newVersion, oldVersion, callback) {
   // Not interested if there isn't a newVersion.
-  if (!newVersion) return callback(null, false);
+  if (newVersion.deleted) return callback(null, false);
 
   var properties = newVersion.properties;
   for (var key in properties) {

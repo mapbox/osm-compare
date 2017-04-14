@@ -3,7 +3,7 @@
 module.exports = wikidata_wikipedia_tag_deleted;
 
 function wikidata_wikipedia_tag_deleted(newVersion, oldVersion) {
-  if (!newVersion || !newVersion.properties) return false;
+  if (newVersion .deleted || !newVersion.properties) return false;
   if (!oldVersion || !oldVersion.properties) return false;
 
   if (('wikidata' in oldVersion.properties && !('wikidata' in newVersion.properties)) ||

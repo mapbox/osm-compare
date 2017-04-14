@@ -31,7 +31,7 @@ test('Test basic fixture', function(assert) {
     var compareFunction = comparators[comparator];
     var jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '/basicFixture.json'), 'utf-8'));
     jsonData.fixtures.forEach(function(fixture) {
-      comparatorQueue.defer(compareFunction, fixture.oldVersion, fixture.newVersion);
+      comparatorQueue.defer(compareFunction, fixture.newVersion, fixture.oldVersion);
     });
   });
   comparatorQueue.awaitAll(function(err, result) {

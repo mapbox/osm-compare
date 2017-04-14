@@ -5,7 +5,7 @@ var Levenshtein = require('levenshtein');
 module.exports = majorNameModification;
 
 function majorNameModification(newVersion, oldVersion) {
-  if (!newVersion || !newVersion.properties || !newVersion.properties.name || (!(newVersion.properties.wikidata ||  newVersion.properties.wikipedia))) return false;
+  if (newVersion.deleted || !newVersion.properties || !newVersion.properties.name || (!(newVersion.properties.wikidata ||  newVersion.properties.wikipedia))) return false;
   if (!oldVersion || !oldVersion.properties || !oldVersion.properties.name) return false;
 
   // If the name tag was not modified

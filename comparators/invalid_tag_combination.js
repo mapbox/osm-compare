@@ -9,7 +9,7 @@ function invalidTagCombination(newVersion, oldVersion, callback) {
   // What should be the minimum value of count to be a valid tag combination.
   var MIN_COUNT = 1;
 
-  if (!newVersion) return callback(null, false);
+  if (newVersion.deleted) return callback(null, false);
 
   csv.parse(fs.readFileSync(path.join(__dirname, 'tag-combinations.csv')), function (error, rows) {
     var tags = Object.keys(newVersion.properties);

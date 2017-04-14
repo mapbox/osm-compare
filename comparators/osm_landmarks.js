@@ -10,7 +10,7 @@ module.exports = osmLandmarks;
 function osmLandmarks(newVersion, oldVersion, callback) {
   var featureID, featureType;
 
-  if (newVersion && newVersion.properties && ('osm:id' in newVersion.properties) && ('osm:type' in newVersion.properties)) {
+  if (!newVersion.deleted && newVersion.properties && ('osm:id' in newVersion.properties) && ('osm:type' in newVersion.properties)) {
     featureID = String(newVersion.properties['osm:id']);
     featureType = newVersion.properties['osm:type'];
   } else if (oldVersion && oldVersion.properties && ('osm:id' in oldVersion.properties) && ('osm:type' in oldVersion.properties)) {

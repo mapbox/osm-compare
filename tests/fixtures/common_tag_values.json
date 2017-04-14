@@ -3,7 +3,7 @@
     "fixtures": [
         {
             "description": "Feature with no new version and old version",
-            "newVersion": {},
+            "newVersion": {"deleted": true},
             "oldVersion": {},
             "expectedResult": false
         },

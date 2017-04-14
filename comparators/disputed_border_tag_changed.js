@@ -2,11 +2,11 @@
 module.exports = disputedBorderTagChanged;
 
 function disputedBorderTagChanged(newVersion, oldVersion) {
-  if (!newVersion && !oldVersion) {
+  if (newVersion.deleted && !oldVersion) {
   // None of old version or new Version present
     return false;
   }
-  if (newVersion && oldVersion) {
+  if (!newVersion.deleted && oldVersion) {
   // Both new Version and old Version are present, which indicates feature has been modified
   /*
     Comparing the tags

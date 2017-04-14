@@ -59,7 +59,7 @@
                 },
                 "geometry": null
             },
-            "newVersion": null
+            "newVersion": {"deleted": true}
         },
         {
             "description": "Fixture with old Version and new Version and non null geometries",

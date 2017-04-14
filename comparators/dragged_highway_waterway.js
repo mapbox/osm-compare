@@ -6,11 +6,11 @@ var turfDistance = require('turf-distance');
 var threshold = 10;
 
 function draggedHighwayWaterway(newVersion, oldVersion) {
-  if (newVersion && oldVersion && newVersion.geometry && oldVersion.geometry) {
+  if (!newVersion.deleted && oldVersion && newVersion.geometry && oldVersion.geometry) {
     if (JSON.stringify(newVersion.geometry) === JSON.stringify(oldVersion.geometry)) return false;
   }
 
-  if (newVersion &&
+  if (!newVersion.deleted &&
     newVersion.properties &&
     (newVersion.properties.hasOwnProperty('highway') ||
     newVersion.properties.hasOwnProperty('waterway')) &&

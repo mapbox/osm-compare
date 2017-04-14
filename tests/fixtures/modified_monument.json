@@ -39,7 +39,7 @@
         },
         {
             "description": "Checks if monument > version 10 is deleted",
-            "newVersion": null,
+            "newVersion": {"deleted": true},
             "oldVersion": {
                 "type": "Feature",
                 "properties": {

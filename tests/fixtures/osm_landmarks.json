@@ -4,7 +4,7 @@
     {
       "description": "Test empty feature versions",
       "expectedResult": false,
-      "newVersion": null,
+      "newVersion": {"deleted": true},
       "oldVersion": null
     },
     {
@@ -40,7 +40,7 @@
       "expectedResult": {
         "result:osm_landmarks": true
       },
-      "newVersion": null,
+      "newVersion": {"deleted": true},
       "oldVersion": {
         "type": "Feature",
         "properties": {
@@ -53,7 +53,7 @@
     {
       "description": "Test lake not present in landmarks",
       "expectedResult": false,
-      "newVersion": null,
+      "newVersion": {"deleted": true},
       "oldVersion": {
         "type": "Feature",
         "properties": {
@@ -81,7 +81,7 @@
     {
       "description": "Test airport not present in landmarks",
       "expectedResult": false,
-      "newVersion": null,
+      "newVersion": {"deleted": true},
       "oldVersion": {
         "type": "Feature",
         "properties": {
@@ -109,7 +109,7 @@
     {
       "description": "Test restaurant not present in landmarks",
       "expectedResult": false,
-      "newVersion": null,
+      "newVersion": {"deleted": true},
       "oldVersion": {
         "type": "Feature",
         "properties": {
