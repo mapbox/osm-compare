@@ -543,7 +543,7 @@
     },
     {
       "description": "major road deleted",
-      "newVersion": null,
+      "newVersion": {"deleted": true},
       "oldVersion": {
         "type": "Feature",
         "id": "way!90800153!23",

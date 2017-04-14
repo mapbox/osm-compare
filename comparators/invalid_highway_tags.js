@@ -46,7 +46,7 @@ function invalidHighwayTags(newVersion, oldVersion) {
     'traffic_signals',
     'turning_circle'
   ];
-  if (newVersion && newVersion.properties && newVersion.properties['highway'] && validHighwayTags.indexOf(newVersion.properties.highway) === -1) {
+  if (!newVersion.deleted && newVersion.properties && newVersion.properties['highway'] && validHighwayTags.indexOf(newVersion.properties.highway) === -1) {
     return {'result:invalid_highway_tags': true};
   }
   return false;

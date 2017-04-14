@@ -4,7 +4,7 @@ var turfArea = require('turf-area');
 module.exports = largeBuilding;
 
 function largeBuilding(newVersion, oldVersion) {
-  if (!newVersion || !newVersion.hasOwnProperty('geometry') || newVersion['geometry'] === null) {
+  if (newVersion.deleted || !newVersion.hasOwnProperty('geometry') || newVersion['geometry'] === null) {
     return false;
   }
   var area = turfArea(newVersion);

@@ -3,6 +3,7 @@
 var fs = require('fs');
 var path = require('path');
 var queue = require('queue-async');
+var comparators = require('../index');
 
 if (process.argv.length !== 3) {
   console.log('\nUsage: node test_compare_function.js fixture_filename\n');
@@ -11,8 +12,7 @@ if (process.argv.length !== 3) {
 
 var filename = process.argv[2];
 var jsonData = JSON.parse(fs.readFileSync(path.join('.', filename), 'utf-8'));
-var compareFunctionPath = path.join('../', 'comparators', jsonData.compareFunction);
-var compareFunction = require(compareFunctionPath);
+var compareFunction = comparators[jsonData.compareFunction];
 
 jsonData.fixtures.forEach(function (fixture) {
   compareFunction(fixture.newVersion, fixture.oldVersion, function(error, result) {

@@ -8,7 +8,7 @@ module.exports = nullIsland;
 
 function nullIsland(newVersion, oldVersion) {
   if (
-    !newVersion ||
+    newVersion.deleted ||
     !newVersion.hasOwnProperty('geometry') ||
     newVersion['geometry'] === null
   ) {

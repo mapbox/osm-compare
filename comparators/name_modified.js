@@ -23,7 +23,7 @@ function name_modified(newVersion, oldVersion) {
   var result = {};
   var cfVersion = 2;
 
-  if (!newVersion || !oldVersion) {
+  if (newVersion.deleted || !oldVersion) {
     return result;
   }
   var newVersionNames = {};

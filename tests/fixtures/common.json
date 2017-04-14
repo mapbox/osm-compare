@@ -3,7 +3,27 @@
     "fixtures": [
         {
             "description": "Test newVersion and oldVersion is null",
-            "newVersion": null,
+            "newVersion": {"deleted": true},
+            "oldVersion": null
+        },
+        {
+            "description": "Test oldVersion is null",
+            "newVersion": {
+                "properties": {
+                    "id": 158230039,
+                    "type": "node",
+                    "typeId": 1,
+                    "tags": {},
+                    "refs": [],
+                    "version": 1,
+                    "timestamp": 1455477064000,
+                    "uid": 3627372,
+                    "user": "ELBORICUA61357",
+                    "changeset": 37210478,
+                    "lat": 42.8864468,
+                    "lon": -78.8783689                    
+                }
+            },
             "oldVersion": null
         },
         {
@@ -21,15 +41,10 @@
                     "user": "ELBORICUA61357",
                     "changeset": 37210478,
                     "lat": 42.8864468,
-                    "lon": -78.8783689,
-                    "deleted": true
-                }
+                    "lon": -78.8783689
+                },
+                "deleted": true
             },
-            "oldVersion": null
-        },
-        {
-            "description": "Test oldVersion is null",
-            "newVersion": null,
             "oldVersion": {
                 "properties": {
                     "id": 158230039,
@@ -43,8 +58,7 @@
                     "user": "ELBORICUA61357",
                     "changeset": 37210478,
                     "lat": 42.8864468,
-                    "lon": -78.8783689,
-                    "deleted": true
+                    "lon": -78.8783689
                 }
             }
         }

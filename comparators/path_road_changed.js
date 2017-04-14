@@ -18,16 +18,16 @@ function isPathRoad(feature) {
 }
 
 function pathRoadChanged(newVersion, oldVersion) {
-  if (!oldVersion && !newVersion) {
+  if (!oldVersion && newVersion.deleted) {
     return false;
   }
 
-  if (oldVersion && !newVersion) {
+  if (oldVersion && newVersion.deleted) {
     // Don't care about path road deletions.
     return false;
   }
 
-  if (!oldVersion && newVersion) {
+  if (!oldVersion && !newVersion.deleted) {
     if (isPathRoad(newVersion)) {
       return {
         'result:path_road_changed': {
@@ -37,7 +37,7 @@ function pathRoadChanged(newVersion, oldVersion) {
     }
   }
 
-  if (oldVersion && newVersion) {
+  if (oldVersion && !newVersion.deleted) {
     var newHighwayType = getHighwayType(newVersion);
     var oldHighwayType = getHighwayType(oldVersion);
 

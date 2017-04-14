@@ -9,11 +9,11 @@ function hasPokename(name) {
 }
 
 function pokemonEdits(newVersion, oldVersion) {
-  if (!newVersion && !oldVersion) {
+  if (newVersion.deleted && !oldVersion) {
     // None of old version or new Version present
     return false;
   }
-  if (newVersion) {
+  if (!newVersion.deleted) {
     var pass = filtered_tags.reduce(function(accum, tag) {
       return (tag in newVersion.properties) || accum;
     }, false);

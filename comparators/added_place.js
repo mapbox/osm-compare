@@ -3,7 +3,7 @@
 module.exports = addedPlace;
 
 function addedPlace(newVersion, oldVersion) {
-  if (!newVersion) {
+  if (newVersion.deleted) {
     return false;
   }
   if (oldVersion) {

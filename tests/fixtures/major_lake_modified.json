@@ -539,7 +539,7 @@
     },
     {
       "description": "major lake not modified",
-      "newVersion": null,
+      "newVersion": {"deleted": true},
       "oldVersion": {
         "type": "Feature",
         "id": "way!90800153!23",

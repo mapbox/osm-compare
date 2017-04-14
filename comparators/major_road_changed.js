@@ -29,18 +29,18 @@ function isMajorRoad(feature) {
 }
 
 function majorRoadChanged(newVersion, oldVersion) {
-  if (!oldVersion && !newVersion) {
+  if (!oldVersion && newVersion.deleted) {
     return false;
   }
 
-  if (!oldVersion && newVersion) {
+  if (!oldVersion && !newVersion.deleted) {
     return false;
   }
 
   var oldVersionNumber = getVersion(oldVersion);
   var oldHighwayType = getHighwayType(oldVersion);
 
-  if (oldVersion && newVersion) {
+  if (oldVersion && !newVersion.deleted) {
     var newVersionNumber = getVersion(newVersion);
     var newHighwayType = getHighwayType(newVersion);
 
@@ -57,7 +57,7 @@ function majorRoadChanged(newVersion, oldVersion) {
     }
   }
 
-  if (oldVersion && !newVersion) {
+  if (oldVersion && newVersion.deleted) {
     if (oldVersionNumber > TRIGGER_AFTER_VERSION && isMajorRoad(oldVersion)) {
       return {
         'result:major_road_changed': {
