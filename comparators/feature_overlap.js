@@ -13,22 +13,20 @@ var limits = {
 
 module.exports = feature_overlap;
 
-var WaterwayJSON = [
+var featuresJSON = [
   'any',
-  ['==', 'natural', 'water'],
-  ['==', 'landuse', 'reservoir'],
-  ['==', 'natural', 'bay'],
-  ['==', 'waterway', 'dock'],
-  ['==', 'waterway', 'riverbank'],
-  ['==', 'natural', 'wetland']
+  ['has', 'natural'],
+  ['has', 'highway'],
+  ['has', 'building']
 ];
-var filterWaterway = featureFilter(WaterwayJSON);
+
+var filterFeatures = featureFilter(featuresJSON);
 
 function feature_overlap(newVersion, oldVersion, callback) {
   var result = {};
   if (newVersion && newVersion.geometry &&
       newVersion.properties &&
-      filterWaterway(newVersion) &&
+      filterFeatures(newVersion) &&
       newVersion['properties']['osm:version'] === 1) {
     var tiles = cover.tiles(newVersion['geometry'], limits);
     featureCollection(tiles, function (err, result) {
@@ -38,10 +36,10 @@ function feature_overlap(newVersion, oldVersion, callback) {
       if (overlaps.length > 0)
         return callback(null, {'result:feature_overlap': overlaps.length});
       else
-        return callback(null, {});
+        return callback(null, false);
     });
   } else {
-    return callback(null, {});
+    return callback(null, false);
   }
 }
 
