@@ -7,7 +7,7 @@
     "test": "TAP_TIMEOUT=600 tap --coverage tests/*.js",
     "lint": "eslint ./*/*.js",
     "pretest": "npm run lint",
-    "postinstall": "./scripts/download_landmarks.sh && ./scripts/download_common_tag_values.sh",
+    "postinstall": "./scripts/download_common_tag_values.sh",
     "precommit": "lint-staged"
   },
   "lint-staged": {
