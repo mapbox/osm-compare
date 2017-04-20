@@ -5,6 +5,7 @@ var area = require('turf-area');
 var intersect  = require('turf-intersect');
 var cover = require('tile-cover');
 var featureFilter = require('feature-filter');
+var arrayIntersection = require('lodash.intersection');
 
 var limits = {
   min_zoom: 16,
@@ -13,12 +14,24 @@ var limits = {
 
 module.exports = feature_overlap;
 
+var primaryTags = ['natural', 'highway', 'building'];
+
 var featuresJSON = [
   'any',
-  ['has', 'natural'],
-  ['has', 'highway'],
-  ['has', 'building']
+  ['==', 'natural', 'water'],
+  ['==', 'highway', 'primary'],
+  ['==', 'highway', 'secondary'],
+  ['==', 'highway', 'tertiary'],
+  ['==', 'highway', 'trunk'],
+  ['==', 'building', 'motorway'],
+  ['==', 'building', 'yes']
 ];
+
+var layersMapping = {
+  'highway': ['water', 'building'],
+  'natural': ['road', 'building'],
+  'building': ['road', 'water']
+};
 
 var filterFeatures = featureFilter(featuresJSON);
 
@@ -28,8 +41,16 @@ function feature_overlap(newVersion, oldVersion, callback) {
       newVersion.properties &&
       filterFeatures(newVersion) &&
       newVersion['properties']['osm:version'] === 1) {
+
+    var featurePrimaryTag = arrayIntersection(Object.keys(newVersion['properties']), primaryTags);
+    if (featurePrimaryTag.length === 0) {
+      return callback(null, false);
+    }
+
     var tiles = cover.tiles(newVersion['geometry'], limits);
-    featureCollection(tiles, function (err, result) {
+    var layers = layersMapping[featurePrimaryTag[0]];
+
+    featureCollection(tiles, layers, function (err, result) {
       if (err)
         return callback(err);
       var overlaps = getOverLappingFeatures(newVersion, result);
@@ -55,12 +76,10 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
       incomingFeature.properties.relations.forEach(function (relationMember) {
         featureCollections.forEach(function (featureCollection) {
           featureCollection.features.forEach(function (feature) {
-            var intersection = intersect(relationMember, feature);
-            if (intersection) {
-              if (area(intersection) > 0) {
-                var id = feature.id.toString();
-                id = parseInt(id.substring(0, id.length - 1));
-                if (relationMembers.indexOf(id) === -1) {
+            if (!isExcluded(feature.properties)) {
+              var intersection = intersect(relationMember, feature);
+              if (intersection) {
+                if (area(intersection) > 0) {
                   overlaps.push(feature);
                 }
               }
@@ -72,12 +91,10 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
   } else if (featureCollections) {
     featureCollections.forEach(function (featureCollection) {
       featureCollection.features.forEach(function (feature) {
-        var intersection = intersect(incomingFeature, feature);
-        if (intersection) {
-          if (area(intersection) > 0) {
-            var id = feature.id.toString();
-            id = parseInt(id.substring(0, id.length - 1));
-            if (relationMembers.indexOf(id) === -1) {
+        if (!isExcluded(feature.properties)) {
+          var intersection = intersect(incomingFeature, feature);
+          if (intersection) {
+            if (area(intersection) > 0) {
               overlaps.push(feature);
             }
           }
@@ -86,4 +103,10 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
     });
   }
   return overlaps;
+}
+
+function isExcluded(properties) {
+  var underground = properties.underground ? properties.underground : false;
+  var layer = properties.layer ? (properties.layer !== 0)  : false;
+  return underground || layer;
 }
