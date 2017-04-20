@@ -30,6 +30,7 @@
     "geopoint": "^1.0.1",
     "levenshtein": "^1.0.5",
     "lodash": "^4.17.3",
+    "lodash.intersection": "^4.4.0",
     "lodash.isempty": "^4.4.0",
     "moment": "^2.17.1",
     "naughty-words": "^1.0.1",
@@ -47,8 +48,8 @@
     "turf-envelope": "^1.0.2",
     "turf-featurecollection": "^1.0.1",
     "turf-inside": "^3.0.12",
-    "turf-point": "^2.0.1",
     "turf-intersect": "^3.0.12",
+    "turf-point": "^2.0.1",
     "turf-within": "^3.0.5"
   },
   "devDependencies": {
