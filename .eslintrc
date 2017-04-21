@@ -8,6 +8,8 @@
     "no-unused-vars": 0,
     "camelcase": 0,
     "valid-jsdoc": 2,
-    "comma-dangle": ["error", "never"]    
+    "comma-dangle": ["error", "never"],
+    "operator-linebreak": [0],
+    "object-curly-spacing": "warn" 
   }
 }
