@@ -98,9 +98,8 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
             if (!isExcluded(feature.properties)) {
               var intersection = intersect(relationMember, feature);
               if (intersection) {
-                if (area(intersection) > 0) {
-                  overlaps.push(feature);
-                }
+                console.log(JSON.stringify(intersection));
+                overlaps.push(feature);
               }
             }
           });
@@ -113,9 +112,8 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
         if (!isExcluded(feature.properties)) {
           var intersection = intersect(incomingFeature, feature);
           if (intersection) {
-            if (area(intersection) > 0) {
-              overlaps.push(feature);
-            }
+            console.log(JSON.stringify(intersection));
+            overlaps.push(feature);
           }
         }
       });
