@@ -39,7 +39,9 @@
         }
       },
       "oldVersion": {},
-      "expectedResult": false
+      "expectedResult": {
+        "result:feature_overlap": 24
+      }
     }
   ]
 }
