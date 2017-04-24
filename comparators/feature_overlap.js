@@ -156,7 +156,9 @@ var landuseFeaturesClass = [
 ];
 
 function isExcluded(properties) {
-  var underground = properties.underground ? properties.underground : false;
+  var underground = properties.underground
+    ? properties.underground === 'true'
+    : false;
   var layer = properties.layer ? properties.layer !== 0 : false;
   var structure = properties.structure
     ? properties.structure !== 'none'
