@@ -24,6 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "@mapbox/vt2geojson": "git://github.com/mapbox/vt2geojson.git#e7de9947a77c8571ea8ce3bccecc9992009657c0",
+    "@turf/difference": "^4.1.0",
     "csv": "^1.1.1",
     "d3-queue": "^3.0.3",
     "feature-filter": "^2.2.0",
