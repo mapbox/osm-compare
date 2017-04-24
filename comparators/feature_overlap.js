@@ -6,6 +6,7 @@ var intersect = require('turf-intersect');
 var cover = require('tile-cover');
 var featureFilter = require('feature-filter');
 var arrayIntersection = require('lodash.intersection');
+var difference = require('@turf/difference');
 
 var limits = {
   min_zoom: 16,
@@ -98,8 +99,15 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
             if (!isExcluded(feature.properties)) {
               var intersection = intersect(relationMember, feature);
               if (intersection) {
-                console.log(JSON.stringify(intersection));
-                overlaps.push(feature);
+                var areaIntersection = area(intersection);
+                if (areaIntersection > 0) {
+                  var diff = difference(intersection, incomingFeature);
+                  if (!diff) {
+                    overlaps.push(feature);
+                  }
+                } else {
+                  overlaps.push(feature);
+                }
               }
             }
           });
@@ -112,8 +120,15 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
         if (!isExcluded(feature.properties)) {
           var intersection = intersect(incomingFeature, feature);
           if (intersection) {
-            console.log(JSON.stringify(intersection));
-            overlaps.push(feature);
+            var areaIntersection = area(intersection);
+            if (areaIntersection > 0) {
+              var diff = difference(intersection, incomingFeature);
+              if (!diff) {
+                overlaps.push(feature);
+              }
+            } else {
+              overlaps.push(feature);
+            }
           }
         }
       });
