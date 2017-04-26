@@ -53,7 +53,7 @@ var excludeFeaturesFilter = featureFilter(excludeFeaturesJSON);
 function feature_overlap(newVersion, oldVersion, callback) {
   var result = {};
   if (
-    newVersion &&
+    !newVersion.deleted &&
     newVersion.geometry &&
     newVersion.properties &&
     filterFeatures(newVersion) &&
