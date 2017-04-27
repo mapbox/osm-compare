@@ -42,5 +42,8 @@ module.exports = {
   osm_landmarks: require('./comparators/osm_landmarks.js'),
   invalid_tag_modification: require('./comparators/invalid_tag_modification'),
   invalid_name: require('./comparators/invalid_name'),
-  feature_overlap: require('./comparators/feature_overlap.js')
+  feature_overlap: require('./comparators/feature_overlap.js'),
+  rare_critical_feature_created: wrapsync(
+    require('./comparators/rare_critical_feature_created')
+  )
 };
