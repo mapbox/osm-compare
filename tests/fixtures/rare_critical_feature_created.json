@@ -1,0 +1,46 @@
+{
+  "compareFunction": "rare_critical_feature_created",
+  "fixtures": [
+    {
+      "description": "New country created",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "osm:version": 1,
+          "place": "country"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                58.35937499999999,
+                64.01449619484472
+              ],
+              [
+                56.953125,
+                57.51582286553883
+              ],
+              [
+                76.2890625,
+                57.70414723434193
+              ],
+              [
+                76.9921875,
+                63.54855223203644
+              ],
+              [
+                58.35937499999999,
+                64.01449619484472
+              ]
+            ]
+          ]
+        }
+      },
+      "oldVersion": {},
+      "expectedResult": {
+        "result:rare_critical_feature_created": true
+      }
+    }
+  ]
+}
