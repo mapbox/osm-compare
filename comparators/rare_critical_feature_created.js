@@ -6,14 +6,13 @@ module.exports = rareCriticalFeatureCreated;
 
 var featuresJSON = [
   'any',
-  ['==', 'boundary', 'administrative'],
   ['==', 'place', 'country'],
   ['==', 'place', 'continent'],
   ['==', 'place', 'ocean'],
   ['==', 'place', 'sea'],
-  ['==', 'natural', 'peak'],
   ['==', 'natural', 'mountain_range'],
-  ['==', 'aeroway', 'aerodrome']
+  ['==', 'aeroway', 'aerodrome'],
+  ['in', 'admin_level', 1, 2, 3, 4]
 ];
 
 var filterFeatures = featureFilter(featuresJSON);
