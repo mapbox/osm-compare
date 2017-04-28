@@ -1,0 +1,481 @@
+{
+  "compareFunction": "invalid-tag-combination",
+  "fixtures": [
+    {
+      "description": "has INVALID combination: highway and leisure",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+        },
+        "properties": {
+          "highway": "motorway",
+          "leisure": "park",
+          "name": "NH5"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination": ["highway", "leisure"]
+        }
+      }
+    },
+    {
+      "description": "has INVALID combination amenity and highway",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+        },
+        "properties": {
+          "highway": "primary",
+          "amenity": "hotel",
+          "name": "NH7"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination": ["amenity", "highway"]
+        }
+      }
+    },
+    {
+      "description": "has INVALID combination highway and tourism",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+        },
+        "properties": {
+          "name": "Limbo",
+          "highway": "trunk",
+          "tourism": "viewpoint"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination": ["highway", "tourism"]
+
+        }
+      }
+    },
+    {
+      "description": "has INVALID combination tourism and landuse",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+        },
+        "properties": {
+          "landuse": "residential",
+          "tourism": "viewpoint",
+          "address": "221B Baker Street"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination":["tourism","landuse"]
+
+        }
+      }
+    },
+    {
+      "description": "has INVALID combination highway and building",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+
+        },
+        "properties": {
+          "highway": "residential",
+          "building": "yes",
+          "name": "building"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination":["highway","building"]
+
+        }
+      }
+    },
+    {
+      "description": "has INVALID combination highway and natural",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+
+        },
+        "properties": {
+          "highway": "residential",
+          "natural": "water",
+          "name": "Lake"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination":["highway","natural"]
+
+        }
+      }
+    },
+    {
+      "description": "has INVALID combination highway and waterway",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+
+        },
+        "properties": {
+          "highway": "residential",
+          "waterway": "stream",
+          "name": "Bow"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination":["highway","waterway"]
+
+        }
+      }
+    },
+    {
+      "description": "has INVALID combination place and shop",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+
+        },
+        "properties": {
+          "place": "island",
+          "shop": "supermarket",
+          "name": "Fresh island animals"
+        }
+      },
+      "expectedResult": {
+        "result:invalid-tag-combination": {
+          "combination":["place","shop"]
+
+        }
+      }
+    },
+    {
+      "description": "has VALID combination place and name",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+
+        },
+        "properties": {
+          "place": "island",
+          "administrative": "disputed",
+          "name": "Fresh island animals"
+        }
+      },
+      "expectedResult": {
+
+      }
+    },
+    {
+      "description": "has VALID combination highway and name",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+
+        },
+        "properties": {
+          "highway": "trunk",
+          "lanes": "4",
+          "name": "NH15"
+        }
+      },
+      "expectedResult": {
+
+      }
+    },
+    {
+      "description": "has VALID combination natural and waterway",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+            "coordinates": [
+            [
+              78.45440447330475,
+              17.389292746112698
+            ],
+            [
+              78.45238745212555,
+              17.389768835158964
+            ],
+            [
+              78.45265030860901,
+              17.3903165919913
+            ],
+            [
+              78.45185101032256,
+              17.390567433357653
+            ],
+            [
+              78.45166862010956,
+              17.389932650458288
+            ]
+          ]
+
+        },
+        "properties": {
+          "natural": "water",
+          "waterway": "river",
+          "name": "Amazon"
+        }
+      },
+      "expectedResult": {
+
+      }
+    }
+
+
+
+
+
+
+
+  ]
+}
