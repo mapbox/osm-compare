@@ -11,7 +11,7 @@ var featuresJSON = [
   ['==', 'place', 'ocean'],
   ['==', 'place', 'sea'],
   ['==', 'natural', 'mountain_range'],
-  ['==', 'aeroway', 'aerodrome'],
+  ['==', 'aerodrome:type', 'public'],
   ['in', 'admin_level', 1, 2, 3, 4]
 ];
 
