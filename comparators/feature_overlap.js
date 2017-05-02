@@ -104,7 +104,10 @@ function feature_overlap(newVersion, oldVersion, callback) {
     var layers = layersMapping[featurePrimaryTag[0]];
 
     featureCollection(tiles, layers, function(err, result) {
-      if (err) return callback(err);
+      if (err) {
+        console.log(JSON.stringify(newVersion), tiles, layers);
+        return callback(err);
+      }
       var overlaps = getOverLappingFeatures(newVersion, result);
       if (overlaps.length > 0)
         return callback(null, {'result:feature_overlap': overlaps.length});
