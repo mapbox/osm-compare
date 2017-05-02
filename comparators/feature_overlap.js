@@ -7,6 +7,7 @@ var cover = require('tile-cover');
 var featureFilter = require('feature-filter');
 var arrayIntersection = require('lodash.intersection');
 var difference = require('@turf/difference');
+var buffer = require('@turf/buffer');
 
 var limits = {
   min_zoom: 16,
@@ -45,6 +46,37 @@ var layersMapping = {
   natural: ['road', 'building'],
   building: ['road', 'water'],
   leisure: ['road', 'building', 'landuse']
+};
+
+/*
+  Both closed polygon
+    1 : feature incoming overlaps completely the other feature
+    0 : feature incoming overlaps some area with the other feature
+    -1: feature incoming is completely inside the other feature
+  One open and another closed way
+    1 : Way is intersecting the other feature near the center
+    0 : Way is intersecting the other feature near the edges
+    -1 : Way is completely inside the other feature
+*/
+
+var Mapping = {
+  highway: {
+    water: [1, -1],
+    building: [1, -1]
+  },
+  natural: {
+    road: [1],
+    building: [1, 0]
+  },
+  building: {
+    road: [1],
+    water: [1, 0, -1]
+  },
+  leisure: {
+    road: [1],
+    building: [1, 0],
+    landuse: [1, 0]
+  }
 };
 
 var filterFeatures = featureFilter(featuresJSON);
@@ -118,16 +150,44 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
     featureCollections.forEach(function(featureCollection) {
       featureCollection.features.forEach(function(feature) {
         if (!isExcluded(feature.properties)) {
-          var intersection = intersect(incomingFeature, feature);
+          var incomingFeatureArea = area(incomingFeature);
+          var featureArea = area(feature);
+          var intersection;
+          try {
+            intersection = intersect(incomingFeature, feature);
+          } catch (err) {
+            console.log(err);
+          }
           if (intersection) {
-            var areaIntersection = area(intersection);
-            if (areaIntersection > 0) {
-              var diff = difference(intersection, incomingFeature);
-              if (!diff) {
+            if (incomingFeatureArea > 0 && featureArea > 0) {
+              var incomingFeatureDiff = difference(
+                incomingFeature,
+                intersection
+              );
+              var featureDiff = difference(feature, intersection);
+              if (incomingFeatureDiff && featureDiff) {
+                var intersectionArea = area(intersection);
+                if (
+                  intersectionArea / incomingFeatureArea > 0.4 ||
+                  intersectionArea / featureArea > 0.4
+                ) {
+                  overlaps.push(feature);
+                }
+              } else if (incomingFeatureDiff && !featureDiff) {
                 overlaps.push(feature);
               }
-            } else {
-              overlaps.push(feature);
+            } else if (incomingFeatureArea > 0 && featureArea === 0) {
+              var buffered = buffer(incomingFeature, -0.001);
+              var bufferedIntersection = intersect(buffered, feature);
+              if (bufferedIntersection) {
+                overlaps.push(feature);
+              }
+            } else if (incomingFeatureArea === 0 && featureArea > 0) {
+              var buffered1 = buffer(feature, -0.001);
+              var bufferedIntersection1 = intersect(buffered1, incomingFeature);
+              if (bufferedIntersection1) {
+                overlaps.push(feature);
+              }
             }
           }
         }
