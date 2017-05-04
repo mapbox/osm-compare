@@ -219,16 +219,10 @@ var landuseFeaturesClass = [
   'agriculture',
   'cemetery',
   'glacier',
-  'grass',
   'hospital',
   'industrial',
-  'parking',
   'piste',
-  'pitch',
-  'rock',
-  'sand',
   'school',
-  'scrub',
   'wood',
   'aboriginal_lands'
 ];
