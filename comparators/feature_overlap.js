@@ -100,6 +100,13 @@ function feature_overlap(newVersion, oldVersion, callback) {
       return callback(null, false);
     }
 
+    if (
+      newVersion['properties']['osm:type'] === 'relation' &&
+      newVersion.properties.relations.length <= 0
+    ) {
+      return callback(null, false);
+    }
+
     var tiles = cover.tiles(newVersion['geometry'], limits);
     var layers = layersMapping[featurePrimaryTag[0]];
 
