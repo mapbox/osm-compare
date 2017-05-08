@@ -139,11 +139,21 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
         featureCollections.forEach(function(featureCollection) {
           featureCollection.features.forEach(function(feature) {
             if (!isExcluded(feature.properties)) {
-              var intersection = intersect(relationMember, feature);
+              var intersection;
+              try {
+                intersection = intersect(relationMember, feature);
+              } catch (err) {
+                console.log('Error caught', err);
+              }
               if (intersection) {
                 var areaIntersection = area(intersection);
                 if (areaIntersection > 0) {
-                  var diff = difference(intersection, incomingFeature);
+                  var diff;
+                  try {
+                    diff = difference(intersection, incomingFeature);
+                  } catch (err) {
+                    console.log('Error caught', err);
+                  }
                   if (!diff) {
                     overlaps.push(feature);
                   }
@@ -170,11 +180,17 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
           }
           if (intersection) {
             if (incomingFeatureArea > 0 && featureArea > 0) {
-              var incomingFeatureDiff = difference(
-                incomingFeature,
-                intersection
-              );
-              var featureDiff = difference(feature, intersection);
+              var incomingFeatureDiff, featureDiff;
+              try {
+                incomingFeatureDiff = difference(incomingFeature, intersection);
+              } catch (err) {
+                console.log('Error caught', err);
+              }
+              try {
+                featureDiff = difference(feature, intersection);
+              } catch (err) {
+                console.log('Error caught', err);
+              }
               if (incomingFeatureDiff && featureDiff) {
                 var intersectionArea = area(intersection);
                 if (
@@ -188,13 +204,23 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
               }
             } else if (incomingFeatureArea > 0 && featureArea === 0) {
               var buffered = buffer(incomingFeature, -0.001);
-              var bufferedIntersection = intersect(buffered, feature);
+              var bufferedIntersection;
+              try {
+                bufferedIntersection = intersect(buffered, feature);
+              } catch (err) {
+                console.log('Error caught', err);
+              }
               if (bufferedIntersection) {
                 overlaps.push(feature);
               }
             } else if (incomingFeatureArea === 0 && featureArea > 0) {
               var buffered1 = buffer(feature, -0.001);
-              var bufferedIntersection1 = intersect(buffered1, incomingFeature);
+              var bufferedIntersection1;
+              try {
+                bufferedIntersection1 = intersect(buffered1, incomingFeature);
+              } catch (err) {
+                console.log('Error caught', err);
+              }
               if (bufferedIntersection1) {
                 overlaps.push(feature);
               }
