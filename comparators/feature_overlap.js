@@ -239,14 +239,17 @@ var allowedFeatureType = [
   'secondary',
   'tertiary',
   'motorway',
-  'trunk'
+  'trunk',
+  'residential',
+  'unclassified'
 ];
 var allowedFeatureClass = [
   'primary',
   'secondary',
   'tertiary',
   'motorway',
-  'trunk'
+  'trunk',
+  'street'
 ];
 var landuseFeaturesClass = [
   'agriculture',
