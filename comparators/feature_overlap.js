@@ -107,7 +107,18 @@ function feature_overlap(newVersion, oldVersion, callback) {
       return callback(null, false);
     }
 
-    var tiles = cover.tiles(newVersion['geometry'], limits);
+    var tiles;
+    try {
+      tiles = cover.tiles(newVersion['geometry'], limits);
+    } catch (err) {
+      console.log(
+        'Error caught',
+        JSON.stringify(err),
+        JSON.stringify(newVersion)
+      );
+      return callback(null, false);
+    }
+
     var layers = layersMapping[featurePrimaryTag[0]];
 
     featureCollection(tiles, layers, function(err, result) {
@@ -184,12 +195,20 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
               try {
                 incomingFeatureDiff = difference(incomingFeature, intersection);
               } catch (err) {
-                console.log('Error caught', err);
+                console.log(
+                  'Error caught',
+                  JSON.stringify(err),
+                  JSON.stringify(incomingFeature)
+                );
               }
               try {
                 featureDiff = difference(feature, intersection);
               } catch (err) {
-                console.log('Error caught', err);
+                console.log(
+                  'Error caught',
+                  JSON.stringify(err),
+                  JSON.stringify(incomingFeature)
+                );
               }
               if (incomingFeatureDiff && featureDiff) {
                 var intersectionArea = area(intersection);
@@ -208,7 +227,11 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
               try {
                 bufferedIntersection = intersect(buffered, feature);
               } catch (err) {
-                console.log('Error caught', err);
+                console.log(
+                  'Error caught',
+                  JSON.stringify(err),
+                  JSON.stringify(incomingFeature)
+                );
               }
               if (bufferedIntersection) {
                 overlaps.push(feature);
@@ -219,7 +242,11 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
               try {
                 bufferedIntersection1 = intersect(buffered1, incomingFeature);
               } catch (err) {
-                console.log('Error caught', err);
+                console.log(
+                  'Error caught',
+                  JSON.stringify(err),
+                  JSON.stringify(incomingFeature)
+                );
               }
               if (bufferedIntersection1) {
                 overlaps.push(feature);
