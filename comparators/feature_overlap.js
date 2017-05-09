@@ -194,8 +194,8 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
               if (incomingFeatureDiff && featureDiff) {
                 var intersectionArea = area(intersection);
                 if (
-                  intersectionArea / incomingFeatureArea > 0.4 ||
-                  intersectionArea / featureArea > 0.4
+                  intersectionArea / incomingFeatureArea > 0.5 ||
+                  intersectionArea / featureArea > 0.5
                 ) {
                   overlaps.push(feature);
                 }
