@@ -5,13 +5,23 @@ var Levenshtein = require('levenshtein');
 module.exports = majorNameModification;
 
 function majorNameModification(newVersion, oldVersion) {
-  if (newVersion.deleted || !newVersion.properties || !newVersion.properties.name || (!(newVersion.properties.wikidata ||  newVersion.properties.wikipedia))) return false;
-  if (!oldVersion || !oldVersion.properties || !oldVersion.properties.name) return false;
+  if (
+    newVersion.deleted ||
+    !newVersion.properties ||
+    !newVersion.properties.name ||
+    !(newVersion.properties.wikidata || newVersion.properties.wikipedia)
+  )
+    return false;
+  if (!oldVersion || !oldVersion.properties || !oldVersion.properties.name)
+    return false;
 
   // If the name tag was not modified
   if (oldVersion.properties.name === newVersion.properties.name) return false;
 
-  var distance = new Levenshtein(newVersion.properties.name, oldVersion.properties.name).distance;
+  var distance = new Levenshtein(
+    newVersion.properties.name,
+    oldVersion.properties.name
+  ).distance;
   var length = oldVersion.properties.name.length;
   var modification = 100.0 * distance / length;
 
