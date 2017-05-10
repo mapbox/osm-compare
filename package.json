@@ -23,7 +23,7 @@
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
-    "@mapbox/vt2geojson": "git://github.com/mapbox/vt2geojson.git#1f8971513cd5209f6874f3f28cfc9cd167611544",
+    "@mapbox/vt2geojson": "^1.1.4",
     "@turf/buffer": "^4.2.0",
     "@turf/difference": "^4.1.0",
     "attempt": "^1.0.1",
