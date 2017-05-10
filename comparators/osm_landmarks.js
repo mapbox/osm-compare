@@ -10,10 +10,20 @@ module.exports = osmLandmarks;
 function osmLandmarks(newVersion, oldVersion, callback) {
   var featureID, featureType;
 
-  if (!newVersion.deleted && newVersion.properties && ('osm:id' in newVersion.properties) && ('osm:type' in newVersion.properties)) {
+  if (
+    !newVersion.deleted &&
+    newVersion.properties &&
+    'osm:id' in newVersion.properties &&
+    'osm:type' in newVersion.properties
+  ) {
     featureID = String(newVersion.properties['osm:id']);
     featureType = newVersion.properties['osm:type'];
-  } else if (oldVersion && oldVersion.properties && ('osm:id' in oldVersion.properties) && ('osm:type' in oldVersion.properties)) {
+  } else if (
+    oldVersion &&
+    oldVersion.properties &&
+    'osm:id' in oldVersion.properties &&
+    'osm:type' in oldVersion.properties
+  ) {
     featureID = String(oldVersion.properties['osm:id']);
     featureType = oldVersion.properties['osm:type'];
   } else {
@@ -34,7 +44,9 @@ function osmLandmarks(newVersion, oldVersion, callback) {
 
     for (var i = 0; i < results.length; i++) {
       for (var j = 0; j < results[i].length; j++) {
-        if (results[i][j][0] === featureID && results[i][j][1] === featureType) {
+        if (
+          results[i][j][0] === featureID && results[i][j][1] === featureType
+        ) {
           return callback(null, {
             'result:osm_landmarks': true
           });

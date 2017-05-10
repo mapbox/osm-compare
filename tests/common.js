@@ -9,7 +9,9 @@ var comparators = require('../index');
 test('Test compare functions with common fixtures', function(assert) {
   var dirname = path.join(__dirname, '/fixtures/');
   var filename = 'common.json';
-  var jsonData = JSON.parse(fs.readFileSync(path.join(dirname, filename), 'utf-8'));
+  var jsonData = JSON.parse(
+    fs.readFileSync(path.join(dirname, filename), 'utf-8')
+  );
 
   var fixtureQueue = queue(1);
   jsonData.fixtures.forEach(function(fixture) {
@@ -20,18 +22,25 @@ test('Test compare functions with common fixtures', function(assert) {
   });
 });
 
-
 /*
 * Takes a fixture and tests it on all compare functions.
 */
 function testFixture(assert, fixture, callback) {
   var dirname = path.join(__dirname, '..', 'comparators');
   var files = fs.readdirSync(dirname);
-  files = files.filter(function(filename) { return /.js$/.test(filename); });
+  files = files.filter(function(filename) {
+    return /.js$/.test(filename);
+  });
 
   var compareQueue = queue(1);
   Object.keys(comparators).forEach(function(comparator) {
-    compareQueue.defer(testFixtureOnCompareFunction, assert, fixture, comparators[comparator], callback);
+    compareQueue.defer(
+      testFixtureOnCompareFunction,
+      assert,
+      fixture,
+      comparators[comparator],
+      callback
+    );
   });
 
   compareQueue.awaitAll(function() {
@@ -39,13 +48,21 @@ function testFixture(assert, fixture, callback) {
   });
 }
 
-
 /*
 * Takes a fixture and a compare function and tests it.
 */
-function testFixtureOnCompareFunction(assert, fixture, compareFunction, callback) {
-  compareFunction(fixture.newVersion, fixture.oldVersion, function(error, result) {
-    assert.error(error);
-    callback();
-  });
+function testFixtureOnCompareFunction(
+  assert,
+  fixture,
+  compareFunction,
+  callback
+) {
+  compareFunction(
+    fixture.newVersion,
+    fixture.oldVersion,
+    function(error, result) {
+      assert.error(error);
+      callback();
+    }
+  );
 }

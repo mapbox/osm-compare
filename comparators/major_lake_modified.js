@@ -55,7 +55,9 @@ function majorLakeModified(newVersion, oldVersion) {
   } else {
     return false;
   }
-  if (!obj.properties || !obj.properties['osm:type'] || !obj.properties['osm:id']) {
+  if (
+    !obj.properties || !obj.properties['osm:type'] || !obj.properties['osm:id']
+  ) {
     return false;
   }
   var props = obj.properties;
