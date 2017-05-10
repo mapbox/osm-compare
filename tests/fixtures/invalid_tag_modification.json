@@ -115,8 +115,8 @@
       }
     },
     {
-      "description": "Test deletion of a second primary tag to a feature",
-      "expectedResult": {"result:invalid_tag_modification":true},
+      "description": "Test deletion of a second primary tag to a feature. The feature just became more specific",
+      "expectedResult": {},
       "newVersion": {
         "type": "Feature",
         "properties": {
@@ -129,6 +129,22 @@
         "properties": {
           "sport": "soccer",
           "leisure": "sports_centre"
+        },
+        "geometry": null
+      }
+    },
+    {
+      "description": "When all properties of a feature are removed, assuming that the feature is being moved to a relation",
+      "expectedResult": {},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": null
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "railway": "yes"
         },
         "geometry": null
       }
