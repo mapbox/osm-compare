@@ -23,7 +23,7 @@
   "author": "Mapbox",
   "license": "ISC",
   "dependencies": {
-    "@mapbox/vt2geojson": "^1.1.4",
+    "@mapbox/vt2geojson": "^1.1.5",
     "@turf/buffer": "^4.2.0",
     "@turf/difference": "^4.1.0",
     "attempt": "^1.0.1",
