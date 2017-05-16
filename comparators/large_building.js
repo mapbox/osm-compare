@@ -13,7 +13,7 @@ function largeBuilding(newVersion, oldVersion) {
   }
   var area = turfArea(newVersion);
 
-  if (area > 5000000 && newVersion.properties.hasOwnProperty('building')) {
+  if (area > 2500000 && newVersion.properties.hasOwnProperty('building')) {
     return {'result:large_building': area};
   }
   return false;
