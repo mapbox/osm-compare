@@ -34,6 +34,13 @@ Compare functions output the following:
 
 ```
 
+## Install
+
+```
+# Install osm-compare from the Mapbox namespace.
+npm install @mapbox/osm-compare
+```
+
 
 ### How do I create a new compare function?
 * Clone this repository with `git clone https://github.com/mapbox/osm-compare`
