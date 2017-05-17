@@ -36,7 +36,7 @@ Compare functions output the following:
 
 ## Install
 
-```
+```sh
 # Install osm-compare from the Mapbox namespace.
 npm install @mapbox/osm-compare
 ```
