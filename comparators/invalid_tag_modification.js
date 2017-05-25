@@ -22,7 +22,7 @@ function getPrimaryTags(properties) {
     'military',
     'natural',
     'office',
-    'places',
+    'place',
     'power',
     'public_transport',
     'railway',
