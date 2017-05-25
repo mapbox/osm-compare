@@ -35,7 +35,7 @@ var fs = require('fs');
     'military',
     'natural',
     'office',
-    'places',
+    'place',
     'power',
     'public_transport',
     'railway',
@@ -111,7 +111,7 @@ man_made
 military
 natural
 office
-places
+place
 power
 public_transport
 railway

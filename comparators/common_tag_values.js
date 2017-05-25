@@ -23,7 +23,7 @@ var primaryTags = [
   'military',
   'natural',
   'office',
-  'places',
+  'place',
   'power',
   'public_transport',
   'railway',
