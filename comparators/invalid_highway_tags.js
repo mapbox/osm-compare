@@ -44,6 +44,7 @@ function invalidHighwayTags(newVersion, oldVersion) {
     'street_lamp',
     'stop',
     'traffic_signals',
+    'milestone',
     'traffic_mirror',
     'turning_circle',
     'turning_loop'
