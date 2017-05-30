@@ -44,7 +44,9 @@ function invalidHighwayTags(newVersion, oldVersion) {
     'street_lamp',
     'stop',
     'traffic_signals',
-    'turning_circle'
+    'traffic_mirror',
+    'turning_circle',
+    'turning_loop'
   ];
   if (
     !newVersion.deleted &&
