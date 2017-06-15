@@ -234,7 +234,11 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
                 overlaps.push(feature);
               }
             } else if (incomingFeatureArea > 0 && featureArea === 0) {
-              var buffered = buffer(incomingFeature, -0.001);
+              var bufferThreshold = -3.5183 *
+                Math.pow(10, -10) *
+                incomingFeatureArea -
+                0.006;
+              var buffered = buffer(incomingFeature, bufferThreshold);
               var bufferedIntersection;
               try {
                 bufferedIntersection = intersect(buffered, feature);
@@ -247,10 +251,13 @@ function getOverLappingFeatures(incomingFeature, featureCollections) {
                 );
               }
               if (bufferedIntersection) {
+                console.log(JSON.stringify(feature));
                 overlaps.push(feature);
               }
             } else if (incomingFeatureArea === 0 && featureArea > 0) {
-              var buffered1 = buffer(feature, -0.001);
+              var bufferThreshold = -3.5183 * Math.pow(10, -10) * featureArea -
+                0.006;
+              var buffered1 = buffer(feature, bufferThreshold);
               var bufferedIntersection1;
               try {
                 bufferedIntersection1 = intersect(buffered1, incomingFeature);
