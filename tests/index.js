@@ -139,6 +139,11 @@ function processFixtureFile(assert, jsonData, callback) {
   });
 }
 
+function removeMessage(result) {
+  delete result.message;
+  return result;
+}
+
 function processFixture(assert, compareFunction, fixture, callback) {
   compareFunction(
     fixture.newVersion,
@@ -148,7 +153,11 @@ function processFixture(assert, compareFunction, fixture, callback) {
         assert.ifError(err);
         return callback(err);
       }
-      assert.deepEqual(result, fixture.expectedResult, fixture.description);
+      assert.deepEqual(
+        removeMessage(result),
+        fixture.expectedResult,
+        fixture.description
+      );
       callback();
     }
   );

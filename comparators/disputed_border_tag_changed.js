@@ -15,7 +15,10 @@ function disputedBorderTagChanged(newVersion, oldVersion) {
   */
     if (oldVersion.properties && oldVersion.properties['disputed']) {
       if (oldVersion.properties['disputed'] !== null) {
-        return {'result:disputed_border_tag_changed': true};
+        return {
+          message: 'Disputed border tag changed',
+          'result:disputed_border_tag_changed': true
+        };
       }
     }
   }
