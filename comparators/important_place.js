@@ -16,7 +16,8 @@ function checkPlaceType(feature) {
   }
   const tags = feature.properties;
   if (tags && tags.place) {
-    if (tags.place === 'city') return 'city';
+    if (tags.place === 'country') return tags.place;
+    if (tags.place === 'city') return tags.place;
     if (tags.place === 'town' && welltagged.hasWikiTags(tags)) {
       return 'town';
     }
