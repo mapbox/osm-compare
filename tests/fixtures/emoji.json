@@ -1,0 +1,50 @@
+{
+  "compareFunction": "emoji",
+  "fixtures": [
+    {
+      "description": "Finds Emoji",
+      "newVersion": {
+        "type": "Feature",
+        "properties": { "name": "'Give me some 💵'" }
+      },
+      "oldVersion": null,
+      "expectedResult": { "message": "Found emoji in name" }
+    },
+    {
+      "description": "Finds Emoji",
+      "newVersion": {
+        "type": "Feature",
+        "properties": { "name": "If all you have is a 🔨" }
+      },
+      "oldVersion": null,
+      "expectedResult": { "message": "Found emoji in name" }
+    },
+    {
+      "description": "Finds Emoji",
+      "newVersion": {
+        "type": "Feature",
+        "properties": { "name": "Emojis 😂 in OSM" }
+      },
+      "oldVersion": null,
+      "expectedResult": { "message": "Found emoji in name" }
+    },
+    {
+      "description": "Finds Emoji",
+      "newVersion": {
+        "type": "Feature",
+        "properties": { "name": "OSM 😈" }
+      },
+      "oldVersion": null,
+      "expectedResult": { "message": "Found emoji in name" }
+    },
+    {
+      "description": "No Emoji in name",
+      "newVersion": {
+        "type": "Feature",
+        "properties": { "name": "OSM does not need Emojis" }
+      },
+      "oldVersion": null,
+      "expectedResult": false
+    }
+  ]
+}

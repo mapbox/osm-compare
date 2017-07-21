@@ -45,5 +45,6 @@ module.exports = {
   feature_overlap: require('./comparators/feature_overlap.js'),
   rare_critical_feature_created: wrapsync(
     require('./comparators/rare_critical_feature_created')
-  )
+  ),
+  emoji: wrapsync(require('./comparators/emoji'))
 };
