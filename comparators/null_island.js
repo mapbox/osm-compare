@@ -24,6 +24,7 @@ function nullIsland(newVersion, oldVersion) {
   var inside = turfInside(center, polygon);
   if (inside) {
     return {
+      message: 'Is inside null island boundaries',
       'result:null_island': inside
     };
   }

@@ -32,7 +32,10 @@ function pokemonEdits(newVersion, oldVersion) {
       for (var prop in newVersion.properties) {
         if (prop.indexOf('name') === 0) {
           if (hasPokename(newVersion.properties[prop])) {
-            return {'result:pokemon_edits': true};
+            return {
+              message: 'Contains a pokemon name',
+              'result:pokemon_edits': true
+            };
           }
         }
       }
