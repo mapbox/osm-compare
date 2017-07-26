@@ -42,22 +42,11 @@ npm install @mapbox/osm-compare
 ```
 
 
-### How do I create a new compare function?
-* Clone this repository with `git clone https://github.com/mapbox/osm-compare`
-* `cd osm-compare`
-* `npm install`
-* Check if all tests pass before making your changes with `npm test`
-* Create a new test fixture in the directory `tests/fixtures/`
-* Create a new compare function in the directory `comparators/` (check comparators/example.js for format)
-* Test your new compare function with `npm test`
-* Add your new comparator to `index.js`
-* Along with a brief description of the comparator, add it to [comparators/README.md](https://github.com/mapbox/osm-compare/blob/master/comparators/README.md)
-* Push to a new branch on Github and create a Pull Request
+### Docs
 
-### How do I test a single compare function against a new fixture?
-* `cd osm-compare/tests/`
-* Create new fixture file in `tests/fixtures/` folder (check tests/fixtures/example.json for format)
-* Test your fixture with `node tests/test_compare_function.js tests/fixtures/example.json`
+- [How do I create a new compare function](https://github.com/mapbox/osm-compare/blob/master/docs/new-compare-function.md)
+- [Sample compare function](https://github.com/mapbox/osm-compare/blob/master/example)
+- [What does each compare function do](https://github.com/mapbox/osm-compare/blob/master/comparators/README.md)
 
 
 ### How do I build an npm package?

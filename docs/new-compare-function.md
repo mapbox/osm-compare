@@ -8,6 +8,8 @@
   `cd osm-compare`
   
   `npm install`
+
+- [ ] Check if all tests pass before making your changes with `npm test`
   
 - [ ] Switch to a new branch
 
@@ -58,7 +60,7 @@ function significant_feature(newVersion, oldVersion) {
   }*/
 }
 ```
-  [Example compare function](https://github.com/mapbox/osm-compare/blob/master/docs/example.js)
+  [Example compare function](https://github.com/mapbox/osm-compare/blob/master/example/example.js)
    
 - [ ] Now to test if our comparator is working all well, we need fixtures. A Fixture is a json object which contains the old version json and new Version json of any feature. Let's write some of them to test our compare function. Also note that we should have a good number(Atleast 3-4) of fixtures to test all the end cases. Add a new json file in tests/fixtures
 
@@ -83,7 +85,7 @@ function significant_feature(newVersion, oldVersion) {
   }
   ```
   
-  [Example compare function test](https://github.com/mapbox/osm-compare/blob/master/docs/example.json)
+  [Example compare function test](https://github.com/mapbox/osm-compare/blob/master/example/example.json)
   
   To add new Version and old Version one can follow: 
   - Query api-dynamosm: https://jzvqzn73ca.execute-api.us-east-1.amazonaws.com/api/feature/way/430124248?version=4
@@ -94,7 +96,12 @@ function significant_feature(newVersion, oldVersion) {
   `node tests/test_compare_function.js tests/fixtures/comparator_name.json`
   
   This will return the fixture description along with the result returned by the comparator. Check whether if this returns result as expected.
-  
+
 - [ ] Export the compare function here: https://github.com/mapbox/osm-compare/blob/master/index.js
 
+- [ ] Test the whole package with `npm test`
+
+- [ ] Along with a brief description of the comparator, add it to [comparators/README.md](https://github.com/mapbox/osm-compare/blob/master/comparators/README.md)
+
+- [ ] Push to a new branch on Github and create a Pull Request
   
