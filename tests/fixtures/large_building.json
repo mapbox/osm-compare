@@ -38,7 +38,7 @@
               }
          },
          "expectedResult":{
-           "result:large_building": 143145029782.25003
+           "result:large_building": true
          }
       },
       {
@@ -115,6 +115,27 @@
                  ]
               }
          },
+         "expectedResult": false
+      },
+      {
+        "Description":  "valid rectangular building",
+        "newVersion": {
+          "type": "Feature",
+          "properties": {
+            "highway": "residential"
+          },
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [77.60377675294876, 12.978876989851633],
+              [77.60483890771866, 12.978876989851633],
+              [77.60483890771866, 12.979888484443892],
+              [77.60377675294876, 12.979888484443892],
+              [77.60377675294876, 12.978876989851633]
+            ]
+          }
+      },
+        "oldVersion": null,
          "expectedResult": false
       }
    ]
