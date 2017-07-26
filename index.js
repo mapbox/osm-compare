@@ -37,6 +37,9 @@ module.exports = {
   common_tag_values: wrapsync(require('./comparators/common_tag_values.js')),
   example: require('./comparators/example.js'),
   added_website: wrapsync(require('./comparators/added_website.js')),
+  wikidata_distance_with_osm: wrapsync(
+    require('./comparators/wikidata_distance_with_osm.js')
+  ),
   name_unmatches_with_wikidata: require('./comparators/name_unmatches_with_wikidata.js'),
   name_modified: wrapsync(require('./comparators/name_modified.js')),
   osm_landmarks: require('./comparators/osm_landmarks.js'),
