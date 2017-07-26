@@ -14,23 +14,20 @@ Compare functions take as inputs the following:
 
 1. `oldVersion` - GeoJSON of the feature's old version
 2. `newVersion` - GeoJSON of the feature's new version
-3. `callback` - A function to call after processing.
 
 Compare functions output the following:
 
-1. `error` - Error if any during processing or `null`.
-2. `result` - Object containing key value pairs representing findings of the compare function or an empty object.
+1. `result` - Object containing key value pairs representing findings of the compare function or an empty object.
 
 ```sh
 # Format of compare function result where value can be primary data types or objects
 {
-    'result:comparator_name': value
+    'result:comparator_name': value,
+    'message': Any custom message which corresponds to the catch
 }
 
 # Format of compare function if no result, (default)
-{
-    'result:comparator_name': {}
-}
+false
 
 ```
 
