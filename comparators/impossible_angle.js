@@ -25,16 +25,23 @@ function impossibleAngle(newVersion, oldVersion, options) {
     options
   );
 
-  if (!newVersion.deleted && newVersion.geometry.type === 'LineString') {
-    const coords = newVersion.geometry.coordinates;
-    for (let j = 0; j < coords.length - 2; j++) {
-      const angle = findAngle(coords[j], coords[j + 1], coords[j + 2]);
-      if (angle < options.maxAngle) {
-        return {
-          message: `Found impossible angle ${angle}`,
-          angle: angle
-        };
-      }
+  if (newVersion.deleted || !newVersion.geometry) return false;
+  let coords = [];
+  if (newVersion.geometry.type === 'MultiPolygon') {
+    coords = newVersion.geometry.coordinates[0][0];
+  } else if (newVersion.geometry.type === 'Polygon') {
+    coords = newVersion.geometry.coordinates[0];
+  } else if (newVersion.geometry.type === 'LineString') {
+    coords = newVersion.geometry.coordinates;
+  }
+
+  for (let j = 0; j < coords.length - 2; j++) {
+    const angle = findAngle(coords[j], coords[j + 1], coords[j + 2]);
+    if (angle < options.maxAngle) {
+      return {
+        message: `Found impossible angle ${angle}`,
+        angle: angle
+      };
     }
   }
   return false;
