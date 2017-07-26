@@ -47,6 +47,8 @@ module.exports = {
     require('./comparators/rare_critical_feature_created')
   ),
   deprecated_construction_proposal_tag: wrapsync(
-    require('./comparators/deprecated_construction_proposal_tag.js')
+    require('./comparators/deprecated_construction_proposal_tag.js')),
+  invalidtag_on_highway: wrapsync(
+    require('./comparators/invalidtag_on_highway.js')
   )
 };
