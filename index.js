@@ -45,5 +45,8 @@ module.exports = {
   feature_overlap: require('./comparators/feature_overlap.js'),
   rare_critical_feature_created: wrapsync(
     require('./comparators/rare_critical_feature_created')
+  ),
+  deprecated_construction_proposal_tag: wrapsync(
+    require('./comparators/deprecated_construction_proposal_tag.js')
   )
 };
