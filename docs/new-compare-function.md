@@ -1,6 +1,6 @@
 ### Lets make a compare function which detects features with version greater than 25 being deleted in OSM.
 
-##Steps
+## Steps
 - [ ] Clone the repository [osm-compare](https://github.com/mapbox/osm-compare)
 
   `git clone git@github.com:mapbox/osm-compare.git`
@@ -36,8 +36,8 @@ function significant_feature(newVersion, oldVersion) {
     /*
       Comparing the tags
       return {
-        message: custom message which can be sent (optional)
-        'result:comparator_name' = value;
+        'message' : 'custom message which can be sent (optional)',
+        'result:comparator_name' : value
       }
      */
   } else if (newVersion && !oldVersion) {
