@@ -1,0 +1,39 @@
+{
+  "compareFunction": "triangular_shapes",
+  "fixtures": [
+  {
+    "description": "triangular edits should be caught",
+    "newVersion": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              76.44190549850464,
+              12.83843546658391
+            ],
+            [
+              76.43973827362059,
+              12.835297260795707
+            ],
+            [
+              76.44385814666748,
+              12.834753301143028
+            ],
+            [
+              76.44190549850464,
+              12.83843546658391
+            ]
+          ]
+        ]
+      }
+    },
+    "oldVersion": {
+    },
+    "expectedResult": {"message":"triangular shape added","result:triangular_shapes":true
+    }
+  }
+  ]
+}
