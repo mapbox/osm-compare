@@ -12,7 +12,6 @@ function deprecated_construction_proposal_tag(newVersion, oldVersion) {
       return {
         'result:deprecated_construction_proposal_tag': true
       };
-      return false;
     }
   }
   return false;
