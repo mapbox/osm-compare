@@ -2,7 +2,7 @@
    "compareFunction":"wikidata_distance_with_osm",
    "fixtures":[
       {
-         "Description":"checking distance between osm feature and wikidata augmenter",
+         "description":"checking distance between osm feature and wikidata augmenter",
          "oldVersion": null,
          "newVersion":{
               "type":"Feature",
@@ -44,7 +44,7 @@
          }
       },
       {
-         "Description":"checking distance between osm feature and wikidata augmenter",
+         "description":"checking distance between osm feature and wikidata augmenter",
          "oldVersion": null,
          "newVersion":{
               "type":"Feature",
@@ -68,7 +68,7 @@
          }
       },
       {
-         "Description":"checking distance between osm feature and wikidata augmenter",
+         "description":"checking distance between osm feature and wikidata augmenter",
          "oldVersion": null,
          "newVersion":{
               "type":"Feature",

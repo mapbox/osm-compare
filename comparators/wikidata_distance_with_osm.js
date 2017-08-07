@@ -6,6 +6,7 @@ module.exports = wikidataDistanceWithOsm;
 
 function wikidataDistanceWithOsm(newVersion) {
   if (
+    newVersion.properties &&
     newVersion.properties.place &&
     newVersion.properties['wikidata:claims:P625:longitude'] &&
     newVersion.properties['wikidata:claims:P625:latitude'] &&
