@@ -1,5 +1,5 @@
 {
-  "compareFunction": "invalidtag_on_highway",
+  "compareFunction": "irrelevant_tags_on_highway",
   "fixtures": [
   {
     "description": "Highway with invalid tags",
@@ -60,7 +60,7 @@
         ]
       }
     },
-    "expectedResult": {"message":"Invalid  tags on highway","result:invalidtag_on_highway":true
+    "expectedResult": {"result:irrelevant_tags_on_highway":true
     }
     },
     {

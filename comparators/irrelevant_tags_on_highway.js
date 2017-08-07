@@ -1,18 +1,18 @@
 'use strict';
-module.exports = significant_feature;
+module.exports = irrelevant_tags_on_highway;
 
 function contains_addr(properties) {
   var keys = Object.keys(properties);
   for (var i = 0; i < keys.length; i++) {
-    if (keys[i].indexOf('addr') != -1) {
+    if (keys[i].indexOf('addr') !== -1) {
       return true;
     }
   }
   return false;
 }
 
-function significant_feature(newVersion, oldVersion) {
-  if (newVersion.deleted && !oldVersion) {
+function irrelevant_tags_on_highway(newVersion, oldVersion) {
+  if (newVersion.deleted || !newVersion) {
     // None of old version or new Version present
     return false;
   }
@@ -24,7 +24,7 @@ function significant_feature(newVersion, oldVersion) {
   ) {
     return {
       message: 'Invalid  tags on highway',
-      'result:invalidtag_on_highway': true
+      'result:irrelevant_tags_on_highway': true
     };
   }
   return false;
