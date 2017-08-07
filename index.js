@@ -46,6 +46,7 @@ module.exports = {
   invalid_tag_modification: require('./comparators/invalid_tag_modification'),
   invalid_name: require('./comparators/invalid_name'),
   feature_overlap: require('./comparators/feature_overlap.js'),
+  turn_restriction: require('./comparators/turn_restriction.js'),
   rare_critical_feature_created: wrapsync(
     require('./comparators/rare_critical_feature_created')
   ),
