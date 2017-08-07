@@ -1,8 +1,8 @@
 {
-  "compareFunction":"turn_restriction",
-  "fixtures":[
+  "compareFunction": "turn_restriction",
+  "fixtures": [
     {
-      "description":"A new turn restriction is created",
+      "description": "A new turn restriction is created",
       "oldVersion": null,
       "newVersion": {
         "type": "Feature",
