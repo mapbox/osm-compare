@@ -6,7 +6,6 @@ module.exports = turnRestriction;
 * Checks for existence of name tag and if it is modified between old and new version, it callbacks with the result.
 * @param {object} newVersion Features new version in GeoJSON.
 * @param {object} oldVersion Features old version in GeoJSON.
-* @param {Function} callback called with (error, result).
 * @returns {bool} Boolean indicating a turn restriction.
 */
 function turnRestriction(newVersion, oldVersion) {
