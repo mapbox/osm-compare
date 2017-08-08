@@ -135,7 +135,9 @@
           ]
         }
       },
-      "expectedResult": true
+      "expectedResult": {
+        "result:turn_restriction": true
+      }
     }
   ]
 }

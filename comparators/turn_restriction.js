@@ -17,7 +17,9 @@ function turnRestriction(newVersion, oldVersion) {
       oldVersion.properties &&
       oldVersion.properties.hasOwnProperty('restriction'))
   ) {
-    return true;
+    return {
+      'result:turn_restriction': true
+    };
   }
   return false;
 }
