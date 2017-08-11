@@ -1,0 +1,99 @@
+{
+  "compareFunction": "irrelevant_tags_on_highway",
+  "fixtures": [
+  {
+    "description": "Highway with invalid tags",
+    "newVersion": {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential",
+        "phone": "202-403-9512",
+        "addr:housenum": 13,
+        "website": "http://www.municipalite.chertsey.qc.ca/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -105.0018310546875,
+            21.84301680883439
+          ],
+          [
+            -104.98397827148438,
+            21.883164152969165
+          ],
+          [
+            -104.88441467285156,
+            21.917567172190736
+          ],
+          [
+            -104.85763549804688,
+            21.92011521355736
+          ]
+        ]
+      }
+    },
+    "oldVersion": {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -105.0018310546875,
+            21.84301680883439
+          ],
+          [
+            -104.98397827148438,
+            21.883164152969165
+          ],
+          [
+            -104.88441467285156,
+            21.917567172190736
+          ],
+          [
+            -104.85763549804688,
+            21.92011521355736
+          ]
+        ]
+      }
+    },
+    "expectedResult": {"result:irrelevant_tags_on_highway":true
+    }
+    },
+    {
+    "description": "Highway does not have invalid tag",
+    "newVersion": {
+      "type": "Feature",
+      "properties": {
+        "highway": "residential"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -105.0018310546875,
+            21.84301680883439
+          ],
+          [
+            -104.98397827148438,
+            21.883164152969165
+          ],
+          [
+            -104.88441467285156,
+            21.917567172190736
+          ],
+          [
+            -104.85763549804688,
+            21.92011521355736
+          ]
+        ]
+      }
+    },
+    "oldVersion": null,
+    "expectedResult": false
+    }
+  ]
+}

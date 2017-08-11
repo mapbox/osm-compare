@@ -1,0 +1,109 @@
+{
+   "compareFunction":"wikidata_distance_with_osm",
+   "fixtures":[
+      {
+         "description":"checking distance between osm feature and wikidata augmenter",
+         "oldVersion": null,
+         "newVersion":{
+              "type":"Feature",
+              "properties":{
+                 "place":"city",
+                 "wikidata:claims:P625:longitude": 16.03194444,
+                 "wikidata:claims:P625:latitude": 52.64333333
+              },
+              "geometry":{
+                 "type":"Polygon",
+                 "coordinates":[
+                    [
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ]
+                    ]
+                 ]
+              }
+         },
+         "expectedResult":{
+           "result:wikidata_distance_with_osm": 9061.142891951475
+         }
+      },
+      {
+         "description":"checking distance between osm feature and wikidata augmenter",
+         "oldVersion": null,
+         "newVersion":{
+              "type":"Feature",
+              "properties":{
+                 "place":"city",
+                 "wikidata:claims:P625:longitude": 16.03194444,
+                 "wikidata:claims:P625:latitude": 52.64333333
+              },
+              "geometry":{
+                 "type":"Point",
+                 "coordinates":[
+
+                         -118.36797058582306,
+                         33.81124046079714
+                       ]
+
+              }
+         },
+         "expectedResult":{
+           "result:wikidata_distance_with_osm": 9439.04674666891
+         }
+      },
+      {
+         "description":"checking distance between osm feature and wikidata augmenter",
+         "oldVersion": null,
+         "newVersion":{
+              "type":"Feature",
+              "properties":{
+                 "natural":"water"
+              },
+              "geometry":{
+                 "type":"Polygon",
+                 "coordinates":[
+                    [
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          41.04621681452063
+                       ],
+                       [
+                          -120.62988281249999,
+                          37.19533058280065
+                       ],
+                       [
+                          -124.49707031249999,
+                          37.19533058280065
+                       ]
+                    ]
+                 ]
+              }
+         },
+         "expectedResult": false
+      }
+   ]
+}

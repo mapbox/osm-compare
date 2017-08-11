@@ -22,7 +22,11 @@ function rareCriticalFeatureCreated(newVersion, oldVersion, callback) {
     !newVersion.deleted &&
     newVersion['properties']['osm:version'] === 1 &&
     filterFeatures(newVersion)
-  )
-    return {'result:rare_critical_feature_created': true};
+  ) {
+    return {
+      message: 'Rare critical feature created',
+      'result:rare_critical_feature_created': true
+    };
+  }
   return false;
 }

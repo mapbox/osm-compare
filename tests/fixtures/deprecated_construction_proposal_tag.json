@@ -1,0 +1,31 @@
+{
+    "compareFunction": "deprecated_construction_proposal_tag",
+    "fixtures": [{
+        "description": "Deprecate highway",
+        "newVersion": {
+            "type": "Feature",
+            "id": "way!430124248!2",
+            "properties": {
+                "highway": "tertiary",
+                "construction": "yes"
+            }
+        },
+        "oldVersion": null,
+        "expectedResult": {
+            "result:deprecated_construction_proposal_tag": true
+        }
+    }, {
+        "description": "No deprecated highway",
+        "newVersion": {
+
+            "type": "Feature",
+            "properties": {
+                "highway": "construction",
+                "construction": "residential"
+            }
+        },
+        "oldVersion": {},
+        "expectedResult": false
+
+    }]
+}

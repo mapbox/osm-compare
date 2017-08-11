@@ -37,14 +37,24 @@ module.exports = {
   common_tag_values: wrapsync(require('./comparators/common_tag_values.js')),
   example: require('./comparators/example.js'),
   added_website: wrapsync(require('./comparators/added_website.js')),
+  wikidata_distance_with_osm: wrapsync(
+    require('./comparators/wikidata_distance_with_osm.js')
+  ),
   name_unmatches_with_wikidata: require('./comparators/name_unmatches_with_wikidata.js'),
   name_modified: wrapsync(require('./comparators/name_modified.js')),
   osm_landmarks: require('./comparators/osm_landmarks.js'),
   invalid_tag_modification: require('./comparators/invalid_tag_modification'),
   invalid_name: require('./comparators/invalid_name'),
   feature_overlap: require('./comparators/feature_overlap.js'),
+  turn_restriction: wrapsync(require('./comparators/turn_restriction')),
   rare_critical_feature_created: wrapsync(
     require('./comparators/rare_critical_feature_created')
   ),
-  emoji: wrapsync(require('./comparators/emoji'))
+  emoji: wrapsync(require('./comparators/emoji')),
+  deprecated_construction_proposal_tag: wrapsync(
+    require('./comparators/deprecated_construction_proposal_tag.js')
+  ),
+  irrelevant_tags_on_highway: wrapsync(
+    require('./comparators/irrelevant_tags_on_highway.js')
+  )
 };

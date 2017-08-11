@@ -13,7 +13,10 @@ function disputedBorderDeleted(newVersion, oldVersion) {
     Creating a result object
   */
     if (oldVersion.properties && oldVersion.properties['disputed']) {
-      return {'result:disputed_border_deleted': true};
+      return {
+        message: 'Disputed border deleted',
+        'result:disputed_border_deleted': true
+      };
     }
   }
 
