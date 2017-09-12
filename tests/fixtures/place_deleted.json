@@ -1,0 +1,31 @@
+{
+  "compareFunction": "place_deleted",
+  "fixtures": [
+    {
+      "description": "London deleted",
+      "oldVersion": {
+        "properties": {
+          "osm:version": 1,
+          "osm:type": "node",
+          "place": "city",
+          "name": "London"
+        }
+      },
+      "newVersion": {
+        "properties": {
+          "osm:version": 2,
+          "osm:type": "node",
+          "place": "city",
+          "name": "London"
+        },
+        "geometry": {
+          "type": "Point"
+        },
+        "deleted": true
+      },
+      "expectedResult": {
+        "message": "Important place=city deleted"
+      }
+    }
+  ]
+}

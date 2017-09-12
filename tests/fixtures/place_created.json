@@ -1,0 +1,47 @@
+{
+  "compareFunction": "place_created",
+  "fixtures": [
+    {
+      "description": "Italy created",
+      "newVersion": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0,
+            0
+          ]
+        },
+        "properties": {
+          "osm:version": 1,
+          "osm:type": "node",
+          "place": "country",
+          "name": "Italia"
+        }
+      },
+      "expectedResult": {
+        "message": "Important place=country created"
+      }
+    },
+    {
+      "description": "London created",
+      "newVersion": {
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            0,
+            0
+          ]
+        },
+        "properties": {
+          "osm:version": 1,
+          "osm:type": "node",
+          "place": "city",
+          "name": "London"
+        }
+      },
+      "expectedResult": {
+        "message": "Important place=city created"
+      }
+    }
+  ]
+}
