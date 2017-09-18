@@ -32,6 +32,9 @@ module.exports = {
     require('./comparators/modified_place_wikidata')
   ),
   modified_monument: wrapsync(require('./comparators/modified_monument')),
+  modified_survey_point: wrapsync(
+    require('./comparators/modified_survey_point')
+  ),
   invalid_tag_combination: require('./comparators/invalid_tag_combination'),
   water_feature_by_new_user: require('./comparators/water_feature_by_new_user'),
   common_tag_values: wrapsync(require('./comparators/common_tag_values.js')),
