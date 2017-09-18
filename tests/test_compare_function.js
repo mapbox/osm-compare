@@ -32,14 +32,14 @@ var nock = require('nock');
         console.log(fixture.description);
         console.log('expected', fixture.expectedResult);
         if (error) console.log(error);
-        console.log('actual', JSON.stringify(result), '\n');
+        console.log('actual', JSON.stringify(result));
         if (
           JSON.stringify(fixture.expectedResult) !==
           JSON.stringify(removeMessage(result))
         ) {
-          console.log('Test failed! Actual is not expected!');
+          console.log('Test FAILED! Actual is not expected!\n');
         } else {
-          console.log('Test passed! Actual is same as expected');
+          console.log('OK! Test passed! Actual is same as expected\n');
         }
       }
     );
