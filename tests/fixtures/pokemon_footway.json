@@ -8,7 +8,7 @@
         "properties": {
           "highway": "footway",
           "osm:version": 4,
-          "osm:uid": 5008734
+          "osm:uid": 5017521
         },
         "geometry": {
           "type": "LineString",
@@ -38,7 +38,7 @@
         "properties": {
           "highway": "primary",
           "osm:version": 4,
-          "osm:uid": 5008734
+          "osm:uid": 5017521
         },
         "geometry": {
           "type": "LineString",
@@ -98,7 +98,7 @@
         "properties": {
           "highway": "footway",
           "osm:version": 1,
-          "osm:uid": 5008734
+          "osm:uid": 5017521
         },
         "geometry": {
           "type": "LineString",
