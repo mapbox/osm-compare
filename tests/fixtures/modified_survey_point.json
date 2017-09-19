@@ -210,6 +210,42 @@
             "expectedResult": {
                 "result:modified_survey_point": true
             }
+        },
+        {
+            "description": "Flag if survey_point lost its main tag",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "obelisk",
+                    "osm:version": 9
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "source": "IBGE"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
         }
     ]
 }
