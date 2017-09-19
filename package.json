@@ -43,7 +43,7 @@
     "queue-async": "^1.2.1",
     "request": "^2.72.0",
     "sax": "^1.2.1",
-    "sqlite3": "^3.1.8",
+    "sqlite3": "^3.1.11",
     "tile-cover": "^3.0.1",
     "turf-area": "^1.1.1",
     "turf-bbox-polygon": "^3.0.12",
@@ -57,7 +57,7 @@
     "turf-within": "^3.0.5"
   },
   "devDependencies": {
-    "csv": "^1.1.1",
+    "cli-color": "^1.2.0",
     "eslint": "^2.8.0",
     "eslint-config-mourner": "^2.0.1",
     "husky": "^0.13.3",
