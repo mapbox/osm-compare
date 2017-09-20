@@ -36,6 +36,24 @@ function modifiedSurveyPoint(newVersion, oldVersion) {
       // survey_point lost its main tag
       return {'result:modified_survey_point': true};
     }
+    if (
+      newVersion.properties &&
+      oldVersion.properties.hasOwnProperty('ele') &&
+      (!newVersion.properties.ele ||
+        oldVersion.properties.ele !== newVersion.properties.ele)
+    ) {
+      // survey_point lost or changed its ele tag
+      return {'result:modified_survey_point': true};
+    }
+    if (
+      newVersion.properties &&
+      oldVersion.properties.hasOwnProperty('ref') &&
+      (!newVersion.properties.ref ||
+        oldVersion.properties.ref !== newVersion.properties.ref)
+    ) {
+      // survey_point lost or changed its ref tag
+      return {'result:modified_survey_point': true};
+    }
   }
 
   if (
