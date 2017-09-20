@@ -1,0 +1,397 @@
+{
+    "compareFunction": "modified_survey_point",
+    "fixtures": [
+        {
+            "description": "Checks if survey_point was moved (changed latitude)",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 2
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 1
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89.877
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Checks if survey_point was moved (changed longitude)",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 2
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 1
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89.343,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Checks if survey_point was deleted",
+            "newVersion": {"deleted": true},
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 11
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Checks if survey_point was created",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 1
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {},
+            "expectedResult": false
+        },
+        {
+            "description": "Checks if survey_point was created",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 2
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "historic": "monument",
+                    "osm:version": 1
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": false
+        },
+        {
+            "description": "Don't flag if survey_point lost other tags",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 9
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "source": "IBGE"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": false
+        },
+        {
+            "description": "Flag if survey_point lost its main tag",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "historic": "monument",
+                    "osm:version": 9
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "source": "IBGE"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Flag if survey_point changed to other man_made feature",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "obelisk",
+                    "osm:version": 9
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "source": "IBGE"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Flag if survey_point had changes in the ref tag",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 9,
+                    "ref": "021"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "ref": "043"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Flag if survey_point lost ref tag",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 9
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "ref": "043"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Flag if survey_point had changes in the ele tag",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 9,
+                    "ele": "1021"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "ele": "1043"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        },
+        {
+            "description": "Flag if survey_point lost ele tag",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 9
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "man_made": "survey_point",
+                    "osm:version": 8,
+                    "name": "Another survey point",
+                    "ele": "1043"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        89,
+                        89
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:modified_survey_point": true
+            }
+        }
+    ]
+}
