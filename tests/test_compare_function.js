@@ -5,6 +5,8 @@ var path = require('path');
 var queue = require('queue-async');
 var comparators = require('../index');
 var nock = require('nock');
+var clc = require('cli-color');
+
 (function() {
   if (process.argv.length !== 3) {
     console.log('\nUsage: node test_compare_function.js fixture_filename\n');
@@ -30,16 +32,18 @@ var nock = require('nock');
       fixture.oldVersion,
       function(error, result) {
         console.log(fixture.description);
-        console.log('expected', fixture.expectedResult);
-        if (error) console.log(error);
-        console.log('actual', JSON.stringify(result), '\n');
+        console.log(clc.yellow('expected', fixture.expectedResult));
+        if (error) console.log(clc.red(error));
+        console.log(clc.yellow('actual', JSON.stringify(result)));
         if (
           JSON.stringify(fixture.expectedResult) !==
           JSON.stringify(removeMessage(result))
         ) {
-          console.log('Test failed! Actual is not expected!');
+          console.log(clc.red('Test FAILED! Actual is not expected!\n'));
         } else {
-          console.log('Test passed! Actual is same as expected');
+          console.log(
+            clc.green('OK! Test passed! Actual is same as expected\n')
+          );
         }
       }
     );
