@@ -53,6 +53,7 @@ module.exports = {
   rare_critical_feature_created: wrapsync(
     require('./comparators/rare_critical_feature_created')
   ),
+  emoji: wrapsync(require('./comparators/emoji')),
   deprecated_construction_proposal_tag: wrapsync(
     require('./comparators/deprecated_construction_proposal_tag.js')
   ),
