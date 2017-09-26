@@ -1,0 +1,634 @@
+{
+  "compareFunction": "wrong_turn_restriction",
+  "fixtures": [
+    {
+      "description": "The FROM way doesn't share nodes with the VIA node",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "action": "create",
+          "changeType": "added",
+          "relations": [
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "23871010",
+                "role": "from"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.4282111,
+                    37.7596955
+                  ],
+                  [
+                    -122.430341,
+                    37.7595591
+                  ],
+                  [
+                    -122.4304416,
+                    37.7595539
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "via",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "217358397",
+                "role": "to"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.42839,
+                    37.7612257
+                  ],
+                  [
+                    -122.4283241,
+                    37.7604909
+                  ],
+                  [
+                    -122.4282483,
+                    37.7596955
+                  ]
+                ]
+              }
+            }
+          ],
+          "osm:id": "7450991",
+          "osm:version": "1",
+          "osm:timestamp": "2017-08-07T00:06:40Z",
+          "osm:changeset": "50899742",
+          "osm:uid": "589596",
+          "osm:user": "lxbarth",
+          "osm:type": "relation",
+          "restriction": "no_left_turn",
+          "type": "restriction"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -122.4348751,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7592988
+              ]
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:wrong_turn_restriction": true
+      }
+    },
+    {
+      "description": "The TO way doesn't share nodes with the VIA node",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "action": "create",
+          "changeType": "added",
+          "relations": [
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "23871010",
+                "role": "from"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.4282483,
+                    37.7596955
+                  ],
+                  [
+                    -122.430341,
+                    37.7595591
+                  ],
+                  [
+                    -122.4304416,
+                    37.7595539
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "via",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "217358397",
+                "role": "to"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.42839,
+                    37.7612257
+                  ],
+                  [
+                    -122.4283241,
+                    37.7604909
+                  ],
+                  [
+                    -122.4282111,
+                    37.7596955
+                  ]
+                ]
+              }
+            }
+          ],
+          "osm:id": "7450991",
+          "osm:version": "1",
+          "osm:timestamp": "2017-08-07T00:06:40Z",
+          "osm:changeset": "50899742",
+          "osm:uid": "589596",
+          "osm:user": "lxbarth",
+          "osm:type": "relation",
+          "restriction": "no_left_turn",
+          "type": "restriction"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -122.4348751,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7592988
+              ]
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:wrong_turn_restriction": true
+      }
+    },
+    {
+      "description": "The relation has a member with wrong role",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "action": "create",
+          "changeType": "added",
+          "relations": [
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "23871010",
+                "role": "from"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.4282483,
+                    37.7596955
+                  ],
+                  [
+                    -122.430341,
+                    37.7595591
+                  ],
+                  [
+                    -122.4304416,
+                    37.7595539
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "via",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "location_hint",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "another",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "217358397",
+                "role": "to"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.42839,
+                    37.7612257
+                  ],
+                  [
+                    -122.4283241,
+                    37.7604909
+                  ],
+                  [
+                    -122.4282483,
+                    37.7596955
+                  ]
+                ]
+              }
+            }
+          ],
+          "osm:id": "7450991",
+          "osm:version": "1",
+          "osm:timestamp": "2017-08-07T00:06:40Z",
+          "osm:changeset": "50899742",
+          "osm:uid": "589596",
+          "osm:user": "lxbarth",
+          "osm:type": "relation",
+          "restriction": "no_left_turn",
+          "type": "restriction"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -122.4348751,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7592988
+              ]
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:wrong_turn_restriction": true
+      }
+    },
+    {
+      "description": "The relation has two VIA nodes",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "action": "create",
+          "changeType": "added",
+          "relations": [
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "23871010",
+                "role": "from"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.4282483,
+                    37.7596955
+                  ],
+                  [
+                    -122.430341,
+                    37.7595591
+                  ],
+                  [
+                    -122.4304416,
+                    37.7595539
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "via",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "location_hint",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "via",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "217358397",
+                "role": "to"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.42839,
+                    37.7612257
+                  ],
+                  [
+                    -122.4283241,
+                    37.7604909
+                  ],
+                  [
+                    -122.4282483,
+                    37.7596955
+                  ]
+                ]
+              }
+            }
+          ],
+          "osm:id": "7450991",
+          "osm:version": "1",
+          "osm:timestamp": "2017-08-07T00:06:40Z",
+          "osm:changeset": "50899742",
+          "osm:uid": "589596",
+          "osm:user": "lxbarth",
+          "osm:type": "relation",
+          "restriction": "no_left_turn",
+          "type": "restriction"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -122.4348751,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7592988
+              ]
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:wrong_turn_restriction": true
+      }
+    },
+    {
+      "description": "The relation has less than 3 members",
+      "oldVersion": null,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "action": "create",
+          "changeType": "added",
+          "relations": [
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "way",
+                "ref": "23871010",
+                "role": "from"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -122.4282483,
+                    37.7596955
+                  ],
+                  [
+                    -122.430341,
+                    37.7595591
+                  ],
+                  [
+                    -122.4304416,
+                    37.7595539
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "Feature",
+              "properties": {
+                "type": "node",
+                "ref": "65293636",
+                "role": "via",
+                "nodes": []
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.4282483,
+                  37.7596955
+                ]
+              }
+            }
+          ],
+          "osm:id": "7450991",
+          "osm:version": "1",
+          "osm:timestamp": "2017-08-07T00:06:40Z",
+          "osm:changeset": "50899742",
+          "osm:uid": "589596",
+          "osm:user": "lxbarth",
+          "osm:type": "relation",
+          "restriction": "no_left_turn",
+          "type": "restriction"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -122.4348751,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7592988
+              ],
+              [
+                -122.4282483,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7612812
+              ],
+              [
+                -122.4348751,
+                37.7592988
+              ]
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:wrong_turn_restriction": true
+      }
+    }
+  ]
+}
