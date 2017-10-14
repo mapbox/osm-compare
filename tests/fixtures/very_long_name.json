@@ -1,0 +1,53 @@
+{
+  "compareFunction": "very_long_name",
+  "fixtures": [
+    {
+      "description": "Test feature whose name has 78 characters",
+      "expectedResult": false,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Universidade Federal do Rio Grande do Sul - Campus Universitário Darcy Ribeiro"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature whose name has 66 characters",
+      "expectedResult": false,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "International Airport of Brasília - President Juscelino Kubitschek"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature whose name has 255 characters",
+      "expectedResult": {"result:very_long_name": true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Новоуренгойский городской отдел статистики, Управление соц.защиты населения,Упраление образования города Новый Уренгой ,Управление архитектуры и градостроительства, Регистрационный отдел администрации Новый Уренгой,Комитет по земельным ресурсам и землеуст"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test feature whose name has 100 characters",
+      "expectedResult": {"result:very_long_name": true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "A very long name with more than eighty characters. Eighty one chars to be precise"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    }
+  ]
+}

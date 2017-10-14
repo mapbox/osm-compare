@@ -45,6 +45,7 @@ module.exports = {
   ),
   name_unmatches_with_wikidata: require('./comparators/name_unmatches_with_wikidata.js'),
   name_modified: wrapsync(require('./comparators/name_modified.js')),
+  very_long_name: wrapsync(require('./comparators/very_long_name.js')),
   osm_landmarks: require('./comparators/osm_landmarks.js'),
   invalid_tag_modification: require('./comparators/invalid_tag_modification'),
   invalid_name: require('./comparators/invalid_name'),
