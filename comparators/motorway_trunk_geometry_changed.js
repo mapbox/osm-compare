@@ -17,18 +17,14 @@ function getGeometry(feature) {
 }
 
 function geometryChanged(newVersion, oldVersion) {
-  if (!oldVersion) {
+  if (!oldVersion || newVersion.deleted) {
     return false;
   }
-  if (newVersion.deleted) {
-    return false;
-  }
+
   if (isMajorRoad(oldVersion)) {
     if (!deepEquals(getGeometry(oldVersion), getGeometry(newVersion))) {
       return {
-        'result:motorway_trunk_geometry_changed': {
-          geometryChanged: true
-        }
+        'result:motorway_trunk_geometry_changed': true
       };
     }
   }
