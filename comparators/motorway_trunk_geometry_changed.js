@@ -26,7 +26,7 @@ function geometryChanged(newVersion, oldVersion) {
   if (isMajorRoad(oldVersion)) {
     if (!deepEquals(getGeometry(oldVersion), getGeometry(newVersion))) {
       return {
-        'result:major_road_changed': {
+        'result:motorway_trunk_geometry_changed': {
           geometryChanged: true
         }
       };
