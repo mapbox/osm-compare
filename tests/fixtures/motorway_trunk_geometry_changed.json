@@ -1,0 +1,95 @@
+{
+  "compareFunction": "motorway_trunk_geometry_changed",
+  "fixtures": [
+    {
+      "description": "Case:1 motorway geometry modified. Should be flagged",
+      "newVersion": {
+        "type": "Feature",
+        "id": "way!90800153!24",
+        "properties": {
+          "AND_a_nosr_r": "15062474",
+          "AND:importance_level": "2",
+          "highway": "motorway",
+          "osm:type": "way",
+          "osm:id": 90800153,
+          "osm:version": 25,
+          "osm:changeset": 44390158,
+          "osm:timestamp": 1481696445000,
+          "osm:uid": 3479270,
+          "osm:user": "nammala"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.3348845,
+              17.7221054
+            ],
+            [
+              83.3346842,
+              17.7221352
+            ],
+            [
+              83.3342895,
+              17.7221956
+            ],
+            [
+              83.3339606,
+              17.7222435
+            ],
+            [
+              83.3337141,
+              17.7222982
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "id": "way!90800153!24",
+        "properties": {
+          "AND_a_nosr_r": "15062474",
+          "AND:importance_level": "2",
+          "highway": "motorway",
+          "osm:type": "way",
+          "osm:id": 90800153,
+          "osm:version": 24,
+          "osm:changeset": 44390158,
+          "osm:timestamp": 1481696445000,
+          "osm:uid": 3479270,
+          "osm:user": "nammala"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              73.3348845,
+              17.7221054
+            ],
+            [
+              83.3346842,
+              17.7221352
+            ],
+            [
+              83.3342895,
+              17.7221956
+            ],
+            [
+              83.3339606,
+              17.7222435
+            ],
+            [
+              83.3337141,
+              17.7222982
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:motorway_trunk_geometry_changed": {
+          "geometryChanged": true
+        }
+      }
+    }
+  ]
+}

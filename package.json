@@ -29,6 +29,7 @@
     "attempt": "^1.0.1",
     "csv": "^1.1.1",
     "d3-queue": "^3.0.3",
+    "deep-equals": "0.0.2",
     "feature-filter": "^2.2.0",
     "geojson-polygon-self-intersections": "^1.1.1",
     "geopoint": "^1.0.1",
