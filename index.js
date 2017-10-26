@@ -58,5 +58,8 @@ module.exports = {
   ),
   irrelevant_tags_on_highway: wrapsync(
     require('./comparators/irrelevant_tags_on_highway.js')
+  ),
+  motorway_trunk_geometry_changed: wrapsync(
+    require('./comparators/motorway_trunk_geometry_changed.js')
   )
 };
