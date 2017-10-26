@@ -86,9 +86,7 @@
         }
       },
       "expectedResult": {
-        "result:motorway_trunk_geometry_changed": {
-          "geometryChanged": true
-        }
+        "result:motorway_trunk_geometry_changed": true
       }
     }
   ]
