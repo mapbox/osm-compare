@@ -17,11 +17,10 @@ function getGeometry(feature) {
 }
 
 function geometryChanged(newVersion, oldVersion) {
-  if (!oldVersion && newVersion.deleted) {
+  if (!oldVersion) {
     return false;
   }
-
-  if (!oldVersion && !newVersion.deleted) {
+  if (newVersion.deleted) {
     return false;
   }
   if (isMajorRoad(oldVersion)) {
