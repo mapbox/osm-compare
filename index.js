@@ -62,5 +62,8 @@ module.exports = {
   motorway_trunk_geometry_changed: wrapsync(
     require('./comparators/motorway_trunk_geometry_changed.js')
   ),
-  name_ref_changes: wrapsync(require('./comparators/name_ref_changes.js'))
+  name_ref_changes: wrapsync(require('./comparators/name_ref_changes.js')),
+  destination_ref_changed: wrapsync(
+    require('./comparators/destination_ref_changed.js')
+  )
 };
