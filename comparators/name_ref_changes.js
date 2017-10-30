@@ -1,6 +1,13 @@
 'use strict';
 
-var MAJOR_ROAD_TYPES = ['motorway', 'trunk', 'motorway_link', 'trunk_link'];
+var MAJOR_ROAD_TYPES = [
+  'motorway',
+  'trunk',
+  'motorway_link',
+  'trunk_link',
+  'primary',
+  'primary_link'
+];
 
 function getHighwayType(feature) {
   return feature.properties.highway;
