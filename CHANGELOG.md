@@ -3,9 +3,12 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [8.3.0] - 2018-02-14
+### Updated
+* Changed `turn_restriction` function to detect only bad formatted ones.
+
 ### Added
-- Start following [SemVer](http://semver.org/) properly.
+* Function `very_long_name` to detect features with more than 80 chars in the name.
 
 ## [3.2.1] - 2016-05-23
 ### Fixed
