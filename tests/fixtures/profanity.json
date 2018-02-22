@@ -1,0 +1,87 @@
+{
+    "compareFunction": "profanity",
+    "fixtures": [
+        {
+            "description": "Flags profanity in name changes",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 123,
+                    "osm:changeset": 123,
+                    "name": "shit"
+                },
+                "geometry": {}
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 124,
+                    "osm:changeset": 124,
+                    "name": "no name"
+                },
+                "geometry": {}
+            },
+            "expectedResult": {
+                "result:profanity": true
+            }
+        },
+        {
+            "description": "Does not flag profanity",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 123,
+                    "osm:changeset": 123,
+                    "name": "yes name"
+                },
+                "geometry": {}
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 124,
+                    "osm:changeset": 124,
+                    "name": "no name"
+                },
+                "geometry": {}
+            },
+            "expectedResult": false
+        },
+        {
+            "description": "Flags profanity",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 123,
+                    "osm:changeset": 123,
+                    "name:en": "fuck"
+                },
+                "geometry": {}
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 124,
+                    "osm:changeset": 124,
+                    "name:en": "normal name"
+                },
+                "geometry": {}
+            },
+            "expectedResult": {
+                "result:profanity": true
+            }
+        }
+    ]
+}
