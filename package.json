@@ -24,6 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "@mapbox/vt2geojson": "^1.1.5",
+    "@turf/area": "^5.1.5",
     "@turf/buffer": "^4.2.0",
     "@turf/difference": "^4.1.0",
     "@turf/line-intersect": "4.4.0",

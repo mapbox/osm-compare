@@ -74,6 +74,8 @@ module.exports = {
   new_user_footway: wrapsync(require('./comparators/new_user_footway.js')),
   new_user_water: wrapsync(require('./comparators/new_user_water.js')),
   new_user_motorway_deleted: wrapsync(
-    require('./comparators/new_user_motorway_deleted.js')
+    require('./comparators/new_user_motorway_deleted.js')),
+  new_user_large_building: wrapsync(
+    require('./comparators/new_user_large_building.js')
   )
 };
