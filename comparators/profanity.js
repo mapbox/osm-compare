@@ -3,9 +3,6 @@ const naughtyWords = require('../forked/naughty-words');
 const priorityLanguages = require('../config/priority_languages.json');
 const isNameKey = require('../lib/names').isNameKey;
 
-/**
- * Flag features with profanity in name tags.
- */
 function profanity(newVersion, oldVersion) {
   if (newVersion.deleted) return false;
   const oldTags = (oldVersion && oldVersion.properties) || {};
