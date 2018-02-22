@@ -31,7 +31,7 @@ const newUserMotorwayDeleted = (newVersion, oldVersion) => {
     isMotorway(newVersion, oldVersion) &&
     isDeleted(newVersion)
   ) {
-    return {};
+    return {'result:new_user_motorway_deleted': true};
   }
   return false;
 };
