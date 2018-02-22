@@ -28,7 +28,7 @@ const motorwayNewUser = (newVersion, oldVersion) => {
     isMotorway(newVersion) &&
     isAdded(newVersion)
   ) {
-    return {};
+    return {'result:new_user_motorway': true};
   }
   return false;
 };
