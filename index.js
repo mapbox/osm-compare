@@ -69,5 +69,8 @@ module.exports = {
   destination_ref_changed: wrapsync(
     require('./comparators/destination_ref_changed.js')
   ),
-  new_user: wrapsync(require('./comparators/new_user.js'))
+  new_user: wrapsync(require('./comparators/new_user.js')),
+  new_user_pokemon_nest: wrapsync(
+    require('./comparators/new_user_pokemon_nest.js')
+  )
 };

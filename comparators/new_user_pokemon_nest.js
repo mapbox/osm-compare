@@ -1,6 +1,6 @@
 'use strict';
-const newUser = require('./new-user');
-const pokemonNest = require('../lib/pokemon-nest');
+const newUser = require('./new_user');
+const pokemonNest = require('../lib/pokemon_nest');
 const isNewUser = (n, o) => newUser(n, o, {maxChangesets: 20});
 
 const newUserPokemonNest = (newVersion, oldVersion) => {
