@@ -13,6 +13,9 @@ function ensureFeatureAugmented(ft) {
 }
 
 function newUser(newVersion, oldVersion, opts) {
+  if (!newVersion || !newVersion.properties) {
+    return false;
+  }
   ensureFeatureAugmented(newVersion);
   opts = Object.assign(
     {
