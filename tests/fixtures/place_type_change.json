@@ -1,5 +1,5 @@
 {
-    "compareFunction": "place_type_changed",
+    "compareFunction": "place_type_change",
     "fixtures": [
         {
             "description": "Flags place type is changed",
