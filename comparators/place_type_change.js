@@ -2,6 +2,11 @@
 const checkPlaceType = require('../lib/important_place').checkPlaceType;
 
 function placeTypeChange(newVersion, oldVersion) {
+  if (
+    !oldVersion || !oldVersion.properties || !oldVersion || !oldVersion.geometry
+  ) {
+    return false;
+  }
   const isNew = newVersion.properties['osm:version'] === 1 || !oldVersion;
   const isDeleted = !!newVersion.deleted;
   if (isNew || isDeleted) return false;
