@@ -68,5 +68,6 @@ module.exports = {
   name_ref_changes: wrapsync(require('./comparators/name_ref_changes.js')),
   destination_ref_changed: wrapsync(
     require('./comparators/destination_ref_changed.js')
-  )
+  ),
+  place_name_changed: wrapsync(require('./comparators/place_name_changed.js'))
 };
