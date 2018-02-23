@@ -78,5 +78,8 @@ module.exports = {
   new_user_large_building: wrapsync(
     require('./comparators/new_user_large_building.js')
   ),
-  straight_segment: wrapsync(require('./comparators/straight_segment.js'))
+  straight_segment: wrapsync(require('./comparators/straight_segment.js')),
+  place_feature_deleted: wrapsync(
+    require('./comparators/place_feature_deleted.js')
+  )
 };
