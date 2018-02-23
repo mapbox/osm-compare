@@ -1,5 +1,5 @@
 'use strict';
-const naughtyWords = require('../forked/naughty-words');
+const naughtyWords = require('naughty-words');
 const priorityLanguages = require('../config/priority_languages.json');
 const isNameKey = require('../lib/names').isNameKey;
 
