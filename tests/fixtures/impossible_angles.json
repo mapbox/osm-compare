@@ -174,7 +174,7 @@
                 "geometry": {}
             },
             "expectedResult": {
-                "result:impossible_angle": true
+                "result:impossible_angles": true
             }
         }
     ]

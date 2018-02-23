@@ -82,5 +82,6 @@ module.exports = {
   straight_segment: wrapsync(require('./comparators/straight_segment.js')),
   place_feature_deleted: wrapsync(
     require('./comparators/place_feature_deleted.js')
-  )
+  ),
+  impossible_angles: wrapsync(require('./comparators/impossible_angles.js'))
 };

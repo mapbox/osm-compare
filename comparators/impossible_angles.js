@@ -1,13 +1,13 @@
 'use strict';
-const impossibleAngle = require('../lib/impossible_angle');
+const impossibleAngle = require('../lib/impossible_angle').impossibleAngle;
 
 module.exports = impossibleAngleMotorableHighways;
 /*
   check impossible angles in highways
 */
-function impossibleAngleMotorableHighways(newVersion) {
-
-  return (motorableHighway(newVersion) && impossibleAngle(newVersion));
+function impossibleAngleMotorableHighways(newVersion, oldVersion) {
+  return motorableHighway(newVersion, oldVersion) &&
+    impossibleAngle(newVersion);
 }
 
 const highwayValues = new Set([
@@ -31,6 +31,10 @@ function isMotorableHighway(tags) {
   return highwayValues.has(tags.highway);
 }
 function motorableHighway(newVersion, oldVersion) {
-  if ((newVersion && isMotorableHighway(newVersion.properties)) || (oldVersion && isMotorableHighway(oldVersion.properties))) return {'result:impossible_angle': true};
+  if (
+    (newVersion && isMotorableHighway(newVersion.properties)) ||
+    (oldVersion && isMotorableHighway(oldVersion.properties))
+  )
+    return {'result:impossible_angles': true};
   return false;
 }
