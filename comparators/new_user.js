@@ -19,7 +19,7 @@ function newUser(newVersion, oldVersion, opts) {
   ensureFeatureAugmented(newVersion);
   opts = Object.assign(
     {
-      maxChangesets: 10,
+      maxChangesets: 5,
       maxMappingdays: 5
     },
     opts
