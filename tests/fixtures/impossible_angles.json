@@ -10,7 +10,7 @@
                     "osm:type": "node",
                     "osm:uid": 123,
                     "osm:changeset": 123,
-                    "highway": "residential"
+                    "highway": "motorway"
                 },
                 "geometry": {
                     "type": "LineString",
@@ -169,7 +169,8 @@
                     "osm:type": "node",
                     "osm:uid": 124,
                     "osm:changeset": 124,
-                    "name": "no name"
+                    "name": "no name",
+                    "highway": "motorway"
                 },
                 "geometry": {}
             },

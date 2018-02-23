@@ -1,4 +1,3 @@
-/* eslint global-require: [0] */
 'use strict';
 
 var test = require('tap').test;
@@ -7,7 +6,6 @@ var path = require('path');
 var fs = require('fs');
 var isEmpty = require('lodash').isEmpty;
 var nock = require('nock');
-
 var comparators = require('../index');
 
 nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')

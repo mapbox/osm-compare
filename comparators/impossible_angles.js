@@ -1,13 +1,13 @@
 'use strict';
-const impossibleAngle = require('../lib/impossible_angle').impossibleAngle;
+const impossibleAngle = require('./impossible_angle');
 
 module.exports = impossibleAngleMotorableHighways;
 /*
   check impossible angles in highways
 */
 function impossibleAngleMotorableHighways(newVersion, oldVersion) {
-  return motorableHighway(newVersion, oldVersion) &&
-    impossibleAngle(newVersion);
+  return impossibleAngle(newVersion) &&
+    motorableHighway(newVersion, oldVersion);
 }
 
 const highwayValues = new Set([
