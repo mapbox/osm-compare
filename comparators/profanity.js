@@ -32,10 +32,8 @@ function profanity(newVersion, oldVersion) {
         const word = naughtyWords[lang][i];
         const regex = new RegExp('(\\s|^)' + word + '(\\s|$)', 'gi');
         if (regex.test(normalized)) {
-          const msg = `Profanity for language:${lang}, found ${word} in ${tag}=${val}`;
-          return {
-            'result:profanity': true
-          };
+          console.log('Regex check is true');
+          return {'result:profanity': true};
         }
       }
       return false;

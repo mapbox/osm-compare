@@ -10,7 +10,7 @@
                     "osm:type": "node",
                     "osm:uid": 123,
                     "osm:changeset": 123,
-                    "name": "shit"
+                    "name:en": "shit"
                 },
                 "geometry": {}
             },
@@ -21,11 +21,12 @@
                     "osm:type": "node",
                     "osm:uid": 124,
                     "osm:changeset": 124,
-                    "name": "no name"
+                    "name:en": "no name"
                 },
                 "geometry": {}
             },
             "expectedResult": {
+                "message": "Profanity for language",
                 "result:profanity": true
             }
         },
@@ -38,7 +39,7 @@
                     "osm:type": "node",
                     "osm:uid": 123,
                     "osm:changeset": 123,
-                    "name": "yes name"
+                    "name:en": "yes name"
                 },
                 "geometry": {}
             },
@@ -49,7 +50,7 @@
                     "osm:type": "node",
                     "osm:uid": 124,
                     "osm:changeset": 124,
-                    "name": "no name"
+                    "name:en": "no name"
                 },
                 "geometry": {}
             },
