@@ -1,5 +1,5 @@
 'use strict';
-const impossibleAngle = require('./impossible_angle');
+const impossibleAngle = require('../lib/impossible_angle');
 
 module.exports = impossibleAngleMotorableHighways;
 /*
