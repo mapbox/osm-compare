@@ -1,4 +1,4 @@
-{
+  {
   "compareFunction": "very_long_name",
   "fixtures": [
     {
@@ -44,6 +44,36 @@
         "type": "Feature",
         "properties": {
           "name": "A very long name with more than eighty characters. Eighty one chars to be precise"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test route whose name has 88 characters",
+      "expectedResult": false,
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Bus MKK-68 (1-2) Gelnhausen Bahnhof ⇒ Langenselbold Bahnhof über Gelnhausen Schulzentrum",
+          "route": "bus",
+          "type":"route",
+          "osm:type": "relation"
+        },
+        "geometry": null
+      },
+      "oldVersion": null
+    },
+    {
+      "description": "Test route whose name has 121 characters",
+      "expectedResult": {"result:very_long_name": true},
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "name": "Linha 526 - Terminal Vila Velha / Terminal Campo Grande - via Vasco da Gama / Expedito Garcia / Centro / Avenida Sessenta",
+          "route": "bus",
+          "type":"route",
+          "osm:type": "relation"
         },
         "geometry": null
       },
