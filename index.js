@@ -77,5 +77,6 @@ module.exports = {
     require('./comparators/new_user_motorway_deleted.js')),
   new_user_large_building: wrapsync(
     require('./comparators/new_user_large_building.js')
-  )
+  ),
+  straight_segment: wrapsync(require('./comparators/straight_segment.js'))
 };
