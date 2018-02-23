@@ -1,6 +1,6 @@
 'use strict';
 const turfArea = require('turf-area');
-const impossibleAngle = require('./impossible_angle');
+const impossibleAngle = require('../lib/impossible_angle');
 
 module.exports = largeBuilding;
 
