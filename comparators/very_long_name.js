@@ -9,7 +9,17 @@ function veryLongName(newVersion, oldVersion) {
     newVersion.properties.hasOwnProperty('name') &&
     newVersion.properties['name'].length > 80
   ) {
-    return {'result:very_long_name': true};
+    if (
+      newVersion.properties.hasOwnProperty('type') &&
+      newVersion.properties.hasOwnProperty('osm:type') &&
+      newVersion.properties['type'] === 'route' &&
+      newVersion.properties['osm:type'] === 'relation' &&
+      newVersion.properties['name'].length < 121
+    ) {
+      return false;
+    } else {
+      return {'result:very_long_name': true};
+    }
   } else {
     return false;
   }
