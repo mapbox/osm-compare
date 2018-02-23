@@ -1,0 +1,197 @@
+{
+  "compareFunction": "new_user",
+  "fixtures": [
+    {
+      "description": "checks for a new user",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "motorway",
+          "osm:type": "way",
+        "osm:user:mapping_days": 10,
+        "osm:user:changesetcount": 1,
+        "osm:user:num_changes": 2
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              77.53283500671385,
+              13.032864653055398
+            ],
+            [
+              77.53068923950195,
+              13.03428618497674
+            ],
+            [
+              77.5285005569458,
+              13.035080566906114
+            ],
+            [
+              77.52635478973389,
+              13.035665899327737
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              77.53283500671385,
+              13.032864653055398
+            ],
+            [
+              77.53068923950195,
+              13.03428618497674
+            ],
+            [
+              77.5285005569458,
+              13.035080566906114
+            ],
+            [
+              77.52635478973389,
+              13.035665899327737
+            ],
+            [
+              77.52506732940674,
+              13.036251230364918
+            ]
+          ]
+        }
+      },
+      "expectedResult": {"result:new_user":true}
+    },
+    {
+      "description": "checks for a new user",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "motorway",
+          "osm:type": "way",
+        "osm:user:mapping_days": 1,
+        "osm:user:changesetcount": 20,
+        "osm:user:num_changes": 2
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              77.53283500671385,
+              13.032864653055398
+            ],
+            [
+              77.53068923950195,
+              13.03428618497674
+            ],
+            [
+              77.5285005569458,
+              13.035080566906114
+            ],
+            [
+              77.52635478973389,
+              13.035665899327737
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              77.53283500671385,
+              13.032864653055398
+            ],
+            [
+              77.53068923950195,
+              13.03428618497674
+            ],
+            [
+              77.5285005569458,
+              13.035080566906114
+            ],
+            [
+              77.52635478973389,
+              13.035665899327737
+            ],
+            [
+              77.52506732940674,
+              13.036251230364918
+            ]
+          ]
+        }
+      },
+      "expectedResult": {"result:new_user":true}
+    },
+    {
+      "description": "checks for a new user",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "motorway",
+          "osm:type": "way",
+        "osm:user:mapping_days": 20,
+        "osm:user:changesetcount": 20,
+        "osm:user:num_changes": 2
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              77.53283500671385,
+              13.032864653055398
+            ],
+            [
+              77.53068923950195,
+              13.03428618497674
+            ],
+            [
+              77.5285005569458,
+              13.035080566906114
+            ],
+            [
+              77.52635478973389,
+              13.035665899327737
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              77.53283500671385,
+              13.032864653055398
+            ],
+            [
+              77.53068923950195,
+              13.03428618497674
+            ],
+            [
+              77.5285005569458,
+              13.035080566906114
+            ],
+            [
+              77.52635478973389,
+              13.035665899327737
+            ],
+            [
+              77.52506732940674,
+              13.036251230364918
+            ]
+          ]
+        }
+      },
+      "expectedResult": false
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+    "compareFunction": "place_feature_deleted",
+    "fixtures": [
+        {
+            "description": "Flags place deleted",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:version": 2,
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 123,
+                    "osm:changeset": 123,
+                    "name": "London",
+                    "place": "city"
+                },
+                "deleted": true,
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        10,
+                        10
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:version": 1,
+                    "osm:type": "node",
+                    "osm:uid": 124,
+                    "osm:changeset": 124,
+                    "name": "London",
+                    "place": "city"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        11,
+                        11
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:place_feature_deleted": true
+            }
+        }
+    ]
+}

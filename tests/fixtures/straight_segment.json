@@ -1,0 +1,25 @@
+{
+    "compareFunction": "straight_segment",
+    "fixtures": [
+      {
+        "description": "If the feature that contains out of a single segment exceeding a reasonable length",
+        "newVersion": {
+          "type": "Feature",
+          "properties": {
+            "highway": "footway",
+            "osm:version": 4,
+            "osm:uid": 5017521
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [[-78, 39], [-76, 39]]
+          }
+        },
+        "oldVersion": null,
+        "expectedResult": {
+            "result:straight_segment": true
+          }
+      }
+    ]
+  }
+  
