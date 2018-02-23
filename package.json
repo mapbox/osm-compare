@@ -29,6 +29,7 @@
     "@turf/difference": "^4.1.0",
     "@turf/line-intersect": "4.4.0",
     "attempt": "^1.0.1",
+    "cheap-ruler": "^2.5.1",
     "csv": "^1.1.1",
     "d3-queue": "^3.0.3",
     "deep-equals": "0.0.2",
