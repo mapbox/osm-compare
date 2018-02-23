@@ -18,6 +18,7 @@ function irrelevant_tags_on_highway(newVersion, oldVersion) {
   }
   if (
     newVersion.properties.highway &&
+    newVersion.properties.highway !== 'bus_stop' &&
     (newVersion.properties.phone ||
       newVersion.properties.website ||
       contains_addr(newVersion.properties))
