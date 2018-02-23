@@ -1,0 +1,89 @@
+{
+    "compareFunction": "place_type_change",
+    "fixtures": [
+        {
+            "description": "Flags place type is changed",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 123,
+                    "osm:changeset": 123,
+                    "place": "city",
+                    "name": "Ellenton",
+                    "osm:version": 10,
+                    "wikidata": "Q12345"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        10,
+                        10
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 123,
+                    "osm:changeset": 123,
+                    "place": "village",
+                    "name": "Ellenton",
+                    "osm:version": 10,
+                    "wikidata": "Q12345"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        11,
+                        11
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:place_type_change": true
+            }
+        },
+        {
+            "description": "Does not flag non-important place tag edited - geometry changed",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 123,
+                    "osm:changeset": 123,
+                    "place": "abcd"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        10,
+                        10
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "osm:id": 1234,
+                    "osm:type": "node",
+                    "osm:uid": 124,
+                    "osm:changeset": 124,
+                    "place": "abcd"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        11,
+                        11
+                    ]
+                }
+            },
+            "expectedResult": false
+        }
+    ]
+}

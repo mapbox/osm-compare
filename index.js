@@ -83,5 +83,6 @@ module.exports = {
   place_feature_deleted: wrapsync(
     require('./comparators/place_feature_deleted.js')
   ),
-  impossible_angles: wrapsync(require('./comparators/impossible_angles.js'))
+  impossible_angles: wrapsync(require('./comparators/impossible_angles.js')),
+  place_type_change: wrapsync(require('./comparators/place_type_change.js'))
 };
