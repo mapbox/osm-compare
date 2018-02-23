@@ -34,7 +34,6 @@ function profanity(newVersion, oldVersion) {
         if (regex.test(normalized)) {
           const msg = `Profanity for language:${lang}, found ${word} in ${tag}=${val}`;
           return {
-            message: 'name tag has profanity',
             'result:profanity': true
           };
         }
@@ -43,3 +42,4 @@ function profanity(newVersion, oldVersion) {
     });
   }
 }
+module.exports = profanity;
