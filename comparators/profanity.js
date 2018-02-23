@@ -43,5 +43,3 @@ function profanity(newVersion, oldVersion) {
     });
   }
 }
-
-module.exports = profanity;
