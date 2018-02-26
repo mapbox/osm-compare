@@ -27,17 +27,20 @@ function profanity(newVersion, oldVersion) {
     // If there is a language code, check against the matching language,
     // Otherwise check priority languages
     const languagesToCheck = naughtyWords[lang] ? [lang] : priorityLanguages;
-    const incidents = languagesToCheck.map(lang => {
-      for (let i = 0; i < naughtyWords[lang].length; i++) {
-        const word = naughtyWords[lang][i];
-        const regex = new RegExp('(\\s|^)' + word + '(\\s|$)', 'gi');
-        if (regex.test(normalized)) {
-          console.log('Regex check is true');
-          return {'result:profanity': true};
+    const incidents = languagesToCheck
+      .map(lang => {
+        for (let i = 0; i < naughtyWords[lang].length; i++) {
+          const word = naughtyWords[lang][i];
+          const regex = new RegExp('(\\s|^)' + word + '(\\s|$)', 'gi');
+          if (regex.test(normalized)) {
+            return true;
+          }
         }
-      }
-      return false;
-    });
+        return false;
+      })
+      .filter(incident => !!incident);
+    if (incidents.length) return {'result:profanity': true};
+    return false;
   }
 }
 module.exports = profanity;

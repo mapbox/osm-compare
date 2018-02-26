@@ -31,7 +31,6 @@ var clc = require('cli-color');
       fixture.newVersion,
       fixture.oldVersion,
       function(error, result) {
-        console.log(result);
         console.log(fixture.description);
         console.log(clc.yellow('expected', fixture.expectedResult));
         if (error) console.log(clc.red(error));

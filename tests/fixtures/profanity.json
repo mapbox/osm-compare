@@ -26,7 +26,6 @@
                 "geometry": {}
             },
             "expectedResult": {
-                "message": "Profanity for language",
                 "result:profanity": true
             }
         },
