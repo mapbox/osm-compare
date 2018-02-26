@@ -51,6 +51,9 @@ var clc = require('cli-color');
 })();
 
 function removeMessage(result) {
-  delete result.message;
+  // console.log(result);
+  // if (result.message){
+  //   delete result.message;
+  // }
   return result;
 }
