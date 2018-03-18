@@ -86,5 +86,6 @@ module.exports = {
   impossible_angles: wrapsync(require('./comparators/impossible_angles.js')),
   place_type_change: wrapsync(require('./comparators/place_type_change.js')),
   profanity: wrapsync(require('./comparators/profanity.js')),
-  new_user_park: wrapsync(require('./comparators/new_user_park.js'))
+  new_user_park: wrapsync(require('./comparators/new_user_park.js')),
+  new_user_pokemon_nest: wrapsync(require('./comparators/new_user_pokemon_nest.js'))
 };
