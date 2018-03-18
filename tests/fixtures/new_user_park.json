@@ -1,0 +1,59 @@
+{
+  "compareFunction": "new_user_park",
+  "fixtures": [
+    {
+      "description": "checks for a park added by new user",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "landuse": "park",
+          "osm:type": "way",
+          "osm:version": 1,
+          "osm:user:mapping_days": 1,
+          "osm:user:changesetcount": 2,
+          "osm:user:num_changes": 2
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-82.27118186653,
+              27.39206051794
+            ],
+            [-82.27623514831,
+              27.39210814748
+            ],
+            [-82.27632634342,
+              27.39216053995
+            ],
+            [-82.27631561458,
+              27.39305120812
+            ],
+            [-82.27620296180,
+              27.39310360014
+            ],
+            [-82.27227084339,
+              27.39306073394
+            ],
+            [-82.27221585810,
+              27.39301548627
+            ],
+            [-82.27223731577,
+              27.39006005878
+            ],
+            [-82.27319620550,
+              27.39006958487
+            ],
+            [-82.27325253189,
+              27.39013388590
+            ],
+            [-82.27325789630,
+              27.39229152101
+            ]
+          ]
+        }
+      },
+      "oldVersion": null,
+      "expectedResult": {"result:new_user_park":true}
+    }
+  ]
+}
