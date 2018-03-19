@@ -60,7 +60,7 @@ function invalidHighwayTags(newVersion, oldVersion) {
       oldVersion &&
       oldVersion.properties &&
       oldVersion.properties['highway'] &&
-      validHighwayTags.indexOf(oldVersion.properties.highway) === -1
+      oldVersion.properties.highway === newVersion.properties.highway
     ) {
       return false;
     } else {
