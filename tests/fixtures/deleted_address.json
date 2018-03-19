@@ -1,0 +1,132 @@
+{
+    "compareFunction": "deleted_address",
+    "fixtures": [
+        {
+            "description": "Flag deleted addr:housenumber and addr:street tags",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "amenity": "school"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        10,
+                        10
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "addr:housenumber": 1234,
+                    "addr:street": "Avenida del Libertador",
+                    "amenity": "school"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        11,
+                        11
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:deleted_address": true
+            }
+        },
+        {
+            "description": "Flag deleted addr:housename and addr:street tags",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "amenity": "school"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        10,
+                        10
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "addr:housename": "The Cottage",
+                    "addr:street": "Oxford Street",
+                    "amenity": "school"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        11,
+                        11
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:deleted_address": true
+            }
+        },
+        {
+            "description": "Flag deleted address feature",
+            "newVersion": {
+                "deleted": true
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "addr:housenumber": 1234,
+                    "addr:street": "Avenida del Libertador",
+                    "amenity": "school"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        11,
+                        11
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:deleted_address": true
+            }
+        },
+        {
+            "description": "Flag deleted addr:street tags",
+            "newVersion": {
+                "type": "Feature",
+                "properties": {
+                    "addr:housenumber": 1234,
+                    "amenity": "school"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        10,
+                        10
+                    ]
+                }
+            },
+            "oldVersion": {
+                "type": "Feature",
+                "properties": {
+                    "addr:housenumber": 1234,
+                    "addr:street": "Avenida del Libertador",
+                    "amenity": "school"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        11,
+                        11
+                    ]
+                }
+            },
+            "expectedResult": {
+                "result:deleted_address": true
+            }
+        }
+    ]
+}
