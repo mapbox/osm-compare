@@ -18,6 +18,7 @@ function invalidHighwayTags(newVersion, oldVersion) {
     'tertiary_link',
     'living_street',
     'pedestrian',
+    'corridor',
     'track',
     'bus_guideway',
     'escape',
@@ -55,7 +56,16 @@ function invalidHighwayTags(newVersion, oldVersion) {
     newVersion.properties['highway'] &&
     validHighwayTags.indexOf(newVersion.properties.highway) === -1
   ) {
-    return {'result:invalid_highway_tags': true};
+    if (
+      oldVersion &&
+      oldVersion.properties &&
+      oldVersion.properties['highway'] &&
+      oldVersion.properties.highway === newVersion.properties.highway
+    ) {
+      return false;
+    } else {
+      return {'result:invalid_highway_tags': true};
+    }
   }
   return false;
 }

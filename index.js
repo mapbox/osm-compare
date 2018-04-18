@@ -75,7 +75,8 @@ module.exports = {
   new_user_footway: wrapsync(require('./comparators/new_user_footway.js')),
   new_user_water: wrapsync(require('./comparators/new_user_water.js')),
   new_user_motorway_deleted: wrapsync(
-    require('./comparators/new_user_motorway_deleted.js')),
+    require('./comparators/new_user_motorway_deleted.js')
+  ),
   new_user_large_building: wrapsync(
     require('./comparators/new_user_large_building.js')
   ),
@@ -87,5 +88,8 @@ module.exports = {
   place_type_change: wrapsync(require('./comparators/place_type_change.js')),
   profanity: wrapsync(require('./comparators/profanity.js')),
   new_user_park: wrapsync(require('./comparators/new_user_park.js')),
-  new_user_pokemon_nest: wrapsync(require('./comparators/new_user_pokemon_nest.js'))
+  new_user_pokemon_nest: wrapsync(
+    require('./comparators/new_user_pokemon_nest.js')
+  ),
+  deleted_address: wrapsync(require('./comparators/deleted_address.js'))
 };
