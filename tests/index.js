@@ -12,7 +12,7 @@ var comparators = require('../index');
 
 nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')
   .get(
-    '/16/46886/30383.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNpcWt1bWc4bjAzOXNmdG04bng4dHVhZ3EifQ.bJK6rpjNmiP3kW2pROdScg'
+    '/16/46886/30383.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNqaHVibzk5ZjBpaGQzcW9uanRrZG1kdTMifQ.YfJF2hRjuxM3FnRghgV7yw'
   )
   .reply(
     200,
@@ -21,7 +21,7 @@ nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')
 
 nock('http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7')
   .get(
-    '/16/46782/30751.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNpcWt1bWc4bjAzOXNmdG04bng4dHVhZ3EifQ.bJK6rpjNmiP3kW2pROdScg'
+    '/16/46782/30751.mvt?access_token=pk.eyJ1IjoiYW1pc2hhIiwiYSI6ImNqaHVibzk5ZjBpaGQzcW9uanRrZG1kdTMifQ.YfJF2hRjuxM3FnRghgV7yw'
   )
   .reply(200, fs.readFileSync(path.join(__dirname, 'basic_fixture.pbf')));
 
