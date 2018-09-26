@@ -1,0 +1,61 @@
+{
+    "compareFunction": "missing_primary_tag",
+    "fixtures": [
+        {
+            "description": "Feature with no new version and old version",
+            "newVersion": {"deleted": true},
+            "oldVersion": {},
+            "expectedResult": false
+        },
+        {
+            "description": "Feature with invalid highway value but with correct key",
+            "newVersion": {"highway": "random"},
+            "oldVersion": {},
+            "expectedResult": false
+        },
+        {
+            "description": "Feature with invalid shop value but with correct key",
+            "newVersion": {"shop": "random_shop"},
+            "oldVersion": {},
+            "expectedResult": false
+        },
+        {
+            "description": "Feature with valid highway tag",
+            "newVersion": {"properties": {"highway" : "primary"}},
+            "oldVersion": {},
+            "expectedResult": false
+        },
+        {
+            "description": "Feature with invalid highway key",
+            "newVersion": {"properties": {"higway" : "residential"}},
+            "oldVersion": {},
+            "expectedResult": {
+                "result:missing_primary_tag": true
+            }
+        },
+        {
+            "description": "Feature with only area=yes",
+            "newVersion": {"properties": {"area" : "yes"}},
+            "oldVersion": {},
+            "expectedResult": {
+                "result:missing_primary_tag": true
+            }
+        },
+        {
+            "description": "Feature without primary tag",
+            "newVersion": {"properties": {"area" : "yes", "name": "The Shop"}},
+            "oldVersion": {},
+            "expectedResult": {
+                "result:missing_primary_tag": true
+            }
+        },
+        {
+            "description": "Feature with invalid amenity key",
+            "newVersion": {"properties": {"amennity" : "school", "name": "The school"}},
+            "oldVersion": {},
+            "expectedResult": {
+                "result:missing_primary_tag": true
+            }
+        }
+    ]
+}

@@ -2,37 +2,9 @@
 
 var fs = require('fs');
 var join = require('path').join;
+const primaryTags = require('../lib/primary_tags').primaryTags;
 
 module.exports = commonTagValues;
-
-var primaryTags = [
-  'aerialway',
-  'aeroway',
-  'amenity',
-  'barrier',
-  'boundary',
-  'building',
-  'craft',
-  'emergency',
-  'geological',
-  'highway',
-  'historic',
-  'landuse',
-  'leisure',
-  'man_made',
-  'military',
-  'natural',
-  'office',
-  'place',
-  'power',
-  'public_transport',
-  'railway',
-  'route',
-  'shop',
-  'sport',
-  'tourism',
-  'waterway'
-];
 
 function commonTagValues(newVersion, oldVersion) {
   var result = false;
