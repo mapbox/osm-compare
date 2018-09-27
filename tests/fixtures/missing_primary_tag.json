@@ -9,15 +9,33 @@
         },
         {
             "description": "Feature with invalid highway value but with correct key",
-            "newVersion": {"highway": "random"},
+            "newVersion": {"properties": {"highway": "random"}},
             "oldVersion": {},
             "expectedResult": false
         },
         {
             "description": "Feature with invalid shop value but with correct key",
-            "newVersion": {"shop": "random_shop"},
+            "newVersion": {"properties":{"shop": "random_shop"}},
             "oldVersion": {},
             "expectedResult": false
+        },
+        {
+            "description": "Feature with correct address tags",
+            "newVersion": {
+                "properties": {"addr:street": "Via 1", "addr:housenumber": 123}
+            },
+            "oldVersion": {},
+            "expectedResult": false
+        },
+        {
+            "description": "Feature with missing addr key",
+            "newVersion": {
+                "properties": {"addr:country": "Fiji", "addr:housenumber": 123}
+            },
+            "oldVersion": {},
+            "expectedResult": {
+                "result:missing_primary_tag": true
+            }
         },
         {
             "description": "Feature with valid highway tag",
@@ -51,7 +69,9 @@
         },
         {
             "description": "Feature with invalid amenity key",
-            "newVersion": {"properties": {"amennity" : "school", "name": "The school"}},
+            "newVersion": {
+                "properties": {"amennity" : "school", "name": "The school"}
+            },
             "oldVersion": {},
             "expectedResult": {
                 "result:missing_primary_tag": true

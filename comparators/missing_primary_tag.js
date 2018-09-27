@@ -2,12 +2,19 @@
 
 var fs = require('fs');
 var join = require('path').join;
-const primaryTags = require('../lib/primary_tags').primaryTags;
+var primaryTags = require('../lib/primary_tags').primaryTags;
 
 module.exports = missingPrimaryTag;
 
 function missingPrimaryTag(newVersion, oldVersion) {
   if (newVersion.deleted || !newVersion.properties) return false;
+
+  primaryTags = primaryTags.concat([
+    'addr:street',
+    'addr:interpolation',
+    'addr:full',
+    'addr:postcode'
+  ]);
 
   const feature_tags = Object.keys(newVersion.properties);
   const feature_primary_tags = primaryTags.filter(
