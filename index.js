@@ -29,6 +29,7 @@ module.exports = {
   ),
   added_place: wrapsync(require('./comparators/added_place')),
   added_ref_tag: wrapsync(require('./comparators/added_ref_tag')),
+  deleted_ref_tag: wrapsync(require('./comparators/deleted_ref_tag')),
   modified_place_wikidata: wrapsync(
     require('./comparators/modified_place_wikidata')
   ),
