@@ -38,6 +38,9 @@ module.exports = {
   invalid_tag_combination: require('./comparators/invalid_tag_combination'),
   water_feature_by_new_user: require('./comparators/water_feature_by_new_user'),
   common_tag_values: wrapsync(require('./comparators/common_tag_values.js')),
+  missing_primary_tag: wrapsync(
+    require('./comparators/missing_primary_tag.js')
+  ),
   example: require('./comparators/example.js'),
   added_website: wrapsync(require('./comparators/added_website.js')),
   wikidata_distance_with_osm: wrapsync(
