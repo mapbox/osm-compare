@@ -33,7 +33,7 @@
     "csv": "^1.1.1",
     "d3-queue": "^3.0.3",
     "deep-equals": "0.0.2",
-    "diff": "^3.4.0",
+    "diff": "^3.5.0",
     "feature-filter": "^2.2.0",
     "geojson-polygon-self-intersections": "^1.1.1",
     "geopoint": "^1.0.1",
@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "cli-color": "^1.2.0",
-    "eslint": "^2.8.0",
+    "eslint": "^4.18.2",
     "eslint-config-mourner": "^2.0.1",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",

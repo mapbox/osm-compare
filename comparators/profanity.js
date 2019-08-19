@@ -19,7 +19,7 @@ function profanity(newVersion, oldVersion) {
     // Replace punctuation with whitespace
     // http://stackoverflow.com/a/25575009
     const normalized = val.replace(
-      /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/ig,
+      /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-./:;<=>?@[\]^_`{|}~]/ig,
       ' '
     );
     const splitTag = tag.split(':');

@@ -14,7 +14,7 @@ function nameChanged(newTags, oldTags) {
     if (
       diffWords(newTags[key] || '', oldTags[key] || '').filter(change => {
         if (!change.added && !change.removed) return false;
-        if (/^\([^\)]+\)$/.test(change.value.trim())) return false;
+        if (/^\([^)]+\)$/.test(change.value.trim())) return false;
         return true;
       }).length === 0
     )
