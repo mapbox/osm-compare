@@ -1,6 +1,7 @@
 ### Lets make a compare function which detects features with version greater than 25 being deleted in OSM.
 
 ## Steps
+- [ ] The recommended node version to run osm-compare is `v8.15.0`.
 - [ ] Clone the repository [osm-compare](https://github.com/mapbox/osm-compare)
 
   `git clone git@github.com:mapbox/osm-compare.git`
