@@ -9,9 +9,7 @@
           "landuse": "park",
           "osm:type": "way",
           "osm:version": 1,
-          "osm:user:mapping_days": 1,
-          "osm:user:changesetcount": 2,
-          "osm:user:num_changes": 2
+          "osm:user:changesetcount": 2
         },
         "geometry": {
           "type": "LineString",

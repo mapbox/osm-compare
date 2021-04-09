@@ -9,9 +9,7 @@
           "highway": "motorway",
           "osm:type": "way",
           "osm:version": 1,
-          "osm:user:mapping_days": 10,
-          "osm:user:changesetcount": 1,
-          "osm:user:num_changes": 2
+          "osm:user:changesetcount": 1
         },
         "geometry": {
           "type": "LineString",

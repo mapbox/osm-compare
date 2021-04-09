@@ -1,6 +1,5 @@
 'use strict';
-
-var request = require('request');
+const newUser = require('./new_user');
 
 module.exports = waterFeatureByNewUser;
 
@@ -32,38 +31,13 @@ function isWaterFeature(feature) {
   return false;
 }
 
-function getUserDetails(user, callback) {
-  var url = 'https://osm-comments-api.mapbox.com/api/v1/users/name/' +
-    encodeURIComponent(user);
-
-  request(url, function(error, response, body) {
-    // Pass the error back to the callee.
-    if (error) return callback(error, undefined);
-    else return callback(null, JSON.parse(body));
-  });
-}
-
 function waterFeatureByNewUser(newVersion, oldVersion, callback) {
-  // What is the number of changesets of a user to be considered a new user?
-  var MINIMUM_CHANGESET_COUNT = 10;
-
-  if (newVersion.deleted || newVersion.properties['osm:version'] !== 1)
-    return callback(null, false);
-
-  if (isWaterFeature(newVersion)) {
-    var user = newVersion.properties['osm:user'];
-
-    getUserDetails(user, function(error, userDetails) {
-      // Return back from the compare function with no results.
-      if (error) return callback(null, false);
-
-      if (userDetails['changeset_count'] <= MINIMUM_CHANGESET_COUNT) {
-        return callback(null, {'result:water_feature_by_new_user': true});
-      } else {
-        return callback(null, false);
-      }
-    });
-  } else {
-    return callback(null, false);
+  if (newVersion.deleted || newVersion.properties['osm:version'] !== 1) {
+    return false;
   }
+
+  if (isWaterFeature(newVersion) && newUser(newVersion)) {
+    return {'result:water_feature_by_new_user': true};
+  }
+  return false;
 }
