@@ -2,7 +2,6 @@
 
 var fs = require('fs');
 var path = require('path');
-var queue = require('queue-async');
 var comparators = require('../index');
 var nock = require('nock');
 var clc = require('cli-color');
@@ -25,6 +24,10 @@ var clc = require('cli-color');
   var filename = process.argv[2];
   var jsonData = JSON.parse(fs.readFileSync(path.join('.', filename), 'utf-8'));
   var compareFunction = comparators[jsonData.compareFunction];
+  if (typeof compareFunction !== 'function') {
+    console.log(jsonData.compareFunction);
+    return;
+  }
 
   jsonData.fixtures.forEach(function(fixture) {
     compareFunction(
@@ -51,9 +54,8 @@ var clc = require('cli-color');
 })();
 
 function removeMessage(result) {
-  // console.log(result);
-  // if (result.message){
-  //   delete result.message;
-  // }
+  if (result.message) {
+    delete result.message;
+  }
   return result;
 }

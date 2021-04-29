@@ -14,7 +14,6 @@ module.exports = {
   major_road_changed: wrapsync(require('./comparators/major_road_changed')),
   path_road_changed: wrapsync(require('./comparators/path_road_changed')),
   major_lake_modified: wrapsync(require('./comparators/major_lake_modified')),
-  pokemon_footway: require('./comparators/pokemon_footway'),
   place_edited: wrapsync(require('./comparators/place_edited')),
   major_name_modification: wrapsync(
     require('./comparators/major_name_modification')

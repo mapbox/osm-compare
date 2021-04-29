@@ -8,9 +8,7 @@
         "properties": {
           "highway": "motorway",
           "osm:type": "way",
-        "osm:user:mapping_days": 10,
-        "osm:user:changesetcount": 1,
-        "osm:user:num_changes": 2
+          "osm:user:changesetcount": 1
         },
         "geometry": {
           "type": "LineString",
@@ -72,9 +70,7 @@
         "properties": {
           "highway": "motorway",
           "osm:type": "way",
-        "osm:user:mapping_days": 1,
-        "osm:user:changesetcount": 20,
-        "osm:user:num_changes": 2
+          "osm:user:changesetcount": 50
         },
         "geometry": {
           "type": "LineString",
@@ -136,9 +132,7 @@
         "properties": {
           "highway": "motorway",
           "osm:type": "way",
-        "osm:user:mapping_days": 20,
-        "osm:user:changesetcount": 20,
-        "osm:user:num_changes": 2
+          "osm:user:changesetcount": 51
         },
         "geometry": {
           "type": "LineString",

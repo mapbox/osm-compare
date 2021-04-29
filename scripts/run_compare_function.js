@@ -2,7 +2,7 @@
 
 var fs = require('graceful-fs');
 var path = require('path');
-var queue = require('queue-async');
+var queue = require('d3-queue').queue;
 var json2csv = require('json2csv');
 var fields = ['oldVersion', 'newVersion', 'result'];
 var comparators = require('../index');

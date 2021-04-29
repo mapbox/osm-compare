@@ -9,9 +9,7 @@
           "building": "apartment",
           "osm:version" : 1,
           "osm:type": "way",
-        "osm:user:mapping_days": 10,
-        "osm:user:changesetcount": 1,
-        "osm:user:num_changes": 2
+        "osm:user:changesetcount": 1
         },
         "geometry": {
           "type": "Polygon",

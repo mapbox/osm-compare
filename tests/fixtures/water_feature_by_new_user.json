@@ -13,6 +13,7 @@
           "osm:type": "way",
           "osm:version": 1,
           "osm:user": "deered",
+          "osm:user:changesetcount": 49,
           "natural": "water"
         },
         "geometry": null
@@ -29,6 +30,7 @@
           "osm:type": "way",
           "osm:version": 2,
           "osm:user": "deered",
+          "osm:user:changesetcount": 1,
           "name": "nope",
           "water": "lake"
         },
@@ -55,6 +57,7 @@
           "osm:id": 469253887,
           "osm:type": "way",
           "osm:version": 1,
+          "osm:user:changesetcount": 1,
           "osm:user": "deered"
         },
         "geometry": null
@@ -71,6 +74,7 @@
           "osm:type": "way",
           "osm:version": 1,
           "osm:user": "Canvec_s_longiaru",
+          "osm:user:changesetcount": 51,
           "natural": "water"
         },
         "geometry": null
@@ -89,6 +93,7 @@
           "osm:type": "way",
           "osm:version": 1,
           "osm:user": "deered",
+          "osm:user:changesetcount": 39,
           "landuse": "pond"
         },
         "geometry": null

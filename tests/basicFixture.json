@@ -7,9 +7,7 @@
                 "properties": {
                     "id": 76274,
                     "type": "node",
-                    "osm:user:mapping_days": 10,
-                    "osm:user:changesetcount": 1,
-                    "osm:user:num_changes": 2
+                    "osm:user:changesetcount": 1
                 },
                 "geometry": null
             },
@@ -22,9 +20,7 @@
                 "properties": {
                     "id": 76273,
                     "type": "node",
-                    "osm:user:mapping_days": 10,
-                    "osm:user:changesetcount": 1,
-                    "osm:user:num_changes": 2
+                    "osm:user:changesetcount": 1
                 },
                 "geometry": {
                   "type": "Point",
@@ -43,9 +39,7 @@
                 "properties": {
                     "id": 76276,
                     "type": "node",
-                    "osm:user:mapping_days": 10,
-                    "osm:user:changesetcount": 1,
-                    "osm:user:num_changes": 2
+                    "osm:user:changesetcount": 1
                 },
                 "geometry": null
             },
@@ -65,9 +59,7 @@
                 "properties": {
                     "id": 76278,
                     "type": "node",
-                    "osm:user:mapping_days": 10,
-                    "osm:user:changesetcount": 1,
-                    "osm:user:num_changes": 2
+                    "osm:user:changesetcount": 1
                 },
                 "geometry": null
             },
@@ -80,9 +72,7 @@
                 "properties": {
                     "id": 76279,
                     "type": "node",
-                    "osm:user:mapping_days": 10,
-                    "osm:user:changesetcount": 1,
-                    "osm:user:num_changes": 2
+                    "osm:user:changesetcount": 1
                 },
                 "geometry": {
                   "type": "Point",
@@ -97,9 +87,7 @@
                 "properties": {
                     "id": 76279,
                     "type": "node",
-                    "osm:user:mapping_days": 10,
-                    "osm:user:changesetcount": 1,
-                    "osm:user:num_changes": 2
+                    "osm:user:changesetcount": 1
                 },
                 "geometry": {
                   "type": "Point",
