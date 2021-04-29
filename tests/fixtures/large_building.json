@@ -37,10 +37,7 @@
                  ]
               }
          },
-         "expectedResult":{
-           "area": 143145029782,
-           "result:large_building": true
-         }
+         "expectedResult": {"result:large_building": true}
       },
       {
          "Description":"This is a small building input that should not be caught",
@@ -193,11 +190,7 @@
           }
       },
         "oldVersion": null,
-        "expectedResult": {
-            "angle": 48,
-            "area": 559786,
-            "result:large_building": true
-        }
+        "expectedResult": {"result:large_building": true}
       }
    ]
 }

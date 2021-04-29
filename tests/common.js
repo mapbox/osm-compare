@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tap').test;
-var queue = require('queue-async');
+var queue = require('d3-queue').queue;
 var path = require('path');
 var fs = require('fs');
 var comparators = require('../index');
@@ -13,7 +13,7 @@ test('Test compare functions with common fixtures', function(assert) {
     fs.readFileSync(path.join(dirname, filename), 'utf-8')
   );
 
-  var fixtureQueue = queue(1);
+  var fixtureQueue = queue(10);
   jsonData.fixtures.forEach(function(fixture) {
     fixtureQueue.defer(testFixture, assert, fixture);
   });
@@ -32,7 +32,7 @@ function testFixture(assert, fixture, callback) {
     return /.js$/.test(filename);
   });
 
-  var compareQueue = queue(1);
+  var compareQueue = queue(10);
   Object.keys(comparators).forEach(function(comparator) {
     compareQueue.defer(
       testFixtureOnCompareFunction,

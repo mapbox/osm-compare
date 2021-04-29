@@ -18,20 +18,11 @@ function largeBuilding(newVersion, oldVersion) {
     maxAngle: 50
   });
   if (area > 500000 && hasImpossibleAngle) {
-    return {
-      'result:large_building': true,
-      message: `Building with large area ${area} and impossible angle ${hasImpossibleAngle.angle}`,
-      area: area,
-      angle: Math.round(hasImpossibleAngle.angle)
-    };
+    return {'result:large_building': true};
   }
 
   if (area > 2000000) {
-    return {
-      'result:large_building': true,
-      message: `Building with very large area ${area}`,
-      area: area
-    };
+    return {'result:large_building': true};
   }
   return false;
 }

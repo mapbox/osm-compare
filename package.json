@@ -4,7 +4,7 @@
   "description": "Compare a features new and old versions in GeoJSON",
   "main": "index.js",
   "scripts": {
-    "test": "TAP_TIMEOUT=600 tap --coverage tests/*.js",
+    "test": "TAP_TIMEOUT=600 tap --coverage --no-check-coverage tests/*.js --test-ignore=tests/test_compare_function.js",
     "lint": "eslint ./*/*.js",
     "pretest": "npm run lint",
     "postinstall": "./scripts/download_common_tag_values.sh",
@@ -31,7 +31,7 @@
     "attempt": "^1.0.1",
     "cheap-ruler": "^2.5.1",
     "csv": "^1.1.1",
-    "d3-queue": "^3.0.3",
+    "d3-queue": "^3.0.7",
     "deep-equals": "0.0.2",
     "diff": "^3.5.0",
     "feature-filter": "^2.2.0",
@@ -45,7 +45,6 @@
     "naughty-words": "^1.0.1",
     "nock": "^9.0.11",
     "osm-landmarks": "^0.3.1",
-    "queue-async": "^1.2.1",
     "request": "^2.72.0",
     "sax": "^1.2.1",
     "sqlite3": "^4.1.1",
@@ -69,6 +68,6 @@
     "lint-staged": "^3.4.0",
     "prettier": "^0.22.0",
     "prettier-eslint-cli": "^3.2.0",
-    "tap": "^5.7.1"
+    "tap": "^15.0.2"
   }
 }
