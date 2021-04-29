@@ -2,7 +2,7 @@
 
 
 ![](https://img.shields.io/npm/v/@mapbox/osm-compare.svg)
-[![Circle CI](https://circleci.com/gh/mapbox/osm-compare.svg?style=svg)](https://circleci.com/gh/mapbox/osm-compare)
+[![Travis CI](https://travis-ci.com/mapbox/osm-compare.svg?branch=master)](https://travis-ci.com/github/mapbox/osm-compare)
 
 
 Compare functions are small atomic functions that are designed identify what changed during a feature edit on OpenStreetMap. Compare functions can be broadly split up into two categories:
