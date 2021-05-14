@@ -4783,10 +4783,10 @@ tap-yaml@^1.0.0:
   dependencies:
     yaml "^1.5.0"
 
-tap@^15.0.2:
-  version "15.0.2"
-  resolved "https://registry.yarnpkg.com/tap/-/tap-15.0.2.tgz#44e6f98829079f27e39c8ca5a56a484fdb8e1a2a"
-  integrity sha512-HfEahBCFIA/t3YuBZxkgfu9UiLqpOo/ibCs1xgGwJSWNqdmIxF8tiPwmgni+7SlNtmf0jNfYjT2xeatfZ7t/QA==
+tap@^15.0.9:
+  version "15.0.9"
+  resolved "https://registry.yarnpkg.com/tap/-/tap-15.0.9.tgz#21347a789e88798a94aa151d25ea1c92d04c27ef"
+  integrity sha512-bqY5SxEqYKRd37PIUfKBf9HMs/hklyl/fGXkuStr9rYTIGa0/icpSLsm6IVOmx2qT0/TliPNJ6OvS5kddJYHdg==
   dependencies:
     "@types/react" "^16.9.23"
     chokidar "^3.3.0"
@@ -4812,8 +4812,8 @@ tap@^15.0.2:
     tap-mocha-reporter "^5.0.0"
     tap-parser "^10.0.1"
     tap-yaml "^1.0.0"
-    tcompare "^5.0.4"
-    treport "^2.0.0"
+    tcompare "^5.0.6"
+    treport "^2.0.2"
     which "^2.0.2"
 
 tar@^4:
@@ -4829,10 +4829,17 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
-tcompare@^5.0.1, tcompare@^5.0.4:
+tcompare@^5.0.1:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/tcompare/-/tcompare-5.0.4.tgz#98d571bae0cd945388c3641a7ab7013f95ebe359"
   integrity sha512-worXBcrmLoFu9oJYAKznjPE89APTEXk/XCazuDuSQfK1EqX3bpLPW3cY/RQucbcc7mW+yKW0duujsuFlU7dRCA==
+  dependencies:
+    diff "^4.0.2"
+
+tcompare@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/tcompare/-/tcompare-5.0.6.tgz#b809135cca3d165fb17d5eabb9ed292629e38e31"
+  integrity sha512-OvO7omN/wkdsKzmOqr3sQFfLbghs/2X5mwSkcfgRiXZshfPnTsAs3IRf1RixR/Pff26qG/r9ogcZMpV0YdeGXg==
   dependencies:
     diff "^4.0.2"
 
@@ -4912,10 +4919,10 @@ tough-cookie@~2.5.0:
     psl "^1.1.28"
     punycode "^2.1.1"
 
-treport@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/treport/-/treport-2.0.0.tgz#f4f11adea298e3a2e1c83c05b82fd4d424b110dc"
-  integrity sha512-SBUraVmpkJoGAhd97alZDsSS8kYyFVza0SOcImVaiweTEv9aPGROyIYeCAgLJtyp8R2/7ZynSPLE4uPFh/R+3A==
+treport@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/treport/-/treport-2.0.2.tgz#a007278c01335c1209e3f5c20e98ef14fd736cc2"
+  integrity sha512-AnHKgHMy3II7Arfvf1tSHAwv9rzcvgbWrOixFJgdExVKd0mMsOp9wD2LGP9RbXy9j8AZoerBVu3OR2Uz9MpUJw==
   dependencies:
     cardinal "^2.1.1"
     chalk "^3.0.0"
