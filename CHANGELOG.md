@@ -3,6 +3,19 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [9.4.1] - 2021-05-16
+### Fixed
+- Don't throw error if the user information is not available
+
+### Updated
+- tap library update to version 15.0.9
+
+## [9.4.0] - 2021-04-29
+### Updated
+- Change compare functions that used the osm-comments-api to use only the user data available on the changeset
+- Update queue and tap libs and update tests
+- Move from Circle CI to Travis CI
+
 ## [8.3.0] - 2018-02-14
 ### Updated
 * Changed `turn_restriction` function to detect only bad formatted ones.
