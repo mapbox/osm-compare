@@ -1,0 +1,288 @@
+{
+  "compareFunction": "deleted_ref_tag",
+  "fixtures": [
+    {
+      "description": "New object without ref tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "primary"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ]
+          ]
+        }
+      },
+      "oldVersion": null,
+      "expectedResult": false
+    },
+    {
+      "description": "Object loses ref tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "primary"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "primary",
+          "ref": "BR-001"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:deleted_ref_tag": true
+      }
+    },
+    {
+      "description": "Building loses ref tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "building": "yes"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ],
+            [
+              83.33335071802139,
+              17.7251960851791
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "building": "yes",
+          "ref": "BR-010"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ],
+            [
+              83.33335071802139,
+              17.7251960851791
+            ]
+          ]
+        }
+      },
+      "expectedResult": false
+    },
+    {
+      "description": "Route loses ref tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "type": "route",
+          "route": "road"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "route": "road",
+          "type": "route",
+          "ref": "BA-001"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ]
+          ]
+        }
+      },
+      "expectedResult": {
+        "result:deleted_ref_tag": true
+      }
+    },
+    {
+      "description": "Changes in existing object with ref tag",
+      "newVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "secondary",
+          "ref": "BR-001"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ]
+          ]
+        }
+      },
+      "oldVersion": {
+        "type": "Feature",
+        "properties": {
+          "highway": "primary",
+          "ref": "BR-001"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              83.33335071802139,
+              17.7251960851791
+            ],
+            [
+              83.33353847265244,
+              17.725829693891324
+            ],
+            [
+              83.33366185426712,
+              17.726299789230563
+            ],
+            [
+              83.33373963832855,
+              17.726568049605337
+            ]
+          ]
+        }
+      },
+      "expectedResult": false
+    }
+  ]
+}
