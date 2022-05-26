@@ -5,7 +5,7 @@
 [![Travis CI](https://travis-ci.com/mapbox/osm-compare.svg?branch=master)](https://travis-ci.com/github/mapbox/osm-compare)
 
 
-Compare functions are small atomic functions that are designed identify what changed during a feature edit on OpenStreetMap. Compare functions can be broadly split up into two categories:
+Compare functions are small atomic functions that are designed to identify what changed during a feature edit on OpenStreetMap. Compare functions can be broadly split up into two categories:
 
 1. Property (tags) checking compare function
 2. Geometry checking compare functions
