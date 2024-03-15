@@ -1,3 +1,9 @@
+⚠️ This repo is archived because it is no longer used and no stacks are running.  
+Previously used only in transferred and discontinued mapbox/osmcha project.  
+Shutdown [ticket in Jira](https://mapbox.atlassian.net/browse/RTSR-479) for reference.
+
+---
+
 # osm-compare
 
 
